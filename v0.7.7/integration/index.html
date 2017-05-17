@@ -17,7 +17,7 @@
     
     
       
-        <title>Linear Algebra - LightGraphs.jl</title>
+        <title>Integration with other packages - LightGraphs.jl</title>
       
     
     
@@ -80,7 +80,7 @@
             
               
             
-            Linear Algebra
+            Integration with other packages
           
         </span>
       </div>
@@ -257,20 +257,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-    <a href="./" title="Linear Algebra" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../linalg/" title="Linear Algebra" class="md-nav__link">
       Linear Algebra
     </a>
-    
   </li>
 
     
@@ -338,11 +329,82 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../integration/" title="Integration with other packages" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Integration with other packages
+      </label>
+    
+    <a href="./" title="Integration with other packages" class="md-nav__link md-nav__link--active">
       Integration with other packages
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#graphsjl" title="Graphs.jl" class="md-nav__link">
+    Graphs.jl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphlayoutjl" title="GraphLayout.jl" class="md-nav__link">
+    GraphLayout.jl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tikzgraphsjl" title="TikzGraphs.jl" class="md-nav__link">
+    TikzGraphs.jl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphplotjl" title="GraphPlot.jl" class="md-nav__link">
+    GraphPlot.jl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metisjl" title="Metis.jl" class="md-nav__link">
+    Metis.jl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkvizjl-networkvizjl-is-tightly-coupled-with-lightgraphsjl-graphs-can-be-visualized-in-2d-as-well-as-3d-using-threejsjl-and-escherjl" title="NetworkViz.jl NetworkViz.jl is tightly coupled with LightGraphs.jl. Graphs can be visualized in 2D as well as 3D using ThreeJS.jl and Escher.jl." class="md-nav__link">
+    NetworkViz.jl NetworkViz.jl is tightly coupled with LightGraphs.jl. Graphs can be visualized in 2D as well as 3D using ThreeJS.jl and Escher.jl.
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -387,6 +449,55 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#graphsjl" title="Graphs.jl" class="md-nav__link">
+    Graphs.jl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphlayoutjl" title="GraphLayout.jl" class="md-nav__link">
+    GraphLayout.jl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tikzgraphsjl" title="TikzGraphs.jl" class="md-nav__link">
+    TikzGraphs.jl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphplotjl" title="GraphPlot.jl" class="md-nav__link">
+    GraphPlot.jl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metisjl" title="Metis.jl" class="md-nav__link">
+    Metis.jl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkvizjl-networkvizjl-is-tightly-coupled-with-lightgraphsjl-graphs-can-be-visualized-in-2d-as-well-as-3d-using-threejsjl-and-escherjl" title="NetworkViz.jl NetworkViz.jl is tightly coupled with LightGraphs.jl. Graphs can be visualized in 2D as well as 3D using ThreeJS.jl and Escher.jl." class="md-nav__link">
+    NetworkViz.jl NetworkViz.jl is tightly coupled with LightGraphs.jl. Graphs can be visualized in 2D as well as 3D using ThreeJS.jl and Escher.jl.
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -397,39 +508,78 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/edit/master/docs/linalg.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/edit/master/docs/integration.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
-                <p><a id='Linear-Algebra-1'></a></p>
-<h1 id="linear-algebra">Linear Algebra</h1>
-<p><em>LightGraphs.jl</em> provides the following matrix operations on both directed and undirected graphs:</p>
-<p><a id='LightGraphs.adjacency_matrix' href='#LightGraphs.adjacency_matrix'>#</a>
-<strong><code>LightGraphs.adjacency_matrix</code></strong> &mdash; <em>Function</em>.</p>
-<p>Returns a sparse boolean adjacency matrix for a graph, indexed by <code>[u, v]</code> vertices. <code>true</code> values indicate an edge between <code>u</code> and <code>v</code>. Users may specify a direction (<code>:in</code>, <code>:out</code>, or <code>:both</code> are currently supported; <code>:out</code> is default for both directed and undirected graphs) and a data type for the matrix (defaults to <code>Int</code>).</p>
-<p>Note: This function is optimized for speed.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/linalg/./spectral.jl#L9-L17' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.adjacency_spectrum' href='#LightGraphs.adjacency_spectrum'>#</a>
-<strong><code>LightGraphs.adjacency_spectrum</code></strong> &mdash; <em>Function</em>.</p>
-<p>Returns the eigenvalues of the adjacency matrix for a graph <code>g</code>, indexed by vertex. Warning: Converts the matrix to dense with $nv^2$ memory usage. Use <code>eigs(adjacency_matrix(g);kwargs...)</code> to compute some of the eigenvalues/eigenvectors. Default values for <code>dir</code> and <code>T</code> are the same as <code>adjacency_matrix</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/linalg/./spectral.jl#L90' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.incidence_matrix' href='#LightGraphs.incidence_matrix'>#</a>
-<strong><code>LightGraphs.incidence_matrix</code></strong> &mdash; <em>Function</em>.</p>
-<p>Returns a sparse node-arc incidence matrix for a graph, indexed by <code>[v, i]</code>, where <code>i</code> is in <code>1:ne(g)</code>, indexing an edge <code>e</code>. For directed graphs, a value of <code>-1</code> indicates that <code>src(e) == v</code>, while a value of <code>1</code> indicates that <code>dst(e) == v</code>. Otherwise, the value is <code>0</code>. For undirected graphs, if the optional keyword <code>oriented</code> is <code>false</code>,  both entries are <code>1</code>, otherwise, an arbitrary orientation is chosen.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/linalg/./spectral.jl#L100-L107' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.laplacian_matrix' href='#LightGraphs.laplacian_matrix'>#</a>
-<strong><code>LightGraphs.laplacian_matrix</code></strong> &mdash; <em>Function</em>.</p>
-<p>Returns a sparse <a href="https://en.wikipedia.org/wiki/Laplacian_matrix">Laplacian matrix</a> for a graph <code>g</code>, indexed by <code>[u, v]</code> vertices. For undirected graphs, <code>dir</code> defaults to <code>:out</code>; for directed graphs, <code>dir</code> defaults to <code>:both</code>. <code>T</code> defaults to <code>Int</code> for both graph types.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/linalg/./spectral.jl#L64-L69' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.laplacian_spectrum' href='#LightGraphs.laplacian_spectrum'>#</a>
-<strong><code>LightGraphs.laplacian_spectrum</code></strong> &mdash; <em>Function</em>.</p>
-<p>Returns the eigenvalues of the Laplacian matrix for a graph <code>g</code>, indexed by vertex. Warning: Converts the matrix to dense with $nv^2$ memory usage. Use <code>eigs(laplacian_matrix(g);  kwargs...)</code> to compute some of the eigenvalues/eigenvectors. Default values for <code>dir</code> and <code>T</code> are the same as <code>laplacian_matrix</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/linalg/./spectral.jl#L81' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.spectral_distance-Tuple{LightGraphs.Graph,LightGraphs.Graph,Integer}' href='#LightGraphs.spectral_distance-Tuple{LightGraphs.Graph,LightGraphs.Graph,Integer}'>#</a>
-<strong><code>LightGraphs.spectral_distance</code></strong> &mdash; <em>Method</em>.</p>
-<p>spectral_distance(G₁, G₂ [, k]) Compute the spectral distance between undirected n-vertex graphs G₁ and G₂ using the top k ≤ n greatest eigenvalues. If k is ommitted, uses full spectrum.</p>
-<p>For further details, please refer to:</p>
-<p>JOVANOVIC, I.; STANIC, Z., 2014. Spectral Distances of Graphs Based on their Different Matrix Representations</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/linalg/./spectral.jl#L134-L144' class='documenter-source'>source</a><br></p>
+                <p><a id='Integration-with-other-packages-1'></a></p>
+<h1 id="integration-with-other-packages">Integration with other packages</h1>
+<p><em>LightGraphs.jl</em>'s integration with other Julia packages is designed to be straightforward. Here are a few examples.</p>
+<p><a id='<a href="http://github.com/JuliaLang/Graphs.jl">Graphs.jl</a>-1'></a></p>
+<h2 id="graphsjl"><a href="http://github.com/JuliaLang/Graphs.jl">Graphs.jl</a></h2>
+<p>Creating a Graphs.jl <code>simple_graph</code> is easy:</p>
+<pre><code class="julia">julia&gt; s = simple_graph(nv(g), is_directed=LightGraphs.is_directed(g))
+julia&gt; for e in LightGraphs.edges(g)
+           add_edge!(s,src(e), dst(e))
+       end
+</code></pre>
+
+<p><a id='<a href="https://github.com/IainNZ/GraphLayout.jl">GraphLayout.jl</a>-1'></a></p>
+<h2 id="graphlayoutjl"><a href="https://github.com/IainNZ/GraphLayout.jl">GraphLayout.jl</a></h2>
+<p>This excellent graph visualization package can be used with <em>LightGraphs.jl</em> as follows:</p>
+<pre><code class="julia">julia&gt; g = WheelGraph(10); am = full(adjacency_matrix(g))
+julia&gt; loc_x, loc_y = layout_spring_adj(am)
+julia&gt; draw_layout_adj(am, loc_x, loc_y, filename=&quot;wheel10.svg&quot;)
+</code></pre>
+
+<p>producing a graph like this:</p>
+<p><img alt="Wheel Graph" src="https://cloud.githubusercontent.com/assets/941359/8960521/35582c1e-35c5-11e5-82d7-cd641dff424c.png" /></p>
+<p><a id='<a href="https://github.com/sisl/TikzGraphs.jl">TikzGraphs.jl</a>-1'></a></p>
+<h2 id="tikzgraphsjl"><a href="https://github.com/sisl/TikzGraphs.jl">TikzGraphs.jl</a></h2>
+<p>Another nice graph visualization package. (<a href="https://github.com/sisl/TikzPictures.jl">TikzPictures.jl</a> required to render/save):</p>
+<pre><code class="julia">julia&gt; g = WheelGraph(10); t = plot(g)
+
+julia&gt; save(SVG(&quot;wheel10.svg&quot;), t)
+</code></pre>
+
+<p>producing a graph like this:</p>
+<p><img alt="Wheel Graph" src="https://cloud.githubusercontent.com/assets/941359/8960499/17f703c0-35c5-11e5-935e-044be51bc531.png" /></p>
+<p><a id='<a href="https://github.com/afternone/GraphPlot.jl">GraphPlot.jl</a>-1'></a></p>
+<h2 id="graphplotjl"><a href="https://github.com/afternone/GraphPlot.jl">GraphPlot.jl</a></h2>
+<p>Another graph visualization package that is very simple to use. <a href="https://github.com/dcjones/Compose.jl">Compose.jl</a> is required for most rendering functionality:</p>
+<pre><code class="julia">julia&gt; using GraphPlot, Compose
+
+julia&gt; g = WheelGraph(10)
+
+julia&gt; draw(PNG(&quot;/tmp/wheel10.png&quot;, 16cm, 16cm), gplot(g))
+</code></pre>
+
+<p><a id='<a href="https://github.com/JuliaSparse/Metis.jl">Metis.jl</a>-1'></a></p>
+<h2 id="metisjl"><a href="https://github.com/JuliaSparse/Metis.jl">Metis.jl</a></h2>
+<p>The Metis graph partitioning package can interface with <em>LightGraphs.jl</em>:</p>
+<pre><code class="julia">julia&gt; using LightGraphs
+
+julia&gt; g = Graph(100,1000)
+{100, 1000} undirected graph
+
+julia&gt; partGraphKway(g, 6)  # 6 partitions
+</code></pre>
+
+<h2 id="networkvizjl-networkvizjl-is-tightly-coupled-with-lightgraphsjl-graphs-can-be-visualized-in-2d-as-well-as-3d-using-threejsjl-and-escherjl"><a href="https://github.com/abhijithanilkumar/NetworkViz.jl">NetworkViz.jl</a> NetworkViz.jl is tightly coupled with <em>LightGraphs.jl</em>. Graphs can be visualized in 2D as well as 3D using <a href="https://github.com/rohitvarkey/ThreeJS.jl">ThreeJS.jl</a> and <a href="https://github.com/shashi/Escher.jl">Escher.jl</a>.</h2>
+<pre><code class="julia">#Run this code in Escher
+
+using NetworkViz
+using LightGraphs
+
+main(window) = begin
+  push!(window.assets, &quot;widgets&quot;)
+  push!(window.assets,(&quot;ThreeJS&quot;,&quot;threejs&quot;))
+  g = CompleteGraph(10)
+  drawGraph(g)
+end
+</code></pre>
+
+<p>The above code produces the following output:</p>
+<p><img alt="alt tag" src="https://raw.githubusercontent.com/abhijithanilkumar/NetworkViz.jl/master/examples/networkviz.gif" /></p>
                 
                   
                 
@@ -448,7 +598,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../centrality/" title="Centrality Measures" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../persistence/" title="Reading / Writing Graphs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -457,19 +607,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Centrality Measures
+                Reading / Writing Graphs
               </span>
             </div>
           </a>
         
         
-          <a href="../matching/" title="Matching" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../contributing/" title="Contributing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Matching
+                Contributing
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
