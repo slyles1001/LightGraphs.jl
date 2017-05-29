@@ -412,7 +412,7 @@
 <p>Simple graphs (not multi- or hypergraphs) are represented in a memory- and time-efficient manner with adjacency lists and edge sets. Both directed and undirected graphs are supported via separate types, and conversion is available from directed to undirected.</p>
 <p>The project goal is to mirror the functionality of robust network and graph analysis libraries such as NetworkX while being simpler to use and more efficient than existing Julian graph libraries such as Graphs.jl. It is an explicit design decision that any data not required for graph manipulation (attributes and other information, for example) is expected to be stored outside of the graph structure itself. Such data lends itself to storage in more traditional and better-optimized mechanisms.</p>
 <p><a href="http://codecov.io/github/JuliaGraphs/LightGraphs.jl">Full documentation</a> is available, and tutorials are available at the <a href="https://github.com/JuliaGraphs/JuliaGraphsTutorials">JuliaGraphsTutorials repository</a>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/LightGraphs.jl#L120-L141' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/LightGraphs.jl#L120-L141' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.Nonbacktracking' href='#LightGraphs.Nonbacktracking'>#</a>
 <strong><code>LightGraphs.Nonbacktracking</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>Nonbacktracking{G}
@@ -424,28 +424,28 @@
 <p>$B_{A_{i j}, A_{k l}} = δ_{j k} * (1 - δ_{i l})$</p>
 <p>This type is in the style of GraphMatrices.jl and supports the necessary operations for computed eigenvectors and conducting linear solves.</p>
 <p>Additionally the <code>contract!(vertexspace, nbt, edgespace)</code> method takes vectors represented in the domain of $B$ and represents them in the domain of the adjacency matrix of <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/linalg/./nonbacktracking.jl#L47' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/linalg/./nonbacktracking.jl#L47' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.AbstractEdge' href='#LightGraphs.AbstractEdge'>#</a>
 <strong><code>LightGraphs.AbstractEdge</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>AbstractEdge
 </code></pre>
 
 <p>An absract type representing a single edge between two vertices of a graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L5-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L5-L9' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.AbstractGraph' href='#LightGraphs.AbstractGraph'>#</a>
 <strong><code>LightGraphs.AbstractGraph</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>AbstractGraph
 </code></pre>
 
 <p>An abstract type representing a graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L19-L23' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L19-L23' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.BoykovKolmogorovAlgorithm' href='#LightGraphs.BoykovKolmogorovAlgorithm'>#</a>
 <strong><code>LightGraphs.BoykovKolmogorovAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>BoykovKolmogorovAlgorithm &lt;: AbstractFlowAlgorithm
 </code></pre>
 
 <p>Forces the maximum_flow function to use the Boykov-Kolmogorov algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/maximum_flow.jl#L22-L26' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/maximum_flow.jl#L22-L26' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.BreadthFirst' href='#LightGraphs.BreadthFirst'>#</a>
 <strong><code>LightGraphs.BreadthFirst</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>BreadthFirst
@@ -463,7 +463,7 @@
 <li>color == 0    =&gt; unseen</li>
 <li>color == 1    =&gt; examined</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/bfs.jl#L11-L23' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/bfs.jl#L11-L23' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.DepthFirst' href='#LightGraphs.DepthFirst'>#</a>
 <strong><code>LightGraphs.DepthFirst</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>DepthFirst
@@ -481,39 +481,39 @@
 <li>color == 0    =&gt; unseen</li>
 <li>color == 1     =&gt; examined</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/dfs.jl#L12-L23' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/dfs.jl#L12-L23' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.DinicAlgorithm' href='#LightGraphs.DinicAlgorithm'>#</a>
 <strong><code>LightGraphs.DinicAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>DinicAlgorithm &lt;: AbstractFlowAlgorithm
 </code></pre>
 
 <p>Forces the maximum_flow function to use Dinic's algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/maximum_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/maximum_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.EdmondsKarpAlgorithm' href='#LightGraphs.EdmondsKarpAlgorithm'>#</a>
 <strong><code>LightGraphs.EdmondsKarpAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>EdmondsKarpAlgorithm &lt;: AbstractFlowAlgorithm
 </code></pre>
 
 <p>Forces the maximum_flow function to use the Edmonds–Karp algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/maximum_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/maximum_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.ExtendedMultirouteFlowAlgorithm' href='#LightGraphs.ExtendedMultirouteFlowAlgorithm'>#</a>
 <strong><code>LightGraphs.ExtendedMultirouteFlowAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>ExtendedMultirouteFlowAlgorithm
 </code></pre>
 
 <p>Used to specify the Extended Multiroute Flow algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/multiroute_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/multiroute_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.KishimotoAlgorithm' href='#LightGraphs.KishimotoAlgorithm'>#</a>
 <strong><code>LightGraphs.KishimotoAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>KishimotoAlgorithm
 </code></pre>
 
 <p>Used to specify the Kishimoto algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/multiroute_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/multiroute_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.PushRelabelAlgorithm' href='#LightGraphs.PushRelabelAlgorithm'>#</a>
 <strong><code>LightGraphs.PushRelabelAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <p>Forces the maximum_flow function to use the Push-Relabel algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/maximum_flow.jl#L29-L31' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/maximum_flow.jl#L29-L31' class='documenter-source'>source</a><br></p>
 <p><a id='Base.SparseArrays.blkdiag-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph' href='#Base.SparseArrays.blkdiag-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>Base.SparseArrays.blkdiag</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>blkdiag(g, h)
@@ -522,7 +522,7 @@
 <p>Return a graph with $|V(g)| + |V(h)|$ vertices and $|E(g)| + |E(h)|$ edges where the vertices an edges from graph <code>h</code> are appended to graph <code>g</code>.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L65' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L65' class='documenter-source'>source</a><br></p>
 <p><a id='Base.intersect-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph' href='#Base.intersect-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>Base.intersect</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>intersect(g, h)
@@ -531,7 +531,7 @@
 <p>Return a graph with edges that are only in both graph <code>g</code> and graph <code>h</code>.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>This function may produce a graph with 0-degree vertices. Preserves the eltype of the input graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L87-L95' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L87-L95' class='documenter-source'>source</a><br></p>
 <p><a id='Base.join-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph' href='#Base.join-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>Base.join</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>join(g, h)
@@ -540,7 +540,7 @@
 <p>Return a graph that combines graphs <code>g</code> and <code>h</code> using <code>blkdiag</code> and then adds all the edges between the vertices in <code>g</code> and those in <code>h</code>.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L181-L190' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L181-L190' class='documenter-source'>source</a><br></p>
 <p><a id='Base.reverse' href='#Base.reverse'>#</a>
 <strong><code>Base.reverse</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>reverse(g)
@@ -549,21 +549,21 @@
 <p>Return a directed graph where all edges are reversed from the original directed graph.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Preserves the eltype of the input graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L34-L42' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L34-L42' class='documenter-source'>source</a><br></p>
 <p><a id='Base.reverse!' href='#Base.reverse!'>#</a>
 <strong><code>Base.reverse!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>reverse!(g)
 </code></pre>
 
 <p>In-place reverse of a directed graph (modifies the original graph).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L54-L58' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L54-L58' class='documenter-source'>source</a><br></p>
 <p><a id='Base.reverse-Tuple{LightGraphs.AbstractEdge}' href='#Base.reverse-Tuple{LightGraphs.AbstractEdge}'>#</a>
 <strong><code>Base.reverse</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>reverse(e)
 </code></pre>
 
 <p>Create a new edge from <code>e</code> with source and destination vertices reversed.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L52-L56' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L52-L56' class='documenter-source'>source</a><br></p>
 <p><a id='Base.union-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph' href='#Base.union-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>Base.union</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>union(g, h)
@@ -572,35 +572,35 @@
 <p>Return a graph that combines graphs <code>g</code> and <code>h</code> by taking the set union of all vertices and edges.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L152-L161' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L152-L161' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.a_star-Union{Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2},Function}, Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,Integer,Integer}, Tuple{T}} where T' href='#LightGraphs.a_star-Union{Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2},Function}, Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,Integer,Integer}, Tuple{T}} where T'>#</a>
 <strong><code>LightGraphs.a_star</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>a_star(g, s, t[, distmx][, heuristic])
 </code></pre>
 
 <p>Return a vector of edges comprising the shortest path between vertices <code>s</code> and <code>t</code> using the <a href="http://en.wikipedia.org/wiki/A%2A_search_algorithm">A* search algorithm</a>. An optional heuristic function and edge distance matrix may be supplied. If missing, the distance matrix is set to <a href="../@ref"><code>DefaultDistance</code></a> and the heuristic is set to <code>n -&gt; 0</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/shortestpaths/astar.jl#L38-L46' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/shortestpaths/astar.jl#L38-L46' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.add_edge!-Tuple' href='#LightGraphs.add_edge!-Tuple'>#</a>
 <strong><code>LightGraphs.add_edge!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>add_edge!(g, e)
 </code></pre>
 
 <p>Add a new edge <code>e</code> to <code>g</code>. Return false if add fails (e.g., if vertices are not in the graph, or edge already exists), true otherwise.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L125-L130' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L125-L130' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.add_vertex!-Tuple' href='#LightGraphs.add_vertex!-Tuple'>#</a>
 <strong><code>LightGraphs.add_vertex!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>add_vertex!(g)
 </code></pre>
 
 <p>Add a new vertex to the graph <code>g</code>. Return true if the vertex was added successfully, false otherwise.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L117-L122' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L117-L122' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.articulation-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.articulation-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.articulation</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>articulation(g)
 </code></pre>
 
 <p>Compute the <a href="https://en.wikipedia.org/wiki/Biconnected_component">articulation points</a> of a connected graph <code>g</code> and return an array containing all cut vertices.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/biconnectivity/articulation.jl#L51-L56' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/biconnectivity/articulation.jl#L51-L56' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.bellman_ford_shortest_paths-Union{Tuple{LightGraphs.AbstractGraph,AbstractArray{U,1},AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,AbstractArray{U,1}}, Tuple{T}, Tuple{U}} where T where U<:Integer' href='#LightGraphs.bellman_ford_shortest_paths-Union{Tuple{LightGraphs.AbstractGraph,AbstractArray{U,1},AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,AbstractArray{U,1}}, Tuple{T}, Tuple{U}} where T where U<:Integer'>#</a>
 <strong><code>LightGraphs.bellman_ford_shortest_paths</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>bellman_ford_shortest_paths(g, s, distmx=DefaultDistance())
@@ -608,7 +608,7 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 </code></pre>
 
 <p>Compute shortest paths between a source <code>s</code> (or list of sources <code>ss</code>) and all other nodes in graph <code>g</code> using the <a href="http://en.wikipedia.org/wiki/Bellman–Ford_algorithm">Bellman-Ford algorithm</a>. Return a <a href="./#LightGraphs.BellmanFordState"><code>BellmanFordState</code></a> with relevant traversal information.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/shortestpaths/bellman-ford.jl#L62-L69' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/shortestpaths/bellman-ford.jl#L62-L69' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.bfs_tree-Tuple{LightGraphs.AbstractGraph,Integer}' href='#LightGraphs.bfs_tree-Tuple{LightGraphs.AbstractGraph,Integer}'>#</a>
 <strong><code>LightGraphs.bfs_tree</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>bfs_tree(g, s)
@@ -617,7 +617,7 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 <p>Provide a breadth-first traversal of the graph <code>g</code> starting with source vertex <code>s</code>, and return a directed acyclic graph of vertices in the order they were discovered.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>This function is a high level wrapper around <a href="./#LightGraphs.bfs_tree!-Union{Tuple{LightGraphs.LevelSynchronousBFS,LightGraphs.ThreadQueue,LightGraphs.AbstractGraph,T,Array{Base.Threads.Atomic{T},N} where N}, Tuple{T}} where T&lt;:Integer"><code>bfs_tree!</code></a>; use that function for more performance.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/bfs.jl#L148-L156' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/bfs.jl#L148-L156' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.bfs_tree-Union{Tuple{LightGraphs.LevelSynchronousBFS,LightGraphs.AbstractGraph,T,T}, Tuple{T}} where T<:Integer' href='#LightGraphs.bfs_tree-Union{Tuple{LightGraphs.LevelSynchronousBFS,LightGraphs.AbstractGraph,T,T}, Tuple{T}} where T<:Integer'>#</a>
 <strong><code>LightGraphs.bfs_tree</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>bfs_tree(LevelSynchronousBFS(), g, s, nv)
@@ -626,7 +626,7 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 <p>Provide a parallel breadth-first traversal of the graph <code>g</code> starting with source vertex <code>s</code>, and return a directed acyclic graph of vertices in the order they were discovered using a frontier based parallel approach.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>This function uses <code>@threads</code> for parallelism which depends on the <code>JULIA_NUM_THREADS</code> environment variable to decide the number of threads to use. Refer <code>@threads</code> documentation for more details. This function is a high level wrapper around <a href="./#LightGraphs.bfs_tree!-Union{Tuple{LightGraphs.LevelSynchronousBFS,LightGraphs.ThreadQueue,LightGraphs.AbstractGraph,T,Array{Base.Threads.Atomic{T},N} where N}, Tuple{T}} where T&lt;:Integer"><code>bfs_tree!</code></a>; use that function for more performance.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/parallel_bfs.jl#L106-L118' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/parallel_bfs.jl#L106-L118' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.biconnected_components' href='#LightGraphs.biconnected_components'>#</a>
 <strong><code>LightGraphs.biconnected_components</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>biconnected_components(g)
@@ -634,14 +634,14 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 
 <p>Compute the <a href="https://en.wikipedia.org/wiki/Biconnected_component">biconnected components</a> of an undirected graph <code>g</code>and return a vector of vectors containing each biconnected component.</p>
 <p>Performance: Time complexity is $\mathcal{O}(|V|)$.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/biconnectivity/biconnect.jl#L56' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/biconnectivity/biconnect.jl#L56' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.bipartite_map-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.bipartite_map-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.bipartite_map</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>bipartite_map(g)
 </code></pre>
 
 <p>For a bipartite graph <code>g</code>, return a vector <code>c</code> of size $|V|$ containing the assignment of each vertex to one of the two sets ($c_i == 1$ or c_i == 2<code>`). If</code>g` is not bipartite, return an empty vector.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/bfs.jl#L242' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/bfs.jl#L242' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.cartesian_product-Union{Tuple{G,G}, Tuple{G}} where G<:LightGraphs.AbstractGraph' href='#LightGraphs.cartesian_product-Union{Tuple{G,G}, Tuple{G}} where G<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>LightGraphs.cartesian_product</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>cartesian_product(g, h)
@@ -650,7 +650,7 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 <p>Return the (cartesian product)[https://en.wikipedia.org/wiki/Tensor_product_of_graphs] of <code>g</code> and <code>h</code>.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L287-L296' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L287-L296' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.complement-Tuple{LightGraphs.SimpleGraphs.SimpleGraph}' href='#LightGraphs.complement-Tuple{LightGraphs.SimpleGraphs.SimpleGraph}'>#</a>
 <strong><code>LightGraphs.complement</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>complement(g)
@@ -659,21 +659,21 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 <p>Return the <a href="https://en.wikipedia.org/wiki/Complement_graph">graph complement</a> of a graph</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Preserves the eltype of the input graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L1-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L1-L9' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.contract!-Tuple{Array{T,1} where T,LightGraphs.Nonbacktracking,Array{T,1} where T}' href='#LightGraphs.contract!-Tuple{Array{T,1} where T,LightGraphs.Nonbacktracking,Array{T,1} where T}'>#</a>
 <strong><code>LightGraphs.contract!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>contract!(vertexspace, nbt, edgespace)
 </code></pre>
 
 <p>The mutating version of <code>contract(nbt, edgespace)</code>. Modifies <code>vertexspace</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/linalg/./nonbacktracking.jl#L143-L147' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/linalg/./nonbacktracking.jl#L143-L147' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.contract-Tuple{LightGraphs.Nonbacktracking,Array{T,1} where T}' href='#LightGraphs.contract-Tuple{LightGraphs.Nonbacktracking,Array{T,1} where T}'>#</a>
 <strong><code>LightGraphs.contract</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>contract(nbt, edgespace)
 </code></pre>
 
 <p>Integrate out the edges by summing over the edges incident to each vertex.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/linalg/./nonbacktracking.jl#L157-L161' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/linalg/./nonbacktracking.jl#L157-L161' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.core_periphery_deg' href='#LightGraphs.core_periphery_deg'>#</a>
 <strong><code>LightGraphs.core_periphery_deg</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>core_periphery_deg(g)
@@ -681,7 +681,7 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 
 <p>Compute the degree-based core-periphery for graph <code>g</code>. Return the vertex assignments (<code>1</code> for core and <code>2</code> for periphery) for each node in <code>g</code>.</p>
 <p>References:     <a href="http://arxiv.org/abs/1102.5511">Lip</a>)</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/community/core-periphery.jl#L1-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/community/core-periphery.jl#L1-L9' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.crosspath' href='#LightGraphs.crosspath'>#</a>
 <strong><code>LightGraphs.crosspath</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>crosspath(len::Integer, g::Graph)
@@ -690,14 +690,14 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 <p>Return a graph that duplicates <code>g</code> <code>len</code> times and connects each vertex with its copies in a path.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L202-L211' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L202-L211' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.dfs_tree-Tuple{LightGraphs.AbstractGraph,Integer}' href='#LightGraphs.dfs_tree-Tuple{LightGraphs.AbstractGraph,Integer}'>#</a>
 <strong><code>LightGraphs.dfs_tree</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>dfs_tree(g, s)
 </code></pre>
 
 <p>Return an ordered vector of vertices representing a directed acylic graph based on depth-first traversal of the graph <code>g</code> starting with source vertex <code>s</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/dfs.jl#L186-L191' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/dfs.jl#L186-L191' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.difference-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph' href='#LightGraphs.difference-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>LightGraphs.difference</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>difference(g, h)
@@ -706,7 +706,7 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 <p>Return a graph with edges in graph <code>g</code> that are not in graph <code>h</code>.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Note that this function may produce a graph with 0-degree vertices. Preserves the eltype of the input graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L107-L115' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L107-L115' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.dijkstra_shortest_paths-Union{Tuple{LightGraphs.AbstractGraph,Array{U,1},AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,Array{U,1}}, Tuple{T}, Tuple{U}} where T where U<:Integer' href='#LightGraphs.dijkstra_shortest_paths-Union{Tuple{LightGraphs.AbstractGraph,Array{U,1},AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,Array{U,1}}, Tuple{T}, Tuple{U}} where T where U<:Integer'>#</a>
 <strong><code>LightGraphs.dijkstra_shortest_paths</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>dijkstra_shortest_paths(g, srcs, distmx=DefaultDistance());
@@ -718,14 +718,14 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 <li><code>allpaths=false</code>: If true, returns a <a href="./#LightGraphs.DijkstraState"><code>DijkstraState</code></a> that keeps track of all</li>
 </ul>
 <p>predecessors of a given vertex.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/shortestpaths/dijkstra.jl#L21-L31' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/shortestpaths/dijkstra.jl#L21-L31' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.dst-Tuple{LightGraphs.AbstractEdge}' href='#LightGraphs.dst-Tuple{LightGraphs.AbstractEdge}'>#</a>
 <strong><code>LightGraphs.dst</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>dst(e)
 </code></pre>
 
 <p>Return the destination vertex of edge <code>e</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L42-L46' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L42-L46' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.edges-Tuple' href='#LightGraphs.edges-Tuple'>#</a>
 <strong><code>LightGraphs.edges</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>edges(g)
@@ -734,14 +734,14 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 <p>Return (an iterator to or collection of) the edges of a graph.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>A returned iterator is valid for one pass over the edges, and is invalidated by changes to <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L105-L112' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L105-L112' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.edgetype-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.edgetype-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.edgetype</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>edgetype(g)
 </code></pre>
 
 <p>Return the type of graph <code>g</code>'s edge</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L65-L69' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L65-L69' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.egonet-Tuple{LightGraphs.AbstractGraph,Integer,Integer}' href='#LightGraphs.egonet-Tuple{LightGraphs.AbstractGraph,Integer,Integer}'>#</a>
 <strong><code>LightGraphs.egonet</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>egonet(g, v:, d)
@@ -753,48 +753,48 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 <li><code>dir=:out</code>: if <code>g</code> is directed, this argument specifies the edge direction</li>
 </ul>
 <p>with respect to <code>v</code> (i.e. <code>:in</code> or <code>:out</code>).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L433-L443' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L433-L443' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.floyd_warshall_shortest_paths-Union{Tuple{LightGraphs.AbstractGraph,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph}, Tuple{T}} where T' href='#LightGraphs.floyd_warshall_shortest_paths-Union{Tuple{LightGraphs.AbstractGraph,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph}, Tuple{T}} where T'>#</a>
 <strong><code>LightGraphs.floyd_warshall_shortest_paths</code></strong> &mdash; <em>Method</em>.</p>
 <p>floyd_warshall_shortest_paths(g, distmx=DefaultDistance()) Use the <a href="http://en.wikipedia.org/wiki/Floyd–Warshall_algorithm">Floyd-Warshall algorithm</a> to compute the shortest paths between all pairs of vertices in graph <code>g</code> using an optional distance matrix <code>distmx</code>. Return a <a href="./#LightGraphs.FloydWarshallState"><code>FloydWarshallState</code></a> with relevant traversal information.</p>
 <p><strong>Performance</strong></p>
 <p>Space complexity is on the order of $\mathcal{O}(|V|^2)$.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/shortestpaths/floyd-warshall.jl#L15' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/shortestpaths/floyd-warshall.jl#L15' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.gdistances!-Tuple{LightGraphs.AbstractGraph,Any,Any}' href='#LightGraphs.gdistances!-Tuple{LightGraphs.AbstractGraph,Any,Any}'>#</a>
 <strong><code>LightGraphs.gdistances!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>gdistances!(g, source, dists)
 </code></pre>
 
 <p>Fill <code>dists</code> with the geodesic distances of vertices in <code>g</code> from <code>source</code>. <code>dists</code> should be a vector of length <code>nv(g)</code>. Return <code>dists</code>. For vertices in disconnected components the default distance is -1.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/bfs.jl#L264-L270' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/bfs.jl#L264-L270' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.gdistances-Tuple{LightGraphs.AbstractGraph,Any}' href='#LightGraphs.gdistances-Tuple{LightGraphs.AbstractGraph,Any}'>#</a>
 <strong><code>LightGraphs.gdistances</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>gdistances(g, source)
 </code></pre>
 
 <p>Return a vector filled with the geodesic distances of vertices in  <code>g</code> from <code>source</code>. If <code>source</code> is a collection of vertices each element should be unique. For vertices in disconnected components the default distance is -1.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/bfs.jl#L298-L304' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/bfs.jl#L298-L304' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.global_clustering_coefficient-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.global_clustering_coefficient-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.global_clustering_coefficient</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>global_clustering_coefficient(g)
 </code></pre>
 
 <p>Return the <a href="https://en.wikipedia.org/wiki/Clustering_coefficient">global clustering coefficient</a> of graph <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/community/clustering.jl#L66-L71' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/community/clustering.jl#L66-L71' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.has_edge-Tuple' href='#LightGraphs.has_edge-Tuple'>#</a>
 <strong><code>LightGraphs.has_edge</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>has_edge(g, e)
 </code></pre>
 
 <p>Return true if the graph <code>g</code> has an edge <code>e</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L156-L160' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L156-L160' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.has_vertex-Tuple' href='#LightGraphs.has_vertex-Tuple'>#</a>
 <strong><code>LightGraphs.has_vertex</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>has_vertex(g, v)
 </code></pre>
 
 <p>Return true if <code>v</code> is a vertex of <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L149-L153' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L149-L153' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.in_neighbors-Tuple' href='#LightGraphs.in_neighbors-Tuple'>#</a>
 <strong><code>LightGraphs.in_neighbors</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>in_neighbors(g, v)
@@ -803,7 +803,7 @@ bellman_ford_shortest_paths(g, ss, distmx=DefaultDistance())
 <p>Return a list of all neighbors connected to vertex <code>v</code> by an incoming edge.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Returns a reference, not a copy. Do not modify result.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L163-L170' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L163-L170' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.induced_subgraph-Union{Tuple{T,AbstractArray{U,1}}, Tuple{T}, Tuple{U}} where T<:LightGraphs.AbstractGraph where U<:Integer' href='#LightGraphs.induced_subgraph-Union{Tuple{T,AbstractArray{U,1}}, Tuple{T}, Tuple{U}} where T<:LightGraphs.AbstractGraph where U<:Integer'>#</a>
 <strong><code>LightGraphs.induced_subgraph</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>induced_subgraph(g, vlist)
@@ -836,21 +836,21 @@ julia&gt; sg, vmap = induced_subgraph(g, elist)
 julia&gt; @assert sg == g[elist]
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L342-L378' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L342-L378' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.is_bipartite-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.is_bipartite-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.is_bipartite</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>is_bipartite(g[, v])
 </code></pre>
 
 <p>Return <code>true</code> if graph <code>g</code> is <a href="https://en.wikipedia.org/wiki/Bipartite_graph">bipartite</a>. If a node <code>v</code> is specified, only the connected component to which it belongs is considered.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/bfs.jl#L208-L213' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/bfs.jl#L208-L213' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.kruskal_mst' href='#LightGraphs.kruskal_mst'>#</a>
 <strong><code>LightGraphs.kruskal_mst</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>kruskal_mst(g, distmx=DefaultDistance())
 </code></pre>
 
 <p>Return a vector of edges representing the minimum spanning tree of a connected, undirected graph <code>g</code> with optional distance matrix <code>distmx</code> using <a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal's algorithm</a>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/spanningtrees/kruskal.jl#L24-L29' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/spanningtrees/kruskal.jl#L24-L29' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.label_propagation' href='#LightGraphs.label_propagation'>#</a>
 <strong><code>LightGraphs.label_propagation</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>label_propagation(g, maxiter=1000)
@@ -861,7 +861,7 @@ julia&gt; @assert sg == g[elist]
 <ul>
 <li><a href="http://arxiv.org/abs/0709.2938">Raghavan et al.</a></li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/community/label_propagation.jl#L1-L11' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/community/label_propagation.jl#L1-L11' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.local_clustering-Tuple{LightGraphs.AbstractGraph,Integer}' href='#LightGraphs.local_clustering-Tuple{LightGraphs.AbstractGraph,Integer}'>#</a>
 <strong><code>LightGraphs.local_clustering</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>local_clustering(g, v)
@@ -870,7 +870,7 @@ local_clustering(g, vs)
 
 <p>Return a tuple <code>(a, b)</code>, where <code>a</code> is the number of triangles in the neighborhood of <code>v</code> and <code>b</code> is the maximum number of possible triangles. If a list of vertices <code>vs</code> is specified, return two vectors representing the number of triangles and the maximum number of possible triangles, respectively, for each node in the list.</p>
 <p>This function is related to the local clustering coefficient <code>r</code> by $r=rac{a}{b}$.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/community/clustering.jl#L18' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/community/clustering.jl#L18' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.local_clustering_coefficient-Tuple{LightGraphs.AbstractGraph,Integer}' href='#LightGraphs.local_clustering_coefficient-Tuple{LightGraphs.AbstractGraph,Integer}'>#</a>
 <strong><code>LightGraphs.local_clustering_coefficient</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>local_clustering_coefficient(g, v)
@@ -878,7 +878,7 @@ local_clustering_coefficient(g, vs)
 </code></pre>
 
 <p>Return the <a href="https://en.wikipedia.org/wiki/Clustering_coefficient">local clustering coefficient</a> for node <code>v</code> in graph <code>g</code>. If a list of vertices <code>vs</code> is specified, return a vector of coefficients for each node in the list.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/community/clustering.jl#L1-L8' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/community/clustering.jl#L1-L8' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.maximal_cliques' href='#LightGraphs.maximal_cliques'>#</a>
 <strong><code>LightGraphs.maximal_cliques</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>maximal_cliques(g)
@@ -895,14 +895,14 @@ julia&gt; maximal_cliques(g)
  [2,1]
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/community/cliques.jl#L8-L24' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/community/cliques.jl#L8-L24' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.maximum_adjacency_visit-Union{Tuple{LightGraphs.AbstractGraph,AbstractArray{T,2},Bool,IO}, Tuple{T}} where T' href='#LightGraphs.maximum_adjacency_visit-Union{Tuple{LightGraphs.AbstractGraph,AbstractArray{T,2},Bool,IO}, Tuple{T}} where T'>#</a>
 <strong><code>LightGraphs.maximum_adjacency_visit</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>maximum_adjacency_visit(g[, distmx][, log][, io])
 </code></pre>
 
 <p>Return the vertices in <code>g</code> traversed by maximum adjacency search. An optional <code>distmx</code> matrix may be specified; if omitted, edge distances are assumed to be 1. If <code>log</code> (default <code>false</code>) is <code>true</code>, visitor events will be printed to <code>io</code>, which defaults to <code>STDOUT</code>; otherwise, no event information will be displayed.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/maxadjvisit.jl#L196-L204' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/maxadjvisit.jl#L196-L204' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.maximum_flow' href='#LightGraphs.maximum_flow'>#</a>
 <strong><code>LightGraphs.maximum_flow</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>maximum_flow(flow_graph, source, target[, capacity_matrix][, algorithm][, restriction])
@@ -943,7 +943,7 @@ julia&gt; f, F, labels = maximum_flow(flow_graph,1,8,capacity_matrix,algorithm=B
 
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/maximum_flow.jl#L122-L165' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/maximum_flow.jl#L122-L165' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.maxsimplecycles' href='#LightGraphs.maxsimplecycles'>#</a>
 <strong><code>LightGraphs.maxsimplecycles</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>maxsimplecycles(dg::::IsDirected, byscc::Bool = true)
@@ -957,7 +957,7 @@ julia&gt; f, F, labels = maximum_flow(flow_graph,1,8,capacity_matrix,algorithm=B
 <ul>
 <li><a href="http://epubs.siam.org/doi/abs/10.1137/0204007">Johnson</a></li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L26' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L26' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.maxsimplecycles-Tuple{Integer}' href='#LightGraphs.maxsimplecycles-Tuple{Integer}'>#</a>
 <strong><code>LightGraphs.maxsimplecycles</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>maxsimplecycles(n::Integer)
@@ -968,21 +968,21 @@ julia&gt; f, F, labels = maximum_flow(flow_graph,1,8,capacity_matrix,algorithm=B
 <ul>
 <li><a href="http://epubs.siam.org/doi/abs/10.1137/0204007">Johnson</a>.</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L12-L21' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L12-L21' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.mincut-Union{Tuple{LightGraphs.AbstractGraph,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph}, Tuple{T}} where T' href='#LightGraphs.mincut-Union{Tuple{LightGraphs.AbstractGraph,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph}, Tuple{T}} where T'>#</a>
 <strong><code>LightGraphs.mincut</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>mincut(g, distmx=DefaultDistance())
 </code></pre>
 
 <p>Return a tuple <code>(parity, bestcut)</code>, where <code>parity</code> is a vector of integer values that determines the partition in <code>g</code> (1 or 2) and <code>bestcut</code> is the weight of the cut that makes this partition. An optional <code>distmx</code> matrix may be specified; if omitted, edge distances are assumed to be 1.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/maxadjvisit.jl#L177-L184' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/maxadjvisit.jl#L177-L184' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.modularity' href='#LightGraphs.modularity'>#</a>
 <strong><code>LightGraphs.modularity</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>modularity(g, c)
 </code></pre>
 
 <p>Return a value representing Newman's modularity <code>Q</code> for the undirected graph <code>g</code> given the partitioning vector <code>c</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/community/modularity.jl#L1-L6' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/community/modularity.jl#L1-L6' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.multiroute_flow-Union{Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2} where T}, Tuple{LightGraphs.AbstractGraph,Integer,Integer}, Tuple{R}} where R<:Real' href='#LightGraphs.multiroute_flow-Union{Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2} where T}, Tuple{LightGraphs.AbstractGraph,Integer,Integer}, Tuple{R}} where R<:Real'>#</a>
 <strong><code>LightGraphs.multiroute_flow</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>multiroute_flow(flow_graph, source, target[, DefaultCapacity][, flow_algorithm][, mrf_algorithm][, routes])
@@ -1069,14 +1069,14 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/multiroute_flow.jl#L100-L189' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/multiroute_flow.jl#L100-L189' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.ne-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.ne-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.ne</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>ne(g)
 </code></pre>
 
 <p>Return the number of edges in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L86-L90' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L86-L90' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.non_backtracking_matrix-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.non_backtracking_matrix-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.non_backtracking_matrix</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>non_backtracking_matrix(g)
@@ -1085,21 +1085,21 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 <p>Return a non-backtracking matrix <code>B</code> and an edgemap storing the oriented edges' positions in <code>B</code>.</p>
 <p>Given two arcs $A_{i j}<code>and</code>A_{k l}<code>in</code>g`, the non-backtraking matrix$B`` is defined as</p>
 <p>$B_{A_{i j}, A_{k l}} = δ_{j k} * (1 - δ_{i l})$</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/linalg/./nonbacktracking.jl#L6' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/linalg/./nonbacktracking.jl#L6' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.non_backtracking_randomwalk' href='#LightGraphs.non_backtracking_randomwalk'>#</a>
 <strong><code>LightGraphs.non_backtracking_randomwalk</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>non_backtracking_randomwalk(g, s, niter)
 </code></pre>
 
 <p>Perform a non-backtracking random walk on directed graph <code>g</code> starting at vertex <code>s</code> and continuing for a maximum of <code>niter</code> steps. Return a vector of vertices visited in order.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/randomwalks.jl#L24-L30' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/randomwalks.jl#L24-L30' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.nv-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.nv-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.nv</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>nv(g)
 </code></pre>
 
 <p>Return the number of vertices in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L79-L83' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L79-L83' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.out_neighbors-Tuple' href='#LightGraphs.out_neighbors-Tuple'>#</a>
 <strong><code>LightGraphs.out_neighbors</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>out_neighbors(g, v)
@@ -1108,42 +1108,42 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 <p>Return a list of all neighbors connected to vertex <code>v</code> by an outgoing edge.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Returns a reference, not a copy. Do not modify result.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L173-L180' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L173-L180' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.prim_mst' href='#LightGraphs.prim_mst'>#</a>
 <strong><code>LightGraphs.prim_mst</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>prim_mst(g, distmx=DefaultDistance())
 </code></pre>
 
 <p>Return a vector of edges representing the minimum spanning tree of a connected, undirected graph <code>g</code> with optional distance matrix <code>distmx</code> using <a href="https://en.wikipedia.org/wiki/Prim%27s_algorithm">Prim's algorithm</a>. Return a vector of edges.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/spanningtrees/prim.jl#L8-L14' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/spanningtrees/prim.jl#L8-L14' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.randomwalk-Tuple{LightGraphs.AbstractGraph,Integer,Integer}' href='#LightGraphs.randomwalk-Tuple{LightGraphs.AbstractGraph,Integer,Integer}'>#</a>
 <strong><code>LightGraphs.randomwalk</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>randomwalk(g, s, niter)
 </code></pre>
 
 <p>Perform a random walk on graph <code>g</code> starting at vertex <code>s</code> and continuing for a maximum of <code>niter</code> steps. Return a vector of vertices visited in order.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/randomwalks.jl#L1-L6' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/randomwalks.jl#L1-L6' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.rem_edge!-Tuple' href='#LightGraphs.rem_edge!-Tuple'>#</a>
 <strong><code>LightGraphs.rem_edge!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>rem_edge!(g, e)
 </code></pre>
 
 <p>Remove the edge <code>e</code> from <code>g</code>. Return false if edge removal fails (e.g., if edge does not exist), true otherwise.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L141-L146' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L141-L146' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.rem_vertex!-Tuple' href='#LightGraphs.rem_vertex!-Tuple'>#</a>
 <strong><code>LightGraphs.rem_vertex!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>rem_vertex!(g)
 </code></pre>
 
 <p>Remove the vertex <code>v</code> from graph <code>g</code>. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L133-L138' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L133-L138' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.saw-Tuple{LightGraphs.AbstractGraph,Integer,Integer}' href='#LightGraphs.saw-Tuple{LightGraphs.AbstractGraph,Integer,Integer}'>#</a>
 <strong><code>LightGraphs.saw</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>saw(g, s, niter)
 </code></pre>
 
 <p>Perform a <a href="https://en.wikipedia.org/wiki/Self-avoiding_walk">self-avoiding walk</a> on graph <code>g</code> starting at vertex <code>s</code> and continuing for a maximum of <code>niter</code> steps. Return a vector of vertices visited in order.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/randomwalks.jl#L93-L98' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/randomwalks.jl#L93-L98' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.simplecycles' href='#LightGraphs.simplecycles'>#</a>
 <strong><code>LightGraphs.simplecycles</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>simplecycles(dg::::IsDirected)
@@ -1155,7 +1155,7 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 <ul>
 <li><a href="http://epubs.siam.org/doi/abs/10.1137/0204007">Johnson</a></li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L159' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L159' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.simplecycles_hadwick_james' href='#LightGraphs.simplecycles_hadwick_james'>#</a>
 <strong><code>LightGraphs.simplecycles_hadwick_james</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>simplecycles_hadwick_james(g)
@@ -1166,7 +1166,7 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 <ul>
 <li>Hadwick &amp; James, "Enumerating Circuits and Loops in Graphs with Self-Arcs and Multiple-Arcs", 2008</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/hadwick-james.jl#L1-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/hadwick-james.jl#L1-L9' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.simplecycles_iter' href='#LightGraphs.simplecycles_iter'>#</a>
 <strong><code>LightGraphs.simplecycles_iter</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>simplecycles_iter(dg::DiGraph, ceiling = 10^6)
@@ -1179,7 +1179,7 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 <ul>
 <li><a href="http://epubs.siam.org/doi/abs/10.1137/0204007">Johnson</a></li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L296' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L296' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.simplecyclescount' href='#LightGraphs.simplecyclescount'>#</a>
 <strong><code>LightGraphs.simplecyclescount</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>simplecyclescount(dg::DiGraph, ceiling = 10^6)
@@ -1192,7 +1192,7 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 <ul>
 <li><a href="http://epubs.siam.org/doi/abs/10.1137/0204007">Johnson</a></li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L271' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L271' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.simplecycleslength' href='#LightGraphs.simplecycleslength'>#</a>
 <strong><code>LightGraphs.simplecycleslength</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>simplecycleslength(dg::DiGraph, ceiling = 10^6)
@@ -1205,14 +1205,14 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 <ul>
 <li><a href="http://epubs.siam.org/doi/abs/10.1137/0204007">Johnson</a></li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L317' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L317' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.src-Tuple{LightGraphs.AbstractEdge}' href='#LightGraphs.src-Tuple{LightGraphs.AbstractEdge}'>#</a>
 <strong><code>LightGraphs.src</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>src(e)
 </code></pre>
 
 <p>Return the source vertex of edge <code>e</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L35-L39' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L35-L39' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.symmetric_difference-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph' href='#LightGraphs.symmetric_difference-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>LightGraphs.symmetric_difference</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>symmetric_difference(g, h)
@@ -1221,7 +1221,7 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 <p>Return a graph with edges from graph <code>g</code> that do not exist in graph <code>h</code>, and vice versa.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Note that this function may produce a graph with 0-degree vertices. Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L127-L137' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L127-L137' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.tensor_product-Union{Tuple{G,G}, Tuple{G}} where G<:LightGraphs.AbstractGraph' href='#LightGraphs.tensor_product-Union{Tuple{G,G}, Tuple{G}} where G<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>LightGraphs.tensor_product</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>tensor_product(g, h)
@@ -1230,7 +1230,7 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 <p>Return the (tensor product)[https://en.wikipedia.org/wiki/Tensor_product_of_graphs] of <code>g</code> and <code>h</code>.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L316-L325' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L316-L325' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.transitiveclosure' href='#LightGraphs.transitiveclosure'>#</a>
 <strong><code>LightGraphs.transitiveclosure</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>transitiveclosure(g, selflooped=false)
@@ -1239,7 +1239,7 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 <p>Compute the transitive closure of a directed graph, using the Floyd-Warshall algorithm. Return a graph representing the transitive closure. If <code>selflooped</code> is <code>true</code>, add self loops to the graph.</p>
 <p><strong>Performance</strong></p>
 <p>Time complexity is \mathcal{O}(|V|^3).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/transitivity.jl#L31-L40' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/transitivity.jl#L31-L40' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.transitiveclosure!' href='#LightGraphs.transitiveclosure!'>#</a>
 <strong><code>LightGraphs.transitiveclosure!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>transitiveclosure!(g, selflooped=false)
@@ -1250,7 +1250,7 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 <p>Time complexity is \mathcal{O}(|V|^3).</p>
 <p><strong>Implementation Notes</strong></p>
 <p>This version of the function modifies the original graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/transitivity.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/transitivity.jl#L1' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.triangles-Tuple{LightGraphs.AbstractGraph,Integer}' href='#LightGraphs.triangles-Tuple{LightGraphs.AbstractGraph,Integer}'>#</a>
 <strong><code>LightGraphs.triangles</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>triangles(g[, v])
@@ -1258,7 +1258,7 @@ triangles(g, vs)
 </code></pre>
 
 <p>Return the number of triangles in the neighborhood of node <code>v</code> in graph <code>g</code>. If a list of vertices <code>vs</code> is specified, return a vector of number of triangles for each node in the list. If no vertices are specified, return the number of triangles for each node in the graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/community/clustering.jl#L53-L61' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/community/clustering.jl#L53-L61' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.vertices-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.vertices-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.vertices</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>vertices(g)
@@ -1267,56 +1267,56 @@ triangles(g, vs)
 <p>Return (an iterator to or collection of) the vertices of a graph.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>A returned iterator is valid for one pass over the edges, and is invalidated by changes to <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L93-L102' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L93-L102' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.yen_k_shortest_paths-Union{Tuple{LightGraphs.AbstractGraph,U,U,AbstractArray{T,2},Int64}, Tuple{LightGraphs.AbstractGraph,U,U,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,U,U}, Tuple{T}, Tuple{U}} where T<:Real where U<:Integer' href='#LightGraphs.yen_k_shortest_paths-Union{Tuple{LightGraphs.AbstractGraph,U,U,AbstractArray{T,2},Int64}, Tuple{LightGraphs.AbstractGraph,U,U,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,U,U}, Tuple{T}, Tuple{U}} where T<:Real where U<:Integer'>#</a>
 <strong><code>LightGraphs.yen_k_shortest_paths</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>yen_k_shortest_paths(g, source, target, distmx=DefaultDistance(), K=1; maxdist=Inf);
 </code></pre>
 
 <p>Perform <a href="http://en.wikipedia.org/wiki/Yen%27s_algorithm">Yen's algorithm</a> on a graph, computing k-shortest distances between <code>source</code> and <code>target</code> other vertices. Return a <a href="./#LightGraphs.YenState"><code>YenState</code></a> that contains distances and paths.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/shortestpaths/yen.jl#L12-L18' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/shortestpaths/yen.jl#L12-L18' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.Articulations' href='#LightGraphs.Articulations'>#</a>
 <strong><code>LightGraphs.Articulations</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>Articulations{T}
 </code></pre>
 
 <p>A state type for the depth-first search that finds the articulation points in a graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/biconnectivity/articulation.jl#L1-L5' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/biconnectivity/articulation.jl#L1-L5' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.BellmanFordState' href='#LightGraphs.BellmanFordState'>#</a>
 <strong><code>LightGraphs.BellmanFordState</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>BellmanFordState{T, U}
 </code></pre>
 
 <p>An <code>AbstractPathState</code> designed for Bellman-Ford shortest-paths calculations.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/shortestpaths/bellman-ford.jl#L15-L19' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/shortestpaths/bellman-ford.jl#L15-L19' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.ComponentVisitorVector' href='#LightGraphs.ComponentVisitorVector'>#</a>
 <strong><code>LightGraphs.ComponentVisitorVector</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>ComponentVisitorVector{T}
 </code></pre>
 
 <p>A type of <code>AbstractGraphVisitor</code> that represents connected components with BFS starting from a given seed.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/bfs.jl#L167-L172' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/bfs.jl#L167-L172' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.DefaultCapacity' href='#LightGraphs.DefaultCapacity'>#</a>
 <strong><code>LightGraphs.DefaultCapacity</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>DefaultCapacity{T}
 </code></pre>
 
 <p>Structure that returns <code>1</code> if a forward edge exists in <code>flow_graph</code>, and <code>0</code> otherwise.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/maximum_flow.jl#L34-L38' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/maximum_flow.jl#L34-L38' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.DijkstraState' href='#LightGraphs.DijkstraState'>#</a>
 <strong><code>LightGraphs.DijkstraState</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>struct DijkstraState{T, U}
 </code></pre>
 
 <p>An <a href="../@ref"><code>AbstractPathState</code></a> designed for Dijkstra shortest-paths calculations.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/shortestpaths/dijkstra.jl#L8-L12' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/shortestpaths/dijkstra.jl#L8-L12' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.FloydWarshallState' href='#LightGraphs.FloydWarshallState'>#</a>
 <strong><code>LightGraphs.FloydWarshallState</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>struct FloydWarshallState{T, U}
 </code></pre>
 
 <p>An <a href="../@ref"><code>AbstractPathState</code></a> designed for Floyd-Warshall shortest-paths calculations.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/shortestpaths/floyd-warshall.jl#L5-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/shortestpaths/floyd-warshall.jl#L5-L9' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.JohnsonVisitor' href='#LightGraphs.JohnsonVisitor'>#</a>
 <strong><code>LightGraphs.JohnsonVisitor</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>type JohnsonVisitor{T&lt;:Integer} &lt;: Visitor{T}
@@ -1328,119 +1328,119 @@ end
 
 <p>Composite type that regroups the information needed for Johnson's algorithm.</p>
 <p><code>stack</code> is the stack of visited vertices. <code>blocked</code> is a boolean for each  vertex that tells whether it is blocked or not. <code>blockedmap</code> tells which  vertices to unblock if the key vertex is unblocked.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L58-L72' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L58-L72' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.JohnsonVisitor-Union{Tuple{LightGraphs.SimpleGraphs.SimpleDiGraph{T}}, Tuple{T}} where T<:Integer' href='#LightGraphs.JohnsonVisitor-Union{Tuple{LightGraphs.SimpleGraphs.SimpleDiGraph{T}}, Tuple{T}} where T<:Integer'>#</a>
 <strong><code>LightGraphs.JohnsonVisitor</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>JohnsonVisitor(dg::::IsDirected)
 </code></pre>
 
 <p>Constructor of the visitor, using the directed graph information.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L79-L83' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L79-L83' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.NeighComm' href='#LightGraphs.NeighComm'>#</a>
 <strong><code>LightGraphs.NeighComm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>NeighComm{T}
 </code></pre>
 
 <p>Type to record neighbor labels and their counts.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/community/label_propagation.jl#L49-L53' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/community/label_propagation.jl#L49-L53' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.ThreadQueue' href='#LightGraphs.ThreadQueue'>#</a>
 <strong><code>LightGraphs.ThreadQueue</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>ThreadQueue
 </code></pre>
 
 <p>A thread safe queue implementation for using as the queue for BFS.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/parallel_bfs.jl#L20-L24' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/parallel_bfs.jl#L20-L24' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.TreeBFSVisitorVector' href='#LightGraphs.TreeBFSVisitorVector'>#</a>
 <strong><code>LightGraphs.TreeBFSVisitorVector</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>TreeBFSVisitorVector{T}
 </code></pre>
 
 <p>A type for representing a BFS traversal of the graph as a parents array.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/bfs.jl#L90-L94' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/bfs.jl#L90-L94' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.YenState' href='#LightGraphs.YenState'>#</a>
 <strong><code>LightGraphs.YenState</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>struct YenState{T, U}
 </code></pre>
 
 <p>Designed for yen k-shortest-paths calculations.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/shortestpaths/yen.jl#L1-L5' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/shortestpaths/yen.jl#L1-L5' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.AbstractEdgeIter' href='#LightGraphs.AbstractEdgeIter'>#</a>
 <strong><code>LightGraphs.AbstractEdgeIter</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>AbstractEdgeIter
 </code></pre>
 
 <p>An abstract type representing an edge iterator.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L12-L16' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L12-L16' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.AbstractFlowAlgorithm' href='#LightGraphs.AbstractFlowAlgorithm'>#</a>
 <strong><code>LightGraphs.AbstractFlowAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>AbstractFlowAlgorithm
 </code></pre>
 
 <p>Abstract type that allows users to pass in their preferred algorithm</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/maximum_flow.jl#L1-L5' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/maximum_flow.jl#L1-L5' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.AbstractMultirouteFlowAlgorithm' href='#LightGraphs.AbstractMultirouteFlowAlgorithm'>#</a>
 <strong><code>LightGraphs.AbstractMultirouteFlowAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>AbstractMultirouteFlowAlgorithm
 </code></pre>
 
 <p>Abstract type that allows users to pass in their preferred algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/multiroute_flow.jl#L1-L5' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/multiroute_flow.jl#L1-L5' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.Biconnections' href='#LightGraphs.Biconnections'>#</a>
 <strong><code>LightGraphs.Biconnections</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>Biconnections
 </code></pre>
 
 <p>A state type for depth-first search that finds the biconnected components.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/biconnectivity/biconnect.jl#L1-L5' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/biconnectivity/biconnect.jl#L1-L5' class='documenter-source'>source</a><br></p>
 <p><a id='Base.SparseArrays.sparse-Tuple{LightGraphs.AbstractGraph}' href='#Base.SparseArrays.sparse-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>Base.SparseArrays.sparse</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>sparse(g)
 </code></pre>
 
 <p>Return the default adjacency matrix of <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L274-L278' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L274-L278' class='documenter-source'>source</a><br></p>
 <p><a id='Base.eltype-Tuple{LightGraphs.AbstractGraph}' href='#Base.eltype-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>Base.eltype</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>eltype(g)
 </code></pre>
 
 <p>Return the type of the graph's vertices (must be &lt;: Integer)</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L72-L76' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L72-L76' class='documenter-source'>source</a><br></p>
 <p><a id='Base.getindex-Tuple{LightGraphs.AbstractGraph,Any}' href='#Base.getindex-Tuple{LightGraphs.AbstractGraph,Any}'>#</a>
 <strong><code>Base.getindex</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>g[iter]
 </code></pre>
 
 <p>Return the subgraph induced by <code>iter</code>. Equivalent to <a href="./#LightGraphs.induced_subgraph-Union{Tuple{T,AbstractArray{U,1}}, Tuple{T}, Tuple{U}} where T&lt;:LightGraphs.AbstractGraph where U&lt;:Integer"><code>induced_subgraph</code></a><code>(g, iter)[1]</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L424-L429' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L424-L429' class='documenter-source'>source</a><br></p>
 <p><a id='Base.size-Tuple{LightGraphs.SimpleGraphs.SimpleGraph,Int64}' href='#Base.size-Tuple{LightGraphs.SimpleGraphs.SimpleGraph,Int64}'>#</a>
 <strong><code>Base.size</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>size(g, i)
 </code></pre>
 
 <p>Return the number of vertices in <code>g</code> if <code>i</code>=1 or <code>i</code>=2, or <code>1</code> otherwise.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L260-L264' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L260-L264' class='documenter-source'>source</a><br></p>
 <p><a id='Base.sum-Tuple{LightGraphs.AbstractGraph,Int64}' href='#Base.sum-Tuple{LightGraphs.AbstractGraph,Int64}'>#</a>
 <strong><code>Base.sum</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>sum(g, i)
 </code></pre>
 
 <p>Return a vector of indegree (<code>i</code>=1) or outdegree (<code>i</code>=2) values for graph <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L247-L251' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L247-L251' class='documenter-source'>source</a><br></p>
 <p><a id='Base.sum-Tuple{LightGraphs.AbstractGraph}' href='#Base.sum-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>Base.sum</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>sum(g)
 </code></pre>
 
 <p>Return the number of edges in <code>g</code></p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/operators.jl#L267-L271' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/operators.jl#L267-L271' class='documenter-source'>source</a><br></p>
 <p><a id='Base.zero-Tuple{LightGraphs.AbstractGraph}' href='#Base.zero-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>Base.zero</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>zero(g)
 </code></pre>
 
 <p>Return a zero-vertex, zero-edge version of the same type of graph as <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/interface.jl#L183-L187' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/interface.jl#L183-L187' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.approximately_equal-Union{Tuple{T}, Tuple{Tuple{T,T},Tuple{T,T}}} where T<:AbstractFloat' href='#LightGraphs.approximately_equal-Union{Tuple{T}, Tuple{Tuple{T,T},Tuple{T,T}}} where T<:AbstractFloat'>#</a>
 <strong><code>LightGraphs.approximately_equal</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>approximately_equal(a, b)
@@ -1449,14 +1449,14 @@ end
 <p>Return true if each element in the tuple is approximately equal to its counterpart.</p>
 <p><strong>Implementation Notes:</strong></p>
 <p>This is a separate function because we don't want to hijack isapprox for tuples.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/ext_multiroute_flow.jl#L245-L252' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/ext_multiroute_flow.jl#L245-L252' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.augment_path!-Tuple{Array{Int64,1},AbstractArray{T,2} where T,AbstractArray{T,2} where T}' href='#LightGraphs.augment_path!-Tuple{Array{Int64,1},AbstractArray{T,2} where T,AbstractArray{T,2} where T}'>#</a>
 <strong><code>LightGraphs.augment_path!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>augment_path!(path, flow_matrix, capacity_matrix)
 </code></pre>
 
 <p>Calculate the amount by which flow can be augmented in the given path. Augment the flow and returns the augment value.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/edmonds_karp.jl#L53-L58' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/edmonds_karp.jl#L53-L58' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.auxiliaryPoints' href='#LightGraphs.auxiliaryPoints'>#</a>
 <strong><code>LightGraphs.auxiliaryPoints</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>auxiliaryPoints(flow_graph, source, target, capacity_matrix)
@@ -1465,7 +1465,7 @@ end
 <p>Output a set of (point, slope) that compose the restricted max-flow function of <code>flow_graph</code> from <code>source to</code>target<code>using capacities in</code>capacity_matrix`.</p>
 <p><strong>Performance</strong></p>
 <p>One point by possible slope is enough (hence mathcal{O}(λ×max_flow) complexity).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/ext_multiroute_flow.jl#L34' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/ext_multiroute_flow.jl#L34' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.bfs_tree!-Union{Tuple{LightGraphs.LevelSynchronousBFS,LightGraphs.ThreadQueue,LightGraphs.AbstractGraph,T,Array{Base.Threads.Atomic{T},N} where N}, Tuple{T}} where T<:Integer' href='#LightGraphs.bfs_tree!-Union{Tuple{LightGraphs.LevelSynchronousBFS,LightGraphs.ThreadQueue,LightGraphs.AbstractGraph,T,Array{Base.Threads.Atomic{T},N} where N}, Tuple{T}} where T<:Integer'>#</a>
 <strong><code>LightGraphs.bfs_tree!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>bfs_tree!(LevelSynchronousBFS(), g, src, parents)
@@ -1474,21 +1474,21 @@ end
 <p>Provide a parallel breadth-first traversal of the graph <code>g</code> starting with source vertex <code>s</code>, and return a parents array. The returned array is an Array of <code>Atomic</code> integers.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>This function uses <code>@threads</code> for parallelism which depends on the <code>JULIA_NUM_THREADS</code> environment variable to decide the number of threads to use. Refer <code>@threads</code> documentation for more details.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/parallel_bfs.jl#L78-L88' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/parallel_bfs.jl#L78-L88' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.blocking_flow!' href='#LightGraphs.blocking_flow!'>#</a>
 <strong><code>LightGraphs.blocking_flow!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>blocking_flow!(residual_graph, source, target, capacity_matrix, flow-matrix, P)
 </code></pre>
 
 <p>Like <code>blocking_flow</code>, but requires a preallocated parent vector <code>P</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/dinic.jl#L34-L38' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/dinic.jl#L34-L38' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.blocking_flow-Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2} where T,AbstractArray{T,2} where T}' href='#LightGraphs.blocking_flow-Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2} where T,AbstractArray{T,2} where T}'>#</a>
 <strong><code>LightGraphs.blocking_flow</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>blocking_flow(residual_graph, source, target, capacity_matrix, flow-matrix)
 </code></pre>
 
 <p>Use BFS to identify a blocking flow in the <code>residual_graph</code> with current flow matrix <code>flow_matrix</code>and then backtrack from <code>target</code> to <code>source</code>, augmenting flow along all possible paths.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/dinic.jl#L101-L107' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/dinic.jl#L101-L107' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.boykov_kolmogorov_impl' href='#LightGraphs.boykov_kolmogorov_impl'>#</a>
 <strong><code>LightGraphs.boykov_kolmogorov_impl</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>boykov_kolmogorov_impl(residual_graph, source, target, capacity_matrix)
@@ -1505,14 +1505,14 @@ end
 <ul>
 <li>Júlio Hoffimann Mendes (juliohm@stanford.edu)</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/boykov_kolmogorov.jl#L1-L16' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/boykov_kolmogorov.jl#L1-L16' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.breakingPoints' href='#LightGraphs.breakingPoints'>#</a>
 <strong><code>LightGraphs.breakingPoints</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>breakingPoints(flow_graph::::IsDirected, source, target, capacity_matrix)
 </code></pre>
 
 <p>Calculates the breaking of the restricted max-flow from a set of auxiliary points for <code>flow_graph</code> from <code>source to</code>target<code>using capacities in</code>capacity_matrix`.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/ext_multiroute_flow.jl#L100-L105' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/ext_multiroute_flow.jl#L100-L105' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.circuit' href='#LightGraphs.circuit'>#</a>
 <strong><code>LightGraphs.circuit</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>circuit{T&lt;:Integer}(v::T, dg::::IsDirected, vis::JohnsonVisitor{T}, 
@@ -1541,7 +1541,7 @@ allcycles::Vector{Vector{T}}, vmap::Vector{T}, startnode::T = v)
 <ul>
 <li><a href="http://epubs.siam.org/doi/abs/10.1137/0204007">Johnson</a></li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L107' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L107' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.circuit_iter' href='#LightGraphs.circuit_iter'>#</a>
 <strong><code>LightGraphs.circuit_iter</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>circuit_iter{T&lt;:Integer}(v::T, dg::::IsDirected, vis::JohnsonVisitor{T}, 
@@ -1575,56 +1575,56 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 <ul>
 <li><a href="http://epubs.siam.org/doi/abs/10.1137/0204007">Johnson</a></li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L190' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L190' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.circuit_recursive!' href='#LightGraphs.circuit_recursive!'>#</a>
 <strong><code>LightGraphs.circuit_recursive!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>circuit_recursive!(g, v1, v2, blocked, B, stack, cycles)
 </code></pre>
 
 <p>Find circuits in <code>g</code> recursively starting from v1.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/hadwick-james.jl#L43-L47' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/hadwick-james.jl#L43-L47' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.components-Union{Tuple{Array{T,1}}, Tuple{T}} where T<:Integer' href='#LightGraphs.components-Union{Tuple{Array{T,1}}, Tuple{T}} where T<:Integer'>#</a>
 <strong><code>LightGraphs.components</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>components(labels)
 </code></pre>
 
 <p>Given a vector of component labels, return a vector of vectors representing the vertices associated with a given component id.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/connectivity.jl#L53-L58' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/connectivity.jl#L53-L58' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.components_dict-Union{Tuple{Array{T,1}}, Tuple{T}} where T<:Integer' href='#LightGraphs.components_dict-Union{Tuple{Array{T,1}}, Tuple{T}} where T<:Integer'>#</a>
 <strong><code>LightGraphs.components_dict</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>components_dict(labels)
 </code></pre>
 
 <p>Convert an array of labels to a map of component id to vertices, and return a map with each key corresponding to a given component id and each value containing the vertices associated with that component.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/connectivity.jl#L36-L42' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/connectivity.jl#L36-L42' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.connected_components!' href='#LightGraphs.connected_components!'>#</a>
 <strong><code>LightGraphs.connected_components!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>connected_components!(label, g)
 </code></pre>
 
 <p>Fill <code>label</code> with the <code>id</code> of the connected component in the undirected graph <code>g</code> to which it belongs. Return a vector representing the component assigned to each vertex. The component value is the smallest vertex ID in the component.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/connectivity.jl#L3-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/connectivity.jl#L3-L9' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.dinic_impl' href='#LightGraphs.dinic_impl'>#</a>
 <strong><code>LightGraphs.dinic_impl</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>function dinic_impl(residual_graph, source, target, capacity_matrix)
 </code></pre>
 
 <p>Compute the maximum flow between the <code>source</code> and <code>target</code> for <code>residual_graph</code> with edge flow capacities in <code>capacity_matrix</code> using <a href="https://en.wikipedia.org/wiki/Dinic%27s_algorithm">Dinic's Algorithm</a>. Return the value of the maximum flow as well as the final flow matrix.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/dinic.jl#L1-L8' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/dinic.jl#L1-L8' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.discharge!' href='#LightGraphs.discharge!'>#</a>
 <strong><code>LightGraphs.discharge!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>discharge!(residual_graph, v, capacity_matrix, flow_matrix, excess, height, active, count, Q)
 </code></pre>
 
 <p>Drain the excess flow out of node <code>v</code>. Run the gap heuristic or relabel the vertex if the excess remains non-zero.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/push_relabel.jl#L175-L180' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/push_relabel.jl#L175-L180' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.edmonds_karp_impl' href='#LightGraphs.edmonds_karp_impl'>#</a>
 <strong><code>LightGraphs.edmonds_karp_impl</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>edmonds_karp_impl(residual_graph, source, target, capacity_matrix)
 </code></pre>
 
 <p>Compute the maximum flow in flow graph <code>residual_graph</code> between <code>source</code> and <code>target</code> and capacities defined in <code>capacity_matrix</code> using the <a href="https://en.wikipedia.org/wiki/Edmondss%E2%80%93Karp_algorithm">Edmonds-Karp algorithm</a>. Return the value of the maximum flow as well as the final flow matrix.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/edmonds_karp.jl#L1-L8' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/edmonds_karp.jl#L1-L8' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.emrf' href='#LightGraphs.emrf'>#</a>
 <strong><code>LightGraphs.emrf</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>emrf(flow_graph, source, target, capacity_matrix, flow_algorithm, routes=0)
@@ -1636,28 +1636,28 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 <ul>
 <li><a href="http://dx.doi.org/10.1016/j.disopt.2016.05.002">Extended Multiroute Flow algorithm</a></li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/ext_multiroute_flow.jl#L1-L15' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/ext_multiroute_flow.jl#L1-L15' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.enqueue_vertex!-Tuple{AbstractArray{T,1} where T,Integer,AbstractArray{Bool,1},AbstractArray{T,1} where T}' href='#LightGraphs.enqueue_vertex!-Tuple{AbstractArray{T,1} where T,Integer,AbstractArray{Bool,1},AbstractArray{T,1} where T}'>#</a>
 <strong><code>LightGraphs.enqueue_vertex!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>enqueue_vertex!(Q, v, active, excess)
 </code></pre>
 
 <p>Push inactive node <code>v</code> into queue <code>Q</code> and activates it. Requires preallocated <code>active</code> and <code>excess</code> vectors.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/push_relabel.jl#L53-L58' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/push_relabel.jl#L53-L58' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.fetch_path' href='#LightGraphs.fetch_path'>#</a>
 <strong><code>LightGraphs.fetch_path</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>fetch_path(residual_graph, source, target, flow_matrix, capacity_matrix)
 </code></pre>
 
 <p>Use bidirectional BFS to look for augmentable paths from <code>source</code> to <code>target</code> in <code>residual_graph</code>. Return the vertex where the two BFS searches intersect, the parent table of the path, the successor table of the path found, and a flag indicating success (0 =&gt; success; 1 =&gt; no path to target, 2 =&gt; no path to source).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/edmonds_karp.jl#L142-L151' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/edmonds_karp.jl#L142-L151' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.fetch_path!' href='#LightGraphs.fetch_path!'>#</a>
 <strong><code>LightGraphs.fetch_path!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>fetch_path!(residual_graph, source, target, flow_matrix, capacity_matrix, P, S)
 </code></pre>
 
 <p>Like <code>fetch_path</code>, but requires preallocated parent vector <code>P</code> and successor vector <code>S</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/edmonds_karp.jl#L82-L87' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/edmonds_karp.jl#L82-L87' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.gap!' href='#LightGraphs.gap!'>#</a>
 <strong><code>LightGraphs.gap!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>gap!(residual_graph, h, excess, height, active, count, Q)
@@ -1674,14 +1674,14 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 <li>count::AbstractVector{Int}</li>
 <li>Q::AbstractVector</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/push_relabel.jl#L107-L122' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/push_relabel.jl#L107-L122' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.intersection-Union{Tuple{Array{Tuple{T,T,I},1},R}, Tuple{I}, Tuple{R}, Tuple{T}} where T<:AbstractFloat where I<:Integer where R<:Real' href='#LightGraphs.intersection-Union{Tuple{Array{Tuple{T,T,I},1},R}, Tuple{I}, Tuple{R}, Tuple{T}} where T<:AbstractFloat where I<:Integer where R<:Real'>#</a>
 <strong><code>LightGraphs.intersection</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>intersection(points, k)
 </code></pre>
 
 <p>Return the intersection of a set of line segments and a line of slope <code>k</code> passing by the origin. Segments are defined as a triple (x, y, slope).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/ext_multiroute_flow.jl#L220-L225' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/ext_multiroute_flow.jl#L220-L225' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.intersection-Union{Tuple{R}, Tuple{T,T,Integer,T,T,R}, Tuple{T}} where T<:AbstractFloat where R<:Real' href='#LightGraphs.intersection-Union{Tuple{R}, Tuple{T,T,Integer,T,T,R}, Tuple{T}} where T<:AbstractFloat where R<:Real'>#</a>
 <strong><code>LightGraphs.intersection</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>    intersection(x1, y1, a1, x2, y2, a2)
@@ -1707,7 +1707,7 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 <p>k::R&lt;:Real                             # number of routes (slope of the line)</p>
 </li>
 </ol>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/ext_multiroute_flow.jl#L192-L201' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/ext_multiroute_flow.jl#L192-L201' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.itercycles' href='#LightGraphs.itercycles'>#</a>
 <strong><code>LightGraphs.itercycles</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>itercycles(dg::::IsDirected, cycle::Channel)
@@ -1719,21 +1719,21 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 <ul>
 <li><a href="http://epubs.siam.org/doi/abs/10.1137/0204007">Johnson</a></li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L246-L257' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L246-L257' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.kishimoto' href='#LightGraphs.kishimoto'>#</a>
 <strong><code>LightGraphs.kishimoto</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>kishimoto(flow_graph, source, target, capacity_matrix, flow_algorithm, routes)
 </code></pre>
 
 <p>Compute the maximum multiroute flow (for an integer number of <code>route</code>s) between <code>source</code> and <code>target</code> in <code>flow_graph</code> with capacities in <code>capacity_matrix</code> using the <a href="http://dx.doi.org/10.1109/ICCS.1992.255031">Kishimoto algorithm</a>. Return the value of the multiroute flow as well as the final flow matrix, along with a multiroute cut if Boykov-Kolmogorov is used as a subroutine.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/kishimoto.jl#L33-L41' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/kishimoto.jl#L33-L41' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.loadlg_mult-Tuple{IO}' href='#LightGraphs.loadlg_mult-Tuple{IO}'>#</a>
 <strong><code>LightGraphs.loadlg_mult</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>loadlg_mult(io)
 </code></pre>
 
 <p>Return a dictionary of (name=&gt;graph) loaded from IO stream <code>io</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/persistence/lg.jl#L40-L44' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/persistence/lg.jl#L40-L44' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.minmaxCapacity-Tuple{AbstractArray{T,2} where T}' href='#LightGraphs.minmaxCapacity-Tuple{AbstractArray{T,2} where T}'>#</a>
 <strong><code>LightGraphs.minmaxCapacity</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>minmaxCapacity(capacity_matrix)
@@ -1741,14 +1741,14 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 
 <p>Return the nonzero min and max function of <code>capacity_matrix</code>.</p>
 <p>Note: this is more efficient than maximum() / minimum() / extrema() since we have to ignore zero values.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/ext_multiroute_flow.jl#L135-L142' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/ext_multiroute_flow.jl#L135-L142' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.ncycles_n_i-Tuple{Integer,Integer}' href='#LightGraphs.ncycles_n_i-Tuple{Integer,Integer}'>#</a>
 <strong><code>LightGraphs.ncycles_n_i</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>ncycles_n_i(n::Integer, i::Integer)
 </code></pre>
 
 <p>Compute the theoretical maximum number of cycles of size <code>i</code> in a directed graph of <code>n</code>  vertices.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L3-L8' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L3-L8' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.nearbipartiteaffinity-Union{Tuple{Array{T,1},Real,Real}, Tuple{T}} where T<:Integer' href='#LightGraphs.nearbipartiteaffinity-Union{Tuple{Array{T,1},Real,Real}, Tuple{T}} where T<:Integer'>#</a>
 <strong><code>LightGraphs.nearbipartiteaffinity</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>nearbipartiteaffinity(sizes, between, intra)
@@ -1756,21 +1756,21 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 
 <p>Construct the affinity matrix for a near bipartite SBM. <code>between</code> is the affinity between the two parts of each bipartite community. <code>intra</code> is the probability of an edge within the parts of the partitions.</p>
 <p>This is a specific type of SBM with <code>`\frac{k}{2} blocks each with two halves. Each half is connected as a random bipartite graph with probability</code>intra<code>The blocks are connected with probability</code>between`.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/generators/randgraphs.jl#L738' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/generators/randgraphs.jl#L738' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.noallocextreme-NTuple{4,Any}' href='#LightGraphs.noallocextreme-NTuple{4,Any}'>#</a>
 <strong><code>LightGraphs.noallocextreme</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>noallocextreme(f, comparison, initial, g)
 </code></pre>
 
 <p>Compute the extreme value of <code>[f(g,i) for i=i:nv(g)]</code> without gathering them all</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/core.jl#L92-L95' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/core.jl#L92-L95' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.push_flow!' href='#LightGraphs.push_flow!'>#</a>
 <strong><code>LightGraphs.push_flow!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>push_flow!(residual_graph, u, v, capacity_matrix, flow_matrix, excess, height, active, Q)
 </code></pre>
 
 <p>Using <code>residual_graph</code> with capacities in <code>capacity_matrix</code>, push as much flow as possible through the given edge(<code>u</code>, <code>v</code>). Requires preallocated <code>flow_matrix</code> matrix, and <code>excess</code>, <code>height,</code>active<code>, and</code>Q` vectors.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/push_relabel.jl#L73-L79' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/push_relabel.jl#L73-L79' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.push_relabel' href='#LightGraphs.push_relabel'>#</a>
 <strong><code>LightGraphs.push_relabel</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>push_relabel(residual_graph, source, target, capacity_matrix)
@@ -1779,14 +1779,14 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 <p>Return the maximum flow of <code>residual_graph</code> from <code>source</code> to <code>target</code> using the FIFO push relabel algorithm with gap heuristic.</p>
 <p><strong>Performance</strong></p>
 <p>Takes approximately $\mathcal{O}(|V|^{3})$ time.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/push_relabel.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/push_relabel.jl#L1' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.quick_find!-Tuple{Any,Any,Any}' href='#LightGraphs.quick_find!-Tuple{Any,Any,Any}'>#</a>
 <strong><code>LightGraphs.quick_find!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>quick_find!(vs, p, q)
 </code></pre>
 
 <p>Perform <a href="https://en.wikipedia.org/wiki/Disjoint-set_data_structure">Quick-Find algorithm</a> on a given pair of vertices <code>p</code>and <code>q</code>, and make a connection between them in the vector <code>vs</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/spanningtrees/kruskal.jl#L8-L13' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/spanningtrees/kruskal.jl#L8-L13' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.randbn' href='#LightGraphs.randbn'>#</a>
 <strong><code>LightGraphs.randbn</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>randbn(n, p, seed=-1)
@@ -1798,42 +1798,42 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 <li>"Non-Uniform Random Variate Generation," Luc Devroye, p. 522. Retrieved via http://www.eirene.de/Devroye.pdf.</li>
 <li>http://stackoverflow.com/questions/23561551/a-efficient-binomial-random-number-generator-code-in-java</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/generators/randgraphs.jl#L34-L42' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/generators/randgraphs.jl#L34-L42' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.random_pair-Tuple{AbstractRNG,Integer}' href='#LightGraphs.random_pair-Tuple{AbstractRNG,Integer}'>#</a>
 <strong><code>LightGraphs.random_pair</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>random_pair(rng, n)
 </code></pre>
 
 <p>Generate a stream of random pairs in <code>1:n</code> using random number generator <code>RNG</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/generators/randgraphs.jl#L766-L770' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/generators/randgraphs.jl#L766-L770' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.range_shuffle!-Tuple{UnitRange,AbstractArray{T,1} where T}' href='#LightGraphs.range_shuffle!-Tuple{UnitRange,AbstractArray{T,1} where T}'>#</a>
 <strong><code>LightGraphs.range_shuffle!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>range_shuffle!(r, a)
 </code></pre>
 
 <p>Fast shuffle Array <code>a</code> in UnitRange <code>r</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/community/label_propagation.jl#L60-L64' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/community/label_propagation.jl#L60-L64' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.relabel!' href='#LightGraphs.relabel!'>#</a>
 <strong><code>LightGraphs.relabel!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>relabel!(residual_graph, v, capacity_matrix, flow_matrix, excess, height, active, count, Q)
 </code></pre>
 
 <p>Relabel a node <code>v</code> with respect to its neighbors to produce an admissable edge.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/push_relabel.jl#L144-L148' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/push_relabel.jl#L144-L148' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.resetB!-Tuple{Any}' href='#LightGraphs.resetB!-Tuple{Any}'>#</a>
 <strong><code>LightGraphs.resetB!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>resetB!(B)
 </code></pre>
 
 <p>Reset B work structure.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/hadwick-james.jl#L29-L33' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/hadwick-james.jl#L29-L33' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.resetblocked!-Tuple{Any}' href='#LightGraphs.resetblocked!-Tuple{Any}'>#</a>
 <strong><code>LightGraphs.resetblocked!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>resetblocked!(blocked)
 </code></pre>
 
 <p>Reset vector of <code>blocked</code> vertices.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/hadwick-james.jl#L36-L40' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/hadwick-james.jl#L36-L40' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.residual' href='#LightGraphs.residual'>#</a>
 <strong><code>LightGraphs.residual</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>residual(flow_graph)
@@ -1842,7 +1842,7 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 <p>Return a directed residual graph for a directed <code>flow_graph</code>.</p>
 <p>The residual graph comprises the same node list as the orginal flow graph, but ensures that for each edge (u,v), (v,u) also exists in the graph. This allows flow in the reverse direction.</p>
 <p>If only the forward edge exists, a reverse edge is created with capacity 0. If both forward and reverse edges exist, their capacities are left unchanged. Since the capacities in <a href="../@ref"><code>DefaultDistance</code></a> cannot be changed, an array of ones is created.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/maximum_flow.jl#L53-L66' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/maximum_flow.jl#L53-L66' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.sample!-Tuple{AbstractRNG,AbstractArray,Integer}' href='#LightGraphs.sample!-Tuple{AbstractRNG,AbstractArray,Integer}'>#</a>
 <strong><code>LightGraphs.sample!</code></strong> &mdash; <em>Method</em>.</p>
 <p>sample!([rng, ]a, k)</p>
@@ -1853,7 +1853,7 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 </ul>
 <p><strong>Implementation Notes</strong></p>
 <p>Changes the order of the elements in <code>a</code>. For a non-mutating version, see <a href="./#LightGraphs.sample-Tuple{UnitRange,Integer}"><code>sample</code></a>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/utils.jl#L1-L11' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/utils.jl#L1-L11' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.sample-Tuple{UnitRange,Integer}' href='#LightGraphs.sample-Tuple{UnitRange,Integer}'>#</a>
 <strong><code>LightGraphs.sample</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>sample([rng,] r, k)
@@ -1866,49 +1866,49 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 </ul>
 <p><strong>Implementation Notes</strong></p>
 <p>Unlike <a href="./#LightGraphs.sample!-Tuple{AbstractRNG,AbstractArray,Integer}"><code>sample!</code></a>, does not produce side effects.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/utils.jl#L31-L41' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/utils.jl#L31-L41' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.savelg-Tuple{IO,LightGraphs.AbstractGraph,String}' href='#LightGraphs.savelg-Tuple{IO,LightGraphs.AbstractGraph,String}'>#</a>
 <strong><code>LightGraphs.savelg</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>savelg(io, g, gname)
 </code></pre>
 
 <p>Write a graph <code>g</code> with name <code>gname</code> in a proprietary format to the IO stream designated by <code>io</code>. Return 1 (number of graphs written).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/persistence/lg.jl#L85-L90' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/persistence/lg.jl#L85-L90' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.savelg_mult-Tuple{IO,Dict}' href='#LightGraphs.savelg_mult-Tuple{IO,Dict}'>#</a>
 <strong><code>LightGraphs.savelg_mult</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>savelg_mult(io, graphs)
 </code></pre>
 
 <p>Write a dictionary of (name=&gt;graph) to an IO stream <code>io</code>, with default <code>GZip</code> compression. Return number of graphs written.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/persistence/lg.jl#L103-L108' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/persistence/lg.jl#L103-L108' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.sbmaffinity-Union{Tuple{Array{T,1},Real,Array{U,1}}, Tuple{T}, Tuple{U}} where T<:Real where U<:Integer' href='#LightGraphs.sbmaffinity-Union{Tuple{Array{T,1},Real,Array{U,1}}, Tuple{T}, Tuple{U}} where T<:Real where U<:Integer'>#</a>
 <strong><code>LightGraphs.sbmaffinity</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>sbmaffinity(internalp, externalp, sizes)
 </code></pre>
 
 <p>Produce the sbm affinity matrix with internal probabilities <code>internalp</code> and external probabilities <code>externalp</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/generators/randgraphs.jl#L705-L710' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/generators/randgraphs.jl#L705-L710' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.slope' href='#LightGraphs.slope'>#</a>
 <strong><code>LightGraphs.slope</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>slope(flow_graph, capacity_matrix, cut, restriction)
 </code></pre>
 
 <p>Return the slope of <code>flow_graph</code> using capacities in <code>capacity_matrix</code> and a cut vector <code>cut</code>. The slope is initialized at 0 and is incremented for each edge whose capacity does not exceed <code>restriction</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/flow/ext_multiroute_flow.jl#L161-L167' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/flow/ext_multiroute_flow.jl#L161-L167' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.tree-Union{Tuple{AbstractArray{T,1}}, Tuple{T}} where T<:Integer' href='#LightGraphs.tree-Union{Tuple{AbstractArray{T,1}}, Tuple{T}} where T<:Integer'>#</a>
 <strong><code>LightGraphs.tree</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>tree(parents)
 </code></pre>
 
 <p>Convert a parents array into a directed graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/traversals/bfs.jl#L103-L107' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/traversals/bfs.jl#L103-L107' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.unblock!-Union{Tuple{T,BitArray,Array{Array{T,1},1}}, Tuple{T}} where T' href='#LightGraphs.unblock!-Union{Tuple{T,BitArray,Array{Array{T,1},1}}, Tuple{T}} where T'>#</a>
 <strong><code>LightGraphs.unblock!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>unblock!(v, blocked, B)
 </code></pre>
 
 <p>Unblock the value <code>v</code> from the <code>blocked</code> list and remove from <code>B</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/hadwick-james.jl#L78-L82' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/hadwick-james.jl#L78-L82' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.unblock!-Union{Tuple{T,BitArray,Array{Set{T},1}}, Tuple{T}} where T<:Integer' href='#LightGraphs.unblock!-Union{Tuple{T,BitArray,Array{Set{T},1}}, Tuple{T}} where T<:Integer'>#</a>
 <strong><code>LightGraphs.unblock!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>unblock!{T&lt;:Integer}(v::T, blocked::BitArray, B::Vector{Set{T}})
@@ -1916,35 +1916,35 @@ vmap::Vector{T}, cycle::Channel, startnode::T = v)
 
 <p>Unblock the vertices recursively. </p>
 <p><code>v</code> is the vertex to unblock, <code>blocked</code> tells whether a vertex is blocked or  not and <code>B</code> is the map that tells if the unblocking of one vertex should  unblock other vertices.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/digraph/cycles/johnson.jl#L88-L96' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/digraph/cycles/johnson.jl#L88-L96' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.visit!-Tuple{LightGraphs.AbstractGraph,Integer,AbstractArray{Bool,1},AbstractArray{T,1} where T,AbstractArray{T,2} where T}' href='#LightGraphs.visit!-Tuple{LightGraphs.AbstractGraph,Integer,AbstractArray{Bool,1},AbstractArray{T,1} where T,AbstractArray{T,2} where T}'>#</a>
 <strong><code>LightGraphs.visit!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>visit!(g, v, marked, pq, distmx)
 </code></pre>
 
 <p>Mark the vertex <code>v</code> of graph <code>g</code> true in the array <code>marked</code> and enter all its edges into priority queue <code>pq</code> with its <code>distmx</code> values as a PrimHeapEntry.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/spanningtrees/prim.jl#L43-L48' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/spanningtrees/prim.jl#L43-L48' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.visit!-Tuple{LightGraphs.AbstractGraph,LightGraphs.Biconnections,Integer,Integer}' href='#LightGraphs.visit!-Tuple{LightGraphs.AbstractGraph,LightGraphs.Biconnections,Integer,Integer}'>#</a>
 <strong><code>LightGraphs.visit!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>visit!(g, state, u, v)
 </code></pre>
 
 <p>Perform a DFS visit storing the depth and low-points of each vertex.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/biconnectivity/biconnect.jl#L20-L24' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/biconnectivity/biconnect.jl#L20-L24' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.visit!-Tuple{LightGraphs.Articulations,LightGraphs.AbstractGraph,Integer,Integer}' href='#LightGraphs.visit!-Tuple{LightGraphs.Articulations,LightGraphs.AbstractGraph,Integer,Integer}'>#</a>
 <strong><code>LightGraphs.visit!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>visit!(state, g, u, v)
 </code></pre>
 
 <p>Perform a depth first search storing the depth (in <code>depth</code>) and low-points (in <code>low</code>) of each vertex. Call this function repeatedly to complete the DFS (see <a href="./#LightGraphs.articulation-Tuple{LightGraphs.AbstractGraph}"><code>articulation</code></a> for usage).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/biconnectivity/articulation.jl#L19-L25' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/biconnectivity/articulation.jl#L19-L25' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.vote!-Tuple{LightGraphs.AbstractGraph,Array{T,1} where T,LightGraphs.NeighComm,Integer}' href='#LightGraphs.vote!-Tuple{LightGraphs.AbstractGraph,Array{T,1} where T,LightGraphs.NeighComm,Integer}'>#</a>
 <strong><code>LightGraphs.vote!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>vote!(g, m, c, u)
 </code></pre>
 
 <p>Return the label with greatest frequency.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c8bf836c36978c9e68e02d3980030ca07fac595e/docs/../src/community/label_propagation.jl#L75-L79' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f70bdbd99b534c3d16186f14eb840a012703ade6/docs/../src/community/label_propagation.jl#L75-L79' class='documenter-source'>source</a><br></p>
                 
                   
                 
