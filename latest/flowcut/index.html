@@ -13,7 +13,7 @@
       
         <link rel="shortcut icon" href="../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.4">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.0">
     
     
       
@@ -24,9 +24,9 @@
       <script src="../assets/javascripts/modernizr-1df76c4e58.js"></script>
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application-e2807e330f.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application-c147e0d28f.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-f78e5cb881.palette.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-8817cfa535.palette.css">
       
     
     
@@ -98,7 +98,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
           <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
             Type to start searching
           </div>
@@ -409,25 +409,25 @@
 </code></pre>
 
 <p>Forces the maximum_flow function to use the Boykov-Kolmogorov algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2ad036e594283d3bdefd4d0e20bab4291f4ab48e/docs/../src/flow/maximum_flow.jl#L22-L26' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/592d9ce553cc50d90799e53f680cda00ad1d05a7/docs/../src/flow/maximum_flow.jl#L22-L26' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.DinicAlgorithm' href='#LightGraphs.DinicAlgorithm'>#</a>
 <strong><code>LightGraphs.DinicAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>DinicAlgorithm &lt;: AbstractFlowAlgorithm
 </code></pre>
 
 <p>Forces the maximum_flow function to use Dinic's algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2ad036e594283d3bdefd4d0e20bab4291f4ab48e/docs/../src/flow/maximum_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/592d9ce553cc50d90799e53f680cda00ad1d05a7/docs/../src/flow/maximum_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.EdmondsKarpAlgorithm' href='#LightGraphs.EdmondsKarpAlgorithm'>#</a>
 <strong><code>LightGraphs.EdmondsKarpAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>EdmondsKarpAlgorithm &lt;: AbstractFlowAlgorithm
 </code></pre>
 
 <p>Forces the maximum_flow function to use the Edmonds–Karp algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2ad036e594283d3bdefd4d0e20bab4291f4ab48e/docs/../src/flow/maximum_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/592d9ce553cc50d90799e53f680cda00ad1d05a7/docs/../src/flow/maximum_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.PushRelabelAlgorithm' href='#LightGraphs.PushRelabelAlgorithm'>#</a>
 <strong><code>LightGraphs.PushRelabelAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <p>Forces the maximum_flow function to use the Push-Relabel algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2ad036e594283d3bdefd4d0e20bab4291f4ab48e/docs/../src/flow/maximum_flow.jl#L29-L31' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/592d9ce553cc50d90799e53f680cda00ad1d05a7/docs/../src/flow/maximum_flow.jl#L29-L31' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.maximum_flow' href='#LightGraphs.maximum_flow'>#</a>
 <strong><code>LightGraphs.maximum_flow</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>maximum_flow(flow_graph, source, target[, capacity_matrix][, algorithm][, restriction])
@@ -468,21 +468,21 @@ julia&gt; f, F, labels = maximum_flow(flow_graph,1,8,capacity_matrix,algorithm=B
 
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2ad036e594283d3bdefd4d0e20bab4291f4ab48e/docs/../src/flow/maximum_flow.jl#L122-L165' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/592d9ce553cc50d90799e53f680cda00ad1d05a7/docs/../src/flow/maximum_flow.jl#L122-L165' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.ExtendedMultirouteFlowAlgorithm' href='#LightGraphs.ExtendedMultirouteFlowAlgorithm'>#</a>
 <strong><code>LightGraphs.ExtendedMultirouteFlowAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>ExtendedMultirouteFlowAlgorithm
 </code></pre>
 
 <p>Used to specify the Extended Multiroute Flow algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2ad036e594283d3bdefd4d0e20bab4291f4ab48e/docs/../src/flow/multiroute_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/592d9ce553cc50d90799e53f680cda00ad1d05a7/docs/../src/flow/multiroute_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.KishimotoAlgorithm' href='#LightGraphs.KishimotoAlgorithm'>#</a>
 <strong><code>LightGraphs.KishimotoAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>KishimotoAlgorithm
 </code></pre>
 
 <p>Used to specify the Kishimoto algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2ad036e594283d3bdefd4d0e20bab4291f4ab48e/docs/../src/flow/multiroute_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/592d9ce553cc50d90799e53f680cda00ad1d05a7/docs/../src/flow/multiroute_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.multiroute_flow-Union{Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2} where T}, Tuple{LightGraphs.AbstractGraph,Integer,Integer}, Tuple{R}} where R<:Real' href='#LightGraphs.multiroute_flow-Union{Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2} where T}, Tuple{LightGraphs.AbstractGraph,Integer,Integer}, Tuple{R}} where R<:Real'>#</a>
 <strong><code>LightGraphs.multiroute_flow</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>multiroute_flow(flow_graph, source, target[, DefaultCapacity][, flow_algorithm][, mrf_algorithm][, routes])
@@ -569,7 +569,7 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2ad036e594283d3bdefd4d0e20bab4291f4ab48e/docs/../src/flow/multiroute_flow.jl#L100-L189' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/592d9ce553cc50d90799e53f680cda00ad1d05a7/docs/../src/flow/multiroute_flow.jl#L100-L189' class='documenter-source'>source</a><br></p>
                 
                   
                 
@@ -639,7 +639,9 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
       
     </div>
     
-      <script src="../assets/javascripts/application-06a3e72efd.js"></script>
+      <script src="../assets/javascripts/application-e3caa82af6.js"></script>
+      
+      
       <script>app.initialize({url:{base:".."}})</script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
