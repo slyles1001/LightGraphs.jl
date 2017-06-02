@@ -424,16 +424,16 @@ parallel_betweenness_centrality(g, k)
 <ul>
 <li><code>normalize=true</code>: If true, normalize the betweenness values by the</li>
 </ul>
-<p>total number of possible distinct paths between all pairsin the graphs. For an undirected graph, this number is $\frac{(|V|-1)(|V|-2)}{2}$ and for a directed graph, ${(|V|-1)(|V|-2)}$.</p>
+<p>total number of possible distinct paths between all pairsin the graphs. For an undirected graph, this number is <script type="math/tex">\frac{(|V|-1)(|V|-2)}{2}</script> and for a directed graph, <script type="math/tex">{(|V|-1)(|V|-2)}</script>.</p>
 <ul>
 <li><code>endpoints=false</code>: If true, include endpoints in the shortest path count.</li>
 </ul>
-<p>Betweenness centrality is defined as: $bc(v) = \frac{1}{\mathcal{N}} sum_{s \neq t \neq v} \frac{\sigma_{st}(v)}{\sigma_{st}}$.</p>
+<p>Betweenness centrality is defined as: <script type="math/tex">bc(v) = \frac{1}{\mathcal{N}} sum_{s \neq t \neq v} \frac{\sigma_{st}(v)}{\sigma_{st}}</script>.</p>
 <p><strong>References</strong></p>
 <ul>
 <li>Brandes 2001 &amp; Brandes 2008</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/14a2ccd03f2171446f6730a6d4c01dc421acc068/docs/../src/centrality/betweenness.jl#L5' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/195ab749b897f75137c7a6ec9d9e883526abfded/docs/../src/centrality/betweenness.jl#L5' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.closeness_centrality-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.closeness_centrality-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.closeness_centrality</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>closeness_centrality(g)
@@ -444,8 +444,8 @@ parallel_betweenness_centrality(g, k)
 <ul>
 <li><code>normalize=true</code>: If true, normalize the centrality value of each</li>
 </ul>
-<p>node <code>n</code> by $\frac{|δ_n|}{|V|-1}$, where $δ_n$ is the set of vertices reachable from node <code>n</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/14a2ccd03f2171446f6730a6d4c01dc421acc068/docs/../src/centrality/closeness.jl#L1' class='documenter-source'>source</a><br></p>
+<p>node <code>n</code> by <script type="math/tex">\frac{|δ_n|}{|V|-1}</script>, where <script type="math/tex">δ_n</script> is the set of vertices reachable from node <code>n</code>.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/195ab749b897f75137c7a6ec9d9e883526abfded/docs/../src/centrality/closeness.jl#L1' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.degree_centrality-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.degree_centrality-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.degree_centrality</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>degree_centrality(g)
@@ -456,9 +456,9 @@ outdegree_centrality(g)
 <p>Calculate the <a href="https://en.wikipedia.org/wiki/Centrality#Degree_centrality">degree centrality</a> of graph <code>g</code>. Return a vector representing the centrality calculated for each node in <code>g</code>.</p>
 <p><strong>Optional Arguments</strong></p>
 <ul>
-<li><code>normalize=true</code>: If true, normalize each centrality measure by $\frac{1}{|V|-1}$.</li>
+<li><code>normalize=true</code>: If true, normalize each centrality measure by <script type="math/tex">\frac{1}{|V|-1}</script>.</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/14a2ccd03f2171446f6730a6d4c01dc421acc068/docs/../src/centrality/degree.jl#L18-L28' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/195ab749b897f75137c7a6ec9d9e883526abfded/docs/../src/centrality/degree.jl#L18-L28' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.eigenvector_centrality-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.eigenvector_centrality-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.eigenvector_centrality</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>eigenvector_centrality(g)
@@ -475,21 +475,21 @@ outdegree_centrality(g)
 <li>Phillip Bonacich: Power and Centrality: A Family of Measures.   American Journal of Sociology 92(5):1170–1182, 1986   http://www.leonidzhukov.net/hse/2014/socialnetworks/papers/Bonacich-Centrality.pdf</li>
 <li>Mark E. J. Newman: Networks: An Introduction.      Oxford University Press, USA, 2010, pp. 169.</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/14a2ccd03f2171446f6730a6d4c01dc421acc068/docs/../src/centrality/eigenvector.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/195ab749b897f75137c7a6ec9d9e883526abfded/docs/../src/centrality/eigenvector.jl#L1' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.katz_centrality' href='#LightGraphs.katz_centrality'>#</a>
 <strong><code>LightGraphs.katz_centrality</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>katz_centrality(g, α=0.3)
 </code></pre>
 
 <p>Calculate the <a href="https://en.wikipedia.org/wiki/Katz_centrality">Katz centrality</a> of the graph <code>g</code> optionally parameterized by <code>α</code>. Return a vector representing the centrality calculated for each node in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/14a2ccd03f2171446f6730a6d4c01dc421acc068/docs/../src/centrality/katz.jl#L24-L29' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/195ab749b897f75137c7a6ec9d9e883526abfded/docs/../src/centrality/katz.jl#L24-L29' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.pagerank' href='#LightGraphs.pagerank'>#</a>
 <strong><code>LightGraphs.pagerank</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>pagerank(g, α=0.85, n=100, ϵ=1.0e-6)
 </code></pre>
 
 <p>Calculate the <a href="https://en.wikipedia.org/wiki/PageRank">PageRank</a> of the directed graph <code>g</code> parameterized by damping factor <code>α</code>, number of iterations <code>n</code>, and convergence threshold <code>ϵ</code>. Return a vector representing the centrality calculated for each node in <code>g</code>, or an error if convergence is not reached within <code>n</code> iterations.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/14a2ccd03f2171446f6730a6d4c01dc421acc068/docs/../src/centrality/pagerank.jl#L4-L12' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/195ab749b897f75137c7a6ec9d9e883526abfded/docs/../src/centrality/pagerank.jl#L4-L12' class='documenter-source'>source</a><br></p>
                 
                   
                 
