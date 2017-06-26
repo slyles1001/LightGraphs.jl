@@ -75,6 +75,14 @@
 
     
     <url>
+     <loc>/decomposition/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>/flowcut/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>

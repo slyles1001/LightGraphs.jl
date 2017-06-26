@@ -18,7 +18,7 @@
     
     
       
-        <title>Contributing - LightGraphs.jl</title>
+        <title>Decomposition - LightGraphs.jl</title>
       
     
     
@@ -81,7 +81,7 @@
             
               
             
-            Contributing
+            Decomposition
           
         </span>
       </div>
@@ -294,11 +294,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../decomposition/" title="Decomposition" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Decomposition" class="md-nav__link md-nav__link--active">
       Decomposition
     </a>
+    
   </li>
 
     
@@ -354,50 +363,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Contributing
-      </label>
-    
-    <a href="./" title="Contributing" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../contributing/" title="Contributing" class="md-nav__link">
       Contributing
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#bug-reports" title="Bug reports" class="md-nav__link">
-    Bug reports
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#development-guidelines" title="Development guidelines" class="md-nav__link">
-    Development guidelines
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -427,27 +397,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#bug-reports" title="Bug reports" class="md-nav__link">
-    Bug reports
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#development-guidelines" title="Development guidelines" class="md-nav__link">
-    Development guidelines
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
   
 </nav>
                   </div>
@@ -459,64 +410,90 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/edit/master/docs/contributing.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/edit/master/docs/decomposition.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
-                  <h1>Contributing</h1>
-                
-                <p>We welcome all possible contributors and ask that you read these guidelines before starting to work on this project. Following these guidelines will reduce friction and improve the speed at which your code gets merged.</p>
-<p><a id='Bug-reports-1'></a></p>
-<h2 id="bug-reports">Bug reports</h2>
-<p>If you notice code that is incorrect/crashes/too slow please file a bug report. The report should be raised as a github issue with a minimal working example that reproduces the error message. The example should include any data needed. If the problem is incorrectness, then please post the correct result along with an incorrect result.</p>
-<p>Please include version numbers of all relevant libraries and Julia itself.</p>
-<p><a id='Development-guidelines-1'></a></p>
-<h2 id="development-guidelines">Development guidelines</h2>
+                <p><a id='Graph-Decomposition-1'></a></p>
+<h1 id="graph-decomposition">Graph Decomposition</h1>
+<p><em>LightGraphs.jl</em> provides the following decomposition functions:</p>
 <ul>
-<li>PRs should contain one logical enhancement to the codebase.</li>
-<li>Squash commits in a PR.</li>
-<li>Open an issue to discuss a feature before you start coding (this maximizes the likelihood of patch acceptance).</li>
-<li>
-<p>Minimize dependencies on external packages, and avoid introducing new dependencies. In general,</p>
-<ul>
-<li>PRs introducing dependencies on core Julia packages are ok.</li>
-<li>PRs introducing dependencies on non-core "leaf" packages (no subdependencies except for core Julia packages) are less ok.</li>
-<li>PRs introducing dependencies on non-core non-leaf packages require strict scrutiny and will likely not be accepted without some compelling reason (urgent bugfix or much-needed functionality).</li>
-<li>Put type assertions on all function arguments (use abstract types, Union, or Any if necessary).</li>
-<li>If the algorithm was presented in a paper, include a reference to the paper (i.e. a proper academic citation along with an eprint link).</li>
-<li>Take steps to ensure that code works on graphs with multiple connected components efficiently.</li>
-<li>Correctness is a necessary requirement; efficiency is desirable. Once you have a correct implementation, make a PR so we can help improve performance.</li>
-<li>We can accept code that does not work for directed graphs as long as it comes with an explanation of what it would take to make it work for directed graphs.</li>
-<li>Style point: prefer the short circuiting conditional over if/else when convenient, and where state is not explicitly being mutated (<em>e.g.</em>, <code>condition &amp;&amp; error("message")</code> is good; <code>condition &amp;&amp; i += 1</code> is not).</li>
-<li>When possible write code to reuse memory. For example:</li>
+<li><a href="./#LightGraphs.core_number-Tuple{LightGraphs.AbstractGraph}"><code>LightGraphs.core_number</code></a></li>
+<li><a href="./#LightGraphs.k_core"><code>LightGraphs.k_core</code></a></li>
+<li><a href="./#LightGraphs.k_corona-Tuple{LightGraphs.AbstractGraph,Any}"><code>LightGraphs.k_corona</code></a></li>
+<li><a href="./#LightGraphs.k_crust"><code>LightGraphs.k_crust</code></a></li>
+<li><a href="./#LightGraphs.k_shell"><code>LightGraphs.k_shell</code></a></li>
 </ul>
-</li>
-</ul>
-<pre><code class="julia">function f(g, v)
-    storage = Vector{Int}(nv(g))
-    # some code operating on storage, g, and v.
-    for i in 1:nv(g)
-        storage[i] = v-i
-    end
-    return sum(storage)
-end
+<p><a id='LightGraphs.core_number-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.core_number-Tuple{LightGraphs.AbstractGraph}'>#</a>
+<strong><code>LightGraphs.core_number</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>core_number(g)
 </code></pre>
 
-<p>should be rewritten as two functions</p>
-<pre><code class="julia">function f(g::AbstractGraph, v::Integer)
-    storage = Vector{Int}(nv(g))
-    return inner!(storage, g, v)
-end
-
-function inner!(storage::AbstractVector{Int}, g::AbstractGraph, v::Integer)
-    # some code operating on storage, g, and v.
-    for i in 1:nv(g)
-        storage[i] = v-i
-    end
-    return sum(storage)
-end
+<p>Return the core number for each vertex in graph <code>g</code>.</p>
+<p>A k-core is a maximal subgraph that contains vertices of degree <code>k</code> or more. The core number of a vertex is the largest value <code>k</code> of a k-core containing that vertex.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Not implemented for graphs with self loops.</p>
+<p><strong>References</strong></p>
+<ul>
+<li>An O(m) Algorithm for Cores Decomposition of Networks,   Vladimir Batagelj and Matjaz Zaversnik, 2003.   http://arxiv.org/abs/cs.DS/0310049</li>
+</ul>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/774a13e20897f8e9ba7f6a9a39c0acae9d821080/docs/../src/decomposition.jl#L3-L19' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.k_core' href='#LightGraphs.k_core'>#</a>
+<strong><code>LightGraphs.k_core</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>k_core(g[, k]; corenum=core_number(g))
 </code></pre>
 
-<p>This allows us to reuse the memory and improve performance.</p>
+<p>Return a vector of vertices in the k-core of graph <code>g</code>. If <code>k</code> is not specified, return the core with the largest degree.</p>
+<p>A k-core is a maximal subgraph that contains vertices of degree <code>k</code> or more.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Not implemented for graphs with self loops.</p>
+<p><strong>References</strong></p>
+<ul>
+<li>An O(m) Algorithm for Cores Decomposition of Networks,   Vladimir Batagelj and Matjaz Zaversnik, 2003.   http://arxiv.org/abs/cs.DS/0310049</li>
+</ul>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/774a13e20897f8e9ba7f6a9a39c0acae9d821080/docs/../src/decomposition.jl#L54-L69' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.k_corona-Tuple{LightGraphs.AbstractGraph,Any}' href='#LightGraphs.k_corona-Tuple{LightGraphs.AbstractGraph,Any}'>#</a>
+<strong><code>LightGraphs.k_corona</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>k_corona(g, k; corenum=core_number(g))
+</code></pre>
+
+<p>Return a vector of vertices in the k-corona of <code>g</code>. </p>
+<p>The k-corona is the subgraph of vertices in the k-core which have exactly <code>k</code> neighbors in the k-core.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Not implemented for graphs with parallel edges or self loops.</p>
+<p><strong>References</strong></p>
+<ul>
+<li>k-core (bootstrap) percolation on complex networks:  Critical phenomena and nonlocal effects,  A. V. Goltsev, S. N. Dorogovtsev, and J. F. F. Mendes,  Phys. Rev. E 73, 056101 (2006)  http://link.aps.org/doi/10.1103/PhysRevE.73.056101</li>
+</ul>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/774a13e20897f8e9ba7f6a9a39c0acae9d821080/docs/../src/decomposition.jl#L134-L152' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.k_crust' href='#LightGraphs.k_crust'>#</a>
+<strong><code>LightGraphs.k_crust</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>k_crust(g[, k]; corenum=core_number(g))
+</code></pre>
+
+<p>Return a vector of vertices in the k-crust of <code>g</code>.  If <code>k</code> is not specified, return the crust of the core with the largest degree.</p>
+<p>The k-crust is the graph <code>g</code> with the k-core removed.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>This definition of k-crust is different than the definition in References. The k-crust in References is equivalent to the <code>k+1</code> crust of this algorithm.</p>
+<p>Not implemented for graphs with self loops.</p>
+<p><strong>References</strong></p>
+<ul>
+<li>A model of Internet topology using k-shell decomposition  Shai Carmi, Shlomo Havlin, Scott Kirkpatrick, Yuval Shavitt,  and Eran Shir, PNAS  July 3, 2007   vol. 104  no. 27  11150-11154  http://www.pnas.org/content/104/27/11150.full</li>
+</ul>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/774a13e20897f8e9ba7f6a9a39c0acae9d821080/docs/../src/decomposition.jl#L106-L126' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.k_shell' href='#LightGraphs.k_shell'>#</a>
+<strong><code>LightGraphs.k_shell</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>k_shell(g[, k]; corenum=core_number(g))
+</code></pre>
+
+<p>Return a vector of vertices in the k-shell of <code>g</code>. If <code>k</code> is not specified, return the shell of the core with the largest degree.</p>
+<p>The k-shell is the subgraph of vertices in the <code>k</code>-core but not in the (<code>k+1</code>)-core. This is similar to <code>k_corona</code> but in that case only neighbors in the k-core are considered.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Not implemented for graphs with parallel edges or self loops.</p>
+<p><strong>References</strong></p>
+<ul>
+<li>A model of Internet topology using k-shell decomposition  Shai Carmi, Shlomo Havlin, Scott Kirkpatrick, Yuval Shavitt,  and Eran Shir, PNAS  July 3, 2007   vol. 104  no. 27  11150-11154  http://www.pnas.org/content/104/27/11150.full</li>
+</ul>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/774a13e20897f8e9ba7f6a9a39c0acae9d821080/docs/../src/decomposition.jl#L78-L98' class='documenter-source'>source</a><br></p>
                 
                   
                 
@@ -535,7 +512,7 @@ end
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../integration/" title="Integration with other packages" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../community/" title="Community Structures" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -544,19 +521,19 @@ end
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Integration with other packages
+                Community Structures
               </span>
             </div>
           </a>
         
         
-          <a href="../license/" title="License Information" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../flowcut/" title="Flow and Cut" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                License Information
+                Flow and Cut
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
