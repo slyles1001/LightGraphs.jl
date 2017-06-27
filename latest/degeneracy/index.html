@@ -18,7 +18,7 @@
     
     
       
-        <title>Decomposition - LightGraphs.jl</title>
+        <title>Degeneracy - LightGraphs.jl</title>
       
     
     
@@ -81,7 +81,7 @@
             
               
             
-            Decomposition
+            Degeneracy
           
         </span>
       </div>
@@ -304,8 +304,8 @@
       
     
     
-    <a href="./" title="Decomposition" class="md-nav__link md-nav__link--active">
-      Decomposition
+    <a href="./" title="Degeneracy" class="md-nav__link md-nav__link--active">
+      Degeneracy
     </a>
     
   </li>
@@ -410,90 +410,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/edit/master/docs/decomposition.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/edit/master/docs/degeneracy.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
                 
                 
                 <p><a id='Graph-Decomposition-1'></a></p>
 <h1 id="graph-decomposition">Graph Decomposition</h1>
 <p><em>LightGraphs.jl</em> provides the following decomposition functions:</p>
-<ul>
-<li><a href="./#LightGraphs.core_number-Tuple{LightGraphs.AbstractGraph}"><code>LightGraphs.core_number</code></a></li>
-<li><a href="./#LightGraphs.k_core"><code>LightGraphs.k_core</code></a></li>
-<li><a href="./#LightGraphs.k_corona-Tuple{LightGraphs.AbstractGraph,Any}"><code>LightGraphs.k_corona</code></a></li>
-<li><a href="./#LightGraphs.k_crust"><code>LightGraphs.k_crust</code></a></li>
-<li><a href="./#LightGraphs.k_shell"><code>LightGraphs.k_shell</code></a></li>
-</ul>
-<p><a id='LightGraphs.core_number-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.core_number-Tuple{LightGraphs.AbstractGraph}'>#</a>
-<strong><code>LightGraphs.core_number</code></strong> &mdash; <em>Method</em>.</p>
-<pre><code>core_number(g)
-</code></pre>
-
-<p>Return the core number for each vertex in graph <code>g</code>.</p>
-<p>A k-core is a maximal subgraph that contains vertices of degree <code>k</code> or more. The core number of a vertex is the largest value <code>k</code> of a k-core containing that vertex.</p>
-<p><strong>Implementation Notes</strong></p>
-<p>Not implemented for graphs with self loops.</p>
-<p><strong>References</strong></p>
-<ul>
-<li>An O(m) Algorithm for Cores Decomposition of Networks,   Vladimir Batagelj and Matjaz Zaversnik, 2003.   http://arxiv.org/abs/cs.DS/0310049</li>
-</ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/774a13e20897f8e9ba7f6a9a39c0acae9d821080/docs/../src/decomposition.jl#L3-L19' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.k_core' href='#LightGraphs.k_core'>#</a>
-<strong><code>LightGraphs.k_core</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>k_core(g[, k]; corenum=core_number(g))
-</code></pre>
-
-<p>Return a vector of vertices in the k-core of graph <code>g</code>. If <code>k</code> is not specified, return the core with the largest degree.</p>
-<p>A k-core is a maximal subgraph that contains vertices of degree <code>k</code> or more.</p>
-<p><strong>Implementation Notes</strong></p>
-<p>Not implemented for graphs with self loops.</p>
-<p><strong>References</strong></p>
-<ul>
-<li>An O(m) Algorithm for Cores Decomposition of Networks,   Vladimir Batagelj and Matjaz Zaversnik, 2003.   http://arxiv.org/abs/cs.DS/0310049</li>
-</ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/774a13e20897f8e9ba7f6a9a39c0acae9d821080/docs/../src/decomposition.jl#L54-L69' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.k_corona-Tuple{LightGraphs.AbstractGraph,Any}' href='#LightGraphs.k_corona-Tuple{LightGraphs.AbstractGraph,Any}'>#</a>
-<strong><code>LightGraphs.k_corona</code></strong> &mdash; <em>Method</em>.</p>
-<pre><code>k_corona(g, k; corenum=core_number(g))
-</code></pre>
-
-<p>Return a vector of vertices in the k-corona of <code>g</code>. </p>
-<p>The k-corona is the subgraph of vertices in the k-core which have exactly <code>k</code> neighbors in the k-core.</p>
-<p><strong>Implementation Notes</strong></p>
-<p>Not implemented for graphs with parallel edges or self loops.</p>
-<p><strong>References</strong></p>
-<ul>
-<li>k-core (bootstrap) percolation on complex networks:  Critical phenomena and nonlocal effects,  A. V. Goltsev, S. N. Dorogovtsev, and J. F. F. Mendes,  Phys. Rev. E 73, 056101 (2006)  http://link.aps.org/doi/10.1103/PhysRevE.73.056101</li>
-</ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/774a13e20897f8e9ba7f6a9a39c0acae9d821080/docs/../src/decomposition.jl#L134-L152' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.k_crust' href='#LightGraphs.k_crust'>#</a>
-<strong><code>LightGraphs.k_crust</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>k_crust(g[, k]; corenum=core_number(g))
-</code></pre>
-
-<p>Return a vector of vertices in the k-crust of <code>g</code>.  If <code>k</code> is not specified, return the crust of the core with the largest degree.</p>
-<p>The k-crust is the graph <code>g</code> with the k-core removed.</p>
-<p><strong>Implementation Notes</strong></p>
-<p>This definition of k-crust is different than the definition in References. The k-crust in References is equivalent to the <code>k+1</code> crust of this algorithm.</p>
-<p>Not implemented for graphs with self loops.</p>
-<p><strong>References</strong></p>
-<ul>
-<li>A model of Internet topology using k-shell decomposition  Shai Carmi, Shlomo Havlin, Scott Kirkpatrick, Yuval Shavitt,  and Eran Shir, PNAS  July 3, 2007   vol. 104  no. 27  11150-11154  http://www.pnas.org/content/104/27/11150.full</li>
-</ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/774a13e20897f8e9ba7f6a9a39c0acae9d821080/docs/../src/decomposition.jl#L106-L126' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.k_shell' href='#LightGraphs.k_shell'>#</a>
-<strong><code>LightGraphs.k_shell</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>k_shell(g[, k]; corenum=core_number(g))
-</code></pre>
-
-<p>Return a vector of vertices in the k-shell of <code>g</code>. If <code>k</code> is not specified, return the shell of the core with the largest degree.</p>
-<p>The k-shell is the subgraph of vertices in the <code>k</code>-core but not in the (<code>k+1</code>)-core. This is similar to <code>k_corona</code> but in that case only neighbors in the k-core are considered.</p>
-<p><strong>Implementation Notes</strong></p>
-<p>Not implemented for graphs with parallel edges or self loops.</p>
-<p><strong>References</strong></p>
-<ul>
-<li>A model of Internet topology using k-shell decomposition  Shai Carmi, Shlomo Havlin, Scott Kirkpatrick, Yuval Shavitt,  and Eran Shir, PNAS  July 3, 2007   vol. 104  no. 27  11150-11154  http://www.pnas.org/content/104/27/11150.full</li>
-</ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/774a13e20897f8e9ba7f6a9a39c0acae9d821080/docs/../src/decomposition.jl#L78-L98' class='documenter-source'>source</a><br></p>
                 
                   
                 
