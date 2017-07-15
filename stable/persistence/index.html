@@ -5,6 +5,7 @@
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
       
@@ -13,7 +14,7 @@
       
         <link rel="shortcut icon" href="../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.3">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.4">
     
     
       
@@ -21,12 +22,12 @@
       
     
     
-      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+      <script src="../assets/javascripts/modernizr-1df76c4e58.js"></script>
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application-e2807e330f.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application-769c285a91.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-f78e5cb881.palette.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-02c2a4388f.palette.css">
       
     
     
@@ -98,7 +99,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
           <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
             Type to start searching
           </div>
@@ -110,9 +111,9 @@
 </div>
         
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <div class="md-header-nav__source">
-          
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
             
 
 
@@ -132,9 +133,9 @@
     </div>
   </a>
 
-          
+          </div>
         </div>
-      </div>
+      
     </div>
   </nav>
 </header>
@@ -295,6 +296,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../degeneracy/" title="Degeneracy" class="md-nav__link">
+      Degeneracy
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../flowcut/" title="Flow and Cut" class="md-nav__link">
       Flow and Cut
     </a>
@@ -443,47 +456,43 @@
                 
                 <p><a id='Reading-and-writing-Graphs-1'></a></p>
 <h1 id="reading-and-writing-graphs">Reading and writing Graphs</h1>
-<p>Graphs may be written to I/O streams and files using the <code>save</code> function and read with the <code>load</code> function. Currently supported graph formats are the  <em>LightGraphs.jl</em> format <code>lg</code> and the common formats <code>gml, graphml, gexf, dot, net</code>.</p>
-<p><a id='LightGraphs.load' href='#LightGraphs.load'>#</a>
-<strong><code>LightGraphs.load</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>load(file, t=:lg)
-</code></pre>
-
-<p>Loads multiple graphs from  <code>file</code> in the format <code>t</code>. Returns a dictionary mapping graph name to graph.</p>
-<p>For unnamed graphs the default names "graph" and "digraph" will be used.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/persistence/common.jl#L45-L52' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.load' href='#LightGraphs.load'>#</a>
-<strong><code>LightGraphs.load</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>load(file, name, t=:lg)
-</code></pre>
-
-<p>Loads a graph with name <code>name</code> from <code>file</code> in format <code>t</code>.</p>
-<p>Currently supported formats are <code>:lg, :gml, :graphml, :gexf, :dot, :net</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/persistence/common.jl#L33-L39' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.loadgraph-Tuple{String,Vararg{Any,N}}' href='#LightGraphs.loadgraph-Tuple{String,Vararg{Any,N}}'>#</a>
+<p>Graphs may be written to I/O streams and files using the <code>savegraph</code> function and read with the <code>loadgraph</code> function. The default graph format is a proprietary compressed <em>LightGraphs.jl</em> format <code>lg</code>. Other formats are available via the <em>GraphPersistence</em> package.</p>
+<p><a id='LightGraphs.loadgraph-Tuple{AbstractString,AbstractString,LightGraphs.AbstractGraphFormat}' href='#LightGraphs.loadgraph-Tuple{AbstractString,AbstractString,LightGraphs.AbstractGraphFormat}'>#</a>
 <strong><code>LightGraphs.loadgraph</code></strong> &mdash; <em>Method</em>.</p>
-<pre><code>loadgraph(file, t=:lg)
+<pre><code>loadgraph(file, gname=&quot;graph&quot;, format=LGFormat)
 </code></pre>
 
-<p>Reads a graph from  <code>file</code> in the format <code>t</code>.</p>
-<p>Supported formats are <code>:lg, :gml, :dot, :graphml, :gexf, :net, :jld, :graph6</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/persistence/common.jl#L13-L19' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.save' href='#LightGraphs.save'>#</a>
-<strong><code>LightGraphs.save</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>save(file, g, t=:lg)
-save(file, g, name, t=:lg)
-save(file, dict, t=:lg)
+<p>Read a graph named <code>gname</code> from <code>file</code> in the format <code>format</code>.</p>
+<p><strong>Implementation Notes</strong></p>
+<p><code>gname</code> is graph-format dependent and is only used if the file contains multiple graphs; if the file format does not support multiple graphs, this value is ignored. The default value may change in the future.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/persistence/common.jl#L3-L12' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.loadgraphs-Tuple{AbstractString,LightGraphs.AbstractGraphFormat}' href='#LightGraphs.loadgraphs-Tuple{AbstractString,LightGraphs.AbstractGraphFormat}'>#</a>
+<strong><code>LightGraphs.loadgraphs</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>loadgraphs(file, format=LGFormat)
 </code></pre>
 
-<p>Saves a graph <code>g</code> with name <code>name</code> to <code>file</code> in the format <code>t</code>. If <code>name</code> is not given the default names "graph" and "digraph" will be used.</p>
-<p>Currently supported formats are <code>:lg, :gml, :graphml, :gexf, :dot, :net, :graph6</code>.</p>
-<p>For some graph formats, multiple graphs in a  <code>dict</code> <code>"name"=&gt;g</code> can be saved in the same file.</p>
-<p>Returns the number of graphs written.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/persistence/common.jl#L72-L85' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.savegraph-Tuple{Any,T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},Vararg{Any,N}}' href='#LightGraphs.savegraph-Tuple{Any,T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},Vararg{Any,N}}'>#</a>
+<p>Load multiple graphs from <code>file</code> in the format <code>format</code>. Return a dictionary mapping graph name to graph.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>For unnamed graphs the default name "graph" will be used. This default may change in the future.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/persistence/common.jl#L21-L30' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.savegraph-Tuple{AbstractString,LightGraphs.AbstractGraph,AbstractString,LightGraphs.AbstractGraphFormat}' href='#LightGraphs.savegraph-Tuple{AbstractString,LightGraphs.AbstractGraph,AbstractString,LightGraphs.AbstractGraphFormat}'>#</a>
 <strong><code>LightGraphs.savegraph</code></strong> &mdash; <em>Method</em>.</p>
-<p>Save a graph to file. See <a href="./#LightGraphs.save"><code>save</code></a>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/persistence/common.jl#L67-L69' class='documenter-source'>source</a><br></p>
+<pre><code>savegraph(file, g, gname=&quot;graph&quot;, format=LGFormat; compress=true)
+</code></pre>
+
+<p>Saves a graph <code>g</code> with name <code>gname</code> to <code>file</code> in the format <code>format</code>. If <code>compress = true</code>, use GZip compression when writing the file. Return the number of graphs written.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>The default graph name assigned to <code>gname</code> may change in the future.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/persistence/common.jl#L40-L49' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.savegraph-Union{Tuple{AbstractString,Dict{T,U},LightGraphs.AbstractGraphFormat}, Tuple{T}, Tuple{U}} where T<:AbstractString where U<:LightGraphs.AbstractGraph' href='#LightGraphs.savegraph-Union{Tuple{AbstractString,Dict{T,U},LightGraphs.AbstractGraphFormat}, Tuple{T}, Tuple{U}} where T<:AbstractString where U<:LightGraphs.AbstractGraph'>#</a>
+<strong><code>LightGraphs.savegraph</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>savegraph(file, g, d, format=LGFormat; compress=true)
+</code></pre>
+
+<p>Save a dictionary of <code>graphname =&gt; graph</code> to <code>file</code> in the format <code>format</code>. If <code>compress = true</code>, use GZip compression when writing the file. Return the number of graphs written.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Will only work if the file format supports multiple graph types.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/persistence/common.jl#L66-L75' class='documenter-source'>source</a><br></p>
 <p><a id='Examples-1'></a></p>
 <h2 id="examples">Examples</h2>
 <pre><code class="julia">save(STDOUT, g)
@@ -492,11 +501,6 @@ save(&quot;mygraph.jgz&quot;, g, &quot;mygraph&quot;, compress=true)
 savegraph(&quot;mygraph.jgz&quot;, g, compress=true)
 
 dg = load(&quot;multiplegraphs.jgz&quot;) # dictionary of graphs
-dg = load(&quot;multiplegraphs.graphml&quot;, :graphml)
-dg = load(&quot;mygraph.gml&quot;, &quot;mygraph&quot;, :gml)
-
-g = laoadgraph(&quot;mygraph.gml&quot;,  :gml)
-
 </code></pre>
                 
                   
@@ -567,7 +571,9 @@ g = laoadgraph(&quot;mygraph.gml&quot;,  :gml)
       
     </div>
     
-      <script src="../assets/javascripts/application-6b4ff16fa7.js"></script>
+      <script src="../assets/javascripts/application-c35428f87f.js"></script>
+      
+      
       <script>app.initialize({url:{base:".."}})</script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>

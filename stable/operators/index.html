@@ -5,6 +5,7 @@
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
       
@@ -13,7 +14,7 @@
       
         <link rel="shortcut icon" href="../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.3">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.4">
     
     
       
@@ -21,12 +22,12 @@
       
     
     
-      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+      <script src="../assets/javascripts/modernizr-1df76c4e58.js"></script>
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application-e2807e330f.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application-769c285a91.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-f78e5cb881.palette.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-02c2a4388f.palette.css">
       
     
     
@@ -98,7 +99,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
           <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
             Type to start searching
           </div>
@@ -110,9 +111,9 @@
 </div>
         
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <div class="md-header-nav__source">
-          
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
             
 
 
@@ -132,9 +133,9 @@
     </div>
   </a>
 
-          
+          </div>
         </div>
-      </div>
+      
     </div>
   </nav>
 </header>
@@ -304,6 +305,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../degeneracy/" title="Degeneracy" class="md-nav__link">
+      Degeneracy
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../flowcut/" title="Flow and Cut" class="md-nav__link">
       Flow and Cut
     </a>
@@ -404,145 +417,172 @@
 <h1 id="operators">Operators</h1>
 <p><em>LightGraphs.jl</em> implements the following graph operators. In general, functions with two graph arguments will require them to be of the same type (either both <code>Graph</code> or both <code>DiGraph</code>).</p>
 <ul>
-<li><a href="./#Base.SparseArrays.blkdiag-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>Base.SparseArrays.blkdiag</code></a></li>
-<li><a href="./#Base.intersect-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>Base.intersect</code></a></li>
-<li><a href="./#Base.join-Tuple{LightGraphs.Graph,LightGraphs.Graph}"><code>Base.join</code></a></li>
-<li><a href="./#Base.reverse-Tuple{LightGraphs.DiGraph}"><code>Base.reverse</code></a></li>
-<li><a href="./#Base.reverse!-Tuple{LightGraphs.DiGraph}"><code>Base.reverse!</code></a></li>
-<li><a href="./#Base.union-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>Base.union</code></a></li>
-<li><a href="./#LightGraphs.cartesian_product-Tuple{G&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},G&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.cartesian_product</code></a></li>
-<li><a href="./#LightGraphs.complement-Tuple{LightGraphs.Graph}"><code>LightGraphs.complement</code></a></li>
-<li><a href="./#LightGraphs.crosspath-Tuple{Integer,LightGraphs.Graph}"><code>LightGraphs.crosspath</code></a></li>
-<li><a href="./#LightGraphs.difference-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.difference</code></a></li>
-<li><a href="./#LightGraphs.egonet-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}"><code>LightGraphs.egonet</code></a></li>
-<li><a href="./#LightGraphs.induced_subgraph-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},AbstractArray{Int64,1}}"><code>LightGraphs.induced_subgraph</code></a></li>
-<li><a href="./#LightGraphs.symmetric_difference-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.symmetric_difference</code></a></li>
-<li><a href="./#LightGraphs.tensor_product-Tuple{G&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},G&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.tensor_product</code></a></li>
+<li><a href="./#Base.SparseArrays.blkdiag-Union{Tuple{T,T}, Tuple{T}} where T&lt;:LightGraphs.AbstractGraph"><code>Base.SparseArrays.blkdiag</code></a></li>
+<li><a href="./#Base.intersect-Union{Tuple{T,T}, Tuple{T}} where T&lt;:LightGraphs.AbstractGraph"><code>Base.intersect</code></a></li>
+<li><a href="./#Base.join-Union{Tuple{T,T}, Tuple{T}} where T&lt;:LightGraphs.AbstractGraph"><code>Base.join</code></a></li>
+<li><a href="./#Base.reverse"><code>Base.reverse</code></a></li>
+<li><a href="./#Base.reverse!"><code>Base.reverse!</code></a></li>
+<li><a href="./#Base.union-Union{Tuple{T,T}, Tuple{T}} where T&lt;:LightGraphs.AbstractGraph"><code>Base.union</code></a></li>
+<li><a href="./#LightGraphs.cartesian_product-Union{Tuple{G,G}, Tuple{G}} where G&lt;:LightGraphs.AbstractGraph"><code>LightGraphs.cartesian_product</code></a></li>
+<li><a href="./#LightGraphs.complement-Tuple{LightGraphs.SimpleGraphs.SimpleGraph}"><code>LightGraphs.complement</code></a></li>
+<li><a href="./#LightGraphs.crosspath"><code>LightGraphs.crosspath</code></a></li>
+<li><a href="./#LightGraphs.difference-Union{Tuple{T,T}, Tuple{T}} where T&lt;:LightGraphs.AbstractGraph"><code>LightGraphs.difference</code></a></li>
+<li><a href="./#LightGraphs.egonet-Tuple{LightGraphs.AbstractGraph,Integer,Integer}"><code>LightGraphs.egonet</code></a></li>
+<li><a href="./#LightGraphs.induced_subgraph-Union{Tuple{T,AbstractArray{U,1}}, Tuple{T}, Tuple{U}} where T&lt;:LightGraphs.AbstractGraph where U&lt;:Integer"><code>LightGraphs.induced_subgraph</code></a></li>
+<li><a href="./#LightGraphs.symmetric_difference-Union{Tuple{T,T}, Tuple{T}} where T&lt;:LightGraphs.AbstractGraph"><code>LightGraphs.symmetric_difference</code></a></li>
+<li><a href="./#LightGraphs.tensor_product-Union{Tuple{G,G}, Tuple{G}} where G&lt;:LightGraphs.AbstractGraph"><code>LightGraphs.tensor_product</code></a></li>
 </ul>
-<p><a id='Base.SparseArrays.blkdiag-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#Base.SparseArrays.blkdiag-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<p><a id='Base.SparseArrays.blkdiag-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph' href='#Base.SparseArrays.blkdiag-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>Base.SparseArrays.blkdiag</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>blkdiag(g, h)
 </code></pre>
 
-<p>Produces a graph with $|V(g)| + |V(h)|$ vertices and $|E(g)| + |E(h)|$ edges.</p>
-<p>Put simply, the vertices and edges from graph <code>h</code> are appended to graph <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L61' class='documenter-source'>source</a><br></p>
-<p><a id='Base.intersect-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#Base.intersect-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<p>Return a graph with <script type="math/tex">|V(g)| + |V(h)|</script> vertices and <script type="math/tex">|E(g)| + |E(h)|</script> edges where the vertices an edges from graph <code>h</code> are appended to graph <code>g</code>.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L65' class='documenter-source'>source</a><br></p>
+<p><a id='Base.intersect-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph' href='#Base.intersect-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>Base.intersect</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>intersect(g, h)
 </code></pre>
 
-<p>Produces a graph with edges that are only in both graph <code>g</code> and graph <code>h</code>.</p>
-<p>Note that this function may produce a graph with 0-degree vertices.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L81-L87' class='documenter-source'>source</a><br></p>
-<p><a id='Base.join-Tuple{LightGraphs.Graph,LightGraphs.Graph}' href='#Base.join-Tuple{LightGraphs.Graph,LightGraphs.Graph}'>#</a>
+<p>Return a graph with edges that are only in both graph <code>g</code> and graph <code>h</code>.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>This function may produce a graph with 0-degree vertices. Preserves the eltype of the input graph.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L87-L95' class='documenter-source'>source</a><br></p>
+<p><a id='Base.join-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph' href='#Base.join-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>Base.join</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>join(g, h)
 </code></pre>
 
-<p>Merges graphs <code>g</code> and <code>h</code> using <code>blkdiag</code> and then adds all the edges between  the vertices in <code>g</code> and those in <code>h</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L163-L168' class='documenter-source'>source</a><br></p>
-<p><a id='Base.reverse!-Tuple{LightGraphs.DiGraph}' href='#Base.reverse!-Tuple{LightGraphs.DiGraph}'>#</a>
-<strong><code>Base.reverse!</code></strong> &mdash; <em>Method</em>.</p>
-<pre><code>reverse!(g::DiGraph)
+<p>Return a graph that combines graphs <code>g</code> and <code>h</code> using <code>blkdiag</code> and then adds all the edges between the vertices in <code>g</code> and those in <code>h</code>.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L181-L190' class='documenter-source'>source</a><br></p>
+<p><a id='Base.reverse' href='#Base.reverse'>#</a>
+<strong><code>Base.reverse</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>reverse(g)
 </code></pre>
 
-<p>In-place reverse (modifies the original graph).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L51-L55' class='documenter-source'>source</a><br></p>
-<p><a id='Base.reverse-Tuple{LightGraphs.DiGraph}' href='#Base.reverse-Tuple{LightGraphs.DiGraph}'>#</a>
-<strong><code>Base.reverse</code></strong> &mdash; <em>Method</em>.</p>
-<pre><code>reverse(g::DiGraph)
+<p>Return a directed graph where all edges are reversed from the original directed graph.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Preserves the eltype of the input graph.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L34-L42' class='documenter-source'>source</a><br></p>
+<p><a id='Base.reverse!' href='#Base.reverse!'>#</a>
+<strong><code>Base.reverse!</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>reverse!(g)
 </code></pre>
 
-<p>Produces a graph where all edges are reversed from the original.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L33-L38' class='documenter-source'>source</a><br></p>
-<p><a id='Base.union-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#Base.union-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<p>In-place reverse of a directed graph (modifies the original graph).</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L54-L58' class='documenter-source'>source</a><br></p>
+<p><a id='Base.union-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph' href='#Base.union-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>Base.union</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>union(g, h)
 </code></pre>
 
-<p>Merges graphs <code>g</code> and <code>h</code> by taking the set union of all vertices and edges.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L139-L143' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.cartesian_product-Tuple{G<:Union{LightGraphs.DiGraph,LightGraphs.Graph},G<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.cartesian_product-Tuple{G<:Union{LightGraphs.DiGraph,LightGraphs.Graph},G<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<p>Return a graph that combines graphs <code>g</code> and <code>h</code> by taking the set union of all vertices and edges.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L152-L161' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.cartesian_product-Union{Tuple{G,G}, Tuple{G}} where G<:LightGraphs.AbstractGraph' href='#LightGraphs.cartesian_product-Union{Tuple{G,G}, Tuple{G}} where G<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>LightGraphs.cartesian_product</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>cartesian_product(g, h)
 </code></pre>
 
-<p>Returns the (cartesian product)[https://en.wikipedia.org/wiki/Tensor_product_of_graphs] of <code>g</code> and <code>h</code></p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L239-L243' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.complement-Tuple{LightGraphs.Graph}' href='#LightGraphs.complement-Tuple{LightGraphs.Graph}'>#</a>
+<p>Return the (cartesian product)[https://en.wikipedia.org/wiki/Tensor_product_of_graphs] of <code>g</code> and <code>h</code>.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L287-L296' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.complement-Tuple{LightGraphs.SimpleGraphs.SimpleGraph}' href='#LightGraphs.complement-Tuple{LightGraphs.SimpleGraphs.SimpleGraph}'>#</a>
 <strong><code>LightGraphs.complement</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>complement(g)
 </code></pre>
 
-<p>Produces the <a href="https://en.wikipedia.org/wiki/Complement_graph">graph complement</a> of a graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L1-L6' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.crosspath-Tuple{Integer,LightGraphs.Graph}' href='#LightGraphs.crosspath-Tuple{Integer,LightGraphs.Graph}'>#</a>
-<strong><code>LightGraphs.crosspath</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return the <a href="https://en.wikipedia.org/wiki/Complement_graph">graph complement</a> of a graph</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Preserves the eltype of the input graph.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L1-L9' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.crosspath' href='#LightGraphs.crosspath'>#</a>
+<strong><code>LightGraphs.crosspath</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>crosspath(len::Integer, g::Graph)
 </code></pre>
 
-<p>Replicate <code>len</code> times <code>h</code> and connect each vertex with its copies in a path</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L180-L184' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.difference-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.difference-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<p>Return a graph that duplicates <code>g</code> <code>len</code> times and connects each vertex with its copies in a path.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L202-L211' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.difference-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph' href='#LightGraphs.difference-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>LightGraphs.difference</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>difference(g, h)
 </code></pre>
 
-<p>Produces a graph with edges in graph <code>g</code> that are not in graph <code>h</code>.</p>
-<p>Note that this function may produce a graph with 0-degree vertices.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L99-L105' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.egonet-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}' href='#LightGraphs.egonet-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}'>#</a>
+<p>Return a graph with edges in graph <code>g</code> that are not in graph <code>h</code>.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Note that this function may produce a graph with 0-degree vertices. Preserves the eltype of the input graph.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L107-L115' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.egonet-Tuple{LightGraphs.AbstractGraph,Integer,Integer}' href='#LightGraphs.egonet-Tuple{LightGraphs.AbstractGraph,Integer,Integer}'>#</a>
 <strong><code>LightGraphs.egonet</code></strong> &mdash; <em>Method</em>.</p>
-<pre><code>egonet(g, v::Int, d::Int; dir=:out)
+<pre><code>egonet(g, v:, d)
 </code></pre>
 
-<p>Returns the subgraph of <code>g</code> induced by the neighbors of <code>v</code> up to distance <code>d</code>. If <code>g</code> is a <code>DiGraph</code> the <code>dir</code> optional argument specifies the edge direction the edge direction with respect to <code>v</code> (i.e. <code>:in</code> or <code>:out</code>) to be considered. This is equivalent to <a href="./#LightGraphs.induced_subgraph-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},AbstractArray{Int64,1}}"><code>induced_subgraph</code></a><code>(g, neighborhood(g, v, d, dir=dir))[1].</code></p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L369-L376' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.induced_subgraph-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},AbstractArray{Int64,1}}' href='#LightGraphs.induced_subgraph-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},AbstractArray{Int64,1}}'>#</a>
+<p>Return the subgraph of <code>g</code> induced by the neighbors of <code>v</code> up to distance <code>d</code>. This is equivalent to <a href="./#LightGraphs.induced_subgraph-Union{Tuple{T,AbstractArray{U,1}}, Tuple{T}, Tuple{U}} where T&lt;:LightGraphs.AbstractGraph where U&lt;:Integer"><code>induced_subgraph</code></a><code>(g, neighborhood(g, v, d, dir=dir))[1].</code></p>
+<p><strong>Optional Arguments</strong></p>
+<ul>
+<li><code>dir=:out</code>: if <code>g</code> is directed, this argument specifies the edge direction</li>
+</ul>
+<p>with respect to <code>v</code> (i.e. <code>:in</code> or <code>:out</code>).</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L433-L443' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.induced_subgraph-Union{Tuple{T,AbstractArray{U,1}}, Tuple{T}, Tuple{U}} where T<:LightGraphs.AbstractGraph where U<:Integer' href='#LightGraphs.induced_subgraph-Union{Tuple{T,AbstractArray{U,1}}, Tuple{T}, Tuple{U}} where T<:LightGraphs.AbstractGraph where U<:Integer'>#</a>
 <strong><code>LightGraphs.induced_subgraph</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>induced_subgraph(g, vlist)
+induced_subgraph(g, elist)
 </code></pre>
 
-<p>Returns the subgraph of <code>g</code> induced by the vertices in  <code>vlist</code>.</p>
+<p>Return the subgraph of <code>g</code> induced by the vertices in  <code>vlist</code> or edges in <code>elist</code> along with a vector mapping the new vertices to the old ones (the  vertex <code>i</code> in the subgraph corresponds to the vertex <code>vmap[i]</code> in <code>g</code>.)</p>
 <p>The returned graph has <code>length(vlist)</code> vertices, with the new vertex <code>i</code> corresponding to the vertex of the original graph in the <code>i</code>-th position of <code>vlist</code>.</p>
-<p>Returns  also a vector <code>vmap</code> mapping the new vertices to the old ones: the  vertex <code>i</code> in the subgraph corresponds to the vertex <code>vmap[i]</code> in <code>g</code>.</p>
-<pre><code>induced_subgraph(g, elist)
+<p><strong>Usage Examples</strong></p>
+<pre><code class="doctestjl">julia&gt; g = CompleteGraph(10)
+
+julia&gt; sg, vmap = induced_subgraph(g, 5:8)
+
+julia&gt; @assert g[5:8] == sg
+
+julia&gt; @assert nv(sg) == 4
+
+julia&gt; @assert ne(sg) == 6
+
+julia&gt; @assert vm[4] == 8
+
+julia&gt; sg, vmap = induced_subgraph(g, [2,8,3,4])
+
+julia&gt; @assert sg == g[[2,8,3,4]]
+
+julia&gt; elist = [Edge(1,2), Edge(3,4), Edge(4,8)]
+
+julia&gt; sg, vmap = induced_subgraph(g, elist)
+
+julia&gt; @assert sg == g[elist]
 </code></pre>
 
-<p>Returns the subgraph of <code>g</code> induced by the edges in <code>elist</code>, along with the associated vector <code>vmap</code> mapping new vertices to the old ones.</p>
-<p><strong>Usage Examples:</strong></p>
-<pre><code class="julia">g = CompleteGraph(10)
-sg, vmap = subgraph(g, 5:8)
-@assert g[5:8] == sg
-@assert nv(sg) == 4
-@assert ne(sg) == 6
-@assert vm[4] == 8
-
-sg, vmap = subgraph(g, [2,8,3,4])
-@asssert sg == g[[2,8,3,4]]
-
-elist = [Edge(1,2), Edge(3,4), Edge(4,8)]
-sg, vmap = subgraph(g, elist)
-@asssert sg == g[elist]
-</code></pre>
-
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L281-L316' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.symmetric_difference-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.symmetric_difference-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L342-L378' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.symmetric_difference-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph' href='#LightGraphs.symmetric_difference-Union{Tuple{T,T}, Tuple{T}} where T<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>LightGraphs.symmetric_difference</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>symmetric_difference(g, h)
 </code></pre>
 
-<p>Produces a graph with edges from graph <code>g</code> that do not exist in graph <code>h</code>, and vice versa.</p>
-<p>Note that this function may produce a graph with 0-degree vertices.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L117-L124' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.tensor_product-Tuple{G<:Union{LightGraphs.DiGraph,LightGraphs.Graph},G<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.tensor_product-Tuple{G<:Union{LightGraphs.DiGraph,LightGraphs.Graph},G<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<p>Return a graph with edges from graph <code>g</code> that do not exist in graph <code>h</code>, and vice versa.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Note that this function may produce a graph with 0-degree vertices. Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L127-L137' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.tensor_product-Union{Tuple{G,G}, Tuple{G}} where G<:LightGraphs.AbstractGraph' href='#LightGraphs.tensor_product-Union{Tuple{G,G}, Tuple{G}} where G<:LightGraphs.AbstractGraph'>#</a>
 <strong><code>LightGraphs.tensor_product</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>tensor_product(g, h)
 </code></pre>
 
-<p>Returns the (tensor product)[https://en.wikipedia.org/wiki/Tensor_product_of_graphs] of <code>g</code> and <code>h</code></p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a0d294b7e1061d11853576b9a40371f01dad4d61/docs/../src/operators.jl#L262-L266' class='documenter-source'>source</a><br></p>
+<p>Return the (tensor product)[https://en.wikipedia.org/wiki/Tensor_product_of_graphs] of <code>g</code> and <code>h</code>.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>Preserves the eltype of the input graph. Will error if the number of vertices in the generated graph exceeds the eltype.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/operators.jl#L316-L325' class='documenter-source'>source</a><br></p>
                 
                   
                 
@@ -612,7 +652,9 @@ sg, vmap = subgraph(g, elist)
       
     </div>
     
-      <script src="../assets/javascripts/application-6b4ff16fa7.js"></script>
+      <script src="../assets/javascripts/application-c35428f87f.js"></script>
+      
+      
       <script>app.initialize({url:{base:".."}})</script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>

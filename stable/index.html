@@ -5,6 +5,7 @@
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
       
@@ -13,7 +14,7 @@
       
         <link rel="shortcut icon" href="./assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.3">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.7.4">
     
     
       
@@ -21,12 +22,12 @@
       
     
     
-      <script src="./assets/javascripts/modernizr-56ade86843.js"></script>
+      <script src="./assets/javascripts/modernizr-1df76c4e58.js"></script>
     
     
-      <link rel="stylesheet" href="./assets/stylesheets/application-e2807e330f.css">
+      <link rel="stylesheet" href="./assets/stylesheets/application-769c285a91.css">
       
-        <link rel="stylesheet" href="./assets/stylesheets/application-f78e5cb881.palette.css">
+        <link rel="stylesheet" href="./assets/stylesheets/application-02c2a4388f.palette.css">
       
     
     
@@ -98,7 +99,7 @@
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="result" data-md-lang-search="">
           <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
             Type to start searching
           </div>
@@ -110,9 +111,9 @@
 </div>
         
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <div class="md-header-nav__source">
-          
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
             
 
 
@@ -132,9 +133,9 @@
     </div>
   </a>
 
-          
+          </div>
         </div>
-      </div>
+      
     </div>
   </nav>
 </header>
@@ -230,13 +231,6 @@
         <li class="md-nav__item">
   <a href="#installation" title="Installation" class="md-nav__link">
     Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage-examples" title="Usage Examples" class="md-nav__link">
-    Usage Examples
   </a>
   
 </li>
@@ -407,6 +401,18 @@
 
 
   <li class="md-nav__item">
+    <a href="degeneracy/" title="Degeneracy" class="md-nav__link">
+      Degeneracy
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="flowcut/" title="Flow and Cut" class="md-nav__link">
       Flow and Cut
     </a>
@@ -515,13 +521,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage-examples" title="Usage Examples" class="md-nav__link">
-    Usage Examples
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#current-functionality" title="Current functionality" class="md-nav__link">
     Current functionality
   </a>
@@ -603,72 +602,17 @@
 <p>Additional functionality may be found in the companion package <a href="https://github.com/JuliaGraphs/LightGraphsExtras.jl">LightGraphsExtras.jl</a>.</p>
 <p><a id='Documentation-1'></a></p>
 <h2 id="documentation">Documentation</h2>
-<p>Full documentation is available at <a href="https://juliagraphs.github.io/LightGraphs.jl/latest">GitHub Pages</a>. Documentation for methods is also available via the Julia REPL help system.</p>
+<p>Full documentation is available at <a href="https://juliagraphs.github.io/LightGraphs.jl/latest">GitHub Pages</a>. Documentation for methods is also available via the Julia REPL help system. Additional tutorials can be found at <a href="https://github.com/JuliaGraphs/JuliaGraphsTutorials">JuliaGraphsTutorials</a>.</p>
 <p><a id='Core-Concepts-1'></a></p>
 <h2 id="core-concepts">Core Concepts</h2>
-<p>A graph <em>G</em> is described by a set of vertices <em>V</em> and edges <em>E</em>: <em>G = {V, E}</em>. <em>V</em> is an integer range <code>1:n</code>; <em>E</em> is represented as forward (and, for directed graphs, backward) adjacency lists indexed by vertices. Edges may also be accessed via an iterator that yields <code>Edge</code> types containing <code>(src::Int, dst::Int)</code> values.</p>
+<p>A graph <em>G</em> is described by a set of vertices <em>V</em> and edges <em>E</em>: <em>G = {V, E}</em>. <em>V</em> is an integer range <code>1:n</code>; <em>E</em> is represented as forward (and, for directed graphs, backward) adjacency lists indexed by vertices. Edges may also be accessed via an iterator that yields <code>Edge</code> types containing <code>(src&lt;:Integer, dst&lt;:Integer)</code> values. Both vertices and edges may be integers of any type, and the smallest type that fits the data is recommended in order to save memory.</p>
 <p><em>LightGraphs.jl</em> provides two graph types: <code>Graph</code> is an undirected graph, and <code>DiGraph</code> is its directed counterpart.</p>
-<p>Graphs are created using <code>Graph()</code> or <code>DiGraph()</code>; there are several options (see below for examples).</p>
-<p>Edges are added to a graph using <code>add_edge!(g, e)</code>. Instead of an edge type integers may be passed denoting the source and destination vertices (e.g., <code>add_edge!(g, 1, 2)</code>).</p>
+<p>Graphs are created using <code>Graph()</code> or <code>DiGraph()</code>; there are several options (see the tutorials for examples).</p>
 <p>Multiple edges between two given vertices are not allowed: an attempt to add an edge that already exists in a graph will result in a silent failure.</p>
-<p>Edges may be removed using <code>rem_edge!(g, e)</code>. Alternately, integers may be passed denoting the source and destination vertices (e.g., <code>rem_edge!(g, 1, 2)</code>). Note that, particularly for very large graphs, edge removal is a (relatively) expensive operation. An attempt to remove an edge that does not exist in the graph will result in an error.</p>
-<p>Use <code>nv(g)</code> and <code>ne(g)</code> to compute the number of vertices and edges respectively.</p>
-<p><code>rem_vertex!(g, v)</code> alters the vertex identifiers. In particular, calling <code>n=nv(g)</code>, it swaps <code>v</code> and <code>n</code> and then removes <code>n</code>.</p>
-<p><code>edges(g)</code> returns an iterator to the edge set. Use <code>collect(edge(set))</code> to fill an array with all edges in the graph.</p>
 <p><a id='Installation-1'></a></p>
 <h2 id="installation">Installation</h2>
 <p>Installation is straightforward:</p>
 <pre><code class="julia">julia&gt; Pkg.add(&quot;LightGraphs&quot;)
-</code></pre>
-
-<p><a id='Usage-Examples-1'></a></p>
-<h2 id="usage-examples">Usage Examples</h2>
-<p>(all examples apply equally to <code>DiGraph</code> unless otherwise noted):</p>
-<pre><code class="julia"># create an empty undirected graph
-g = Graph()
-
-# create a 10-node undirected graph with no edges
-g = Graph(10)
-@assert nv(g) == 10
-
-# create a 10-node undirected graph with 30 randomly-selected edges
-g = Graph(10,30)
-
-# add an edge between vertices 4 and 5
-add_edge!(g, 4, 5)
-
-# remove an edge between vertices 9 and 10
-rem_edge!(g, 9, 10)
-
-# create vertex 11
-add_vertex!(g)
-
-# remove vertex 2
-# attention: this changes the id of vertex nv(g) to 2
-rem_vertex!(g, 2)
-
-# get the neighbors of vertex 4
-neighbors(g, 4)
-
-# iterate over the edges
-m = 0
-for e in edges(g)
-    m += 1
-end
-@assert m == ne(g)
-
-# show distances between vertex 4 and all other vertices
-dijkstra_shortest_paths(g, 4).dists
-
-# as above, but with non-default edge distances
-distmx = zeros(10,10)
-distmx[4,5] = 2.5
-distmx[5,4] = 2.5
-dijkstra_shortest_paths(g, 4, distmx).dists
-
-# graph I/O
-g = loadgraph(&quot;mygraph.jgz&quot;, :lg)
-savegraph(&quot;mygraph.gml&quot;, g, :gml)
 </code></pre>
 
 <p><a id='Current-functionality-1'></a></p>
@@ -692,47 +636,53 @@ savegraph(&quot;mygraph.gml&quot;, g, :gml)
 <li><strong>clique enumeration:</strong> maximal cliques</li>
 <li><strong>linear algebra / spectral graph theory:</strong> adjacency matrix (works as input to <a href="https://github.com/IainNZ/GraphLayout.jl">GraphLayout</a> and <a href="https://github.com/JuliaSparse/Metis.jl">Metis</a>), Laplacian matrix, non-backtracking matrix</li>
 <li><strong>community:</strong> modularity, community detection, core-periphery, clustering coefficients</li>
-<li><strong>persistence formats:</strong> proprietary compressed, <a href="http://en.wikipedia.org/wiki/GraphML">GraphML</a>, <a href="https://en.wikipedia.org/wiki/Graph_Modelling_Language">GML</a>, <a href="http://gexf.net/format">Gexf</a>, <a href="https://en.wikipedia.org/wiki/DOT_(graph_description_language)">DOT</a>, <a href="http://gephi.org/users/supported-graph-formats/pajek-net-format/">Pajek NET</a></li>
-<li><strong>visualization:</strong> integration with <a href="https://github.com/IainNZ/GraphLayout.jl">GraphLayout</a>, <a href="https://github.com/sisl/TikzGraphs.jl">TikzGraphs</a>, <a href="https://github.com/JuliaGraphs/GraphPlot.jl">GraphPlot</a>, <a href="https://github.com/abhijithanilkumar/NetworkViz.jl/">NetworkViz</a></li>
+<li><strong>persistence formats:</strong> LightGraphs natively supports a proprietary compressed format. For other formats, please see the <a href="https://github.com/JuliaGraphs/GraphIO.jl">GraphIO.jl</a> package.</li>
+<li><strong>visualization:</strong> integration with</li>
 </ul>
+<p><a href="https://github.com/JuliaGraphs/GraphPlot.jl">GraphPlot</a>, <a href="https://github.com/JuliaPlots/Plots.jl">Plots</a> via <a href="https://github.com/JuliaPlots/PlotRecipes.jl">PlotRecipes</a>, <a href="https://github.com/IainNZ/GraphLayout.jl">GraphLayout</a>, <a href="https://github.com/sisl/TikzGraphs.jl">TikzGraphs</a>,  <a href="https://github.com/abhijithanilkumar/NetworkViz.jl/">NetworkViz</a></p>
 <p><a id='Core-API-1'></a></p>
 <h2 id="core-api">Core API</h2>
-<p>These functions are defined as the public contract of the LightGraphs.AbstractGraph interface.</p>
+<p>These functions are defined as the public contract of the <code>LightGraphs.AbstractGraph</code> interface.</p>
 <p><a id='Constructing-and-modifying-the-graph-1'></a></p>
 <h3 id="constructing-and-modifying-the-graph">Constructing and modifying the graph</h3>
 <ul>
-<li>add_edge!</li>
-<li>rem_edge!</li>
-<li>add_vertex!</li>
-<li>add_vertices!</li>
-<li>rem_vertex!</li>
+<li><code>Graph</code></li>
+<li><code>DiGraph</code></li>
+<li><code>add_edge!</code></li>
+<li><code>rem_edge!</code></li>
+<li><code>add_vertex!</code>, <code>add_vertices!</code></li>
+<li><code>rem_vertex!</code></li>
+<li><code>zero</code></li>
 </ul>
 <p><a id='Edge/Arc-interface-1'></a></p>
 <h3 id="edgearc-interface">Edge/Arc interface</h3>
 <ul>
-<li>src</li>
-<li>dst</li>
+<li><code>src</code></li>
+<li><code>dst</code></li>
+<li><code>reverse</code></li>
+<li><code>==</code></li>
+<li>Pair / Tuple conversion</li>
 </ul>
 <p><a id='Accessing-state-1'></a></p>
 <h3 id="accessing-state">Accessing state</h3>
 <ul>
-<li>nv::Int</li>
-<li>ne::Int</li>
-<li>vertices (Iterable)</li>
-<li>edges (Iterable)</li>
-<li>neighbors</li>
-<li>in_edges</li>
-<li>out_edges</li>
-<li>has_vertex</li>
-<li>has_edge</li>
-<li>has_self_loops (though this might be a trait or an abstract graph type)</li>
+<li><code>nv</code></li>
+<li><code>ne</code></li>
+<li><code>vertices</code> (Iterable)</li>
+<li><code>edges</code> (Iterable)</li>
+<li><code>neighbors</code>, <code>in_neighbors</code>, <code>out_neighbors</code></li>
+<li><code>has_vertex</code></li>
+<li><code>has_edge</code></li>
+<li><code>has_self_loops</code> (though this might be a trait or an abstract graph type)</li>
+<li><code>is_directed</code> (implemented via traits)</li>
+<li><code>eltype</code> (for edges and graphs)</li>
 </ul>
 <p><a id='Non-Core-APIs-1'></a></p>
 <h3 id="non-core-apis">Non-Core APIs</h3>
 <p>These functions can be constructed from the Core API functions but can be given specialized implementations in order to improve performance.</p>
 <ul>
-<li>adjacency_matrix</li>
-<li>degree</li>
+<li><code>adjacency_matrix</code></li>
+<li><code>degree</code></li>
 </ul>
 <p>This can be computed from neighbors by default <code>degree(g,v) = length(neighbors(g,v))</code> so you don't need to implement this unless your type can compute degree faster than this method.</p>
 <p><a id='Supported-Versions-1'></a></p>
@@ -742,7 +692,8 @@ savegraph(&quot;mygraph.gml&quot;, g, :gml)
 <li>Julia 0.3: LightGraphs v0.3.7 is the last version guaranteed to work with Julia 0.3.</li>
 <li>Julia 0.4: LightGraphs versions in the 0.6 series are designed to work with Julia 0.4.</li>
 <li>Julia 0.5: LightGraphs versions in the 0.7 series are designed to work with Julia 0.5.</li>
-<li>Julia 0.6: Some functionality might not work with prerelease / unstable / nightly versions of Julia. If you run into a problem on 0.6, please file an issue.</li>
+<li>Julia 0.6: LightGraphs versions in the 0.8 and 0.9 series are designed to work with Julia 0.6.</li>
+<li>Later versions: Some functionality might not work with prerelease / unstable / nightly versions of Julia. If you run into a problem, please file an issue.</li>
 </ul>
 <p><a id='Contributing-and-Reporting-Bugs-1'></a></p>
 <h1 id="contributing-and-reporting-bugs">Contributing and Reporting Bugs</h1>
@@ -802,7 +753,9 @@ savegraph(&quot;mygraph.gml&quot;, g, :gml)
       
     </div>
     
-      <script src="./assets/javascripts/application-6b4ff16fa7.js"></script>
+      <script src="./assets/javascripts/application-c35428f87f.js"></script>
+      
+      
       <script>app.initialize({url:{base:"."}})</script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
