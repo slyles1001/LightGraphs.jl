@@ -465,42 +465,42 @@
 </code></pre>
 
 <p>An absract type representing a single edge between two vertices of a graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L5-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L5-L9' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.AbstractGraph' href='#LightGraphs.AbstractGraph'>#</a>
 <strong><code>LightGraphs.AbstractGraph</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>AbstractGraph
 </code></pre>
 
 <p>An abstract type representing a graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L19-L23' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L19-L23' class='documenter-source'>source</a><br></p>
 <p><a id='Base.reverse-Tuple{LightGraphs.AbstractEdge}' href='#Base.reverse-Tuple{LightGraphs.AbstractEdge}'>#</a>
 <strong><code>Base.reverse</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>reverse(e)
 </code></pre>
 
 <p>Create a new edge from <code>e</code> with source and destination vertices reversed.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L52-L56' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L52-L56' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.add_edge!-Tuple{Any,Any}' href='#LightGraphs.add_edge!-Tuple{Any,Any}'>#</a>
 <strong><code>LightGraphs.add_edge!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>add_edge!(g, e)
 </code></pre>
 
 <p>Add a new edge <code>e</code> to <code>g</code>. Return false if add fails (e.g., if vertices are not in the graph, or edge already exists), true otherwise.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L131-L136' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L131-L136' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.add_vertex!-Tuple{Any}' href='#LightGraphs.add_vertex!-Tuple{Any}'>#</a>
 <strong><code>LightGraphs.add_vertex!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>add_vertex!(g)
 </code></pre>
 
 <p>Add a new vertex to the graph <code>g</code>. Return true if the vertex was added successfully, false otherwise.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L123-L128' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L123-L128' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.dst-Tuple{LightGraphs.AbstractEdge}' href='#LightGraphs.dst-Tuple{LightGraphs.AbstractEdge}'>#</a>
 <strong><code>LightGraphs.dst</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>dst(e)
 </code></pre>
 
 <p>Return the destination vertex of edge <code>e</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L42-L46' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L42-L46' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.edges-Tuple{Any}' href='#LightGraphs.edges-Tuple{Any}'>#</a>
 <strong><code>LightGraphs.edges</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>edges(g)
@@ -509,28 +509,28 @@
 <p>Return (an iterator to or collection of) the edges of a graph.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>A returned iterator is valid for one pass over the edges, and is invalidated by changes to <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L105-L113' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L105-L113' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.edgetype-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.edgetype-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.edgetype</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>edgetype(g)
 </code></pre>
 
 <p>Return the type of graph <code>g</code>'s edge</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L65-L69' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L65-L69' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.has_edge-Tuple{Any,Any}' href='#LightGraphs.has_edge-Tuple{Any,Any}'>#</a>
 <strong><code>LightGraphs.has_edge</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>has_edge(g, e)
 </code></pre>
 
 <p>Return true if the graph <code>g</code> has an edge <code>e</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L162-L166' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L162-L166' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.has_vertex-Tuple{Any,Any}' href='#LightGraphs.has_vertex-Tuple{Any,Any}'>#</a>
 <strong><code>LightGraphs.has_vertex</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>has_vertex(g, v)
 </code></pre>
 
 <p>Return true if <code>v</code> is a vertex of <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L155-L159' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L155-L159' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.in_neighbors-Tuple{Any,Any}' href='#LightGraphs.in_neighbors-Tuple{Any,Any}'>#</a>
 <strong><code>LightGraphs.in_neighbors</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>in_neighbors(g, v)
@@ -539,28 +539,28 @@
 <p>Return a list of all neighbors connected to vertex <code>v</code> by an incoming edge.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Returns a reference, not a copy. Do not modify result.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L169-L176' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L169-L176' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.is_directed-Tuple{Any}' href='#LightGraphs.is_directed-Tuple{Any}'>#</a>
 <strong><code>LightGraphs.is_directed</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>is_directed(g)
 </code></pre>
 
 <p>Return true if the graph is a directed graph; false otherwise.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L116-L120' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L116-L120' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.ne-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.ne-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.ne</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>ne(g)
 </code></pre>
 
 <p>Return the number of edges in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L86-L90' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L86-L90' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.nv-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.nv-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.nv</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>nv(g)
 </code></pre>
 
 <p>Return the number of vertices in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L79-L83' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L79-L83' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.out_neighbors-Tuple{Any,Any}' href='#LightGraphs.out_neighbors-Tuple{Any,Any}'>#</a>
 <strong><code>LightGraphs.out_neighbors</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>out_neighbors(g, v)
@@ -569,28 +569,28 @@
 <p>Return a list of all neighbors connected to vertex <code>v</code> by an outgoing edge.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Returns a reference, not a copy. Do not modify result.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L179-L186' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L179-L186' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.rem_edge!-Tuple{Any,Any}' href='#LightGraphs.rem_edge!-Tuple{Any,Any}'>#</a>
 <strong><code>LightGraphs.rem_edge!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>rem_edge!(g, e)
 </code></pre>
 
 <p>Remove the edge <code>e</code> from <code>g</code>. Return false if edge removal fails (e.g., if edge does not exist), true otherwise.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L147-L152' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L147-L152' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.rem_vertex!-Tuple{Any,Any}' href='#LightGraphs.rem_vertex!-Tuple{Any,Any}'>#</a>
 <strong><code>LightGraphs.rem_vertex!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>rem_vertex!(g, v)
 </code></pre>
 
 <p>Remove the vertex <code>v</code> from graph <code>g</code>. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L139-L144' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L139-L144' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.src-Tuple{LightGraphs.AbstractEdge}' href='#LightGraphs.src-Tuple{LightGraphs.AbstractEdge}'>#</a>
 <strong><code>LightGraphs.src</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>src(e)
 </code></pre>
 
 <p>Return the source vertex of edge <code>e</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L35-L39' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L35-L39' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.vertices-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.vertices-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.vertices</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>vertices(g)
@@ -599,14 +599,14 @@
 <p>Return (an iterator to or collection of) the vertices of a graph.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>A returned iterator is valid for one pass over the edges, and is invalidated by changes to <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/interface.jl#L93-L102' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/interface.jl#L93-L102' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.add_vertices!-Tuple{LightGraphs.AbstractGraph,Integer}' href='#LightGraphs.add_vertices!-Tuple{LightGraphs.AbstractGraph,Integer}'>#</a>
 <strong><code>LightGraphs.add_vertices!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>add_vertices!(g, n)
 </code></pre>
 
 <p>Add <code>n</code> new vertices to the graph <code>g</code>. Return <code>true</code> if all vertices were added successfully, <code>false</code> otherwise.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L14-L18' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L14-L18' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.all_neighbors' href='#LightGraphs.all_neighbors'>#</a>
 <strong><code>LightGraphs.all_neighbors</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>all_neighbors(g, v)
@@ -615,7 +615,7 @@
 <p>Return a list of all inbound and outbound neighbors of <code>v</code> in <code>g</code>. For undirected graphs, this is equivalent to both <a href="./#LightGraphs.out_neighbors-Tuple{Any,Any}"><code>out_neighbors</code></a> and <a href="./#LightGraphs.in_neighbors-Tuple{Any,Any}"><code>in_neighbors</code></a>.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Returns a reference, not a copy. Do not modify result.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L140-L148' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L140-L148' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.common_neighbors-Tuple{LightGraphs.AbstractGraph,Integer,Integer}' href='#LightGraphs.common_neighbors-Tuple{LightGraphs.AbstractGraph,Integer,Integer}'>#</a>
 <strong><code>LightGraphs.common_neighbors</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>common_neighbors(g, u, v)
@@ -624,14 +624,14 @@
 <p>Return the neighbors common to vertices <code>u</code> and <code>v</code> in <code>g</code>.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Returns a reference, not a copy. Do not modify result.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L156-L163' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L156-L163' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.degree' href='#LightGraphs.degree'>#</a>
 <strong><code>LightGraphs.degree</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>degree(g[, v])
 </code></pre>
 
 <p>Return a vector corresponding to the number of edges which start or end at each vertex in graph <code>g</code>. If <code>v</code> is specified, only return degrees for vertices in <code>v</code>. For directed graphs, this value equals the incoming plus outgoing edges. For undirected graphs, it equals the connected edges.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L39-L45' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L39-L45' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.degree_histogram' href='#LightGraphs.degree_histogram'>#</a>
 <strong><code>LightGraphs.degree_histogram</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>degree_histogram(g, degfn=degree)
@@ -639,35 +639,35 @@
 
 <p>Return a Dict with values representing the number of vertices that have degree represented by the key.</p>
 <p>Degree function (for example, <code>indegree</code> or <code>outdegree</code>) may be specified by overriding <code>degfn</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L108-L116' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L108-L116' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.density' href='#LightGraphs.density'>#</a>
 <strong><code>LightGraphs.density</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>density(g)
 </code></pre>
 
 <p>Return the density of <code>g</code>. Density is defined as the ratio of the number of actual edges to the number of possible edges (<script type="math/tex">|V|×(|V|-1)</script> for directed graphs and <script type="math/tex">\frac{|V|×(|V|-1)}{2}</script> for undirected graphs).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L181' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L181' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.has_self_loops-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.has_self_loops-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.has_self_loops</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>has_self_loops(g)
 </code></pre>
 
 <p>Return true if <code>g</code> has any self loops.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L167-L171' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L167-L171' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.indegree-Tuple{LightGraphs.AbstractGraph,Integer}' href='#LightGraphs.indegree-Tuple{LightGraphs.AbstractGraph,Integer}'>#</a>
 <strong><code>LightGraphs.indegree</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>indegree(g[, v])
 </code></pre>
 
 <p>Return a vector corresponding to the number of edges which end at each vertex in graph <code>g</code>. If <code>v</code> is specified, only return degrees for vertices in <code>v</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L21-L26' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L21-L26' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.is_ordered-Tuple{LightGraphs.AbstractEdge}' href='#LightGraphs.is_ordered-Tuple{LightGraphs.AbstractEdge}'>#</a>
 <strong><code>LightGraphs.is_ordered</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>is_ordered(e)
 </code></pre>
 
 <p>Return true if the source vertex of edge <code>e</code> is less than or equal to the destination vertex.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L7-L11' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L7-L11' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.neighbors-Tuple{LightGraphs.AbstractGraph,Integer}' href='#LightGraphs.neighbors-Tuple{LightGraphs.AbstractGraph,Integer}'>#</a>
 <strong><code>LightGraphs.neighbors</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>neighbors(g, v)
@@ -676,77 +676,77 @@
 <p>Return a list of all neighbors reachable from vertex <code>v</code> in <code>g</code>. For directed graphs, the default is equivalent to <a href="./#LightGraphs.out_neighbors-Tuple{Any,Any}"><code>out_neighbors</code></a>; use <a href="./#LightGraphs.all_neighbors"><code>all_neighbors</code></a> to list inbound and outbound neighbors.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Returns a reference, not a copy. Do not modify result.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L128-L137' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L128-L137' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.num_self_loops-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.num_self_loops-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.num_self_loops</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>num_self_loops(g)
 </code></pre>
 
 <p>Return the number of self loops in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L174-L178' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L174-L178' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.outdegree-Tuple{LightGraphs.AbstractGraph,Integer}' href='#LightGraphs.outdegree-Tuple{LightGraphs.AbstractGraph,Integer}'>#</a>
 <strong><code>LightGraphs.outdegree</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>outdegree(g[, v])
 </code></pre>
 
 <p>Return a vector corresponding to the number of edges which start at each vertex in graph <code>g</code>. If <code>v</code> is specified, only return degrees for vertices in <code>v</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L30-L35' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L30-L35' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.squash-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.squash-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.squash</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>squash(g)
 </code></pre>
 
 <p>Return a copy of a graph with the smallest practical type that can accommodate all vertices.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L195-L200' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L195-L200' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.weights-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.weights-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.weights</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>weights(g)
 </code></pre>
 
 <p>Return the weights of the edges of a graph <code>g</code> as a matrix. Defaults to <code>DefaultDistance()</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L210-L215' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L210-L215' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.Δ-Tuple{Any}' href='#LightGraphs.Δ-Tuple{Any}'>#</a>
 <strong><code>LightGraphs.Δ</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>Δ(g)
 </code></pre>
 
 <p>Return the maximum <a href="./#LightGraphs.degree"><code>degree</code></a> of vertices in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L79-L83' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L79-L83' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.Δin-Tuple{Any}' href='#LightGraphs.Δin-Tuple{Any}'>#</a>
 <strong><code>LightGraphs.Δin</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>Δin(g)
 </code></pre>
 
 <p>Return the maximum <a href="./#LightGraphs.indegree-Tuple{LightGraphs.AbstractGraph,Integer}"><code>indegree</code></a> of vertices in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L65-L69' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L65-L69' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.Δout-Tuple{Any}' href='#LightGraphs.Δout-Tuple{Any}'>#</a>
 <strong><code>LightGraphs.Δout</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>Δout(g)
 </code></pre>
 
 <p>Return the maximum <a href="./#LightGraphs.outdegree-Tuple{LightGraphs.AbstractGraph,Integer}"><code>outdegree</code></a> of vertices in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L52-L56' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L52-L56' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.δ-Tuple{Any}' href='#LightGraphs.δ-Tuple{Any}'>#</a>
 <strong><code>LightGraphs.δ</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>δ(g)
 </code></pre>
 
 <p>Return the minimum <a href="./#LightGraphs.degree"><code>degree</code></a> of vertices in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L86-L89' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L86-L89' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.δin-Tuple{Any}' href='#LightGraphs.δin-Tuple{Any}'>#</a>
 <strong><code>LightGraphs.δin</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>δin(g)
 </code></pre>
 
 <p>Return the minimum <a href="../ref"><code>indegree</code></a> of vertices in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L72-L76' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L72-L76' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.δout-Tuple{Any}' href='#LightGraphs.δout-Tuple{Any}'>#</a>
 <strong><code>LightGraphs.δout</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>δout(g)
 </code></pre>
 
 <p>Return the minimum <a href="./#LightGraphs.outdegree-Tuple{LightGraphs.AbstractGraph,Integer}"><code>outdegree</code></a> of vertices in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/core.jl#L58-L62' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/core.jl#L58-L62' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.isgraphical-Tuple{Array{Int64,1}}' href='#LightGraphs.isgraphical-Tuple{Array{Int64,1}}'>#</a>
 <strong><code>LightGraphs.isgraphical</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>isgraphical(degs)
@@ -757,7 +757,7 @@
 <pre><code>Time complexity: ``\mathcal{O}(|degs|^2)``
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/connectivity.jl#L313-L321' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/connectivity.jl#L313-L321' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.neighborhood-Tuple{LightGraphs.AbstractGraph,Integer,Integer}' href='#LightGraphs.neighborhood-Tuple{LightGraphs.AbstractGraph,Integer,Integer}'>#</a>
 <strong><code>LightGraphs.neighborhood</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>neighborhood(g, v, d)
@@ -769,7 +769,7 @@
 <li><code>dir=:out</code>: If <code>g</code> is directed, this argument specifies the edge direction</li>
 </ul>
 <p>with respect to <code>v</code> of the edges to be considered. Possible values: <code>:in</code> or <code>:out</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/821563cf704810dc5aff6b624d800b37ddb3b6d6/docs/../src/connectivity.jl#L293-L302' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/38b44302b741f8772985ce7c438a619da00cae2e/docs/../src/connectivity.jl#L293-L302' class='documenter-source'>source</a><br></p>
                 
                   
                 
