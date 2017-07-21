@@ -1089,11 +1089,51 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "degeneracy.html#LightGraphs.core_number-Tuple{LightGraphs.AbstractGraph}",
+    "page": "Degeneracy",
+    "title": "LightGraphs.core_number",
+    "category": "Method",
+    "text": "core_number(g)\n\nReturn the core number for each vertex in graph g.\n\nA k-core is a maximal subgraph that contains vertices of degree k or more. The core number of a vertex is the largest value k of a k-core containing that vertex.\n\nImplementation Notes\n\nNot implemented for graphs with self loops.\n\nReferences\n\nAn O(m) Algorithm for Cores Decomposition of Networks,   Vladimir Batagelj and Matjaz Zaversnik, 2003.   http://arxiv.org/abs/cs.DS/0310049\n\n\n\n"
+},
+
+{
+    "location": "degeneracy.html#LightGraphs.k_core",
+    "page": "Degeneracy",
+    "title": "LightGraphs.k_core",
+    "category": "Function",
+    "text": "k_core(g[, k]; corenum=core_number(g))\n\nReturn a vector of vertices in the k-core of graph g. If k is not specified, return the core with the largest degree.\n\nA k-core is a maximal subgraph that contains vertices of degree k or more.\n\nImplementation Notes\n\nNot implemented for graphs with self loops.\n\nReferences\n\nAn O(m) Algorithm for Cores Decomposition of Networks,   Vladimir Batagelj and Matjaz Zaversnik, 2003.   http://arxiv.org/abs/cs.DS/0310049\n\n\n\n"
+},
+
+{
+    "location": "degeneracy.html#LightGraphs.k_corona-Tuple{LightGraphs.AbstractGraph,Any}",
+    "page": "Degeneracy",
+    "title": "LightGraphs.k_corona",
+    "category": "Method",
+    "text": "k_corona(g, k; corenum=core_number(g))\n\nReturn a vector of vertices in the k-corona of g. \n\nThe k-corona is the subgraph of vertices in the k-core which have exactly k neighbors in the k-core.\n\nImplementation Notes\n\nNot implemented for graphs with parallel edges or self loops.\n\nReferences\n\nk-core (bootstrap) percolation on complex networks:  Critical phenomena and nonlocal effects,  A. V. Goltsev, S. N. Dorogovtsev, and J. F. F. Mendes,  Phys. Rev. E 73, 056101 (2006)  http://link.aps.org/doi/10.1103/PhysRevE.73.056101\n\n\n\n"
+},
+
+{
+    "location": "degeneracy.html#LightGraphs.k_crust",
+    "page": "Degeneracy",
+    "title": "LightGraphs.k_crust",
+    "category": "Function",
+    "text": "k_crust(g[, k]; corenum=core_number(g))\n\nReturn a vector of vertices in the k-crust of g.  If k is not specified, return the crust of the core with the largest degree.\n\nThe k-crust is the graph g with the k-core removed.\n\nImplementation Notes\n\nThis definition of k-crust is different than the definition in References. The k-crust in References is equivalent to the k+1 crust of this algorithm.\n\nNot implemented for graphs with self loops.\n\nReferences\n\nA model of Internet topology using k-shell decomposition  Shai Carmi, Shlomo Havlin, Scott Kirkpatrick, Yuval Shavitt,  and Eran Shir, PNAS  July 3, 2007   vol. 104  no. 27  11150-11154  http://www.pnas.org/content/104/27/11150.full\n\n\n\n"
+},
+
+{
+    "location": "degeneracy.html#LightGraphs.k_shell",
+    "page": "Degeneracy",
+    "title": "LightGraphs.k_shell",
+    "category": "Function",
+    "text": "k_shell(g[, k]; corenum=core_number(g))\n\nReturn a vector of vertices in the k-shell of g. If k is not specified, return the shell of the core with the largest degree.\n\nThe k-shell is the subgraph of vertices in the k-core but not in the (k+1)-core. This is similar to k_corona but in that case only neighbors in the k-core are considered.\n\nImplementation Notes\n\nNot implemented for graphs with parallel edges or self loops.\n\nReferences\n\nA model of Internet topology using k-shell decomposition  Shai Carmi, Shlomo Havlin, Scott Kirkpatrick, Yuval Shavitt,  and Eran Shir, PNAS  July 3, 2007   vol. 104  no. 27  11150-11154  http://www.pnas.org/content/104/27/11150.full\n\n\n\n"
+},
+
+{
     "location": "degeneracy.html#Graph-Decomposition-1",
     "page": "Degeneracy",
     "title": "Graph Decomposition",
     "category": "section",
-    "text": "LightGraphs.jl provides the following decomposition functions:Order = [:type, :function]\nPages   = [\"decomposition.md\"]Modules = [LightGraphs]\nPages   = [\"decomposition.jl\"]\nPrivate = false"
+    "text": "LightGraphs.jl provides the following graph degeneracy functions:Order = [:type, :function]\nPages   = [\"degeneracy.md\"]Modules = [LightGraphs]\nPages   = [\"degeneracy.jl\"]\nPrivate = false"
 },
 
 {
