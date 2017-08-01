@@ -117,7 +117,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Functions",
     "title": "LightGraphs.AbstractEdge",
     "category": "Type",
-    "text": "AbstractEdge\n\nAn absract type representing a single edge between two vertices of a graph.\n\n\n\n"
+    "text": "AbstractEdge\n\nAn abstract type representing a single edge between two vertices of a graph.\n\n\n\n"
 },
 
 {
