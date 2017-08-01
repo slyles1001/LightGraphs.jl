@@ -541,7 +541,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Operators",
     "title": "LightGraphs.egonet",
     "category": "Method",
-    "text": "egonet(g, v:, d)\n\nReturn the subgraph of g induced by the neighbors of v up to distance d. This is equivalent to induced_subgraph(g, neighborhood(g, v, d, dir=dir))[1].\n\nOptional Arguments\n\ndir=:out: if g is directed, this argument specifies the edge direction\n\nwith respect to v (i.e. :in or :out).\n\n\n\n"
+    "text": "egonet(g, v, d)\n\nReturn the subgraph of g induced by the neighbors of v up to distance d. This is equivalent to induced_subgraph(g, neighborhood(g, v, d, dir=dir))[1].\n\nOptional Arguments\n\ndir=:out: if g is directed, this argument specifies the edge direction\n\nwith respect to v (i.e. :in or :out).\n\n\n\n"
 },
 
 {
