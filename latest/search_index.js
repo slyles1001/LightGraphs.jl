@@ -613,7 +613,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.bfs_tree",
     "category": "Function",
-    "text": "bfs_tree(g, s)\n\nProvide a breadth-first traversal of the graph g starting with source vertex s, and return a directed acyclic graph of vertices in the order they were discovered.\n\nImplementation Notes\n\nThis function is a high level wrapper around bfs_tree!; use that function for more performance.\n\n\n\nbfs_tree(LevelSynchronousBFS(), g, s, nv)\n\nProvide a parallel breadth-first traversal of the graph g starting with source vertex s, and return a directed acyclic graph of vertices in the order they were discovered using a frontier based parallel approach.\n\nImplementation Notes\n\nThis function uses @threads for parallelism which depends on the JULIA_NUM_THREADS environment variable to decide the number of threads to use. Refer @threads documentation for more details. This function is a high level wrapper around bfs_tree!; use that function for more performance.\n\n\n\n"
+    "text": "bfs_tree(g, s[; dir=:out])\n\nProvide a breadth-first traversal of the graph g starting with source vertex s, and return a directed acyclic graph of vertices in the order they were discovered. If dir is specified, use the corresponding edge direction (:in and :out are acceptable values).\n\n\n\nbfs_tree(LevelSynchronousBFS(), g, s, nv)\n\nProvide a parallel breadth-first traversal of the graph g starting with source vertex s, and return a directed acyclic graph of vertices in the order they were discovered using a frontier based parallel approach.\n\nImplementation Notes\n\nThis function uses @threads for parallelism which depends on the JULIA_NUM_THREADS environment variable to decide the number of threads to use. Refer @threads documentation for more details. This function is a high level wrapper around bfs_tree!; use that function for more performance.\n\n\n\n"
 },
 
 {
@@ -933,7 +933,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.adjacency_matrix",
     "category": "Function",
-    "text": "adjacency_matrix(g, dir=:out, T=Int)\n\nReturn a sparse adjacency matrix for a graph, indexed by [u, v] vertices. Non-zero values indicate an edge between u and v. Users may specify a direction (:in, :out, or :both are currently supported; :out is default for both directed and undirected graphs) and a data type for the matrix (defaults to Int).\n\nImplementation Notes\n\nThis function is optimized for speed and directly manipulates CSC sparse matrix fields.\n\n\n\n"
+    "text": "adjacency_matrix(g[, T=Int; dir=:out])\n\nReturn a sparse adjacency matrix for a graph, indexed by [u, v] vertices. Non-zero values indicate an edge between u and v. Users may override the default data type (Int) and specify an optional direction.\n\nOptional Arguments\n\ndir=:out: :in, :out, or :both are currently supported.\n\nImplementation Notes\n\nThis function is optimized for speed and directly manipulates CSC sparse matrix fields.\n\n\n\n"
 },
 
 {
@@ -941,7 +941,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.adjacency_spectrum",
     "category": "Function",
-    "text": "Return the eigenvalues of the adjacency matrix for a graph g, indexed by vertex. Default values for dir and T are the same as those in adjacency_matrix.\n\nPerformance\n\nConverts the matrix to dense with nv^2 memory usage.\n\nImplementation Notes\n\nUse eigs(adjacency_matrix(g);  kwargs...) to compute some of the eigenvalues/eigenvectors.\n\n\n\n"
+    "text": "Return the eigenvalues of the adjacency matrix for a graph g, indexed by vertex. Default values for T are the same as those in adjacency_matrix.\n\nOptional Arguments\n\ndir=:unspec: Options for dir are the same as those in laplacian_matrix.\n\nPerformance\n\nConverts the matrix to dense with nv^2 memory usage.\n\nImplementation Notes\n\nUse eigs(adjacency_matrix(g);  kwargs...) to compute some of the eigenvalues/eigenvectors.\n\n\n\n"
 },
 
 {
@@ -949,7 +949,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.incidence_matrix",
     "category": "Function",
-    "text": "incidence_matrix(g, T=Int)\n\nReturn a sparse node-arc incidence matrix for a graph, indexed by [v, i], where i is in 1:ne(g), indexing an edge e. For directed graphs, a value of -1 indicates that src(e) == v, while a value of 1 indicates that dst(e) == v. Otherwise, the value is 0. For undirected graphs, both entries are 1 by default (this behavior can be overridden by the oriented optional argument).\n\nOptional Arguments\n\noriented=false: If true, for an undirected graph g, the matrix will\n\ncontain arbitrary non-zero values representing connectivity between v and i.\n\n\n\n"
+    "text": "incidence_matrix(g[, T=Int; oriented=false])\n\nReturn a sparse node-arc incidence matrix for a graph, indexed by [v, i], where i is in 1:ne(g), indexing an edge e. For directed graphs, a value of -1 indicates that src(e) == v, while a value of 1 indicates that dst(e) == v. Otherwise, the value is 0. For undirected graphs, both entries are 1 by default (this behavior can be overridden by the oriented optional argument).\n\nIf oriented (default false) is true, for an undirected graph g, the matrix will contain arbitrary non-zero values representing connectivity between v and i.\n\n\n\n"
 },
 
 {
@@ -957,7 +957,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.laplacian_matrix",
     "category": "Function",
-    "text": "laplacian_matrix(g, dir=:unspec, T=Int)\n\nReturn a sparse Laplacian matrix for a graph g, indexed by [u, v] vertices. For undirected graphs, dir defaults to :out; for directed graphs, dir defaults to :both. T defaults to Int for both graph types.\n\n\n\n"
+    "text": "laplacian_matrix(g[, T=Int; dir=:unspec])\n\nReturn a sparse Laplacian matrix for a graph g, indexed by [u, v] vertices. T defaults to Int for both graph types.\n\nOptional Arguments\n\ndir=:unspec: :unspec, :both, :in, and:outare currently supported. For undirected graphs,dirdefaults to:out; for directed graphs,dirdefaults to:both`. \n\n\n\n"
 },
 
 {
@@ -965,7 +965,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.laplacian_spectrum",
     "category": "Function",
-    "text": "laplacian_spectrum(g, dir=:unspec, T=Int)\n\nReturn the eigenvalues of the Laplacian matrix for a graph g, indexed by vertex. Default values for dir and T are the same as those in laplacian_matrix.\n\nPerformance\n\nConverts the matrix to dense with nv^2 memory usage.\n\nImplementation Notes\n\nUse eigs(laplacian_matrix(g);  kwargs...) to compute some of the eigenvalues/eigenvectors.\n\n\n\n"
+    "text": "laplacian_spectrum(g[, T=Int; dir=:unspec])\n\nReturn the eigenvalues of the Laplacian matrix for a graph g, indexed by vertex. Default values for T are the same as those in laplacian_matrix.\n\nOptional Arguments\n\ndir=:unspec: Options for dir are the same as those in laplacian_matrix.\n\nPerformance\n\nConverts the matrix to dense with nv^2 memory usage.\n\nImplementation Notes\n\nUse eigs(laplacian_matrix(g);  kwargs...) to compute some of the eigenvalues/eigenvectors.\n\n\n\n"
 },
 
 {
