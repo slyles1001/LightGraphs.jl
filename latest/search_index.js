@@ -93,7 +93,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Getting Started",
     "title": "Supported Versions",
     "category": "section",
-    "text": "LightGraphs master is designed to work with the latest stable version of Julia.\nJulia 0.3: LightGraphs v0.3.7 is the last version guaranteed to work with Julia 0.3.\nJulia 0.4: LightGraphs versions in the 0.6 series are designed to work with Julia 0.4.\nJulia 0.5: LightGraphs versions in the 0.7 series are designed to work with Julia 0.5.\nJulia 0.6: LightGraphs versions in the 0.8 and 0.9 series are designed to work with Julia 0.6.\nLater versions: Some functionality might not work with prerelease / unstable / nightly versions of Julia. If you run into a problem, please file an issue."
+    "text": "LightGraphs master is designed to work with the latest stable version of Julia.\nJulia 0.3: LightGraphs v0.3.7 is the last version guaranteed to work with Julia 0.3.\nJulia 0.4: LightGraphs versions in the 0.6 series are designed to work with Julia 0.4.\nJulia 0.5: LightGraphs versions in the 0.7 series are designed to work with Julia 0.5.\nJulia 0.6: LightGraphs versions in the 0.8, 0.9, and 0.10 series are designed to work with Julia 0.6.\nLater versions: Some functionality might not work with prerelease / unstable / nightly versions of Julia. If you run into a problem, please file an issue."
 },
 
 {
