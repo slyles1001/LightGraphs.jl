@@ -1597,7 +1597,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Reading / Writing Graphs",
     "title": "LightGraphs.loadgraphs",
     "category": "Method",
-    "text": "loadgraphs(file, format=LGFormat)\n\nLoad multiple graphs from file in the format format. Return a dictionary mapping graph name to graph.\n\nImplementation Notes\n\nFor unnamed graphs the default name \"graph\" will be used. This default may change in the future.\n\n\n\n"
+    "text": "loadgraphs(file, format=LGFormat())\n\nLoad multiple graphs from file in the format format. Return a dictionary mapping graph name to graph.\n\nImplementation Notes\n\nFor unnamed graphs the default name \"graph\" will be used. This default may change in the future.\n\n\n\n"
 },
 
 {
