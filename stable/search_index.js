@@ -817,7 +817,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "distance.html#LightGraphs.eccentricity-Union{Tuple{LightGraphs.AbstractGraph,Integer,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,Integer}, Tuple{T}} where T",
+    "location": "distance.html#LightGraphs.eccentricity-Union{Tuple{LightGraphs.AbstractGraph,Integer,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,Integer}, Tuple{T}} where T<:Real",
     "page": "Distance",
     "title": "LightGraphs.eccentricity",
     "category": "Method",
@@ -869,7 +869,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Centrality Measures",
     "title": "LightGraphs.betweenness_centrality",
     "category": "Function",
-    "text": "betweenness_centrality(g[, vs])\nbetweenness_centrality(g, k)\nparallel_betweenness_centrality(g[, vs])\nparallel_betweenness_centrality(g, k)\n\nCalculate the betweenness centrality of a graph g across all vertices, a specified subset of vertices vs, or a random subset of k vertices. Return a vector representing the centrality calculated for each node in g.\n\nOptional Arguments\n\nnormalize=true: If true, normalize the betweenness values by the\n\ntotal number of possible distinct paths between all pairsin the graphs. For an undirected graph, this number is frac(V-1)(V-2)2 and for a directed graph, (V-1)(V-2).\n\nendpoints=false: If true, include endpoints in the shortest path count.\n\nBetweenness centrality is defined as: bc(v) = frac1mathcalN sum_s neq t neq v fracsigma_st(v)sigma_st.\n\nReferences\n\nBrandes 2001 & Brandes 2008\n\n\n\n"
+    "text": "betweenness_centrality(g[, vs])\nbetweenness_centrality(g, k)\nparallel_betweenness_centrality(g[, vs])\nparallel_betweenness_centrality(g, k)\n\nCalculate the betweenness centrality of a graph g across all vertices, a specified subset of vertices vs, or a random subset of k vertices. Return a vector representing the centrality calculated for each node in g.\n\nOptional Arguments\n\nnormalize=true: If true, normalize the betweenness values by the\n\ntotal number of possible distinct paths between all pairs in the graphs. For an undirected graph, this number is frac(V-1)(V-2)2 and for a directed graph, (V-1)(V-2).\n\nendpoints=false: If true, include endpoints in the shortest path count.\n\nBetweenness centrality is defined as: bc(v) = frac1mathcalN sum_s neq t neq v fracsigma_st(v)sigma_st.\n\nReferences\n\nBrandes 2001 & Brandes 2008\n\n\n\n"
 },
 
 {
@@ -913,11 +913,27 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "centrality.html#LightGraphs.stress_centrality",
+    "page": "Centrality Measures",
+    "title": "LightGraphs.stress_centrality",
+    "category": "Function",
+    "text": "stress_centrality(g[, vs])\nstress_centrality(g, k)\nparallel_stress_centrality(g[, vs])\nparallel_stress_centrality(g, k)\n\nCalculate the stress centrality of a graph g across all vertices, a specified subset of vertices vs, or a random subset of k vertices. Return a vector representing the centrality calculated for each node in g.\n\nThe stress centrality of a vertex n is defined as the number of shortest paths passing through n.\n\nReferences\n\nBarabási, A.L., Oltvai, Z.N.: Network biology: understanding the cell's functional organization. Nat Rev Genet 5 (2004) 101-113\nShimbel, A.: Structural parameters of communication networks. Bull Math Biophys 15 (1953) 501-507.\n\n\n\n"
+},
+
+{
+    "location": "centrality.html#LightGraphs.radiality_centrality-Tuple{LightGraphs.AbstractGraph}",
+    "page": "Centrality Measures",
+    "title": "LightGraphs.radiality_centrality",
+    "category": "Method",
+    "text": "radiality_centrality(g)\nparallel_radiality_centrality(g)\n\nCalculate the radiality centrality of a graph g across all vertices. Return a vector representing the centrality calculated for each node in g.\n\nThe radiality centrality R_u of a vertex u is defined as R_u = fracD_g + 1 - fracsum_vVd_uvV-1D_g\n\nwhere D_g is the diameter of the graph and d_uv is the  length of the shortest path from u to v.\n\nReferences\n\nBrandes, U.: A faster algorithm for betweenness centrality. J Math Sociol 25 (2001) 163-177\n\n\n\n"
+},
+
+{
     "location": "centrality.html#Centrality-Measures-1",
     "page": "Centrality Measures",
     "title": "Centrality Measures",
     "category": "section",
-    "text": "Centrality measures describe the importance of a vertex to the rest of the graph using some set of criteria. Centrality measures implemented in LightGraphs.jl include the following:Order = [:type, :function]\nPages   = [\"centrality.md\"]Modules = [LightGraphs]\nPages   = [\n    \"centrality/betweenness.jl\",\n    \"centrality/closeness.jl\",\n    \"centrality/degree.jl\",\n    \"centrality/eigenvector.jl\",\n    \"centrality/katz.jl\",\n    \"centrality/pagerank.jl\"\n]\nPrivate = false"
+    "text": "Centrality measures describe the importance of a vertex to the rest of the graph using some set of criteria. Centrality measures implemented in LightGraphs.jl include the following:Pages   = [\"centrality.md\"]Modules = [LightGraphs]\nPages   = [\n    \"centrality/betweenness.jl\",\n    \"centrality/closeness.jl\",\n    \"centrality/degree.jl\",\n    \"centrality/eigenvector.jl\",\n    \"centrality/katz.jl\",\n    \"centrality/pagerank.jl\",\n    \"centrality/stress.jl\",\n    \"centrality/radiality.jl\"\n]\nPrivate = false"
 },
 
 {
