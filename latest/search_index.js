@@ -121,6 +121,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "basicmeasures.html#LightGraphs.AbstractEdgeIter",
+    "page": "Basic Functions",
+    "title": "LightGraphs.AbstractEdgeIter",
+    "category": "Type",
+    "text": "AbstractEdgeIter\n\nAn abstract type representing an edge iterator.\n\n\n\n"
+},
+
+{
     "location": "basicmeasures.html#LightGraphs.AbstractGraph",
     "page": "Basic Functions",
     "title": "LightGraphs.AbstractGraph",
