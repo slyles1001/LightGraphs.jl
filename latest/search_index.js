@@ -953,54 +953,6 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "linalg.html#LightGraphs.adjacency_matrix",
-    "page": "Linear Algebra",
-    "title": "LightGraphs.adjacency_matrix",
-    "category": "Function",
-    "text": "adjacency_matrix(g[, T=Int; dir=:out])\n\nReturn a sparse adjacency matrix for a graph, indexed by [u, v] vertices. Non-zero values indicate an edge between u and v. Users may override the default data type (Int) and specify an optional direction.\n\nOptional Arguments\n\ndir=:out: :in, :out, or :both are currently supported.\n\nImplementation Notes\n\nThis function is optimized for speed and directly manipulates CSC sparse matrix fields.\n\n\n\n"
-},
-
-{
-    "location": "linalg.html#LightGraphs.adjacency_spectrum",
-    "page": "Linear Algebra",
-    "title": "LightGraphs.adjacency_spectrum",
-    "category": "Function",
-    "text": "Return the eigenvalues of the adjacency matrix for a graph g, indexed by vertex. Default values for T are the same as those in adjacency_matrix.\n\nOptional Arguments\n\ndir=:unspec: Options for dir are the same as those in laplacian_matrix.\n\nPerformance\n\nConverts the matrix to dense with nv^2 memory usage.\n\nImplementation Notes\n\nUse eigs(adjacency_matrix(g);  kwargs...) to compute some of the eigenvalues/eigenvectors.\n\n\n\n"
-},
-
-{
-    "location": "linalg.html#LightGraphs.incidence_matrix",
-    "page": "Linear Algebra",
-    "title": "LightGraphs.incidence_matrix",
-    "category": "Function",
-    "text": "incidence_matrix(g[, T=Int; oriented=false])\n\nReturn a sparse node-arc incidence matrix for a graph, indexed by [v, i], where i is in 1:ne(g), indexing an edge e. For directed graphs, a value of -1 indicates that src(e) == v, while a value of 1 indicates that dst(e) == v. Otherwise, the value is 0. For undirected graphs, both entries are 1 by default (this behavior can be overridden by the oriented optional argument).\n\nIf oriented (default false) is true, for an undirected graph g, the matrix will contain arbitrary non-zero values representing connectivity between v and i.\n\n\n\n"
-},
-
-{
-    "location": "linalg.html#LightGraphs.laplacian_matrix",
-    "page": "Linear Algebra",
-    "title": "LightGraphs.laplacian_matrix",
-    "category": "Function",
-    "text": "laplacian_matrix(g[, T=Int; dir=:unspec])\n\nReturn a sparse Laplacian matrix for a graph g, indexed by [u, v] vertices. T defaults to Int for both graph types.\n\nOptional Arguments\n\ndir=:unspec: :unspec, :both, :in, and:outare currently supported. For undirected graphs,dirdefaults to:out; for directed graphs,dirdefaults to:both`. \n\n\n\n"
-},
-
-{
-    "location": "linalg.html#LightGraphs.laplacian_spectrum",
-    "page": "Linear Algebra",
-    "title": "LightGraphs.laplacian_spectrum",
-    "category": "Function",
-    "text": "laplacian_spectrum(g[, T=Int; dir=:unspec])\n\nReturn the eigenvalues of the Laplacian matrix for a graph g, indexed by vertex. Default values for T are the same as those in laplacian_matrix.\n\nOptional Arguments\n\ndir=:unspec: Options for dir are the same as those in laplacian_matrix.\n\nPerformance\n\nConverts the matrix to dense with nv^2 memory usage.\n\nImplementation Notes\n\nUse eigs(laplacian_matrix(g);  kwargs...) to compute some of the eigenvalues/eigenvectors.\n\n\n\n"
-},
-
-{
-    "location": "linalg.html#LightGraphs.spectral_distance",
-    "page": "Linear Algebra",
-    "title": "LightGraphs.spectral_distance",
-    "category": "Function",
-    "text": "spectral_distance(G₁, G₂ [, k])\n\nCompute the spectral distance between undirected n-vertex graphs G₁ and G₂ using the top k greatest eigenvalues. If k is ommitted, uses full spectrum.\n\nReferences\n\nJOVANOVIC, I.; STANIC, Z., 2014. Spectral Distances of Graphs Based on their Different Matrix Representations\n\n\n\n"
-},
-
-{
     "location": "linalg.html#Linear-Algebra-1",
     "page": "Linear Algebra",
     "title": "Linear Algebra",
