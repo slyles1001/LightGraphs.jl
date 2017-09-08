@@ -173,7 +173,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Functions",
     "title": "LightGraphs.edges",
     "category": "Method",
-    "text": "edges(g)\n\nReturn (an iterator to or collection of) the edges of a graph.\n\nImplementation Notes\n\nA returned iterator is valid for one pass over the edges, and is invalidated by changes to g.\n\n\n\n"
+    "text": "edges(g)\n\nReturn (an iterator to or collection of) the edges of a graph. For AbstractSimpleGraphs it returns a SimpleEdgeIter.\n\nImplementation Notes\n\nA returned iterator is valid for one pass over the edges, and is invalidated by changes to g.\n\n\n\n"
 },
 
 {
