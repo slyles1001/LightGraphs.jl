@@ -173,7 +173,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Functions",
     "title": "LightGraphs.edges",
     "category": "Method",
-    "text": "edges(g)\n\nReturn (an iterator to or collection of) the edges of a graph. For AbstractSimpleGraphs it returns a SimpleEdgeIter.\n\nImplementation Notes\n\nA returned iterator is valid for one pass over the edges, and is invalidated by changes to g.\n\n\n\n"
+    "text": "edges(g)\n\nReturn (an iterator to or collection of) the edges of a graph. For AbstractSimpleGraphs it returns a SimpleEdgeIter. The expressions e in edges(g) and e ∈ edges(ga) evaluate as calls to has_edge.\n\nImplementation Notes\n\nA returned iterator is valid for one pass over the edges, and is invalidated by changes to g.\n\n\n\n"
 },
 
 {
@@ -189,7 +189,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Basic Functions",
     "title": "LightGraphs.has_edge",
     "category": "Method",
-    "text": "has_edge(g, e)\n\nReturn true if the graph g has an edge e.\n\n\n\n"
+    "text": "has_edge(g, e)\ne ∈ edges(g)\n\nReturn true if the graph g has an edge e.  The expressions e in edges(g) and e ∈ edges(ga) evaluate as calls to has_edge, c.f. edges.\n\n\n\n"
 },
 
 {
