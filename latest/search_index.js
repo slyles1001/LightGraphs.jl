@@ -113,27 +113,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.AbstractEdge",
-    "page": "Basic Functions",
-    "title": "LightGraphs.AbstractEdge",
-    "category": "Type",
-    "text": "AbstractEdge\n\nAn abstract type representing a single edge between two vertices of a graph.\n\n\n\n"
-},
-
-{
     "location": "basicmeasures.html#LightGraphs.AbstractEdgeIter",
     "page": "Basic Functions",
     "title": "LightGraphs.AbstractEdgeIter",
     "category": "Type",
     "text": "AbstractEdgeIter\n\nAn abstract type representing an edge iterator.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.AbstractGraph",
-    "page": "Basic Functions",
-    "title": "LightGraphs.AbstractGraph",
-    "category": "Type",
-    "text": "AbstractGraph\n\nAn abstract type representing a graph.\n\n\n\n"
 },
 
 {
@@ -305,10 +289,10 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.degree_histogram",
+    "location": "basicmeasures.html#LightGraphs.degree_histogram-Union{Tuple{LightGraphs.AbstractGraph{T},Any}, Tuple{LightGraphs.AbstractGraph{T}}, Tuple{T}} where T",
     "page": "Basic Functions",
     "title": "LightGraphs.degree_histogram",
-    "category": "Function",
+    "category": "Method",
     "text": "degree_histogram(g, degfn=degree)\n\nReturn a Dict with values representing the number of vertices that have degree represented by the key.\n\nDegree function (for example, indegree or outdegree) may be specified by overriding degfn.\n\n\n\n"
 },
 
@@ -561,7 +545,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "operators.html#LightGraphs.merge_vertices!-Tuple{LightGraphs.SimpleGraphs.SimpleGraph,Array{T,1} where T<:Integer}",
+    "location": "operators.html#LightGraphs.merge_vertices!-Union{Tuple{LightGraphs.SimpleGraphs.SimpleGraph{T},Array{U,1} where U<:Integer}, Tuple{T}} where T",
     "page": "Operators",
     "title": "LightGraphs.merge_vertices!",
     "category": "Method",
@@ -1033,10 +1017,10 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "community.html#LightGraphs.label_propagation",
+    "location": "community.html#LightGraphs.label_propagation-Union{Tuple{LightGraphs.AbstractGraph{T},Any}, Tuple{LightGraphs.AbstractGraph{T}}, Tuple{T}} where T",
     "page": "Community Structures",
     "title": "LightGraphs.label_propagation",
-    "category": "Function",
+    "category": "Method",
     "text": "label_propagation(g, maxiter=1000)\n\nCommunity detection using the label propagation algorithm. Return two vectors: the first is the label number assigned to each node, and the second is the convergence history for each node. Will return after maxiter iterations if convergence has not completed.\n\nReferences\n\nRaghavan et al.\n\n\n\n"
 },
 
@@ -1065,7 +1049,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "degeneracy.html#LightGraphs.core_number-Tuple{LightGraphs.AbstractGraph}",
+    "location": "degeneracy.html#LightGraphs.core_number-Union{Tuple{LightGraphs.AbstractGraph{T}}, Tuple{T}} where T",
     "page": "Degeneracy",
     "title": "LightGraphs.core_number",
     "category": "Method",
@@ -1177,7 +1161,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "flowcut.html#LightGraphs.multiroute_flow-Union{Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2} where T}, Tuple{LightGraphs.AbstractGraph,Integer,Integer}, Tuple{R}} where R<:Real",
+    "location": "flowcut.html#LightGraphs.multiroute_flow-Union{Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,Integer,Integer}, Tuple{R}, Tuple{T}} where T where R<:Real",
     "page": "Flow and Cut",
     "title": "LightGraphs.multiroute_flow",
     "category": "Method",
