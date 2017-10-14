@@ -113,11 +113,27 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "basicmeasures.html#LightGraphs.AbstractEdge",
+    "page": "Basic Functions",
+    "title": "LightGraphs.AbstractEdge",
+    "category": "Type",
+    "text": "AbstractEdge\n\nAn abstract type representing a single edge between two vertices of a graph.\n\n\n\n"
+},
+
+{
     "location": "basicmeasures.html#LightGraphs.AbstractEdgeIter",
     "page": "Basic Functions",
     "title": "LightGraphs.AbstractEdgeIter",
     "category": "Type",
     "text": "AbstractEdgeIter\n\nAn abstract type representing an edge iterator.\n\n\n\n"
+},
+
+{
+    "location": "basicmeasures.html#LightGraphs.AbstractGraph",
+    "page": "Basic Functions",
+    "title": "LightGraphs.AbstractGraph",
+    "category": "Type",
+    "text": "AbstractGraph\n\nAn abstract type representing a graph.\n\n\n\n"
 },
 
 {
