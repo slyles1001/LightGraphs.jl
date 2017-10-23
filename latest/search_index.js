@@ -9,451 +9,643 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "index.html#LightGraphs-1",
+    "location": "index.html#Light-Graphs-1",
     "page": "Getting Started",
-    "title": "LightGraphs",
+    "title": "Light Graphs",
     "category": "section",
-    "text": "(Image: Build Status) (Image: codecov.io) (Image: ) (Image: Join the chat at https://gitter.im/JuliaGraphs/LightGraphs.jl) (Image: DOI)(Image: LightGraphs) (Image: LightGraphs) (Image: LightGraphs) (Image: LightGraphs)An optimized graphs package.Simple graphs (not multi- or hypergraphs) are represented in a memory- and time-efficient manner with adjacency lists and edge iterators. Both directed and undirected graphs are supported via separate types, and conversion is available from directed to undirected.The project goal is to mirror the functionality of robust network and graph analysis libraries such as NetworkX while being simpler to use and more efficient than existing Julian graph libraries such as Graphs.jl. It is an explicit design decision that any data not required for graph manipulation (attributes and other information, for example) is expected to be stored outside of the graph structure itself. Such data lends itself to storage in more traditional and better-optimized mechanisms.Additional functionality may be found in the companion package LightGraphsExtras.jl."
+    "text": "The goal of LightGraphs.jl is to offer a performant platform for network and graph analysis in Julia. To this end, LightGraphs offers both (a) a set of simple, concrete graph implementations – Graph (for undirected graphs) and DiGraph (for directed graphs), and (b) an API for the development of more sophisticated graph implementations under the AbstractGraph type.As such, LightGraphs.jl is the central package of the JuliaGraphs ecosystem. Additional functionality like advanced IO and file formats, weighted graphs, property graphs, and optimization related functions can be found in the following packages:LightGraphsExtras.jl: extra functions for graph analysis.\nMetaGraphs.jl: graphs with associated meta-data.\nSimpleWeightedGraphs.jl: weighted graphs.\nGraphIO.jl: tools for importing and exporting graph objects using common file types like edgelists, GraphML, Pajek NET, and more."
 },
 
 {
-    "location": "index.html#Documentation-1",
+    "location": "index.html#Basic-library-examples-1",
     "page": "Getting Started",
-    "title": "Documentation",
+    "title": "Basic library examples",
     "category": "section",
-    "text": "Full documentation is available at GitHub Pages. Documentation for methods is also available via the Julia REPL help system. Additional tutorials can be found at JuliaGraphsTutorials."
+    "text": "The LightGraphs.jl libraries includes numerous convenience functions for generating functions detailed in Making and Modifying Graphs, such as PathGraph, which makes a simple undirected path graph of a given length. Once created, these graphs can be easily interrogated and modified.julia> g = PathGraph(6)\n\n# Number vertices\njulia> nv(g)\n\n# Number edges\njulia> ne(g)\n\n# Add an edge to make the path a loop\njulia> add_edge!(g, 1, 6)For an overview of basic functions for interacting with graphs, check out Accessing Graph Properties and Making and Modifying Graphs."
 },
 
 {
-    "location": "index.html#Core-Concepts-1",
-    "page": "Getting Started",
-    "title": "Core Concepts",
-    "category": "section",
-    "text": "A graph G is described by a set of vertices V and edges E: G = {V, E}. V is an integer range 1:n; E is represented as forward (and, for directed graphs, backward) adjacency lists indexed by vertices. Edges may also be accessed via an iterator that yields Edge types containing (src<:Integer, dst<:Integer) values. Both vertices and edges may be integers of any type, and the smallest type that fits the data is recommended in order to save memory.LightGraphs.jl provides two graph types: Graph is an undirected graph, and DiGraph is its directed counterpart.Graphs are created using Graph() or DiGraph(); there are several options (see the tutorials for examples).Multiple edges between two given vertices are not allowed: an attempt to add an edge that already exists in a graph will result in a silent failure."
-},
-
-{
-    "location": "index.html#Installation-1",
-    "page": "Getting Started",
-    "title": "Installation",
-    "category": "section",
-    "text": "Installation is straightforward:julia> Pkg.add(\"LightGraphs\")"
-},
-
-{
-    "location": "index.html#Current-functionality-1",
-    "page": "Getting Started",
-    "title": "Current functionality",
-    "category": "section",
-    "text": "core functions: vertices and edges addition and removal, degree (in/out/histogram), neighbors (in/out/all/common)\ndistance within graphs: eccentricity, diameter, periphery, radius, center\ndistance between graphs: spectral_distance, edit_distance\nconnectivity: strongly- and weakly-connected components, bipartite checks, condensation, attracting components, neighborhood\noperators: complement, reverse, reverse!, union, join, intersect, difference,symmetric difference, blkdiag, induced subgraphs, products (cartesian/scalar)shortest paths: Dijkstra, Dijkstra with predecessors, Bellman-Ford, Floyd-Warshall, A*\nsmall graph generators: see smallgraphs.jl for list\nrandom graph generators: Erdős–Rényi, Watts-Strogatz, random regular, arbitrary degree sequence, stochastic block model\ncentrality: betweenness, closeness, degree, pagerank, Katz\ntraversal operations: cycle detection, BFS and DFS DAGs, BFS and DFS traversals with visitors, DFS topological sort, maximum adjacency / minimum cut, multiple random walks, diffusion\nflow operations: maximum flow\nmatching: Matching functions have been moved to LightGraphsExtras.jl.\nclique enumeration: maximal cliques\nlinear algebra / spectral graph theory: adjacency matrix (works as input to GraphLayout and Metis), Laplacian matrix, non-backtracking matrix\ncommunity: modularity, community detection, core-periphery, clustering coefficients\npersistence formats: LightGraphs natively supports a proprietary compressed format. For other formats, please see the GraphIO.jl package.\nvisualization: integration withGraphPlot, Plots via PlotRecipes, GraphLayout, TikzGraphs,  NetworkViz"
-},
-
-{
-    "location": "index.html#Core-API-1",
-    "page": "Getting Started",
-    "title": "Core API",
-    "category": "section",
-    "text": "These functions are defined as the public contract of the LightGraphs.AbstractGraph interface."
-},
-
-{
-    "location": "index.html#Constructing-and-modifying-the-graph-1",
-    "page": "Getting Started",
-    "title": "Constructing and modifying the graph",
-    "category": "section",
-    "text": "Graph\nDiGraph\nadd_edge!\nrem_edge!\nadd_vertex!, add_vertices!\nrem_vertex!\nzero"
-},
-
-{
-    "location": "index.html#Edge/Arc-interface-1",
-    "page": "Getting Started",
-    "title": "Edge/Arc interface",
-    "category": "section",
-    "text": "src\ndst\nreverse\n==\nPair / Tuple conversion"
-},
-
-{
-    "location": "index.html#Accessing-state-1",
-    "page": "Getting Started",
-    "title": "Accessing state",
-    "category": "section",
-    "text": "nv\nne\nvertices (Iterable)\nedges (Iterable)\nneighbors, in_neighbors, out_neighbors\nhas_vertex\nhas_edge\nhas_self_loops (though this might be a trait or an abstract graph type)\nis_directed (implemented via traits)\neltype (for edges and graphs)"
-},
-
-{
-    "location": "index.html#Non-Core-APIs-1",
-    "page": "Getting Started",
-    "title": "Non-Core APIs",
-    "category": "section",
-    "text": "These functions can be constructed from the Core API functions but can be given specialized implementations in order to improve performance.adjacency_matrix\ndegreeThis can be computed from neighbors by default degree(g,v) = length(neighbors(g,v)) so you don't need to implement this unless your type can compute degree faster than this method."
-},
-
-{
-    "location": "index.html#Supported-Versions-1",
-    "page": "Getting Started",
-    "title": "Supported Versions",
-    "category": "section",
-    "text": "LightGraphs master is designed to work with the latest stable version of Julia.\nJulia 0.3: LightGraphs v0.3.7 is the last version guaranteed to work with Julia 0.3.\nJulia 0.4: LightGraphs versions in the 0.6 series are designed to work with Julia 0.4.\nJulia 0.5: LightGraphs versions in the 0.7 series are designed to work with Julia 0.5.\nJulia 0.6: LightGraphs versions in the 0.8, 0.9, and 0.10 series are designed to work with Julia 0.6.\nLater versions: Some functionality might not work with prerelease / unstable / nightly versions of Julia. If you run into a problem, please file an issue."
-},
-
-{
-    "location": "index.html#Contributing-and-Reporting-Bugs-1",
-    "page": "Getting Started",
-    "title": "Contributing and Reporting Bugs",
-    "category": "section",
-    "text": "We welcome contributions and bug reports! Please see CONTRIBUTING.md for guidance on development and bug reporting."
-},
-
-{
-    "location": "basicmeasures.html#",
-    "page": "Basic Functions",
-    "title": "Basic Functions",
+    "location": "types.html#",
+    "page": "LightGraph Types",
+    "title": "LightGraph Types",
     "category": "page",
-    "text": ""
+    "text": "#LightGraphs TypesThe LightGraph library supports both the AbstractGraph type and two concrete simple graph types- - Graph for undirected graphs and DiGraph for directed graphs – that are subtypes of AbstractGraph."
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.AbstractEdge",
-    "page": "Basic Functions",
+    "location": "types.html#Concrete-Types-1",
+    "page": "LightGraph Types",
+    "title": "Concrete Types",
+    "category": "section",
+    "text": "LightGraphs.jl provides two concrete graph types: Graph is an undirected graph, and DiGraph is its directed counterpart. Both of these types can be parameterized to specifying how vertices are identified (by default, Graph and DiGraph use the system default integer type, usually Int64).A graph G is described by a set of vertices V and edges E: G = {V, E}. V is an integer range 1:n; E is represented as forward (and, for directed graphs, backward) adjacency lists indexed by vertices. Edges may also be accessed via an iterator that yields Edge types containing (src<:Integer, dst<:Integer) values. Both vertices and edges may be integers of any type, and the smallest type that fits the data is recommended in order to save memory.Graphs are created using Graph() or DiGraph(); there are several options (see the tutorials for examples).Multiple edges between two given vertices are not allowed: an attempt to add an edge that already exists in a graph will not raise an error. This event can be detected using the return value of add_edge!."
+},
+
+{
+    "location": "types.html#AbstractGraph-Type-1",
+    "page": "LightGraph Types",
+    "title": "AbstractGraph Type",
+    "category": "section",
+    "text": "To encourage experimentation and development within the JuliaGraphs ecosystem, LightGraphs.jl defines the AbstractGraph type, which is used by libraries like MetaGraphs.jl (for graphs with associated meta-data) and SimpleWeightedGraphs.jl (for weighted graphs). All types that are a subset of AbstractGraph must implement the following functions (most of which are described in more detail in Accessing Graph Properties and Making and Modifying Graphs):Order = [:type, :function]\nPages   = [\"types.md\"]"
+},
+
+{
+    "location": "types.html#LightGraphs.AbstractEdge",
+    "page": "LightGraph Types",
     "title": "LightGraphs.AbstractEdge",
     "category": "Type",
     "text": "AbstractEdge\n\nAn abstract type representing a single edge between two vertices of a graph.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.AbstractEdgeIter",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.AbstractEdgeIter",
+    "page": "LightGraph Types",
     "title": "LightGraphs.AbstractEdgeIter",
     "category": "Type",
     "text": "AbstractEdgeIter\n\nAn abstract type representing an edge iterator.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.AbstractGraph",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.AbstractGraph",
+    "page": "LightGraph Types",
     "title": "LightGraphs.AbstractGraph",
     "category": "Type",
     "text": "AbstractGraph\n\nAn abstract type representing a graph.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#Base.reverse-Tuple{LightGraphs.AbstractEdge}",
-    "page": "Basic Functions",
+    "location": "types.html#Base.reverse-Tuple{LightGraphs.AbstractEdge}",
+    "page": "LightGraph Types",
     "title": "Base.reverse",
     "category": "Method",
     "text": "reverse(e)\n\nCreate a new edge from e with source and destination vertices reversed.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.add_edge!-Tuple{Any,Any}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.add_edge!-Tuple{Any,Any}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.add_edge!",
     "category": "Method",
     "text": "add_edge!(g, e)\n\nAdd a new edge e to g. Return false if add fails (e.g., if vertices are not in the graph, or edge already exists), true otherwise.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.add_vertex!-Tuple{Any}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.add_vertex!-Tuple{Any}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.add_vertex!",
     "category": "Method",
     "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.dst-Tuple{LightGraphs.AbstractEdge}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.dst-Tuple{LightGraphs.AbstractEdge}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.dst",
     "category": "Method",
     "text": "dst(e)\n\nReturn the destination vertex of edge e.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.edges-Tuple{Any}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.edges-Tuple{Any}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.edges",
     "category": "Method",
     "text": "edges(g)\n\nReturn (an iterator to or collection of) the edges of a graph. For AbstractSimpleGraphs it returns a SimpleEdgeIter. The expressions e in edges(g) and e ∈ edges(ga) evaluate as calls to has_edge.\n\nImplementation Notes\n\nA returned iterator is valid for one pass over the edges, and is invalidated by changes to g.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.edgetype-Tuple{LightGraphs.AbstractGraph}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.edgetype-Tuple{LightGraphs.AbstractGraph}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.edgetype",
     "category": "Method",
     "text": "edgetype(g)\n\nReturn the type of graph g's edge\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.has_edge-Tuple{Any,Any}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.has_edge-Tuple{Any,Any}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.has_edge",
     "category": "Method",
     "text": "has_edge(g, e)\ne ∈ edges(g)\n\nReturn true if the graph g has an edge e.  The expressions e in edges(g) and e ∈ edges(ga) evaluate as calls to has_edge, c.f. edges.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.has_vertex-Tuple{Any,Any}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.has_vertex-Tuple{Any,Any}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.has_vertex",
     "category": "Method",
     "text": "has_vertex(g, v)\n\nReturn true if v is a vertex of g.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.in_neighbors-Tuple{Any,Any}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.in_neighbors-Tuple{Any,Any}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.in_neighbors",
     "category": "Method",
     "text": "in_neighbors(g, v)\n\nReturn a list of all neighbors connected to vertex v by an incoming edge.\n\nImplementation Notes\n\nReturns a reference, not a copy. Do not modify result.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.is_directed-Tuple{Any}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.is_directed-Tuple{Any}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.is_directed",
     "category": "Method",
     "text": "is_directed(g)\n\nReturn true if the graph is a directed graph; false otherwise.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.ne-Tuple{LightGraphs.AbstractGraph}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.ne-Tuple{LightGraphs.AbstractGraph}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.ne",
     "category": "Method",
     "text": "ne(g)\n\nReturn the number of edges in g.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.nv-Tuple{LightGraphs.AbstractGraph}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.nv-Tuple{LightGraphs.AbstractGraph}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.nv",
     "category": "Method",
     "text": "nv(g)\n\nReturn the number of vertices in g.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.out_neighbors-Tuple{Any,Any}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.out_neighbors-Tuple{Any,Any}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.out_neighbors",
     "category": "Method",
     "text": "out_neighbors(g, v)\n\nReturn a list of all neighbors connected to vertex v by an outgoing edge.\n\nImplementation Notes\n\nReturns a reference, not a copy. Do not modify result.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.rem_edge!-Tuple{Any,Any}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.rem_edge!-Tuple{Any,Any}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.rem_edge!",
     "category": "Method",
     "text": "rem_edge!(g, e)\n\nRemove the edge e from g. Return false if edge removal fails (e.g., if edge does not exist), true otherwise.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.rem_vertex!-Tuple{Any,Any}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.rem_vertex!-Tuple{Any,Any}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.rem_vertex!",
     "category": "Method",
     "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.src-Tuple{LightGraphs.AbstractEdge}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.src-Tuple{LightGraphs.AbstractEdge}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.src",
     "category": "Method",
     "text": "src(e)\n\nReturn the source vertex of edge e.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.vertices-Tuple{LightGraphs.AbstractGraph}",
-    "page": "Basic Functions",
+    "location": "types.html#LightGraphs.vertices-Tuple{LightGraphs.AbstractGraph}",
+    "page": "LightGraph Types",
     "title": "LightGraphs.vertices",
     "category": "Method",
     "text": "vertices(g)\n\nReturn (an iterator to or collection of) the vertices of a graph.\n\nImplementation Notes\n\nA returned iterator is valid for one pass over the edges, and is invalidated by changes to g.\n\n\n\n"
 },
 
 {
-    "location": "basicmeasures.html#LightGraphs.add_vertices!-Tuple{LightGraphs.AbstractGraph,Integer}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.add_vertices!",
-    "category": "Method",
-    "text": "add_vertices!(g, n)\n\nAdd n new vertices to the graph g. Return true if all vertices were added successfully, false otherwise.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.all_neighbors",
-    "page": "Basic Functions",
-    "title": "LightGraphs.all_neighbors",
-    "category": "Function",
-    "text": "all_neighbors(g, v)\n\nReturn a list of all inbound and outbound neighbors of v in g. For undirected graphs, this is equivalent to both out_neighbors and in_neighbors.\n\nImplementation Notes\n\nReturns a reference, not a copy. Do not modify result.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.common_neighbors-Tuple{LightGraphs.AbstractGraph,Integer,Integer}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.common_neighbors",
-    "category": "Method",
-    "text": "common_neighbors(g, u, v)\n\nReturn the neighbors common to vertices u and v in g.\n\nImplementation Notes\n\nReturns a reference, not a copy. Do not modify result.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.degree",
-    "page": "Basic Functions",
-    "title": "LightGraphs.degree",
-    "category": "Function",
-    "text": "degree(g[, v])\n\nReturn a vector corresponding to the number of edges which start or end at each vertex in graph g. If v is specified, only return degrees for vertices in v. For directed graphs, this value equals the incoming plus outgoing edges. For undirected graphs, it equals the connected edges.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.degree_histogram-Union{Tuple{LightGraphs.AbstractGraph{T},Any}, Tuple{LightGraphs.AbstractGraph{T}}, Tuple{T}} where T",
-    "page": "Basic Functions",
-    "title": "LightGraphs.degree_histogram",
-    "category": "Method",
-    "text": "degree_histogram(g, degfn=degree)\n\nReturn a Dict with values representing the number of vertices that have degree represented by the key.\n\nDegree function (for example, indegree or outdegree) may be specified by overriding degfn.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.density",
-    "page": "Basic Functions",
-    "title": "LightGraphs.density",
-    "category": "Function",
-    "text": "density(g)\n\nReturn the density of g. Density is defined as the ratio of the number of actual edges to the number of possible edges (V(V-1) for directed graphs and fracV(V-1)2 for undirected graphs).\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.has_self_loops-Tuple{LightGraphs.AbstractGraph}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.has_self_loops",
-    "category": "Method",
-    "text": "has_self_loops(g)\n\nReturn true if g has any self loops.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.indegree-Tuple{LightGraphs.AbstractGraph,Integer}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.indegree",
-    "category": "Method",
-    "text": "indegree(g[, v])\n\nReturn a vector corresponding to the number of edges which end at each vertex in graph g. If v is specified, only return degrees for vertices in v.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.is_ordered-Tuple{LightGraphs.AbstractEdge}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.is_ordered",
-    "category": "Method",
-    "text": "is_ordered(e)\n\nReturn true if the source vertex of edge e is less than or equal to the destination vertex.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.neighbors-Tuple{LightGraphs.AbstractGraph,Integer}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.neighbors",
-    "category": "Method",
-    "text": "neighbors(g, v)\n\nReturn a list of all neighbors reachable from vertex v in g. For directed graphs, the default is equivalent to out_neighbors; use all_neighbors to list inbound and outbound neighbors.\n\nImplementation Notes\n\nReturns a reference, not a copy. Do not modify result.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.num_self_loops-Tuple{LightGraphs.AbstractGraph}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.num_self_loops",
-    "category": "Method",
-    "text": "num_self_loops(g)\n\nReturn the number of self loops in g.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.outdegree-Tuple{LightGraphs.AbstractGraph,Integer}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.outdegree",
-    "category": "Method",
-    "text": "outdegree(g[, v])\n\nReturn a vector corresponding to the number of edges which start at each vertex in graph g. If v is specified, only return degrees for vertices in v.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.squash-Tuple{LightGraphs.AbstractGraph}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.squash",
-    "category": "Method",
-    "text": "squash(g)\n\nReturn a copy of a graph with the smallest practical type that can accommodate all vertices.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.weights-Tuple{LightGraphs.AbstractGraph}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.weights",
-    "category": "Method",
-    "text": "weights(g)\n\nReturn the weights of the edges of a graph g as a matrix. Defaults to DefaultDistance().\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.Δ-Tuple{Any}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.Δ",
-    "category": "Method",
-    "text": "Δ(g)\n\nReturn the maximum degree of vertices in g.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.Δin-Tuple{Any}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.Δin",
-    "category": "Method",
-    "text": "Δin(g)\n\nReturn the maximum indegree of vertices in g.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.Δout-Tuple{Any}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.Δout",
-    "category": "Method",
-    "text": "Δout(g)\n\nReturn the maximum outdegree of vertices in g.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.δ-Tuple{Any}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.δ",
-    "category": "Method",
-    "text": "δ(g)\n\nReturn the minimum degree of vertices in g.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.δin-Tuple{Any}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.δin",
-    "category": "Method",
-    "text": "δin(g)\n\nReturn the minimum indegree of vertices in g.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.δout-Tuple{Any}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.δout",
-    "category": "Method",
-    "text": "δout(g)\n\nReturn the minimum outdegree of vertices in g.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.isgraphical-Tuple{Array{Int64,1}}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.isgraphical",
-    "category": "Method",
-    "text": "isgraphical(degs)\n\nReturn true if the degree sequence degs is graphical, according to Erdös-Gallai condition.\n\nPerformance\n\nTime complexity: ``\\mathcal{O}(|degs|^2)``\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#LightGraphs.neighborhood-Tuple{LightGraphs.AbstractGraph,Integer,Integer}",
-    "page": "Basic Functions",
-    "title": "LightGraphs.neighborhood",
-    "category": "Method",
-    "text": "neighborhood(g, v, d)\n\nReturn a vector of the vertices in g at a geodesic distance less or equal to d from v.\n\nOptional Arguments\n\ndir=:out: If g is directed, this argument specifies the edge direction\n\nwith respect to v of the edges to be considered. Possible values: :in or :out.\n\n\n\n"
-},
-
-{
-    "location": "basicmeasures.html#Basic-Functions-1",
-    "page": "Basic Functions",
-    "title": "Basic Functions",
+    "location": "types.html#Full-Docs-for-AbstractGraph-Functions-1",
+    "page": "LightGraph Types",
+    "title": "Full Docs for AbstractGraph Functions",
     "category": "section",
-    "text": "LightGraphs.jl defines the following basic types and functionality:Order = [:type, :function]\nPages   = [\"basicmeasures.md\"]Modules = [LightGraphs]\nOrder = [:type, :function]\nPages   = [\"interface.jl\", \"core.jl\", \"graph.jl\", \"digraph.jl\", \"edgeiter.jl\",\"connectivity.jl\"]\nPrivate = false"
+    "text": "Modules = [LightGraphs]\nPages   = [\"interface.jl\"]\nPrivate = false"
+},
+
+{
+    "location": "basicproperties.html#",
+    "page": "Accessing Properties",
+    "title": "Accessing Properties",
+    "category": "page",
+    "text": ""
+},
+
+{
+    "location": "basicproperties.html#Accessing-Graph-Properties-1",
+    "page": "Accessing Properties",
+    "title": "Accessing Graph Properties",
+    "category": "section",
+    "text": "The following is an overview of functions for accessing graph properties. For functions that modify graphs, see Making and Modifying Graphs."
+},
+
+{
+    "location": "basicproperties.html#Graph-Properties:-1",
+    "page": "Accessing Properties",
+    "title": "Graph Properties:",
+    "category": "section",
+    "text": "nv: Returns number of vertices in graph.\nne: Returns number of edges in graph.\nvertices: Iterable object of all graph vertices.\nedges: Iterable object of all graph edges.\nhas_vertex: Checks for whether graph includes a vertex.\nhas_edge: Checks for whether graph includes an edge.\nhas_self_loops Checks for self-loops.\nis_directed Checks if graph is directed.\neltype Returns element type of graphs."
+},
+
+{
+    "location": "basicproperties.html#Vertex-Properties-1",
+    "page": "Accessing Properties",
+    "title": "Vertex Properties",
+    "category": "section",
+    "text": "neighbors: Return array of neighbors of a vertex. If graph is directed, output is equivalent of out_neighbors.\nall_neighbors:  Returns array of all neighbors (both in_neighbors and out_neighbors). For undirected graphs, equivalent to neighbors.\nin_neighbors: Return array of in-neighbors. Equivalent to neighbors for undirected graphs.\nout_neighbors: Return array of out-neighbors. Equivalent to neighbors for undirected graphs."
+},
+
+{
+    "location": "basicproperties.html#Edge-Properties-1",
+    "page": "Accessing Properties",
+    "title": "Edge Properties",
+    "category": "section",
+    "text": "src: Give source vertex of an edge.\ndst: Give destination vertex of an edge.\nreverse: Creates a new edge running in opposite direction of passed edge."
+},
+
+{
+    "location": "generators.html#",
+    "page": "Making and Modifying Graphs",
+    "title": "Making and Modifying Graphs",
+    "category": "page",
+    "text": ""
+},
+
+{
+    "location": "generators.html#Making-and-Modifying-Graphs-1",
+    "page": "Making and Modifying Graphs",
+    "title": "Making and Modifying Graphs",
+    "category": "section",
+    "text": "LightGraphs.jl provides a number of methods for creating a graph object, including tools for building and modifying graph objects, a wide array of graph generator functions, and the ability to read and write graphs from files (using GraphIO.jl)."
+},
+
+{
+    "location": "generators.html#Modifying-graphs-1",
+    "page": "Making and Modifying Graphs",
+    "title": "Modifying graphs",
+    "category": "section",
+    "text": "LightGraphs.jl offers a range of tools for modifying graphs, including:Graph\nDiGraph\nadd_edge!\nrem_edge!\nadd_vertex!\nadd_vertices!\nrem_vertex!\nzeroIn addition to these core functions, more advanced operators can be found in Operators."
+},
+
+{
+    "location": "generators.html#Graph-Generators-1",
+    "page": "Making and Modifying Graphs",
+    "title": "Graph Generators",
+    "category": "section",
+    "text": "LightGraphs.jl implements numerous graph generators, including random graph generators, constructors for classic graphs, numerous small graphs with familiar topologies, and random and static graphs embedded in Euclidean space.Modules = [LightGraphs]\nPages   = [\"generators.md\"]"
+},
+
+{
+    "location": "generators.html#Datasets-1",
+    "page": "Making and Modifying Graphs",
+    "title": "Datasets",
+    "category": "section",
+    "text": "Other notorious graphs and integration with the MatrixDepot.jl package are available in the Datasets submodule of the companion package LightGraphsExtras.jl. Selected graphs from the Stanford Large Network Dataset Collection may be found in the SNAPDatasets.jl package."
+},
+
+{
+    "location": "generators.html#LightGraphs.StochasticBlockModel",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.StochasticBlockModel",
+    "category": "Type",
+    "text": "StochasticBlockModel{T,P}\n\nA type capturing the parameters of the SBM. Each vertex is assigned to a block and the probability of edge (i,j) depends only on the block labels of vertex i and vertex j.\n\nThe assignement is stored in nodemap and the block affinities a k by k matrix is stored in affinities.\n\naffinities[k,l] is the probability of an edge between any vertex in block k and any vertex in block l.\n\nImplementation Notes\n\nGraphs are generated by taking random ij  V and flipping a coin with probability affinities[nodemap[i],nodemap[j]].\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.barabasi_albert!-Tuple{LightGraphs.AbstractGraph,Integer,Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.barabasi_albert!",
+    "category": "Method",
+    "text": "barabasi_albert!(g::AbstractGraph, n::Integer, k::Integer)\n\nCreate a Barabási–Albert model random graph with n vertices. It is grown by adding new vertices to an initial graph g. Each new vertex is attached with k edges to k different vertices already present in the system by preferential attachment.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.barabasi_albert-Tuple{Integer,Integer,Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.barabasi_albert",
+    "category": "Method",
+    "text": "barabasi_albert(n::Integer, n0::Integer, k::Integer)\n\nCreate a Barabási–Albert model random graph with n vertices. It is grown by adding new vertices to an initial graph with n0 vertices. Each new vertex is attached with k edges to k different vertices already present in the system by preferential attachment. Initial graphs are undirected and consist of isolated vertices by default.\n\nOptional Arguments\n\nis_directed=false: if true, return a directed graph.\ncomplete=false: if true, use a complete graph for the initial graph.\nseed=-1: set the RNG seed.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.barabasi_albert-Tuple{Integer,Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.barabasi_albert",
+    "category": "Method",
+    "text": "barabasi_albert(n, k)\n\nCreate a Barabási–Albert model random graph with n vertices. It is grown by adding new vertices to an initial graph with k vertices. Each new vertex is attached with k edges to k different vertices already present in the system by preferential attachment. Initial graphs are undirected and consist of isolated vertices by default.\n\nOptional Arguments\n\nis_directed=false: if true, return a directed graph.\ncomplete=false: if true, use a complete graph for the initial graph.\nseed=-1: set the RNG seed.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.blockcounts-Tuple{LightGraphs.StochasticBlockModel,AbstractArray{T,2} where T}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.blockcounts",
+    "category": "Method",
+    "text": "blockcounts(sbm, A)\n\nCount the number of edges that go between each block.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.erdos_renyi-Tuple{Integer,Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.erdos_renyi",
+    "category": "Method",
+    "text": "erdos_renyi(n, ne)\n\nCreate an Erdős–Rényi random graph with n vertices and ne edges.\n\nOptional Arguments\n\nis_directed=false: if true, return a directed graph.\nseed=-1: set the RNG seed.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.erdos_renyi-Tuple{Integer,Real}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.erdos_renyi",
+    "category": "Method",
+    "text": "erdos_renyi(n, p)\n\nCreate an Erdős–Rényi random graph with n vertices. Edges are added between pairs of vertices with probability p.\n\nOptional Arguments\n\nis_directed=false: if true, return a directed graph.\nseed=-1: set the RNG seed.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.kronecker",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.kronecker",
+    "category": "Function",
+    "text": "kronecker(SCALE, edgefactor, A=0.57, B=0.19, C=0.19)\n\nGenerate a directed Kronecker graph with the default Graph500 parameters.\n\n\n\nReferences\n\nhttp://www.graph500.org/specifications#alg:generator\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.make_edgestream-Tuple{LightGraphs.StochasticBlockModel}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.make_edgestream",
+    "category": "Method",
+    "text": "make_edgestream(sbm)\n\nTake an infinite sample from the Stochastic Block Model sbm. Pass to Graph(nvg, neg, edgestream) to get a Graph object based on sbm.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.random_configuration_model-Union{Tuple{Integer,Array{T,N} where N}, Tuple{T}} where T<:Integer",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.random_configuration_model",
+    "category": "Method",
+    "text": "random_configuration_model(n, ks)\n\nCreate a random undirected graph according to the configuration model containing n vertices, with each node i having degree k[i].\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\ncheck_graphical=false: if true, ensure that k is a graphical sequence\n\n(see isgraphical).\n\nPerformance\n\nTime complexity is approximately mathcalO(n bark^2).\n\nImplementation Notes\n\nAllocates an array of n bark Ints.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.random_regular_digraph-Tuple{Integer,Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.random_regular_digraph",
+    "category": "Method",
+    "text": "random_regular_digraph(n, k)\n\nCreate a random directed regular graph with n vertices, each with degree k.\n\nOptional Arguments\n\ndir=:out: the direction of the edges for degree parameter.\nseed=-1: set the RNG seed.\n\nImplementation Notes\n\nAllocates an n  n sparse matrix of boolean as an adjacency matrix and uses that to generate the directed graph.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.random_regular_graph-Tuple{Integer,Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.random_regular_graph",
+    "category": "Method",
+    "text": "random_regular_graph(n, k)\n\nCreate a random undirected regular graph with n vertices, each with degree k.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\nPerformance\n\nTime complexity is approximately mathcalO(nk^2).\n\nImplementation Notes\n\nAllocates an array of nk Ints, and . For k  fracn2, generates a graph of degree n-k-1 and returns its complement.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.static_fitness_model-Union{Tuple{Integer,Array{T,1},Array{S,1}}, Tuple{S}, Tuple{T}} where T<:Real where S<:Real",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.static_fitness_model",
+    "category": "Method",
+    "text": "static_fitness_model(m, fitness_out, fitness_in)\n\nGenerate a random graph with fitness_out + fitness_in vertices and m edges, in which the probability of the existence of Edge_ij is proportional with respect to i  fitness_out and j  fitness_in.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\nPerformance\n\nTime complexity is mathcalO(V + E log E).\n\nReferences\n\nGoh K-I, Kahng B, Kim D: Universal behaviour of load distribution in scale-free networks. Phys Rev Lett 87(27):278701, 2001.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.static_fitness_model-Union{Tuple{Integer,Array{T,1}}, Tuple{T}} where T<:Real",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.static_fitness_model",
+    "category": "Method",
+    "text": "static_fitness_model(m, fitness)\n\nGenerate a random graph with fitness vertices and m edges, in which the probability of the existence of Edge_ij is proportional to fitness_i   fitness_j.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\nPerformance\n\nTime complexity is mathcalO(V + E log E).\n\nReferences\n\nGoh K-I, Kahng B, Kim D: Universal behaviour of load distribution in scale-free networks. Phys Rev Lett 87(27):278701, 2001.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.static_scale_free-Tuple{Integer,Integer,Real,Float64}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.static_scale_free",
+    "category": "Method",
+    "text": "static_scale_free(n, m, α_out, α_in)\n\nGenerate a random graph with n vertices, m edges and expected power-law degree distribution with exponent α_out for outbound edges and α_in for inbound edges.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\nfinite_size_correction=true: determines whether to use the finite size correction\n\nproposed by Cho et al.\n\nPerformance\n\nTime complexity is mathcalO(V + E log E).\n\nReferences\n\nGoh K-I, Kahng B, Kim D: Universal behaviour of load distribution in scale-free networks. Phys Rev Lett 87(27):278701, 2001.\nChung F and Lu L: Connected components in a random graph with given degree sequences. Annals of Combinatorics 6, 125-145, 2002.\nCho YS, Kim JS, Park J, Kahng B, Kim D: Percolation transitions in scale-free networks under the Achlioptas process. Phys Rev Lett 103:135702, 2009.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.static_scale_free-Tuple{Integer,Integer,Real}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.static_scale_free",
+    "category": "Method",
+    "text": "static_scale_free(n, m, α)\n\nGenerate a random graph with n vertices, m edges and expected power-law degree distribution with exponent α.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\nfinite_size_correction=true: determines whether to use the finite size correction\n\nproposed by Cho et al.\n\nPerformance\n\nTime complexity is mathcalO(V + E log E).\n\nReferences\n\nGoh K-I, Kahng B, Kim D: Universal behaviour of load distribution in scale-free networks. Phys Rev Lett 87(27):278701, 2001.\nChung F and Lu L: Connected components in a random graph with given degree sequences. Annals of Combinatorics 6, 125-145, 2002.\nCho YS, Kim JS, Park J, Kahng B, Kim D: Percolation transitions in scale-free networks under the Achlioptas process. Phys Rev Lett 103:135702, 2009.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.stochastic_block_model-Union{Tuple{Array{T,2},Array{U,1}}, Tuple{T}, Tuple{U}} where T<:Real where U<:Integer",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.stochastic_block_model",
+    "category": "Method",
+    "text": "stochastic_block_model(c, n)\n\nReturn a Graph generated according to the Stochastic Block Model (SBM).\n\nc[a,b] : Mean number of neighbors of a vertex in block a belonging to block b.            Only the upper triangular part is considered, since the lower traingular is            determined by cba = cab * fracnanb. n[a] : Number of vertices in block a\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\nFor a dynamic version of the SBM see the StochasticBlockModel type and related functions.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.stochastic_block_model-Union{Tuple{T,T,Array{U,1}}, Tuple{T}, Tuple{U}} where T<:Real where U<:Integer",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.stochastic_block_model",
+    "category": "Method",
+    "text": "stochastic_block_model(cint, cext, n)\n\nReturn a Graph generated according to the Stochastic Block Model (SBM), sampling from an SBM with c_aa=cint, and c_ab=cext.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.watts_strogatz-Tuple{Integer,Integer,Real}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.watts_strogatz",
+    "category": "Method",
+    "text": "watts_strogatz(n, k, β)\n\nReturn a Watts-Strogatz small model random graph with n vertices, each with degree k. Edges are randomized per the model based on probability β.\n\nOptional Arguments\n\nis_directed=false: if true, return a directed graph.\nseed=-1: set the RNG seed.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.BinaryTree-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.BinaryTree",
+    "category": "Method",
+    "text": "BinaryTree(k::Integer)\n\nCreate a binary tree of depth k.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.CliqueGraph-Tuple{Integer,Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.CliqueGraph",
+    "category": "Method",
+    "text": "CliqueGraph(k, n)\n\nCreate a graph consisting of n connected k-cliques.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.CompleteBipartiteGraph-Tuple{Integer,Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.CompleteBipartiteGraph",
+    "category": "Method",
+    "text": "CompleteBipartiteGraph(n1, n2)\n\nCreate an undirected complete bipartite graph with n1 + n2 vertices.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.CompleteDiGraph-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.CompleteDiGraph",
+    "category": "Method",
+    "text": "CompleteDiGraph(n)\n\nCreate a directed complete graph with n vertices.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.CompleteGraph-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.CompleteGraph",
+    "category": "Method",
+    "text": "CompleteGraph(n)\n\nCreate an undirected complete graph with n vertices.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.CycleDiGraph-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.CycleDiGraph",
+    "category": "Method",
+    "text": "CycleDiGraph(n)\n\nCreate a directed cycle graph with n vertices.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.CycleGraph-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.CycleGraph",
+    "category": "Method",
+    "text": "CycleGraph(n)\n\nCreate an undirected cycle graph with n vertices.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.DoubleBinaryTree-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.DoubleBinaryTree",
+    "category": "Method",
+    "text": "BinaryTree(k::Integer)\n\nCreate a double complete binary tree with k levels.\n\nReferences\n\nUsed as an example for spectral clustering by Guattery and Miller 1998.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.Grid-Tuple{AbstractArray{T,1} where T}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.Grid",
+    "category": "Method",
+    "text": "Grid(dims; periodic=false)\n\nCreate a dims-dimensional cubic lattice, with length dims[i] in dimension i.\n\nOptional Arguments\n\nperiodic=false: If true, the resulting lattice will have periodic boundary\n\ncondition in each dimension.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.PathDiGraph-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.PathDiGraph",
+    "category": "Method",
+    "text": "PathDiGraph(n)\n\nCreates a directed path graph with n vertices.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.PathGraph-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.PathGraph",
+    "category": "Method",
+    "text": "PathGraph(n)\n\nCreate an undirected path graph with n vertices.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.RoachGraph-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.RoachGraph",
+    "category": "Method",
+    "text": "RoachGraph(k)\n\nCreate a Roach Graph of size k.\n\nReferences\n\nGuattery and Miller 1998\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.StarDiGraph-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.StarDiGraph",
+    "category": "Method",
+    "text": "StarDiGraph(n)\n\nCreate a directed star graph with n vertices.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.StarGraph-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.StarGraph",
+    "category": "Method",
+    "text": "StarGraph(n)\n\nCreate an undirected star graph with n vertices.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.WheelDiGraph-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.WheelDiGraph",
+    "category": "Method",
+    "text": "WheelDiGraph(n)\n\nCreate a directed wheel graph with n vertices.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.WheelGraph-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.WheelGraph",
+    "category": "Method",
+    "text": "WheelGraph(n)\n\nCreate an undirected wheel graph with n vertices.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.smallgraph-Tuple{Symbol}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.smallgraph",
+    "category": "Method",
+    "text": "smallgraph(s)\nsmallgraph(s)\n\nCreate a small graph of type s. Admissible values for s are:\n\ns graph type\n:bull A bull graph.\n:chvatal A Chvátal graph.\n:cubical A Platonic cubical graph.\n:desargues A Desarguesgraph.\n:diamond A diamond graph.\n:dodecahedral A Platonic dodecahedral  graph.\n:frucht A Frucht graph.\n:heawood A Heawood graph.\n:house A graph mimicing the classic outline of a house.\n:housex A house graph, with two edges crossing the bottom square.\n:icosahedral A Platonic icosahedral   graph.\n:krackhardtkite A Krackhardt-Kite social network  graph.\n:moebiuskantor A Möbius-Kantor graph.\n:octahedral A Platonic octahedral graph.\n:pappus A Pappus graph.\n:petersen A Petersen graph.\n:sedgewickmaze A simple maze graph used in Sedgewick's Algorithms in C++: Graph  Algorithms (3rd ed.)\n:tetrahedral A Platonic tetrahedral  graph.\n:truncatedcube A skeleton of the truncated cube graph.\n:truncatedtetrahedron A skeleton of the truncated tetrahedron  graph.\n:truncatedtetrahedron_dir A skeleton of the truncated tetrahedron digraph.\n:tutte A Tutte graph.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.euclidean_graph-Tuple{Array{T,2} where T}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.euclidean_graph",
+    "category": "Method",
+    "text": "euclidean_graph(points)\n\nGiven the d×N matrix points build an Euclidean graph of N vertices and return a graph and Dict containing the distance on each edge.\n\nOptional Arguments\n\nL=1: used to bound the d dimensional box from which points are selected.\np=2\nbc=:open\n\nImplementation Notes\n\nDefining the d-dimensional vectors x[i] = points[:,i], an edge between vertices i and j is inserted if norm(x[i]-x[j], p) < cutoff. In case of negative cutoff instead every edge is inserted. For p=2 we have the standard Euclidean distance. Set bc=:periodic to impose periodic boundary conditions in the box 0L^d.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.euclidean_graph-Tuple{Int64,Int64}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.euclidean_graph",
+    "category": "Method",
+    "text": "euclidean_graph(N, d; seed=-1, L=1., p=2., cutoff=-1., bc=:open)\n\nGenerate N uniformly distributed points in the box 0L^d and return a Euclidean graph, a map containing the distance on each edge and a matrix with the points' positions.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#All-Generators-1",
+    "page": "Making and Modifying Graphs",
+    "title": "All Generators",
+    "category": "section",
+    "text": "Modules = [LightGraphs]\nPages   = [\n    \"generators/randgraphs.jl\",\n    \"generators/staticgraphs.jl\",\n    \"generators/smallgraphs.jl\",\n    \"generators/euclideangraphs.jl\"]\nPrivate = false"
+},
+
+{
+    "location": "persistence.html#",
+    "page": "Reading / Writing Graphs",
+    "title": "Reading / Writing Graphs",
+    "category": "page",
+    "text": ""
+},
+
+{
+    "location": "persistence.html#Reading-and-writing-Graphs-1",
+    "page": "Reading / Writing Graphs",
+    "title": "Reading and writing Graphs",
+    "category": "section",
+    "text": ""
+},
+
+{
+    "location": "persistence.html#Saving-using-*LightGraphs.jl*-lg-format.-1",
+    "page": "Reading / Writing Graphs",
+    "title": "Saving using LightGraphs.jl lg format.",
+    "category": "section",
+    "text": "Graphs may be written to I/O streams and files using the savegraph function and read with the loadgraph function. The default graph format is a bespoke compressed LightGraphs.jl format lg."
+},
+
+{
+    "location": "persistence.html#Example-1",
+    "page": "Reading / Writing Graphs",
+    "title": "Example",
+    "category": "section",
+    "text": "\ng = erdos_renyi(5, 0.2)\n\nsavegraph(\"mygraph.lg\", g)\nreloaded_g = loadgraph(\"mygraph.lg\")In addition, graphs can also be compressed for storage using the compress option.\nsavegraph(\"mygraph.lgz\", g, compress=true)\n\nreloaded_g = loadgraph(\"mygraph.lgz\")Finally, dictionaries of graphs can also be saved and subsequently re-loaded one by one.graph_dict = {\"g1\" => erdos_renyi(5, 0.1),\n              \"g2\" => erdos_renyi(10, 0.2),\n              \"g3\" => erdos_renyi(2, 0.9)}\n\nsavegraph(\"mygraph_dict.lg\", graph_dict)\n\n# Re-load only graph g1\nreloaded_g1 = loadgraph(\"mygraph_dict.lg\", \"g1\")"
+},
+
+{
+    "location": "persistence.html#Reading-and-Writing-using-other-formats-using-GraphIO-1",
+    "page": "Reading / Writing Graphs",
+    "title": "Reading and Writing using other formats using GraphIO",
+    "category": "section",
+    "text": "The GraphIO.jl library provides tools for importing and exporting graph objects using common file types like edgelists, GraphML, Pajek NET, and more."
 },
 
 {
@@ -462,6 +654,14 @@ var documenterSearchIndex = {"docs": [
     "title": "Operators",
     "category": "page",
     "text": ""
+},
+
+{
+    "location": "operators.html#Operators-1",
+    "page": "Operators",
+    "title": "Operators",
+    "category": "section",
+    "text": "LightGraphs.jl implements the following graph operators. In general, functions with two graph arguments will require them to be of the same type (either both Graph or both DiGraph).Order = [:type, :function]\nPages   = [\"operators.md\"]"
 },
 
 {
@@ -593,11 +793,51 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "operators.html#Operators-1",
+    "location": "operators.html#Full-Docs-1",
     "page": "Operators",
-    "title": "Operators",
+    "title": "Full Docs",
     "category": "section",
-    "text": "LightGraphs.jl implements the following graph operators. In general, functions with two graph arguments will require them to be of the same type (either both Graph or both DiGraph).Pages   = [\"operators.md\"]Modules = [LightGraphs]\nPages   = [\"operators.jl\"]\nPrivate = false"
+    "text": "Modules = [LightGraphs]\nPages   = [\"operators.jl\"]\nPrivate = false"
+},
+
+{
+    "location": "plotting.html#",
+    "page": "Plotting Graphs",
+    "title": "Plotting Graphs",
+    "category": "page",
+    "text": ""
+},
+
+{
+    "location": "plotting.html#Plotting-Graphs-1",
+    "page": "Plotting Graphs",
+    "title": "Plotting Graphs",
+    "category": "section",
+    "text": "LightGraphs.jl integrates with several other Julia packages for plotting. Here are a few examples."
+},
+
+{
+    "location": "plotting.html#[GraphLayout.jl](https://github.com/IainNZ/GraphLayout.jl)-1",
+    "page": "Plotting Graphs",
+    "title": "GraphLayout.jl",
+    "category": "section",
+    "text": "This excellent graph visualization package can be used with LightGraphs.jl as follows:julia> g = WheelGraph(10); am = full(adjacency_matrix(g))\njulia> loc_x, loc_y = layout_spring_adj(am)\njulia> draw_layout_adj(am, loc_x, loc_y, filename=\"wheel10.svg\")producing a graph like this:(Image: Wheel Graph)"
+},
+
+{
+    "location": "plotting.html#[TikzGraphs.jl](https://github.com/sisl/TikzGraphs.jl)-1",
+    "page": "Plotting Graphs",
+    "title": "TikzGraphs.jl",
+    "category": "section",
+    "text": "Another nice graph visualization package. (TikzPictures.jl required to render/save):julia> g = WheelGraph(10); t = plot(g)\n\njulia> save(SVG(\"wheel10.svg\"), t)producing a graph like this:(Image: Wheel Graph)"
+},
+
+{
+    "location": "plotting.html#[GraphPlot.jl](https://github.com/afternone/GraphPlot.jl)-1",
+    "page": "Plotting Graphs",
+    "title": "GraphPlot.jl",
+    "category": "section",
+    "text": "Another graph visualization package that is very simple to use. Compose.jl is required for most rendering functionality:julia> using GraphPlot, Compose\n\njulia> g = WheelGraph(10)\n\njulia> draw(PNG(\"/tmp/wheel10.png\", 16cm, 16cm), gplot(g))##NetworkViz.jl NetworkViz.jl is tightly coupled with LightGraphs.jl. Graphs can be visualized in 2D as well as 3D using ThreeJS.jl and Escher.jl.#Run this code in Escher\n\nusing NetworkViz\nusing LightGraphs\n\nmain(window) = begin\n  push!(window.assets, \"widgets\")\n  push!(window.assets,(\"ThreeJS\",\"threejs\"))\n  g = CompleteGraph(10)\n  drawGraph(g)\nendThe above code produces the following output:(Image: alt tag)"
 },
 
 {
@@ -793,6 +1033,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "distance.html#Distance-1",
+    "page": "Distance",
+    "title": "Distance",
+    "category": "section",
+    "text": "LightGraphs.jl includes the following distance measurements:Order = [:type, :function]\nPages   = [\"distance.md\"]"
+},
+
+{
     "location": "distance.html#LightGraphs.BoundedMinkowskiCost-Tuple{AbstractArray{T,1} where T,AbstractArray{T,1} where T}",
     "page": "Distance",
     "title": "LightGraphs.BoundedMinkowskiCost",
@@ -857,11 +1105,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "distance.html#Distance-1",
+    "location": "distance.html#Full-Docs-1",
     "page": "Distance",
-    "title": "Distance",
+    "title": "Full Docs",
     "category": "section",
-    "text": "LightGraphs.jl includes the following distance measurements:Modules = [LightGraphs]\nPages   = [ \"distance.jl\"]\nPrivate = false"
+    "text": "Modules = [LightGraphs]\nPages   = [ \"distance.jl\"]\nPrivate = false"
 },
 
 {
@@ -870,6 +1118,14 @@ var documenterSearchIndex = {"docs": [
     "title": "Centrality Measures",
     "category": "page",
     "text": ""
+},
+
+{
+    "location": "centrality.html#Centrality-Measures-1",
+    "page": "Centrality Measures",
+    "title": "Centrality Measures",
+    "category": "section",
+    "text": "Centrality measures describe the importance of a vertex to the rest of the graph using some set of criteria. Centrality measures implemented in LightGraphs.jl include the following:Pages   = [\"centrality.md\"]"
 },
 
 {
@@ -937,11 +1193,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "centrality.html#Centrality-Measures-1",
+    "location": "centrality.html#Full-docs-1",
     "page": "Centrality Measures",
-    "title": "Centrality Measures",
+    "title": "Full docs",
     "category": "section",
-    "text": "Centrality measures describe the importance of a vertex to the rest of the graph using some set of criteria. Centrality measures implemented in LightGraphs.jl include the following:Pages   = [\"centrality.md\"]Modules = [LightGraphs]\nPages   = [\n    \"centrality/betweenness.jl\",\n    \"centrality/closeness.jl\",\n    \"centrality/degree.jl\",\n    \"centrality/eigenvector.jl\",\n    \"centrality/katz.jl\",\n    \"centrality/pagerank.jl\",\n    \"centrality/stress.jl\",\n    \"centrality/radiality.jl\"\n]\nPrivate = false"
+    "text": "Modules = [LightGraphs]\nPages   = [\n    \"centrality/betweenness.jl\",\n    \"centrality/closeness.jl\",\n    \"centrality/degree.jl\",\n    \"centrality/eigenvector.jl\",\n    \"centrality/katz.jl\",\n    \"centrality/pagerank.jl\",\n    \"centrality/stress.jl\",\n    \"centrality/radiality.jl\"\n]\nPrivate = false"
 },
 
 {
@@ -957,7 +1213,15 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "Linear Algebra",
     "category": "section",
-    "text": "LightGraphs.jl provides the following matrix operations on both directed and undirected graphs in the LinAlg submodule:Modules = [LightGraphs]\nPages   = [\n    \"graphmatrices.jl\",\n    \"Nonbacktracking.jl\",\n    \"spectral.jl\"\n]\nPrivate = false"
+    "text": "LightGraphs.jl provides the following matrix operations on both directed and undirected graphs in the LinAlg submodule:Order = [:type, :function]\nPages   = [\"linalg.md\"]"
+},
+
+{
+    "location": "linalg.html#Full-Docs-1",
+    "page": "Linear Algebra",
+    "title": "Full Docs",
+    "category": "section",
+    "text": "Modules = [LightGraphs]\nPages   = [\n    \"graphmatrices.jl\",\n    \"Nonbacktracking.jl\",\n    \"spectral.jl\"\n]\nPrivate = false"
 },
 
 {
@@ -982,6 +1246,14 @@ var documenterSearchIndex = {"docs": [
     "title": "Community Structures",
     "category": "page",
     "text": ""
+},
+
+{
+    "location": "community.html#Community-Structures-1",
+    "page": "Community Structures",
+    "title": "Community Structures",
+    "category": "section",
+    "text": "LightGraphs.jl contains many algorithm to detect and analyze community structures in graphs. These include:Order = [:type, :function]\nPages   = [\"community.md\"]"
 },
 
 {
@@ -1049,11 +1321,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "community.html#Community-Structures-1",
+    "location": "community.html#Full-Docs-1",
     "page": "Community Structures",
-    "title": "Community Structures",
+    "title": "Full Docs",
     "category": "section",
-    "text": "LightGraphs.jl contains many algorithm to detect and analyze community structures in graphs.Modules = [LightGraphs]\nPages   = [\n    \"community/cliques.jl\",\n    \"community/clustering.jl\",\n    \"community/core-periphery.jl\",\n    \"community/label_propagation.jl\",\n    \"community/modularity.jl\"\n]\nPrivate = false"
+    "text": "Modules = [LightGraphs]\nPages   = [\n    \"community/cliques.jl\",\n    \"community/clustering.jl\",\n    \"community/core-periphery.jl\",\n    \"community/label_propagation.jl\",\n    \"community/modularity.jl\"\n]\nPrivate = false"
 },
 
 {
@@ -1062,6 +1334,14 @@ var documenterSearchIndex = {"docs": [
     "title": "Degeneracy",
     "category": "page",
     "text": ""
+},
+
+{
+    "location": "degeneracy.html#Graph-Decomposition-1",
+    "page": "Degeneracy",
+    "title": "Graph Decomposition",
+    "category": "section",
+    "text": "LightGraphs.jl provides the following graph degeneracy functions:Order = [:type, :function]\nPages   = [\"degeneracy.md\"]"
 },
 
 {
@@ -1105,11 +1385,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "degeneracy.html#Graph-Decomposition-1",
+    "location": "degeneracy.html#Full-Docs-1",
     "page": "Degeneracy",
-    "title": "Graph Decomposition",
+    "title": "Full Docs",
     "category": "section",
-    "text": "LightGraphs.jl provides the following graph degeneracy functions:Order = [:type, :function]\nPages   = [\"degeneracy.md\"]Modules = [LightGraphs]\nPages   = [\"degeneracy.jl\"]\nPrivate = false"
+    "text": "Modules = [LightGraphs]\nPages   = [\"degeneracy.jl\"]\nPrivate = false"
 },
 
 {
@@ -1118,6 +1398,14 @@ var documenterSearchIndex = {"docs": [
     "title": "Flow and Cut",
     "category": "page",
     "text": ""
+},
+
+{
+    "location": "flowcut.html#Flow-and-Cut-1",
+    "page": "Flow and Cut",
+    "title": "Flow and Cut",
+    "category": "section",
+    "text": "LightGraphs.jl provides different algorithms for maximum flow and minimum cut computations, including:Order = [:type, :function]\nPages   = [\"flowcut.md\"]"
 },
 
 {
@@ -1185,427 +1473,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "flowcut.html#Flow-and-Cut-1",
+    "location": "flowcut.html#Full-Docs-1",
     "page": "Flow and Cut",
-    "title": "Flow and Cut",
+    "title": "Full Docs",
     "category": "section",
-    "text": "LightGraphs.jl provides different algorithms for maximum flow and minimum cut computations.Modules = [LightGraphs]\nPages   = [ \"flow/boykov_kolmogorov.jl\",\n            \"flow/dinic.jl\",\n            \"flow/edmonds_karp.jl\",\n            \"flow/ext_multiroute_flow.jl\",\n            \"flow/kishimoto\",\n            \"flow/maximum_flow.jl\",\n            \"flow/multiroute_flow.jl\",\n            \"flow/push_relabel.jl\"\n            ]\nPrivate = false"
-},
-
-{
-    "location": "generators.html#",
-    "page": "Graph Generators",
-    "title": "Graph Generators",
-    "category": "page",
-    "text": ""
-},
-
-{
-    "location": "generators.html#Generators-1",
-    "page": "Graph Generators",
-    "title": "Generators",
-    "category": "section",
-    "text": ""
-},
-
-{
-    "location": "generators.html#LightGraphs.StochasticBlockModel",
-    "page": "Graph Generators",
-    "title": "LightGraphs.StochasticBlockModel",
-    "category": "Type",
-    "text": "StochasticBlockModel{T,P}\n\nA type capturing the parameters of the SBM. Each vertex is assigned to a block and the probability of edge (i,j) depends only on the block labels of vertex i and vertex j.\n\nThe assignement is stored in nodemap and the block affinities a k by k matrix is stored in affinities.\n\naffinities[k,l] is the probability of an edge between any vertex in block k and any vertex in block l.\n\nImplementation Notes\n\nGraphs are generated by taking random ij  V and flipping a coin with probability affinities[nodemap[i],nodemap[j]].\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.barabasi_albert!-Tuple{LightGraphs.AbstractGraph,Integer,Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.barabasi_albert!",
-    "category": "Method",
-    "text": "barabasi_albert!(g::AbstractGraph, n::Integer, k::Integer)\n\nCreate a Barabási–Albert model random graph with n vertices. It is grown by adding new vertices to an initial graph g. Each new vertex is attached with k edges to k different vertices already present in the system by preferential attachment.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.barabasi_albert-Tuple{Integer,Integer,Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.barabasi_albert",
-    "category": "Method",
-    "text": "barabasi_albert(n::Integer, n0::Integer, k::Integer)\n\nCreate a Barabási–Albert model random graph with n vertices. It is grown by adding new vertices to an initial graph with n0 vertices. Each new vertex is attached with k edges to k different vertices already present in the system by preferential attachment. Initial graphs are undirected and consist of isolated vertices by default.\n\nOptional Arguments\n\nis_directed=false: if true, return a directed graph.\ncomplete=false: if true, use a complete graph for the initial graph.\nseed=-1: set the RNG seed.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.barabasi_albert-Tuple{Integer,Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.barabasi_albert",
-    "category": "Method",
-    "text": "barabasi_albert(n, k)\n\nCreate a Barabási–Albert model random graph with n vertices. It is grown by adding new vertices to an initial graph with k vertices. Each new vertex is attached with k edges to k different vertices already present in the system by preferential attachment. Initial graphs are undirected and consist of isolated vertices by default.\n\nOptional Arguments\n\nis_directed=false: if true, return a directed graph.\ncomplete=false: if true, use a complete graph for the initial graph.\nseed=-1: set the RNG seed.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.blockcounts-Tuple{LightGraphs.StochasticBlockModel,AbstractArray{T,2} where T}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.blockcounts",
-    "category": "Method",
-    "text": "blockcounts(sbm, A)\n\nCount the number of edges that go between each block.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.erdos_renyi-Tuple{Integer,Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.erdos_renyi",
-    "category": "Method",
-    "text": "erdos_renyi(n, ne)\n\nCreate an Erdős–Rényi random graph with n vertices and ne edges.\n\nOptional Arguments\n\nis_directed=false: if true, return a directed graph.\nseed=-1: set the RNG seed.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.erdos_renyi-Tuple{Integer,Real}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.erdos_renyi",
-    "category": "Method",
-    "text": "erdos_renyi(n, p)\n\nCreate an Erdős–Rényi random graph with n vertices. Edges are added between pairs of vertices with probability p.\n\nOptional Arguments\n\nis_directed=false: if true, return a directed graph.\nseed=-1: set the RNG seed.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.kronecker",
-    "page": "Graph Generators",
-    "title": "LightGraphs.kronecker",
-    "category": "Function",
-    "text": "kronecker(SCALE, edgefactor, A=0.57, B=0.19, C=0.19)\n\nGenerate a directed Kronecker graph with the default Graph500 parameters.\n\n\n\nReferences\n\nhttp://www.graph500.org/specifications#alg:generator\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.make_edgestream-Tuple{LightGraphs.StochasticBlockModel}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.make_edgestream",
-    "category": "Method",
-    "text": "make_edgestream(sbm)\n\nTake an infinite sample from the Stochastic Block Model sbm. Pass to Graph(nvg, neg, edgestream) to get a Graph object based on sbm.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.random_configuration_model-Union{Tuple{Integer,Array{T,N} where N}, Tuple{T}} where T<:Integer",
-    "page": "Graph Generators",
-    "title": "LightGraphs.random_configuration_model",
-    "category": "Method",
-    "text": "random_configuration_model(n, ks)\n\nCreate a random undirected graph according to the configuration model containing n vertices, with each node i having degree k[i].\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\ncheck_graphical=false: if true, ensure that k is a graphical sequence\n\n(see isgraphical).\n\nPerformance\n\nTime complexity is approximately mathcalO(n bark^2).\n\nImplementation Notes\n\nAllocates an array of n bark Ints.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.random_regular_digraph-Tuple{Integer,Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.random_regular_digraph",
-    "category": "Method",
-    "text": "random_regular_digraph(n, k)\n\nCreate a random directed regular graph with n vertices, each with degree k.\n\nOptional Arguments\n\ndir=:out: the direction of the edges for degree parameter.\nseed=-1: set the RNG seed.\n\nImplementation Notes\n\nAllocates an n  n sparse matrix of boolean as an adjacency matrix and uses that to generate the directed graph.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.random_regular_graph-Tuple{Integer,Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.random_regular_graph",
-    "category": "Method",
-    "text": "random_regular_graph(n, k)\n\nCreate a random undirected regular graph with n vertices, each with degree k.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\nPerformance\n\nTime complexity is approximately mathcalO(nk^2).\n\nImplementation Notes\n\nAllocates an array of nk Ints, and . For k  fracn2, generates a graph of degree n-k-1 and returns its complement.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.static_fitness_model-Union{Tuple{Integer,Array{T,1},Array{S,1}}, Tuple{S}, Tuple{T}} where T<:Real where S<:Real",
-    "page": "Graph Generators",
-    "title": "LightGraphs.static_fitness_model",
-    "category": "Method",
-    "text": "static_fitness_model(m, fitness_out, fitness_in)\n\nGenerate a random graph with fitness_out + fitness_in vertices and m edges, in which the probability of the existence of Edge_ij is proportional with respect to i  fitness_out and j  fitness_in.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\nPerformance\n\nTime complexity is mathcalO(V + E log E).\n\nReferences\n\nGoh K-I, Kahng B, Kim D: Universal behaviour of load distribution in scale-free networks. Phys Rev Lett 87(27):278701, 2001.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.static_fitness_model-Union{Tuple{Integer,Array{T,1}}, Tuple{T}} where T<:Real",
-    "page": "Graph Generators",
-    "title": "LightGraphs.static_fitness_model",
-    "category": "Method",
-    "text": "static_fitness_model(m, fitness)\n\nGenerate a random graph with fitness vertices and m edges, in which the probability of the existence of Edge_ij is proportional to fitness_i   fitness_j.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\nPerformance\n\nTime complexity is mathcalO(V + E log E).\n\nReferences\n\nGoh K-I, Kahng B, Kim D: Universal behaviour of load distribution in scale-free networks. Phys Rev Lett 87(27):278701, 2001.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.static_scale_free-Tuple{Integer,Integer,Real,Float64}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.static_scale_free",
-    "category": "Method",
-    "text": "static_scale_free(n, m, α_out, α_in)\n\nGenerate a random graph with n vertices, m edges and expected power-law degree distribution with exponent α_out for outbound edges and α_in for inbound edges.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\nfinite_size_correction=true: determines whether to use the finite size correction\n\nproposed by Cho et al.\n\nPerformance\n\nTime complexity is mathcalO(V + E log E).\n\nReferences\n\nGoh K-I, Kahng B, Kim D: Universal behaviour of load distribution in scale-free networks. Phys Rev Lett 87(27):278701, 2001.\nChung F and Lu L: Connected components in a random graph with given degree sequences. Annals of Combinatorics 6, 125-145, 2002.\nCho YS, Kim JS, Park J, Kahng B, Kim D: Percolation transitions in scale-free networks under the Achlioptas process. Phys Rev Lett 103:135702, 2009.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.static_scale_free-Tuple{Integer,Integer,Real}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.static_scale_free",
-    "category": "Method",
-    "text": "static_scale_free(n, m, α)\n\nGenerate a random graph with n vertices, m edges and expected power-law degree distribution with exponent α.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\nfinite_size_correction=true: determines whether to use the finite size correction\n\nproposed by Cho et al.\n\nPerformance\n\nTime complexity is mathcalO(V + E log E).\n\nReferences\n\nGoh K-I, Kahng B, Kim D: Universal behaviour of load distribution in scale-free networks. Phys Rev Lett 87(27):278701, 2001.\nChung F and Lu L: Connected components in a random graph with given degree sequences. Annals of Combinatorics 6, 125-145, 2002.\nCho YS, Kim JS, Park J, Kahng B, Kim D: Percolation transitions in scale-free networks under the Achlioptas process. Phys Rev Lett 103:135702, 2009.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.stochastic_block_model-Union{Tuple{Array{T,2},Array{U,1}}, Tuple{T}, Tuple{U}} where T<:Real where U<:Integer",
-    "page": "Graph Generators",
-    "title": "LightGraphs.stochastic_block_model",
-    "category": "Method",
-    "text": "stochastic_block_model(c, n)\n\nReturn a Graph generated according to the Stochastic Block Model (SBM).\n\nc[a,b] : Mean number of neighbors of a vertex in block a belonging to block b.            Only the upper triangular part is considered, since the lower traingular is            determined by cba = cab * fracnanb. n[a] : Number of vertices in block a\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\nFor a dynamic version of the SBM see the StochasticBlockModel type and related functions.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.stochastic_block_model-Union{Tuple{T,T,Array{U,1}}, Tuple{T}, Tuple{U}} where T<:Real where U<:Integer",
-    "page": "Graph Generators",
-    "title": "LightGraphs.stochastic_block_model",
-    "category": "Method",
-    "text": "stochastic_block_model(cint, cext, n)\n\nReturn a Graph generated according to the Stochastic Block Model (SBM), sampling from an SBM with c_aa=cint, and c_ab=cext.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.watts_strogatz-Tuple{Integer,Integer,Real}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.watts_strogatz",
-    "category": "Method",
-    "text": "watts_strogatz(n, k, β)\n\nReturn a Watts-Strogatz small model random graph with n vertices, each with degree k. Edges are randomized per the model based on probability β.\n\nOptional Arguments\n\nis_directed=false: if true, return a directed graph.\nseed=-1: set the RNG seed.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#Random-Graphs-1",
-    "page": "Graph Generators",
-    "title": "Random Graphs",
-    "category": "section",
-    "text": "LightGraphs.jl implements some common random graph generators:Modules = [LightGraphs]\nPages   = [\n    \"generators/randgraphs.jl\"\n]\nPrivate = false"
-},
-
-{
-    "location": "generators.html#LightGraphs.BinaryTree-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.BinaryTree",
-    "category": "Method",
-    "text": "BinaryTree(k::Integer)\n\nCreate a binary tree of depth k.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.CliqueGraph-Tuple{Integer,Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.CliqueGraph",
-    "category": "Method",
-    "text": "CliqueGraph(k, n)\n\nCreate a graph consisting of n connected k-cliques.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.CompleteBipartiteGraph-Tuple{Integer,Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.CompleteBipartiteGraph",
-    "category": "Method",
-    "text": "CompleteBipartiteGraph(n1, n2)\n\nCreate an undirected complete bipartite graph with n1 + n2 vertices.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.CompleteDiGraph-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.CompleteDiGraph",
-    "category": "Method",
-    "text": "CompleteDiGraph(n)\n\nCreate a directed complete graph with n vertices.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.CompleteGraph-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.CompleteGraph",
-    "category": "Method",
-    "text": "CompleteGraph(n)\n\nCreate an undirected complete graph with n vertices.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.CycleDiGraph-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.CycleDiGraph",
-    "category": "Method",
-    "text": "CycleDiGraph(n)\n\nCreate a directed cycle graph with n vertices.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.CycleGraph-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.CycleGraph",
-    "category": "Method",
-    "text": "CycleGraph(n)\n\nCreate an undirected cycle graph with n vertices.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.DoubleBinaryTree-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.DoubleBinaryTree",
-    "category": "Method",
-    "text": "BinaryTree(k::Integer)\n\nCreate a double complete binary tree with k levels.\n\nReferences\n\nUsed as an example for spectral clustering by Guattery and Miller 1998.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.Grid-Tuple{AbstractArray{T,1} where T}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.Grid",
-    "category": "Method",
-    "text": "Grid(dims; periodic=false)\n\nCreate a dims-dimensional cubic lattice, with length dims[i] in dimension i.\n\nOptional Arguments\n\nperiodic=false: If true, the resulting lattice will have periodic boundary\n\ncondition in each dimension.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.PathDiGraph-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.PathDiGraph",
-    "category": "Method",
-    "text": "PathDiGraph(n)\n\nCreates a directed path graph with n vertices.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.PathGraph-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.PathGraph",
-    "category": "Method",
-    "text": "PathGraph(n)\n\nCreate an undirected path graph with n vertices.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.RoachGraph-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.RoachGraph",
-    "category": "Method",
-    "text": "RoachGraph(k)\n\nCreate a Roach Graph of size k.\n\nReferences\n\nGuattery and Miller 1998\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.StarDiGraph-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.StarDiGraph",
-    "category": "Method",
-    "text": "StarDiGraph(n)\n\nCreate a directed star graph with n vertices.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.StarGraph-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.StarGraph",
-    "category": "Method",
-    "text": "StarGraph(n)\n\nCreate an undirected star graph with n vertices.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.WheelDiGraph-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.WheelDiGraph",
-    "category": "Method",
-    "text": "WheelDiGraph(n)\n\nCreate a directed wheel graph with n vertices.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.WheelGraph-Tuple{Integer}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.WheelGraph",
-    "category": "Method",
-    "text": "WheelGraph(n)\n\nCreate an undirected wheel graph with n vertices.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#Static-Graphs-1",
-    "page": "Graph Generators",
-    "title": "Static Graphs",
-    "category": "section",
-    "text": "LightGraphs.jl also implements a collection of classic graph generators:Modules = [LightGraphs]\nPages   = [ \"generators/staticgraphs.jl\"]\nPrivate = false"
-},
-
-{
-    "location": "generators.html#LightGraphs.smallgraph-Tuple{Symbol}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.smallgraph",
-    "category": "Method",
-    "text": "smallgraph(s)\nsmallgraph(s)\n\nCreate a small graph of type s. Admissible values for s are:\n\ns graph type\n:bull A bull graph.\n:chvatal A Chvátal graph.\n:cubical A Platonic cubical graph.\n:desargues A Desarguesgraph.\n:diamond A diamond graph.\n:dodecahedral A Platonic dodecahedral  graph.\n:frucht A Frucht graph.\n:heawood A Heawood graph.\n:house A graph mimicing the classic outline of a house.\n:housex A house graph, with two edges crossing the bottom square.\n:icosahedral A Platonic icosahedral   graph.\n:krackhardtkite A Krackhardt-Kite social network  graph.\n:moebiuskantor A Möbius-Kantor graph.\n:octahedral A Platonic octahedral graph.\n:pappus A Pappus graph.\n:petersen A Petersen graph.\n:sedgewickmaze A simple maze graph used in Sedgewick's Algorithms in C++: Graph  Algorithms (3rd ed.)\n:tetrahedral A Platonic tetrahedral  graph.\n:truncatedcube A skeleton of the truncated cube graph.\n:truncatedtetrahedron A skeleton of the truncated tetrahedron  graph.\n:truncatedtetrahedron_dir A skeleton of the truncated tetrahedron digraph.\n:tutte A Tutte graph.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#Small-Graphs-1",
-    "page": "Graph Generators",
-    "title": "Small Graphs",
-    "category": "section",
-    "text": "Other classical graphs can be generated by the following function:Modules = [LightGraphs]\nPages   = [ \"generators/smallgraphs.jl\"]\nPrivate = false"
-},
-
-{
-    "location": "generators.html#LightGraphs.euclidean_graph-Tuple{Array{T,2} where T}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.euclidean_graph",
-    "category": "Method",
-    "text": "euclidean_graph(points)\n\nGiven the d×N matrix points build an Euclidean graph of N vertices and return a graph and Dict containing the distance on each edge.\n\nOptional Arguments\n\nL=1: used to bound the d dimensional box from which points are selected.\np=2\nbc=:open\n\nImplementation Notes\n\nDefining the d-dimensional vectors x[i] = points[:,i], an edge between vertices i and j is inserted if norm(x[i]-x[j], p) < cutoff. In case of negative cutoff instead every edge is inserted. For p=2 we have the standard Euclidean distance. Set bc=:periodic to impose periodic boundary conditions in the box 0L^d.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#LightGraphs.euclidean_graph-Tuple{Int64,Int64}",
-    "page": "Graph Generators",
-    "title": "LightGraphs.euclidean_graph",
-    "category": "Method",
-    "text": "euclidean_graph(N, d; seed=-1, L=1., p=2., cutoff=-1., bc=:open)\n\nGenerate N uniformly distributed points in the box 0L^d and return a Euclidean graph, a map containing the distance on each edge and a matrix with the points' positions.\n\n\n\n"
-},
-
-{
-    "location": "generators.html#Euclidean-Graphs-1",
-    "page": "Graph Generators",
-    "title": "Euclidean Graphs",
-    "category": "section",
-    "text": "Generation of random and static graphs embedded in Euclidean space.Modules = [LightGraphs]\nPages   = [ \"generators/euclideangraphs.jl\"]\nPrivate = false"
-},
-
-{
-    "location": "generators.html#Datasets-1",
-    "page": "Graph Generators",
-    "title": "Datasets",
-    "category": "section",
-    "text": "Other notorious graphs and integration with the MatrixDepot.jl package are available in the Datasets submodule of the companion package LightGraphsExtras.jl ```"
-},
-
-{
-    "location": "persistence.html#",
-    "page": "Reading / Writing Graphs",
-    "title": "Reading / Writing Graphs",
-    "category": "page",
-    "text": ""
-},
-
-{
-    "location": "persistence.html#LightGraphs.loadgraph-Tuple{AbstractString,AbstractString,LightGraphs.AbstractGraphFormat}",
-    "page": "Reading / Writing Graphs",
-    "title": "LightGraphs.loadgraph",
-    "category": "Method",
-    "text": "loadgraph(file, gname=\"graph\", format=LGFormat)\n\nRead a graph named gname from file in the format format.\n\nImplementation Notes\n\ngname is graph-format dependent and is only used if the file contains multiple graphs; if the file format does not support multiple graphs, this value is ignored. The default value may change in the future.\n\n\n\n"
-},
-
-{
-    "location": "persistence.html#LightGraphs.loadgraphs-Tuple{AbstractString,LightGraphs.AbstractGraphFormat}",
-    "page": "Reading / Writing Graphs",
-    "title": "LightGraphs.loadgraphs",
-    "category": "Method",
-    "text": "loadgraphs(file, format=LGFormat())\n\nLoad multiple graphs from file in the format format. Return a dictionary mapping graph name to graph.\n\nImplementation Notes\n\nFor unnamed graphs the default name \"graph\" will be used. This default may change in the future.\n\n\n\n"
-},
-
-{
-    "location": "persistence.html#LightGraphs.savegraph-Tuple{AbstractString,LightGraphs.AbstractGraph,AbstractString,LightGraphs.AbstractGraphFormat}",
-    "page": "Reading / Writing Graphs",
-    "title": "LightGraphs.savegraph",
-    "category": "Method",
-    "text": "savegraph(file, g, gname=\"graph\", format=LGFormat; compress=true)\n\nSaves a graph g with name gname to file in the format format. If compress = true, use GZip compression when writing the file. Return the number of graphs written.\n\nImplementation Notes\n\nThe default graph name assigned to gname may change in the future.\n\n\n\n"
-},
-
-{
-    "location": "persistence.html#LightGraphs.savegraph-Union{Tuple{AbstractString,Dict{T,U},LightGraphs.AbstractGraphFormat}, Tuple{T}, Tuple{U}} where T<:AbstractString where U<:LightGraphs.AbstractGraph",
-    "page": "Reading / Writing Graphs",
-    "title": "LightGraphs.savegraph",
-    "category": "Method",
-    "text": "savegraph(file, g, d, format=LGFormat; compress=true)\n\nSave a dictionary of graphname => graph to file in the format format. If compress = true, use GZip compression when writing the file. Return the number of graphs written.\n\nImplementation Notes\n\nWill only work if the file format supports multiple graph types.\n\n\n\n"
-},
-
-{
-    "location": "persistence.html#Reading-and-writing-Graphs-1",
-    "page": "Reading / Writing Graphs",
-    "title": "Reading and writing Graphs",
-    "category": "section",
-    "text": "Graphs may be written to I/O streams and files using the savegraph function and read with the loadgraph function. The default graph format is a proprietary compressed LightGraphs.jl format lg. Other formats are available via the GraphPersistence package.Modules = [LightGraphs]\nPages   = [ \"persistence/common.jl\"]\nPrivate = false"
-},
-
-{
-    "location": "persistence.html#Examples-1",
-    "page": "Reading / Writing Graphs",
-    "title": "Examples",
-    "category": "section",
-    "text": "save(STDOUT, g)\nsave(\"mygraph.jgz\", g, \"mygraph\", compress=true)\n\nsavegraph(\"mygraph.jgz\", g, compress=true)\n\ndg = load(\"multiplegraphs.jgz\") # dictionary of graphs"
+    "text": "Modules = [LightGraphs]\nPages   = [ \"flow/boykov_kolmogorov.jl\",\n            \"flow/dinic.jl\",\n            \"flow/edmonds_karp.jl\",\n            \"flow/ext_multiroute_flow.jl\",\n            \"flow/kishimoto\",\n            \"flow/maximum_flow.jl\",\n            \"flow/multiroute_flow.jl\",\n            \"flow/push_relabel.jl\"\n            ]\nPrivate = false"
 },
 
 {
@@ -1633,35 +1505,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "integration.html#[GraphLayout.jl](https://github.com/IainNZ/GraphLayout.jl)-1",
-    "page": "Integration with other packages",
-    "title": "GraphLayout.jl",
-    "category": "section",
-    "text": "This excellent graph visualization package can be used with LightGraphs.jl as follows:julia> g = WheelGraph(10); am = full(adjacency_matrix(g))\njulia> loc_x, loc_y = layout_spring_adj(am)\njulia> draw_layout_adj(am, loc_x, loc_y, filename=\"wheel10.svg\")producing a graph like this:(Image: Wheel Graph)"
-},
-
-{
-    "location": "integration.html#[TikzGraphs.jl](https://github.com/sisl/TikzGraphs.jl)-1",
-    "page": "Integration with other packages",
-    "title": "TikzGraphs.jl",
-    "category": "section",
-    "text": "Another nice graph visualization package. (TikzPictures.jl required to render/save):julia> g = WheelGraph(10); t = plot(g)\n\njulia> save(SVG(\"wheel10.svg\"), t)producing a graph like this:(Image: Wheel Graph)"
-},
-
-{
-    "location": "integration.html#[GraphPlot.jl](https://github.com/afternone/GraphPlot.jl)-1",
-    "page": "Integration with other packages",
-    "title": "GraphPlot.jl",
-    "category": "section",
-    "text": "Another graph visualization package that is very simple to use. Compose.jl is required for most rendering functionality:julia> using GraphPlot, Compose\n\njulia> g = WheelGraph(10)\n\njulia> draw(PNG(\"/tmp/wheel10.png\", 16cm, 16cm), gplot(g))"
-},
-
-{
     "location": "integration.html#[Metis.jl](https://github.com/JuliaSparse/Metis.jl)-1",
     "page": "Integration with other packages",
     "title": "Metis.jl",
     "category": "section",
-    "text": "The Metis graph partitioning package can interface with LightGraphs.jl:julia> using LightGraphs\n\njulia> g = Graph(100,1000)\n{100, 1000} undirected graph\n\njulia> partGraphKway(g, 6)  # 6 partitions##NetworkViz.jl NetworkViz.jl is tightly coupled with LightGraphs.jl. Graphs can be visualized in 2D as well as 3D using ThreeJS.jl and Escher.jl.#Run this code in Escher\n\nusing NetworkViz\nusing LightGraphs\n\nmain(window) = begin\n  push!(window.assets, \"widgets\")\n  push!(window.assets,(\"ThreeJS\",\"threejs\"))\n  g = CompleteGraph(10)\n  drawGraph(g)\nendThe above code produces the following output:(Image: alt tag)"
+    "text": "The Metis graph partitioning package can interface with LightGraphs.jl:julia> using LightGraphs\n\njulia> g = Graph(100,1000)\n{100, 1000} undirected graph\n\njulia> partGraphKway(g, 6)  # 6 partitions"
 },
 
 {
