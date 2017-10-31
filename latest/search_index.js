@@ -629,7 +629,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Reading / Writing Graphs",
     "title": "Saving using LightGraphs.jl lg format.",
     "category": "section",
-    "text": "Graphs may be written to I/O streams and files using the savegraph function and read with the loadgraph function. The default graph format is a bespoke compressed LightGraphs.jl format lg."
+    "text": "Graphs may be written to I/O streams and files using the savegraph function and read with the loadgraph function. The default graph format is a bespoke compressed LightGraphs.jl format LG."
 },
 
 {
@@ -637,7 +637,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Reading / Writing Graphs",
     "title": "Example",
     "category": "section",
-    "text": "\ng = erdos_renyi(5, 0.2)\n\nsavegraph(\"mygraph.lg\", g)\nreloaded_g = loadgraph(\"mygraph.lg\")In addition, graphs can also be compressed for storage using the compress option.\nsavegraph(\"mygraph.lgz\", g, compress=true)\n\nreloaded_g = loadgraph(\"mygraph.lgz\")Finally, dictionaries of graphs can also be saved and subsequently re-loaded one by one.graph_dict = {\"g1\" => erdos_renyi(5, 0.1),\n              \"g2\" => erdos_renyi(10, 0.2),\n              \"g3\" => erdos_renyi(2, 0.9)}\n\nsavegraph(\"mygraph_dict.lg\", graph_dict)\n\n# Re-load only graph g1\nreloaded_g1 = loadgraph(\"mygraph_dict.lg\", \"g1\")"
+    "text": "\ng = erdos_renyi(5, 0.2)\n\nsavegraph(\"mygraph.lgz\", g)\nreloaded_g = loadgraph(\"mygraph.lgz\")In addition, graphs can also be saved in an uncompressed format using the compress=false option.\nsavegraph(\"mygraph.lg\", g, compress=false)\n\nreloaded_g = loadgraph(\"mygraph.lg\")Finally, dictionaries of graphs can also be saved and subsequently re-loaded one by one.graph_dict = {\"g1\" => erdos_renyi(5, 0.1),\n              \"g2\" => erdos_renyi(10, 0.2),\n              \"g3\" => erdos_renyi(2, 0.9)}\n\nsavegraph(\"mygraph_dict.lg\", graph_dict)\n\n# Re-load only graph g1\nreloaded_g1 = loadgraph(\"mygraph_dict.lg\", \"g1\")"
 },
 
 {
