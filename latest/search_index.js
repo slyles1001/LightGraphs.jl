@@ -1225,11 +1225,179 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "linalg.html#LightGraphs.LinAlg",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg",
+    "category": "Module",
+    "text": "LinAlg\n\nA package for using the type system to check types of graph matrices.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.Adjacency",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.Adjacency",
+    "category": "Type",
+    "text": "Adjacency{T}\n\nThe core Adjacency matrix structure. Keeps the vertex degrees around. Subtypes are used to represent the different normalizations of the adjacency matrix. Laplacian and its subtypes are used for the different Laplacian matrices.\n\nAdjacency(lapl::Laplacian) provides a generic function for getting the adjacency matrix of a Laplacian matrix. If your subtype of Laplacian does not provide an field A for the Adjacency instance, then attach another method to this function to provide an Adjacency{T} representation of the Laplacian. The Adjacency matrix here is the final subtype that corresponds to this type of Laplacian\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.AveragingAdjacency",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.AveragingAdjacency",
+    "category": "Type",
+    "text": "AveragingAdjacency{T}\n\nThe matrix whose action is to average over each neighborhood.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.AveragingLaplacian",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.AveragingLaplacian",
+    "category": "Type",
+    "text": "AveragingLaplacian{T}\n\nLaplacian version of the AveragingAdjacency matrix.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.CombinatorialAdjacency",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.CombinatorialAdjacency",
+    "category": "Type",
+    "text": "CombinatorialAdjacency{T,S,V}\n\nThe standard adjacency matrix.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.GraphMatrix",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.GraphMatrix",
+    "category": "Type",
+    "text": "GraphMatrix{T}\n\nAn abstract type to allow opertions on any type of graph matrix\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.Noop",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.Noop",
+    "category": "Type",
+    "text": "Noop\n\nA type that represents no action.\n\nImplementation Notes\n\nThe purpose of Noop is to help write more general code for the\n\ndifferent scaled GraphMatrix types.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.NormalizedAdjacency",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.NormalizedAdjacency",
+    "category": "Type",
+    "text": "NormalizedAdjacency{T}\n\nThe normalized adjacency matrix is hatA = D^-12 A D^-12. If A is symmetric, then the normalized adjacency is also symmetric with real eigenvalues bounded by [-1, 1].\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.NormalizedLaplacian",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.NormalizedLaplacian",
+    "category": "Type",
+    "text": "NormalizedLaplacian{T}\n\nThe normalized Laplacian is hatL = I - D^-12 A D^-12. If A is symmetric, then the normalized Laplacian is also symmetric with positive eigenvalues bounded by 2.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.StochasticAdjacency",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.StochasticAdjacency",
+    "category": "Type",
+    "text": "StochasticAdjacency{T}\n\nA transition matrix for the random walk.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.StochasticLaplacian",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.StochasticLaplacian",
+    "category": "Type",
+    "text": "StochasticLaplacian{T}\n\nLaplacian version of the StochasticAdjacency matrix.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.degrees-Tuple{LightGraphs.LinAlg.CombinatorialAdjacency}",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.degrees",
+    "category": "Method",
+    "text": "degrees(adjmat)\n\nReturn the degrees of a graph represented by the CombinatorialAdjacency adjmat.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.degrees-Tuple{LightGraphs.LinAlg.GraphMatrix}",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.degrees",
+    "category": "Method",
+    "text": "degrees(graphmx)\n\nReturn the degrees of a graph represented by the graph matrix graphmx.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.symmetrize",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.symmetrize",
+    "category": "Function",
+    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.symmetrize",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.symmetrize",
+    "category": "Function",
+    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.adjacency_spectrum",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.adjacency_spectrum",
+    "category": "Function",
+    "text": "Return the eigenvalues of the adjacency matrix for a graph g, indexed by vertex. Default values for T are the same as those in adjacency_matrix.\n\nOptional Arguments\n\ndir=:unspec: Options for dir are the same as those in laplacian_matrix.\n\nPerformance\n\nConverts the matrix to dense with nv^2 memory usage.\n\nImplementation Notes\n\nUse eigs(adjacency_matrix(g);  kwargs...) to compute some of the eigenvalues/eigenvectors.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.incidence_matrix",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.incidence_matrix",
+    "category": "Function",
+    "text": "incidence_matrix(g[, T=Int; oriented=false])\n\nReturn a sparse node-arc incidence matrix for a graph, indexed by [v, i], where i is in 1:ne(g), indexing an edge e. For directed graphs, a value of -1 indicates that src(e) == v, while a value of 1 indicates that dst(e) == v. Otherwise, the value is 0. For undirected graphs, both entries are 1 by default (this behavior can be overridden by the oriented optional argument).\n\nIf oriented (default false) is true, for an undirected graph g, the matrix will contain arbitrary non-zero values representing connectivity between v and i.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.LinAlg.spectral_distance",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.LinAlg.spectral_distance",
+    "category": "Function",
+    "text": "spectral_distance(G₁, G₂ [, k])\n\nCompute the spectral distance between undirected n-vertex graphs G₁ and G₂ using the top k greatest eigenvalues. If k is ommitted, uses full spectrum.\n\nReferences\n\nJOVANOVIC, I.; STANIC, Z., 2014. Spectral Distances of Graphs Based on their Different Matrix Representations\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.adjacency_matrix",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.adjacency_matrix",
+    "category": "Function",
+    "text": "adjacency_matrix(g[, T=Int; dir=:out])\n\nReturn a sparse adjacency matrix for a graph, indexed by [u, v] vertices. Non-zero values indicate an edge between u and v. Users may override the default data type (Int) and specify an optional direction.\n\nOptional Arguments\n\ndir=:out: :in, :out, or :both are currently supported.\n\nImplementation Notes\n\nThis function is optimized for speed and directly manipulates CSC sparse matrix fields.\n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.laplacian_matrix-Union{Tuple{LightGraphs.AbstractGraph{U},DataType}, Tuple{LightGraphs.AbstractGraph{U}}, Tuple{U}} where U",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.laplacian_matrix",
+    "category": "Method",
+    "text": "laplacian_matrix(g[, T=Int; dir=:unspec])\n\nReturn a sparse Laplacian matrix for a graph g, indexed by [u, v] vertices. T defaults to Int for both graph types.\n\nOptional Arguments\n\ndir=:unspec: :unspec, :both, :in, and:outare currently supported. For undirected graphs,dirdefaults to:out; for directed graphs,dirdefaults to:both`. \n\n\n\n"
+},
+
+{
+    "location": "linalg.html#LightGraphs.laplacian_spectrum",
+    "page": "Linear Algebra",
+    "title": "LightGraphs.laplacian_spectrum",
+    "category": "Function",
+    "text": "laplacian_spectrum(g[, T=Int; dir=:unspec])\n\nReturn the eigenvalues of the Laplacian matrix for a graph g, indexed by vertex. Default values for T are the same as those in laplacian_matrix.\n\nOptional Arguments\n\ndir=:unspec: Options for dir are the same as those in laplacian_matrix.\n\nPerformance\n\nConverts the matrix to dense with nv^2 memory usage.\n\nImplementation Notes\n\nUse eigs(laplacian_matrix(g);  kwargs...) to compute some of the eigenvalues/eigenvectors.\n\n\n\n"
+},
+
+{
     "location": "linalg.html#Full-Docs-1",
     "page": "Linear Algebra",
     "title": "Full Docs",
     "category": "section",
-    "text": "Modules = [LightGraphs]\nPages   = [\n    \"graphmatrices.jl\",\n    \"Nonbacktracking.jl\",\n    \"spectral.jl\"\n]\nPrivate = false"
+    "text": "Modules = [LightGraphs.LinAlg]\nPages   = [\n    \"graphmatrices.jl\",\n    \"Nonbacktracking.jl\",\n    \"spectral.jl\"\n]\nPrivate = false"
 },
 
 {
