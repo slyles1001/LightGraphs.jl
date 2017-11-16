@@ -997,7 +997,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.gdistances",
     "category": "Function",
-    "text": "gdistances(g, source)\n\nReturn a vector filled with the geodesic distances of vertices in  g from source. If source is a collection of vertices each element should be unique. For vertices in disconnected components the default distance is -1.\n\n\n\n"
+    "text": "gdistances(g, source)\n\nReturn a vector filled with the geodesic distances of vertices in  g from source. If source is a collection of vertices each element should be unique. For vertices in disconnected components the default distance is typemax(T).\n\n\n\n"
 },
 
 {
@@ -1005,7 +1005,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.gdistances!",
     "category": "Function",
-    "text": "gdistances!(g, source, dists)\n\nFill dists with the geodesic distances of vertices in g from source. dists should be a vector of length nv(g). Return dists. For vertices in disconnected components the default distance is -1.\n\n\n\n"
+    "text": "gdistances!(g, source, dists)\n\nFill dists with the geodesic distances of vertices in g from source. dists should be a vector of length nv(g) filled with typemax(T). Return dists. For vertices in disconnected components the default distance is typemax(T).\n\n\n\n"
 },
 
 {
