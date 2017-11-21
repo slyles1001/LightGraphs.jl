@@ -273,6 +273,70 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "generators.html#LightGraphs.Graph",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.Graph",
+    "category": "Type",
+    "text": "Graph\n\nA datastruture representing an undirected graph.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.DiGraph",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.DiGraph",
+    "category": "Type",
+    "text": "DiGraph\n\nA datastruture representing a directed graph.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.add_edge!",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.add_edge!",
+    "category": "Function",
+    "text": "add_edge!(g, e)\n\nAdd a new edge e to g. Return false if add fails (e.g., if vertices are not in the graph, or edge already exists), true otherwise.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.rem_edge!",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.rem_edge!",
+    "category": "Function",
+    "text": "rem_edge!(g, e)\n\nRemove the edge e from g. Return false if edge removal fails (e.g., if edge does not exist), true otherwise.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.add_vertex!",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.add_vertex!",
+    "category": "Function",
+    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.add_vertices!",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.add_vertices!",
+    "category": "Function",
+    "text": "add_vertices!(g, n)\n\nAdd n new vertices to the graph g. Return the number of vertices that were added successfully.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.rem_vertex!",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.rem_vertex!",
+    "category": "Function",
+    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#Base.zero",
+    "page": "Making and Modifying Graphs",
+    "title": "Base.zero",
+    "category": "Function",
+    "text": "zero(g)\n\nReturn a zero-vertex, zero-edge version of the same type of graph as g.\n\n\n\n"
+},
+
+{
     "location": "generators.html#Modifying-graphs-1",
     "page": "Making and Modifying Graphs",
     "title": "Modifying graphs",
@@ -857,11 +921,19 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "pathing.html#LightGraphs.DefaultDistance",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.DefaultDistance",
+    "category": "Type",
+    "text": "DefaultDistance\n\nAn array-like structure that provides distance values of 1 for any src, dst combination.\n\n\n\n"
+},
+
+{
     "location": "pathing.html#Path-and-Traversal-1",
     "page": "Path and Traversal",
     "title": "Path and Traversal",
     "category": "section",
-    "text": "LightGraphs.jl provides several traversal and shortest-path algorithms, along with various utility functions. Where appropriate, edge distances may be passed in as a matrix of real number values.Edge distances for most traversals may be passed in as a sparse or dense matrix of  values, indexed by [src,dst] vertices. That is, distmx[2,4] = 2.5 assigns the distance 2.5 to the (directed) edge connecting vertex 2 and vertex 4. Note that also for undirected graphs distmx[4,2] has to be set.Any graph traversal  will traverse an edge only if it is present in the graph. When a distance matrix is passed in,distance values for undefined edges will be ignored, and\nany unassigned values (in sparse distance matrices), for edges that are present in the graph, will be assumed to take the default value of 1.0.\nany zero values (in sparse/dense distance matrices), for edges that are present in the graph, will instead have an implicit edge cost of 1.0."
+    "text": "LightGraphs.jl provides several traversal and shortest-path algorithms, along with various utility functions. Where appropriate, edge distances may be passed in as a matrix of real number values.Edge distances for most traversals may be passed in as a sparse or dense matrix of  values, indexed by [src,dst] vertices. That is, distmx[2,4] = 2.5 assigns the distance 2.5 to the (directed) edge connecting vertex 2 and vertex 4. Note that also for undirected graphs distmx[4,2] has to be set.Default edge distances may be passed in via theLightGraphs.DefaultDistancestructure.Any graph traversal  will traverse an edge only if it is present in the graph. When a distance matrix is passed in,distance values for undefined edges will be ignored, and\nany unassigned values (in sparse distance matrices), for edges that are present in the graph, will be assumed to take the default value of 1.0.\nany zero values (in sparse/dense distance matrices), for edges that are present in the graph, will instead have an implicit edge cost of 1.0."
 },
 
 {
@@ -869,7 +941,15 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.bfs_tree",
     "category": "Function",
-    "text": "bfs_tree(g, s[; dir=:out])\n\nProvide a breadth-first traversal of the graph g starting with source vertex s, and return a directed acyclic graph of vertices in the order they were discovered. If dir is specified, use the corresponding edge direction (:in and :out are acceptable values).\n\n\n\nbfs_tree(LevelSynchronousBFS(), g, s, nv)\n\nProvide a parallel breadth-first traversal of the graph g starting with source vertex s, and return a directed acyclic graph of vertices in the order they were discovered using a frontier based parallel approach.\n\nImplementation Notes\n\nThis function uses @threads for parallelism which depends on the JULIA_NUM_THREADS environment variable to decide the number of threads to use. Refer @threads documentation for more details. This function is a high level wrapper around bfs_tree!; use that function for more performance.\n\n\n\n"
+    "text": "bfs_tree(g, s[; dir=:out])\n\nProvide a breadth-first traversal of the graph g starting with source vertex s, and return a directed acyclic graph of vertices in the order they were discovered. If dir is specified, use the corresponding edge direction (:in and :out are acceptable values).\n\n\n\nbfs_tree(LevelSynchronousBFS(), g, s, nv)\n\nProvide a parallel breadth-first traversal of the graph g starting with source vertex s, and return a directed acyclic graph of vertices in the order they were discovered using a frontier based parallel approach.\n\nImplementation Notes\n\nThis function uses @threads for parallelism which depends on the JULIA_NUM_THREADS environment variable to decide the number of threads to use. Refer @threads documentation for more details. This function is a high level wrapper around LightGraphs.bfs_tree!; use that function for more performance.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.bfs_tree!",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.bfs_tree!",
+    "category": "Function",
+    "text": "bfs_tree!(LevelSynchronousBFS(), g, src, parents)\n\nProvide a parallel breadth-first traversal of the graph g starting with source vertex s, and return a parents array. The returned array is an Array of Atomic integers.\n\nImplementation Notes\n\nThis function uses @threads for parallelism which depends on the JULIA_NUM_THREADS environment variable to decide the number of threads to use. Refer @threads documentation for more details.\n\n\n\n"
 },
 
 {
@@ -893,7 +973,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "Graph Traversal",
     "category": "section",
-    "text": "Graph traversal refers to a process that traverses vertices of a graph following certain order (starting from user-input sources). This package implements three traversal schemes:BreadthFirst,\nDepthFirst, and\nMaximumAdjacency.bfs_tree\ndfs_tree\nmaximum_adjacency_visit"
+    "text": "Graph traversal refers to a process that traverses vertices of a graph following certain order (starting from user-input sources). This package implements three traversal schemes:BreadthFirst,\nDepthFirst, and\nMaximumAdjacency.bfs_tree\nLightGraphs.bfs_tree!\ndfs_tree\nmaximum_adjacency_visit"
 },
 
 {
@@ -921,11 +1001,107 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "pathing.html#LightGraphs.is_connected",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.is_connected",
+    "category": "Function",
+    "text": "is_connected(g)\n\nReturn true if graph g is connected. For directed graphs, use is_weakly_connected or is_strongly_connected.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.is_strongly_connected",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.is_strongly_connected",
+    "category": "Function",
+    "text": "is_strongly_connected(g)\n\nReturn true if directed graph g is strongly connected.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.is_weakly_connected",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.is_weakly_connected",
+    "category": "Function",
+    "text": "is_weakly_connected(g)\n\nReturn true if the directed graph g is connected.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.connected_components",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.connected_components",
+    "category": "Function",
+    "text": "connected_components(g)\n\nReturn the connected components of an undirected graph g as a vector of components, with each element a vector of vertices belonging to the component.\n\nFor directed graphs, see strongly_connected_components and weakly_connected_components.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.strongly_connected_components",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.strongly_connected_components",
+    "category": "Function",
+    "text": "strongly_connected_components(g)\n\nCompute the strongly connected components of a directed graph g.\n\nReturn an array of arrays, each of which is the entire connected component.\n\nImplementation Notes\n\nThe order of the components is not part of the API contract.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.weakly_connected_components",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.weakly_connected_components",
+    "category": "Function",
+    "text": "weakly_connected_components(g)\n\nReturn the weakly connected components of the directed graph g. This is equivalent to the connected components of the undirected equivalent of g.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.has_self_loops",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.has_self_loops",
+    "category": "Function",
+    "text": "has_self_loops(g)\n\nReturn true if g has any self loops.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.attracting_components",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.attracting_components",
+    "category": "Function",
+    "text": "attracting_components(g)\n\nReturn a vector of vectors of integers representing lists of attracting components in the directed graph g.\n\nThe attracting components are a subset of the strongly connected components in which the components do not have any leaving edges.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.is_bipartite",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.is_bipartite",
+    "category": "Function",
+    "text": "is_bipartite(g)\n\nReturn true if graph g is bipartite.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.condensation",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.condensation",
+    "category": "Function",
+    "text": "condensation(g[, scc])\n\nReturn the condensation graph of the strongly connected components scc in the directed graph g. If scc is missing, generate the strongly connected components first.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.period",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.period",
+    "category": "Function",
+    "text": "period(g)\n\nReturn the (common) period for all vertices in a strongly connected directed graph. Will throw an error if the graph is not strongly connected.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.isgraphical",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.isgraphical",
+    "category": "Function",
+    "text": "isgraphical(degs)\n\nReturn true if the degree sequence degs is graphical, according to Erdös-Gallai condition.\n\nPerformance\n\nTime complexity: ``\\mathcal{O}(|degs|^2)``\n\n\n\n"
+},
+
+{
     "location": "pathing.html#Connectivity-/-Bipartiteness-1",
     "page": "Path and Traversal",
     "title": "Connectivity / Bipartiteness",
     "category": "section",
-    "text": "Graph connectivity functions are defined on both undirected and directed graphs:is_connected\nis_strongly_connected\nis_weakly_connected\nconnected_components\nstrongly_connected_components\nweakly_connected_components\nhas_self_loop\nattracting_components\nis_bipartite\ncondensation\nperiod"
+    "text": "Graph connectivity functions are defined on both undirected and directed graphs:is_connected\nis_strongly_connected\nis_weakly_connected\nconnected_components\nstrongly_connected_components\nweakly_connected_components\nhas_self_loops\nattracting_components\nis_bipartite\ncondensation\nperiod\nisgraphical"
 },
 
 {
@@ -957,7 +1133,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.a_star",
     "category": "Function",
-    "text": "a_star(g, s, t[, distmx][, heuristic])\n\nReturn a vector of edges comprising the shortest path between vertices s and t using the A* search algorithm. An optional heuristic function and edge distance matrix may be supplied. If missing, the distance matrix is set to DefaultDistance and the heuristic is set to n -> 0.\n\n\n\n"
+    "text": "a_star(g, s, t[, distmx][, heuristic])\n\nReturn a vector of edges comprising the shortest path between vertices s and t using the A* search algorithm. An optional heuristic function and edge distance matrix may be supplied. If missing, the distance matrix is set to LightGraphs.DefaultDistance and the heuristic is set to n -> 0.\n\n\n\n"
 },
 
 {
@@ -965,7 +1141,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.dijkstra_shortest_paths",
     "category": "Function",
-    "text": "dijkstra_shortest_paths(g, srcs, distmx=weights(g));\n\nPerform Dijkstra's algorithm on a graph, computing shortest distances between srcs and all other vertices. Return a DijkstraState that contains various traversal information.\n\nOptional Arguments\n\nallpaths=false: If true, returns a DijkstraState that keeps track of all\n\npredecessors of a given vertex.\n\n\n\n"
+    "text": "dijkstra_shortest_paths(g, srcs, distmx=weights(g));\n\nPerform Dijkstra's algorithm on a graph, computing shortest distances between srcs and all other vertices. Return a LightGraphs.DijkstraState that contains various traversal information.\n\nOptional Arguments\n\nallpaths=false: If true, returns a LightGraphs.DijkstraState that keeps track of all\n\npredecessors of a given vertex.\n\n\n\n"
 },
 
 {
@@ -973,7 +1149,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.bellman_ford_shortest_paths",
     "category": "Function",
-    "text": "bellman_ford_shortest_paths(g, s, distmx=weights(g))\nbellman_ford_shortest_paths(g, ss, distmx=weights(g))\n\nCompute shortest paths between a source s (or list of sources ss) and all other nodes in graph g using the Bellman-Ford algorithm. Return a BellmanFordState with relevant traversal information.\n\n\n\n"
+    "text": "bellman_ford_shortest_paths(g, s, distmx=weights(g))\nbellman_ford_shortest_paths(g, ss, distmx=weights(g))\n\nCompute shortest paths between a source s (or list of sources ss) and all other nodes in graph g using the Bellman-Ford algorithm. Return a LightGraphs.BellmanFordState with relevant traversal information.\n\n\n\n"
 },
 
 {
@@ -981,7 +1157,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.floyd_warshall_shortest_paths",
     "category": "Function",
-    "text": "floyd_warshall_shortest_paths(g, distmx=weights(g)) Use the Floyd-Warshall algorithm to compute the shortest paths between all pairs of vertices in graph g using an optional distance matrix distmx. Return a FloydWarshallState with relevant traversal information.\n\nPerformance\n\nSpace complexity is on the order of mathcalO(V^2).\n\n\n\n"
+    "text": "floyd_warshall_shortest_paths(g, distmx=weights(g)) Use the Floyd-Warshall algorithm to compute the shortest paths between all pairs of vertices in graph g using an optional distance matrix distmx. Return a LightGraphs.FloydWarshallState with relevant traversal information.\n\nPerformance\n\nSpace complexity is on the order of mathcalO(V^2).\n\n\n\n"
 },
 
 {
@@ -1025,11 +1201,51 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "pathing.html#LightGraphs.AbstractPathState",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.AbstractPathState",
+    "category": "Type",
+    "text": "AbstractPathState\n\nAn abstract type that provides information from shortest paths calculations.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.DijkstraState",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.DijkstraState",
+    "category": "Type",
+    "text": "struct DijkstraState{T, U}\n\nAn AbstractPathState designed for Dijkstra shortest-paths calculations.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.BellmanFordState",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.BellmanFordState",
+    "category": "Type",
+    "text": "BellmanFordState{T, U}\n\nAn AbstractPathState designed for Bellman-Ford shortest-paths calculations.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.FloydWarshallState",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.FloydWarshallState",
+    "category": "Type",
+    "text": "struct FloydWarshallState{T, U}\n\nAn AbstractPathState designed for Floyd-Warshall shortest-paths calculations.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.YenState",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.YenState",
+    "category": "Type",
+    "text": "struct YenState{T, U}\n\nDesigned for yen k-shortest-paths calculations.\n\n\n\n"
+},
+
+{
     "location": "pathing.html#Path-States-1",
     "page": "Path and Traversal",
     "title": "Path States",
     "category": "section",
-    "text": "The floyd_warshall_shortest_paths, bellman_ford_shortest_paths, dijkstra_shortest_paths, and dijkstra_predecessor_and_distance functions return a state that contains various information about the graph learned during traversal. The three state types have the following common information, accessible via the type:.dists Holds a vector of distances computed, indexed by source vertex..parents Holds a vector of parents of each source vertex. The parent of a source vertex is always 0.In addition, the dijkstra_predecessor_and_distance function stores the following information:.predecessors Holds a vector, indexed by vertex, of all the predecessors discovered during shortest-path calculations. This keeps track of all parents when there are multiple shortest paths available from the source..pathcounts Holds a vector, indexed by vertex, of the path counts discovered during traversal. This equals the length of each subvector in the .predecessors output above."
+    "text": "All path states derive fromLightGraphs.AbstractPathStateThe dijkstra_shortest_paths, floyd_warshall_shortest_paths, bellman_ford_shortest_paths, and yen_shortest_paths functions  return states that contain various  information about the graph learned during traversal. \nLightGraphs.DijkstraState\nLightGraphs.BellmanFordState\nLightGraphs.FloydWarshallState\nLightGraphs.YenStateThe above state types (with the exception of YenState) have the following common information, accessible via the type:.dists Holds a vector of distances computed, indexed by source vertex..parents Holds a vector of parents of each source vertex. The parent of a source vertex is always 0.(YenState substitutes .paths for .parents.)In addition, the following information may be populated with the appropriate arguments to dijkstra_shortest_paths:.predecessors Holds a vector, indexed by vertex, of all the predecessors discovered during shortest-path calculations. This keeps track of all parents when there are multiple shortest paths available from the source..pathcounts Holds a vector, indexed by vertex, of the path counts discovered during traversal. This equals the length of each subvector in the .predecessors output above."
 },
 
 {
@@ -1645,7 +1861,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Flow and Cut",
     "title": "LightGraphs.multiroute_flow",
     "category": "Method",
-    "text": "multiroute_flow(flow_graph, source, target[, DefaultCapacity][, flow_algorithm][, mrf_algorithm][, routes])\n\nThe generic multiroute_flow function.\n\nThe output will vary depending on the input:\n\nWhen the number of routes is 0, return the set of breaking points of\n\nthe multiroute flow.\n\nWhen the number of routes is 1, return a flow with a set of 1-disjoint paths\n\n(this is the classical max-flow implementation).\n\nWhen the input is limited to a set of breaking points and a route value k,\n\nreturn only the k-route flow.\n\nOtherwise, a tuple with 1) the maximum flow and 2) the flow matrix. When the\n\nmax-flow subroutine is the Boykov-Kolmogorov algorithm, the associated mincut is returned as a third output.\n\nWhen the input is a network, it requires the following arguments:\n\nflow_graph: the input graph\nsource: the source vertex\ntarget: the target vertex\ncapacity_matrix: matrix of edge flow capacities\nflow_algorithm: keyword argument for flow algorithm\nmrf_algorithm: keyword argument for multiroute flow algorithm\nroutes: keyword argument for the number of routes\n\nWhen the input is only the set of (breaking) points and the number of route, it requires the following arguments:\n\nbreakingpoints: vector of breaking points\nroutes: number of routes\n\nWhen the input is the set of (breaking) points, the number of routes, and the network descriptors, it requires the following arguments:\n\nbreakingpoints: vector of breaking points\nroutes: number of routes\nflow_graph: the input graph\nsource: the source vertex\ntarget: the target vertex\ncapacity_matrix: matrix of edge flow capacities\nflow_algorithm: keyword argument for flow algorithm\n\nThe function defaults to the Push-relabel (classical flow) and Kishimoto (multiroute) algorithms. Alternatively, the algorithms to be used can also be specified through  keyword arguments. A default capacity of 1 is assumed for each link if no capacity matrix is provided.\n\nThe mrf_algorithm keyword is inforced to Extended Multiroute Flow in the following cases:\n\nThe number of routes is non-integer\nThe number of routes is 0 or non-specified\n\nUsage Example :\n\n(please consult the  max_flow section for options about flow_algorithm and capacity_matrix)\n\njulia> flow_graph = DiGraph(8) # Create a flow graph\n\njulia> flow_edges = [\n(1, 2, 10), (1, 3, 5),  (1, 4, 15), (2, 3, 4),  (2, 5, 9),\n(2, 6, 15), (3, 4, 4),  (3, 6, 8),  (4, 7, 16), (5, 6, 15),\n(5, 8, 10), (6, 7, 15), (6, 8, 10), (7, 3, 6),  (7, 8, 10)\n]\n\njulia> capacity_matrix = zeros(Int, 8, 8) # Create a capacity matrix\n\njulia> for e in flow_edges\n    u, v, f = e\n    add_edge!(flow_graph, u, v)\n    capacity_matrix[u, v] = f\nend\n\njulia> f, F = multiroute_flow(flow_graph, 1, 8, capacity_matrix, routes = 2) # Run default multiroute_flow with an integer number of routes = 2\n\njulia> f, F = multiroute_flow(flow_graph, 1, 8, capacity_matrix, routes = 1.5) # Run default multiroute_flow with a noninteger number of routes = 1.5\n\njulia> points = multiroute_flow(flow_graph, 1, 8, capacity_matrix) # Run default multiroute_flow for all the breaking points values\n\njulia> f, F = multiroute_flow(points, 1.5) # Then run multiroute flow algorithm for any positive number of routes\n\njulia> f = multiroute_flow(points, 1.5, valueonly = true)\n\njulia> f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algorithm = BoykovKolmogorovAlgorithm(), routes = 2) # Run multiroute flow algorithm using Boykov-Kolmogorov algorithm as max_flow routine\n\n\n\n\n"
+    "text": "multiroute_flow(flow_graph, source, target[, DefaultCapacity][, flow_algorithm][, mrf_algorithm][, routes])\n\nThe generic multiroute_flow function.\n\nThe output will vary depending on the input:\n\nWhen the number of routes is 0, return the set of breaking points of\n\nthe multiroute flow.\n\nWhen the number of routes is 1, return a flow with a set of 1-disjoint paths\n\n(this is the classical max-flow implementation).\n\nWhen the input is limited to a set of breaking points and a route value k,\n\nreturn only the k-route flow.\n\nOtherwise, a tuple with 1) the maximum flow and 2) the flow matrix. When the\n\nmax-flow subroutine is the Boykov-Kolmogorov algorithm, the associated mincut is returned as a third output.\n\nWhen the input is a network, it requires the following arguments:\n\nflow_graph: the input graph\nsource: the source vertex\ntarget: the target vertex\ncapacity_matrix: matrix of edge flow capacities\nflow_algorithm: keyword argument for flow algorithm\nmrf_algorithm: keyword argument for multiroute flow algorithm\nroutes: keyword argument for the number of routes\n\nWhen the input is only the set of (breaking) points and the number of route, it requires the following arguments:\n\nbreakingpoints: vector of breaking points\nroutes: number of routes\n\nWhen the input is the set of (breaking) points, the number of routes, and the network descriptors, it requires the following arguments:\n\nbreakingpoints: vector of breaking points\nroutes: number of routes\nflow_graph: the input graph\nsource: the source vertex\ntarget: the target vertex\ncapacity_matrix: matrix of edge flow capacities\nflow_algorithm: keyword argument for flow algorithm\n\nThe function defaults to the Push-relabel (classical flow) and Kishimoto (multiroute) algorithms. Alternatively, the algorithms to be used can also be specified through  keyword arguments. A default capacity of 1 is assumed for each link if no capacity matrix is provided.\n\nThe mrf_algorithm keyword is inforced to Extended Multiroute Flow in the following cases:\n\nThe number of routes is non-integer\nThe number of routes is 0 or non-specified\n\nUsage Example :\n\n(please consult the  maximum_flow section for options about flow_algorithm and capacity_matrix)\n\njulia> flow_graph = DiGraph(8) # Create a flow graph\n\njulia> flow_edges = [\n(1, 2, 10), (1, 3, 5),  (1, 4, 15), (2, 3, 4),  (2, 5, 9),\n(2, 6, 15), (3, 4, 4),  (3, 6, 8),  (4, 7, 16), (5, 6, 15),\n(5, 8, 10), (6, 7, 15), (6, 8, 10), (7, 3, 6),  (7, 8, 10)\n]\n\njulia> capacity_matrix = zeros(Int, 8, 8) # Create a capacity matrix\n\njulia> for e in flow_edges\n    u, v, f = e\n    add_edge!(flow_graph, u, v)\n    capacity_matrix[u, v] = f\nend\n\njulia> f, F = multiroute_flow(flow_graph, 1, 8, capacity_matrix, routes = 2) # Run default multiroute_flow with an integer number of routes = 2\n\njulia> f, F = multiroute_flow(flow_graph, 1, 8, capacity_matrix, routes = 1.5) # Run default multiroute_flow with a noninteger number of routes = 1.5\n\njulia> points = multiroute_flow(flow_graph, 1, 8, capacity_matrix) # Run default multiroute_flow for all the breaking points values\n\njulia> f, F = multiroute_flow(points, 1.5) # Then run multiroute flow algorithm for any positive number of routes\n\njulia> f = multiroute_flow(points, 1.5, valueonly = true)\n\njulia> f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algorithm = BoykovKolmogorovAlgorithm(), routes = 2) # Run multiroute flow algorithm using Boykov-Kolmogorov algorithm as maximum_flow routine\n\n\n\n\n"
 },
 
 {
