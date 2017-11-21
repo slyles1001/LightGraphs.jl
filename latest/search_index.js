@@ -1941,14 +1941,6 @@ var documenterSearchIndex = {"docs": [
     "page": "Citing LightGraphs",
     "title": "Citing LightGraphs",
     "category": "page",
-    "text": ""
-},
-
-{
-    "location": "citing.html#Citing-LightGraphs-1",
-    "page": "Citing LightGraphs",
-    "title": "Citing LightGraphs",
-    "category": "section",
     "text": "We encourage you to cite our work if you have used our libraries, tools or datasets. Starring the repository on GitHub is also appreciated.Use the following BibTeX citation for the latest version of LightGraphs.jl:@misc{Bromberger17,\n  author       = {Seth Bromberger, James Fairbanks, and other contributors},\n  title        = {JuliaGraphs/LightGraphs.jl: LightGraphs},\n  year         = 2017,\n  doi          = {10.5281/zenodo.889971},\n  url          = {https://doi.org/10.5281/zenodo.889971}\n}For previous versions, please reference the zenodo site."
 },
 
