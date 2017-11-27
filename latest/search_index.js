@@ -21,7 +21,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Getting Started",
     "title": "Basic library examples",
     "category": "section",
-    "text": "The LightGraphs.jl libraries includes numerous convenience functions for generating functions detailed in Making and Modifying Graphs, such as PathGraph, which makes a simple undirected path graph of a given length. Once created, these graphs can be easily interrogated and modified.julia> g = PathGraph(6)\n\n# Number vertices\njulia> nv(g)\n\n# Number edges\njulia> ne(g)\n\n# Add an edge to make the path a loop\njulia> add_edge!(g, 1, 6)For an overview of basic functions for interacting with graphs, check out Accessing Graph Properties and Making and Modifying Graphs."
+    "text": "The LightGraphs.jl libraries includes numerous convenience functions for generating functions detailed in Making and Modifying Graphs, such as PathGraph, which makes a simple undirected path graph of a given length. Once created, these graphs can be easily interrogated and modified.julia> g = PathGraph(6)\n\n# Number of vertices\njulia> nv(g)\n\n# Number of edges\njulia> ne(g)\n\n# Add an edge to make the path a loop\njulia> add_edge!(g, 1, 6)For an overview of basic functions for interacting with graphs, check out Accessing Graph Properties and Making and Modifying Graphs. Detailed tutorials may be found in the JuliaGraphs Tutorial Notebooks repository."
 },
 
 {
@@ -1181,7 +1181,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.gdistances!",
     "category": "Function",
-    "text": "gdistances!(g, source, dists)\n\nFill dists with the geodesic distances of vertices in g from source. dists should be a vector of length nv(g) filled with typemax(T). Return dists. For vertices in disconnected components the default distance is typemax(T).\n\n\n\n"
+    "text": "gdistances!(g, source, dists)\n\nFill dists with the geodesic distances of vertices in g from source vertex/vertices sources. dists should be a vector of length nv(g) filled with typemax(T). Return dists.\n\nFor vertices in disconnected components the default distance is typemax(T).\n\n\n\n"
 },
 
 {
