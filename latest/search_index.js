@@ -29,7 +29,7 @@ var documenterSearchIndex = {"docs": [
     "page": "LightGraph Types",
     "title": "LightGraph Types",
     "category": "page",
-    "text": "#LightGraphs TypesThe LightGraph library supports both the AbstractGraph type and two concrete simple graph types- - Graph for undirected graphs and DiGraph for directed graphs – that are subtypes of AbstractGraph."
+    "text": "#LightGraphs TypesLightGraphs.jl supports both the AbstractGraph type and two concrete simple graph types- - Graph for undirected graphs and DiGraph for directed graphs – that are subtypes of AbstractGraph."
 },
 
 {
