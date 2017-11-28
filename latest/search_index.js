@@ -26,15 +26,15 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#",
-    "page": "LightGraph Types",
-    "title": "LightGraph Types",
+    "page": "LightGraphs Types",
+    "title": "LightGraphs Types",
     "category": "page",
     "text": "#LightGraphs TypesLightGraphs.jl supports both the AbstractGraph type and two concrete simple graph types- - Graph for undirected graphs and DiGraph for directed graphs – that are subtypes of AbstractGraph."
 },
 
 {
     "location": "types.html#Concrete-Types-1",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "Concrete Types",
     "category": "section",
     "text": "LightGraphs.jl provides two concrete graph types: Graph is an undirected graph, and DiGraph is its directed counterpart. Both of these types can be parameterized to specifying how vertices are identified (by default, Graph and DiGraph use the system default integer type, usually Int64).A graph G is described by a set of vertices V and edges E: G = {V, E}. V is an integer range 1:n; E is represented as forward (and, for directed graphs, backward) adjacency lists indexed by vertices. Edges may also be accessed via an iterator that yields Edge types containing (src<:Integer, dst<:Integer) values. Both vertices and edges may be integers of any type, and the smallest type that fits the data is recommended in order to save memory.Graphs are created using Graph() or DiGraph(); there are several options (see the tutorials for examples).Multiple edges between two given vertices are not allowed: an attempt to add an edge that already exists in a graph will not raise an error. This event can be detected using the return value of add_edge!."
@@ -42,7 +42,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#AbstractGraph-Type-1",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "AbstractGraph Type",
     "category": "section",
     "text": "To encourage experimentation and development within the JuliaGraphs ecosystem, LightGraphs.jl defines the AbstractGraph type, which is used by libraries like MetaGraphs.jl (for graphs with associated meta-data) and SimpleWeightedGraphs.jl (for weighted graphs). All types that are a subset of AbstractGraph must implement the following functions (most of which are described in more detail in Accessing Graph Properties and Making and Modifying Graphs):Order = [:type, :function]\nPages   = [\"types.md\"]"
@@ -50,7 +50,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.AbstractEdge",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.AbstractEdge",
     "category": "Type",
     "text": "AbstractEdge\n\nAn abstract type representing a single edge between two vertices of a graph.\n\n\n\n"
@@ -58,7 +58,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.AbstractEdgeIter",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.AbstractEdgeIter",
     "category": "Type",
     "text": "AbstractEdgeIter\n\nAn abstract type representing an edge iterator.\n\n\n\n"
@@ -66,7 +66,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.AbstractGraph",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.AbstractGraph",
     "category": "Type",
     "text": "AbstractGraph\n\nAn abstract type representing a graph.\n\n\n\n"
@@ -74,7 +74,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#Base.reverse-Tuple{LightGraphs.AbstractEdge}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "Base.reverse",
     "category": "Method",
     "text": "reverse(e)\n\nCreate a new edge from e with source and destination vertices reversed.\n\n\n\n"
@@ -82,7 +82,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.add_edge!-Tuple{Any,Any}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.add_edge!",
     "category": "Method",
     "text": "add_edge!(g, e)\n\nAdd a new edge e to g. Return false if add fails (e.g., if vertices are not in the graph, or edge already exists), true otherwise.\n\n\n\n"
@@ -90,7 +90,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.add_vertex!-Tuple{Any}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.add_vertex!",
     "category": "Method",
     "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\n"
@@ -98,7 +98,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.dst-Tuple{LightGraphs.AbstractEdge}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.dst",
     "category": "Method",
     "text": "dst(e)\n\nReturn the destination vertex of edge e.\n\n\n\n"
@@ -106,7 +106,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.edges-Tuple{Any}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.edges",
     "category": "Method",
     "text": "edges(g)\n\nReturn (an iterator to or collection of) the edges of a graph. For AbstractSimpleGraphs it returns a SimpleEdgeIter. The expressions e in edges(g) and e ∈ edges(ga) evaluate as calls to has_edge.\n\nImplementation Notes\n\nA returned iterator is valid for one pass over the edges, and is invalidated by changes to g.\n\n\n\n"
@@ -114,7 +114,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.edgetype-Tuple{LightGraphs.AbstractGraph}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.edgetype",
     "category": "Method",
     "text": "edgetype(g)\n\nReturn the type of graph g's edge\n\n\n\n"
@@ -122,7 +122,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.has_edge-Tuple{Any,Any}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.has_edge",
     "category": "Method",
     "text": "has_edge(g, e)\ne ∈ edges(g)\n\nReturn true if the graph g has an edge e.  The expressions e in edges(g) and e ∈ edges(ga) evaluate as calls to has_edge, c.f. edges.\n\n\n\n"
@@ -130,7 +130,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.has_vertex-Tuple{Any,Any}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.has_vertex",
     "category": "Method",
     "text": "has_vertex(g, v)\n\nReturn true if v is a vertex of g.\n\n\n\n"
@@ -138,7 +138,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.in_neighbors-Tuple{Any,Any}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.in_neighbors",
     "category": "Method",
     "text": "in_neighbors(g, v)\n\nReturn a list of all neighbors connected to vertex v by an incoming edge.\n\nImplementation Notes\n\nReturns a reference, not a copy. Do not modify result.\n\n\n\n"
@@ -146,7 +146,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.is_directed-Tuple{Any}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.is_directed",
     "category": "Method",
     "text": "is_directed(g)\n\nReturn true if the graph is a directed graph; false otherwise.\n\n\n\n"
@@ -154,7 +154,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.ne-Tuple{LightGraphs.AbstractGraph}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.ne",
     "category": "Method",
     "text": "ne(g)\n\nReturn the number of edges in g.\n\n\n\n"
@@ -162,7 +162,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.nv-Tuple{LightGraphs.AbstractGraph}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.nv",
     "category": "Method",
     "text": "nv(g)\n\nReturn the number of vertices in g.\n\n\n\n"
@@ -170,7 +170,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.out_neighbors-Tuple{Any,Any}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.out_neighbors",
     "category": "Method",
     "text": "out_neighbors(g, v)\n\nReturn a list of all neighbors connected to vertex v by an outgoing edge.\n\nImplementation Notes\n\nReturns a reference, not a copy. Do not modify result.\n\n\n\n"
@@ -178,7 +178,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.rem_edge!-Tuple{Any,Any}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.rem_edge!",
     "category": "Method",
     "text": "rem_edge!(g, e)\n\nRemove the edge e from g. Return false if edge removal fails (e.g., if edge does not exist), true otherwise.\n\n\n\n"
@@ -186,7 +186,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.rem_vertex!-Tuple{Any,Any}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.rem_vertex!",
     "category": "Method",
     "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\n"
@@ -194,7 +194,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.src-Tuple{LightGraphs.AbstractEdge}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.src",
     "category": "Method",
     "text": "src(e)\n\nReturn the source vertex of edge e.\n\n\n\n"
@@ -202,7 +202,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#LightGraphs.vertices-Tuple{LightGraphs.AbstractGraph}",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "LightGraphs.vertices",
     "category": "Method",
     "text": "vertices(g)\n\nReturn (an iterator to or collection of) the vertices of a graph.\n\nImplementation Notes\n\nA returned iterator is valid for one pass over the edges, and is invalidated by changes to g.\n\n\n\n"
@@ -210,7 +210,7 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "types.html#Full-Docs-for-AbstractGraph-Functions-1",
-    "page": "LightGraph Types",
+    "page": "LightGraphs Types",
     "title": "Full Docs for AbstractGraph Functions",
     "category": "section",
     "text": "Modules = [LightGraphs]\nPages   = [\"interface.jl\"]\nPrivate = false"
@@ -309,7 +309,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.add_vertex!",
     "category": "Function",
-    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\n"
+    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\n"
 },
 
 {
@@ -325,7 +325,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.rem_vertex!",
     "category": "Function",
-    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\n"
+    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\n"
 },
 
 {
@@ -1549,7 +1549,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
+    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
 },
 
 {
@@ -1557,7 +1557,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
+    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
 },
 
 {
@@ -1930,15 +1930,15 @@ var documenterSearchIndex = {"docs": [
 
 {
     "location": "developing.html#",
-    "page": "Developer's Notes",
-    "title": "Developer's Notes",
+    "page": "Developer Notes",
+    "title": "Developer Notes",
     "category": "page",
     "text": ""
 },
 
 {
     "location": "developing.html#Developing-Alternate-Graph-Types-1",
-    "page": "Developer's Notes",
+    "page": "Developer Notes",
     "title": "Developing Alternate Graph Types",
     "category": "section",
     "text": "This section is designed to guide developers who wish to write their own graph structures.All LightGraphs functions rely on a standard API to function. As long as your graph structure is a subtype of AbstractGraph and implements the following API functions with the given return values, all functions within the LightGraphs package should just work:edges\neltype\nhas_edge\nhas_vertex\nin_neighbors\nis_directed: Note that since we use traits to determine directedness, is_directed for a CustomGraph type should have the following signatures:\nis_directed(::Type{CustomGraph})::Bool\nis_directed(g::CustomGraph)::Bool\nne\nnv\nout_neighbors\nverticesIf the graph structure is designed to represent weights on edges, the weights function should also be defined. Note that the output does not necessarily have to be a dense matrix, but it must be indexable via [u, v]."
