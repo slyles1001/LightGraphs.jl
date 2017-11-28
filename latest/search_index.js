@@ -309,7 +309,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.add_vertex!",
     "category": "Function",
-    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\n"
+    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\n"
 },
 
 {
@@ -325,7 +325,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.rem_vertex!",
     "category": "Function",
-    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\n"
+    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\n"
 },
 
 {
@@ -469,7 +469,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.static_fitness_model",
     "category": "Method",
-    "text": "static_fitness_model(m, fitness)\n\nGenerate a random graph with fitness vertices and m edges, in which the probability of the existence of Edge_ij is proportional to fitness_i   fitness_j.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\nPerformance\n\nTime complexity is mathcalO(V + E log E).\n\nReferences\n\nGoh K-I, Kahng B, Kim D: Universal behaviour of load distribution in scale-free networks. Phys Rev Lett 87(27):278701, 2001.\n\n\n\n"
+    "text": "static_fitness_model(m, fitness)\n\nGenerate a random graph with fitness vertices and m edges, in which the probability of the existence of Edge_ij is proportional to fitness_i  fitness_j.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\nPerformance\n\nTime complexity is mathcalO(V + E log E).\n\nReferences\n\nGoh K-I, Kahng B, Kim D: Universal behaviour of load distribution in scale-free networks. Phys Rev Lett 87(27):278701, 2001.\n\n\n\n"
 },
 
 {
@@ -1301,7 +1301,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Distance",
     "title": "LightGraphs.eccentricity",
     "category": "Method",
-    "text": "eccentricity(g[, v][, distmx])\neccentricity(g[, vs][, distmx])\nparallel_eccentricity(g[, vs][, distmx])\n\nReturn the eccentricity[ies] of a vertex / vertex list v or a set of vertices  vs defaulting to the entire graph. An optional matrix of edge distances may be supplied; if missing, edge distances default to 1.\n\nThe eccentricity of a vertex is the maximum shortest-path distance between it and all other vertices in the graph.\n\nThe output is either a single float (when a single vertex is provided) or a vector of floats corresponding to the vertex vector. If no vertex vector is provided, the vector returned corresponds to each vertex in the graph.\n\nPerformance\n\nBecause this function must calculate shortest paths for all vertices supplied in the argument list, it may take a long time.\n\nImplementation Notes\n\nThe eccentricity vector returned by eccentricity() may be used as input for the rest of the distance measures below. If an eccentricity vector is provided, it will be used. Otherwise, an eccentricity vector will be calculated for each call to the function. It may therefore be more efficient to calculate, store, and pass the eccentricities if multiple distance measures are desired.\n\n\n\n"
+    "text": "eccentricity(g[, v][, distmx])\neccentricity(g[, vs][, distmx])\nparallel_eccentricity(g[, vs][, distmx])\n\nReturn the eccentricity[ies] of a vertex / vertex list v or a set of vertices  vs defaulting to the entire graph. An optional matrix of edge distances may be supplied; if missing, edge distances default to 1.\n\nThe eccentricity of a vertex is the maximum shortest-path distance between it and all other vertices in the graph.\n\nThe output is either a single float (when a single vertex is provided) or a vector of floats corresponding to the vertex vector. If no vertex vector is provided, the vector returned corresponds to each vertex in the graph.\n\nPerformance\n\nBecause this function must calculate shortest paths for all vertices supplied in the argument list, it may take a long time.\n\nImplementation Notes\n\nThe eccentricity vector returned by eccentricity() may be used as input for the rest of the distance measures below. If an eccentricity vector is provided, it will be used. Otherwise, an eccentricity vector will be calculated for each call to the function. It may therefore be more efficient to calculate, store, and pass the eccentricities if multiple distance measures are desired.\n\nAn infinite path length is represented by the typemax of the distance matrix.\n\n\n\n"
 },
 
 {
@@ -1549,7 +1549,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
+    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
 },
 
 {
@@ -1557,7 +1557,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
+    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
 },
 
 {
