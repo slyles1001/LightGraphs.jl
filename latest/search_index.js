@@ -309,7 +309,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.add_vertex!",
     "category": "Function",
-    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\n"
+    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\n"
 },
 
 {
@@ -325,7 +325,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.rem_vertex!",
     "category": "Function",
-    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\n"
+    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\n"
 },
 
 {
@@ -1549,7 +1549,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
+    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
 },
 
 {
@@ -1557,7 +1557,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
+    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
 },
 
 {
@@ -1909,6 +1909,14 @@ var documenterSearchIndex = {"docs": [
     "page": "Contributing",
     "title": "Contributing",
     "category": "page",
+    "text": ""
+},
+
+{
+    "location": "contributing.html#Contributor-Guide-1",
+    "page": "Contributing",
+    "title": "Contributor Guide",
+    "category": "section",
     "text": "We welcome all possible contributors and ask that you read these guidelines before starting to work on this project. Following these guidelines will reduce friction and improve the speed at which your code gets merged."
 },
 
@@ -1926,6 +1934,14 @@ var documenterSearchIndex = {"docs": [
     "title": "Development guidelines",
     "category": "section",
     "text": "PRs should contain one logical enhancement to the codebase.\nSquash commits in a PR.\nOpen an issue to discuss a feature before you start coding (this maximizes the likelihood of patch acceptance).\nMinimize dependencies on external packages, and avoid introducing new dependencies. In general,\nPRs introducing dependencies on core Julia packages are ok.\nPRs introducing dependencies on non-core \"leaf\" packages (no subdependencies except for core Julia packages) are less ok.\nPRs introducing dependencies on non-core non-leaf packages require strict scrutiny and will likely not be accepted without some compelling reason (urgent bugfix or much-needed functionality).\nPut type assertions on all function arguments (use abstract types, Union, or Any if necessary).\nIf the algorithm was presented in a paper, include a reference to the paper (i.e. a proper academic citation along with an eprint link).\nTake steps to ensure that code works on graphs with multiple connected components efficiently.\nCorrectness is a necessary requirement; efficiency is desirable. Once you have a correct implementation, make a PR so we can help improve performance.\nWe can accept code that does not work for directed graphs as long as it comes with an explanation of what it would take to make it work for directed graphs.\nStyle point: prefer the short circuiting conditional over if/else when convenient, and where state is not explicitly being mutated (e.g., condition && error(\"message\") is good; condition && i += 1 is not).\nWhen possible write code to reuse memory. For example:function f(g, v)\n    storage = Vector{Int}(nv(g))\n    # some code operating on storage, g, and v.\n    for i in 1:nv(g)\n        storage[i] = v-i\n    end\n    return sum(storage)\nendshould be rewritten as two functionsfunction f(g::AbstractGraph, v::Integer)\n    storage = Vector{Int}(nv(g))\n    return inner!(storage, g, v)\nend\n\nfunction inner!(storage::AbstractVector{Int}, g::AbstractGraph, v::Integer)\n    # some code operating on storage, g, and v.\n    for i in 1:nv(g)\n        storage[i] = v-i\n    end\n    return sum(storage)\nendThis allows us to reuse the memory and improve performance."
+},
+
+{
+    "location": "contributing.html#Git-usage-1",
+    "page": "Contributing",
+    "title": "Git usage",
+    "category": "section",
+    "text": "In order to make it easier for you to review Pull Requests (PRs), you can add this to your git config file, which should be located at $HOME/.julia/v0.6/LightGraphs/.git/config. Follow the instructions here.Locate the section for your github remote in the .git/config file. It looks like this:[remote \"origin\"]\n	fetch = +refs/heads/*:refs/remotes/origin/*\n	url = git@github.com:JuliaGraphs/LightGraphs.jl.gitNow add the line fetch = +refs/pull/*/head:refs/remotes/origin/pr/* to this section. Obviously, change the github url to match your project's URL. It ends up looking like this:[remote \"origin\"]\n	fetch = +refs/heads/*:refs/remotes/origin/*\n	url = git@github.com:JuliaGraphs/LightGraphs.jl.git\n	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*Now fetch all the pull requests:$ git fetch origin\nFrom github.com:JuliaGraphs/LightGraphs.jl\n * [new ref]         refs/pull/1000/head -> origin/pr/1000\n * [new ref]         refs/pull/1002/head -> origin/pr/1002\n * [new ref]         refs/pull/1004/head -> origin/pr/1004\n * [new ref]         refs/pull/1009/head -> origin/pr/1009\n...To check out a particular pull request:$ git checkout pr/999\nBranch pr/999 set up to track remote branch pr/999 from origin.\nSwitched to a new branch 'pr/999'Now you can test a PR by running git fetch && git checkout pr/PRNUMBER && julia -e 'Pkg.test(\"LightGraphs\")"
 },
 
 {
