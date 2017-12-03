@@ -25,6 +25,30 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "graphtypes.html#",
+    "page": "Choosing A Graph Type",
+    "title": "Choosing A Graph Type",
+    "category": "page",
+    "text": ""
+},
+
+{
+    "location": "graphtypes.html#Graph-Types-1",
+    "page": "Choosing A Graph Type",
+    "title": "Graph Types",
+    "category": "section",
+    "text": "In addition to providing a simplegraph implementation, LightGraphs also serves as a framework for other graph types. Currently, there are several alternative graph types, each with its own package:SimpleWeightedGraphs provides a graph structure with the ability to specify weights on edges.\nMetaGraphs provides a graph structure that supports user-defined properties on the graph, vertices, and edges.\nStaticGraphs supports very large graph structures in a space- and time-efficient manner, but as the name implies, does not allow modification of the graph oncecreated."
+},
+
+{
+    "location": "graphtypes.html#Which-Graph-Type-Should-I-Use?-1",
+    "page": "Choosing A Graph Type",
+    "title": "Which Graph Type Should I Use?",
+    "category": "section",
+    "text": "These are general guidelines to help you select the proper graph type.In general, prefer SimpleGraphs.\nIf you need edge weights and don't require large numbers of graph modifications, use SimpleWeightedGraphs.\nIf you need labeling of vertices or edges, use MetaGraphs.\nIf you work with very large graphs (billons to tens of billions of edges) and don'tneed mutability, use StaticGraphs."
+},
+
+{
     "location": "types.html#",
     "page": "LightGraphs Types",
     "title": "LightGraphs Types",
@@ -1789,7 +1813,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
+    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
 },
 
 {
@@ -1797,7 +1821,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
+    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
 },
 
 {
