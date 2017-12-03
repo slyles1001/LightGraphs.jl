@@ -289,6 +289,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "generators.html#LightGraphs.Edge",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.Edge",
+    "category": "Type",
+    "text": "Edge\n\nA datastruture representing an edge between two vertices in a Graph or DiGraph.\n\n\n\n"
+},
+
+{
     "location": "generators.html#LightGraphs.add_edge!",
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.add_edge!",
@@ -309,7 +317,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.add_vertex!",
     "category": "Function",
-    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\n"
+    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\n"
 },
 
 {
@@ -325,7 +333,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.rem_vertex!",
     "category": "Function",
-    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\n"
+    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\n"
 },
 
 {
@@ -341,7 +349,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "Modifying graphs",
     "category": "section",
-    "text": "LightGraphs.jl offers a range of tools for modifying graphs, including:Graph\nDiGraph\nadd_edge!\nrem_edge!\nadd_vertex!\nadd_vertices!\nrem_vertex!\nzeroIn addition to these core functions, more advanced operators can be found in Operators."
+    "text": "LightGraphs.jl offers a range of tools for modifying graphs, including:Graph\nDiGraph\nEdge\nadd_edge!\nrem_edge!\nadd_vertex!\nadd_vertices!\nrem_vertex!\nzeroIn addition to these core functions, more advanced operators can be found in Operators."
 },
 
 {
@@ -685,7 +693,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Reading / Writing Graphs",
     "title": "Reading and writing Graphs",
     "category": "section",
-    "text": ""
+    "text": "Pages   = [\"persistence.md\"]"
 },
 
 {
@@ -702,6 +710,46 @@ var documenterSearchIndex = {"docs": [
     "title": "Example",
     "category": "section",
     "text": "\ng = erdos_renyi(5, 0.2)\n\nsavegraph(\"mygraph.lgz\", g)\nreloaded_g = loadgraph(\"mygraph.lgz\")In addition, graphs can also be saved in an uncompressed format using the compress=false option.\nsavegraph(\"mygraph.lg\", g, compress=false)\n\nreloaded_g = loadgraph(\"mygraph.lg\")Finally, dictionaries of graphs can also be saved and subsequently re-loaded one by one.graph_dict = {\"g1\" => erdos_renyi(5, 0.1),\n              \"g2\" => erdos_renyi(10, 0.2),\n              \"g3\" => erdos_renyi(2, 0.9)}\n\nsavegraph(\"mygraph_dict.lg\", graph_dict)\n\n# Re-load only graph g1\nreloaded_g1 = loadgraph(\"mygraph_dict.lg\", \"g1\")"
+},
+
+{
+    "location": "persistence.html#LightGraphs.loadgraph-Tuple{AbstractString,AbstractString,LightGraphs.AbstractGraphFormat}",
+    "page": "Reading / Writing Graphs",
+    "title": "LightGraphs.loadgraph",
+    "category": "Method",
+    "text": "loadgraph(file, gname=\"graph\", format=LGFormat)\n\nRead a graph named gname from file in the format format.\n\nImplementation Notes\n\ngname is graph-format dependent and is only used if the file contains multiple graphs; if the file format does not support multiple graphs, this value is ignored. The default value may change in the future.\n\n\n\n"
+},
+
+{
+    "location": "persistence.html#LightGraphs.loadgraphs-Tuple{AbstractString,LightGraphs.AbstractGraphFormat}",
+    "page": "Reading / Writing Graphs",
+    "title": "LightGraphs.loadgraphs",
+    "category": "Method",
+    "text": "loadgraphs(file, format=LGFormat())\n\nLoad multiple graphs from file in the format format. Return a dictionary mapping graph name to graph.\n\nImplementation Notes\n\nFor unnamed graphs the default name \"graph\" will be used. This default may change in the future.\n\n\n\n"
+},
+
+{
+    "location": "persistence.html#LightGraphs.savegraph-Tuple{AbstractString,LightGraphs.AbstractGraph,AbstractString,LightGraphs.AbstractGraphFormat}",
+    "page": "Reading / Writing Graphs",
+    "title": "LightGraphs.savegraph",
+    "category": "Method",
+    "text": "savegraph(file, g, gname=\"graph\", format=LGFormat; compress=true)\n\nSaves a graph g with name gname to file in the format format. If compress = true, use GZip compression when writing the file. Return the number of graphs written.\n\nImplementation Notes\n\nThe default graph name assigned to gname may change in the future.\n\n\n\n"
+},
+
+{
+    "location": "persistence.html#LightGraphs.savegraph-Union{Tuple{AbstractString,Dict{T,U},LightGraphs.AbstractGraphFormat}, Tuple{T}, Tuple{U}} where T<:AbstractString where U<:LightGraphs.AbstractGraph",
+    "page": "Reading / Writing Graphs",
+    "title": "LightGraphs.savegraph",
+    "category": "Method",
+    "text": "savegraph(file, g, d, format=LGFormat; compress=true)\n\nSave a dictionary of graphname => graph to file in the format format. If compress = true, use GZip compression when writing the file. Return the number of graphs written.\n\nImplementation Notes\n\nWill only work if the file format supports multiple graph types.\n\n\n\n"
+},
+
+{
+    "location": "persistence.html#Full-docs-1",
+    "page": "Reading / Writing Graphs",
+    "title": "Full docs",
+    "category": "section",
+    "text": "Modules = [LightGraphs]\nPages   = [\"persistence/common.jl\"]\nPrivate = false"
 },
 
 {
@@ -969,11 +1017,51 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "pathing.html#LightGraphs.bfs_parents",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.bfs_parents",
+    "category": "Function",
+    "text": "bfs_parents(g, s[; dir=:out])\n\nPerform a breadth-first search of graph g starting from vertex s. Return a vector of parent vertices indexed by vertex. If dir is specified, use the corresponding edge direction (:in and :out are acceptable values).\n\nPerformance\n\nThis implementation is designed to perform well on large graphs. There are implementations which are marginally faster in practice for smaller graphs, but the performance improvements using this implementation on large graphs can be significant.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.has_path",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.has_path",
+    "category": "Function",
+    "text": "has_path(g::AbstractGraph, u, v; exclude_vertices=Vector())\n\nReturn true if there is a path from u toving(while avoiding vertices inexclude_vertices) oru == v. Return false if there is no such path or ifuorvis inexcluded_vertices`. \n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.diffusion",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.diffusion",
+    "category": "Function",
+    "text": "diffusion(g, p, n)\n\nRun diffusion simulation on g for n steps with spread probabilities based on p. Return a vector with the set of new vertices reached at each step of the simulation.\n\nOptional Arguments\n\ninitial_infections=sample(vertices(g), 1): A list of vertices that\n\nare infected at the start of the simulation.\n\nwatch=Vector(): While simulation is always run on the full graph,\n\nspecifying watch limits reporting to a specific set of vertices reached during the simulation. If left empty, all vertices will be watched.\n\nnormalize=false: if false, set the probability of spread from a vertex i to\n\neach of the out_neighbors of i to p. If true, set the probability of spread from a vertex i to each of the out_neighbors of i to fracpoutdegreee(g i).\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.diffusion_rate",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.diffusion_rate",
+    "category": "Function",
+    "text": "diffusion_rate(results)\ndiffusion_rate(g, p, n; ...)\n\nGiven the results of a diffusion output or the parameters to the diffusion simulation itself, (run and) return the rate of diffusion as a vector representing the cumulative number of vertices infected at each simulation step, restricted to vertices included in watch, if specified.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.mincut",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.mincut",
+    "category": "Function",
+    "text": "mincut(g, distmx=weights(g))\n\nReturn a tuple (parity, bestcut), where parity is a vector of integer values that determines the partition in g (1 or 2) and bestcut is the weight of the cut that makes this partition. An optional distmx matrix may be specified; if omitted, edge distances are assumed to be 1.\n\n\n\n"
+},
+
+{
     "location": "pathing.html#Graph-Traversal-1",
     "page": "Path and Traversal",
     "title": "Graph Traversal",
     "category": "section",
-    "text": "Graph traversal refers to a process that traverses vertices of a graph following certain order (starting from user-input sources). This package implements three traversal schemes:BreadthFirst,\nDepthFirst, and\nMaximumAdjacency.bfs_tree\nLightGraphs.bfs_tree!\ndfs_tree\nmaximum_adjacency_visit"
+    "text": "Graph traversal refers to a process that traverses vertices of a graph following certain order (starting from user-input sources). This package implements three traversal schemes:BreadthFirst,\nDepthFirst, and\nMaximumAdjacency.bfs_tree\nLightGraphs.bfs_tree!\ndfs_tree\nmaximum_adjacency_visit\nbfs_parents\nhas_path\ndiffusion\ndiffusion_rate\nmincut"
 },
 
 {
@@ -982,6 +1070,14 @@ var documenterSearchIndex = {"docs": [
     "title": "LightGraphs.randomwalk",
     "category": "Function",
     "text": "randomwalk(g, s, niter)\n\nPerform a random walk on graph g starting at vertex s and continuing for a maximum of niter steps. Return a vector of vertices visited in order.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.non_backtracking_randomwalk",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.non_backtracking_randomwalk",
+    "category": "Function",
+    "text": "non_backtracking_randomwalk(g, s, niter)\n\nPerform a non-backtracking random walk on directed graph g starting at vertex s and continuing for a maximum of niter steps. Return a vector of vertices visited in order.\n\n\n\n"
 },
 
 {
@@ -997,7 +1093,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "Random walks",
     "category": "section",
-    "text": "LightGraphs includes uniform random walks and self avoiding walks:randomwalk\nsaw"
+    "text": "LightGraphs includes uniform random walks and self avoiding walks:randomwalk\nnon_backtracking_randomwalk\nsaw"
 },
 
 {
@@ -1073,11 +1169,43 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "pathing.html#LightGraphs.bipartite_map",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.bipartite_map",
+    "category": "Function",
+    "text": "bipartite_map(g)\n\nFor a bipartite graph g, return a vector c of size V containing the assignment of each vertex to one of the two sets (c_i == 1 or c_i == 2`). Ifg` is not bipartite, return an empty vector.\n\nImplementation Notes\n\nNote that an empty vector does not necessarily indicate non-bipartiteness. An empty graph will return an empty vector but is bipartite.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.biconnected_components",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.biconnected_components",
+    "category": "Function",
+    "text": "biconnected_components(g)\n\nCompute the biconnected components of an undirected graph gand return a vector of vectors containing each biconnected component.\n\nPerformance: Time complexity is mathcalO(V).\n\n\n\n"
+},
+
+{
     "location": "pathing.html#LightGraphs.condensation",
     "page": "Path and Traversal",
     "title": "LightGraphs.condensation",
     "category": "Function",
     "text": "condensation(g[, scc])\n\nReturn the condensation graph of the strongly connected components scc in the directed graph g. If scc is missing, generate the strongly connected components first.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.neighborhood",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.neighborhood",
+    "category": "Function",
+    "text": "neighborhood(g, v, d)\n\nReturn a vector of the vertices in g at a geodesic distance less or equal to d from v.\n\nOptional Arguments\n\ndir=:out: If g is directed, this argument specifies the edge direction\n\nwith respect to v of the edges to be considered. Possible values: :in or :out.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.articulation",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.articulation",
+    "category": "Function",
+    "text": "articulation(g)\n\nCompute the articulation points of a connected graph g and return an array containing all cut vertices.\n\n\n\n"
 },
 
 {
@@ -1101,7 +1229,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "Connectivity / Bipartiteness",
     "category": "section",
-    "text": "Graph connectivity functions are defined on both undirected and directed graphs:is_connected\nis_strongly_connected\nis_weakly_connected\nconnected_components\nstrongly_connected_components\nweakly_connected_components\nhas_self_loops\nattracting_components\nis_bipartite\ncondensation\nperiod\nisgraphical"
+    "text": "Graph connectivity functions are defined on both undirected and directed graphs:is_connected\nis_strongly_connected\nis_weakly_connected\nconnected_components\nstrongly_connected_components\nweakly_connected_components\nhas_self_loops\nattracting_components\nis_bipartite\nbipartite_map\nbiconnected_components\ncondensation\nneighborhood\narticulation\nperiod\nisgraphical"
 },
 
 {
@@ -1113,11 +1241,91 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "pathing.html#LightGraphs.maxsimplecycles",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.maxsimplecycles",
+    "category": "Function",
+    "text": "maxsimplecycles(dg::::IsDirected, byscc::Bool = true)\n\nCompute the theoretical maximum number of cycles in the directed graph dg.\n\nThe computation can be performed assuming the graph is complete or taking into account the decomposition in strongly connected components (byscc parameter). The formula is coming from Johnson, 1973.\n\nPerformance\n\nA more efficient version is possible.\n\nReferences\n\nJohnson\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.simplecycles",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.simplecycles",
+    "category": "Function",
+    "text": "simplecycles(dg::::IsDirected)\n\nCompute all cycles of the given directed graph, using Johnson, 1973's algorithm and return them.\n\nPerformance\n\nThe number of cycles grows more than exponentially with the number of vertices, you might want to use the algorithm with a ceiling – getcycles – on large directed graphs (slightly slower). If you want to have an idea of the possible number of cycles, look at function maxsimplecycles(dg::DiGraph, byscc::Bool = true).\n\nReferences\n\nJohnson\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.simplecycles_iter",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.simplecycles_iter",
+    "category": "Function",
+    "text": "simplecycles_iter(dg::DiGraph, ceiling = 10^6)\n\nSearch all cycles of the given directed graph, using Johnson, 1973's algorithm, up to the ceiling (avoid memory overload).\n\nIf the graph is small, the ceiling will not be reached and simplecycles(dgDiGraph) is more efficient. It avoids the overhead of the counting and testing if the ceiling is reached. It returns all the cycles of the directed graph if the ceiling is not reached, a subset of them otherwise.\n\nTo get an idea of the possible number of cycles, using function maxsimplecycles(dg::DiGraph, byscc::Bool = true) on the directed graph.\n\nReferences\n\nJohnson\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.simplecycles_hadwick_james",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.simplecycles_hadwick_james",
+    "category": "Function",
+    "text": "simplecycles_hadwick_james(g)\n\nFind circuits (including self-loops) in g using the algorithm of Hadwick & James.\n\nReferences\n\nHadwick & James, \"Enumerating Circuits and Loops in Graphs with Self-Arcs and Multiple-Arcs\", 2008\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.simplecyclescount",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.simplecyclescount",
+    "category": "Function",
+    "text": "simplecyclescount(dg::DiGraph, ceiling = 10^6)\n\nCount the number of cycles in a directed graph, using Johnson, 1973's algorithm.\n\nThe ceiling is here to avoid memory overload if there are a lot of cycles in the graph. Default value is 10^6, but it can be higher or lower. You can use the function maxsimplecycles(dg::DiGraph, byscc::Bool = true) to get an idea of the theoretical maximum number or cycles.\n\nReturns the minimum of the ceiling and the number of cycles.\n\nReferences\n\nJohnson\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.simplecycleslength",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.simplecycleslength",
+    "category": "Function",
+    "text": "simplecycleslength(dg::DiGraph, ceiling = 10^6)\n\nSearch all cycles of the given directed graph, using Johnson, 1973's algorithm, and return their length.\n\nTo get an idea of the possible number of cycles, using function maxsimplecycles(dg::DiGraph, byscc::Bool = true) on the directed graph.\n\nIt returns cyclelengths and ncycles, the lengths of all cycles and the  number of cycles. The index in the array is the length of the cycle.  If the ceiling is reached (ncycles = ceiling), the output is only a subset of the cycles lengths.\n\nReferences\n\nJohnson\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.karp_minimum_cycle_mean",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.karp_minimum_cycle_mean",
+    "category": "Function",
+    "text": "karp_minimum_cycle_mean(g[, distmx])\n\nReturn minimum cycle mean of the directed graph g with optional edge weights contained in distmx.\n\nReferences\n\nKarp.\n\n\n\n"
+},
+
+{
     "location": "pathing.html#Cycle-Detection-1",
     "page": "Path and Traversal",
     "title": "Cycle Detection",
     "category": "section",
-    "text": "In graph theory, a cycle is defined to be a path that starts from some vertex v and ends up at v.is_cyclic"
+    "text": "In graph theory, a cycle is defined to be a path that starts from some vertex v and ends up at v.is_cyclic\nmaxsimplecycles\nsimplecycles\nsimplecycles_iter\nsimplecycles_hadwick_james\nsimplecyclescount\nsimplecycleslength\nkarp_minimum_cycle_mean"
+},
+
+{
+    "location": "pathing.html#LightGraphs.kruskal_mst",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.kruskal_mst",
+    "category": "Function",
+    "text": "kruskal_mst(g, distmx=weights(g))\n\nReturn a vector of edges representing the minimum spanning tree of a connected, undirected graph g with optional distance matrix distmx using Kruskal's algorithm.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.prim_mst",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.prim_mst",
+    "category": "Function",
+    "text": "prim_mst(g, distmx=weights(g))\n\nReturn a vector of edges representing the minimum spanning tree of a connected, undirected graph g with optional distance matrix distmx using Prim's algorithm. Return a vector of edges.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#Minimum-Spanning-Trees-(MST)-Algorithms-1",
+    "page": "Path and Traversal",
+    "title": "Minimum Spanning Trees (MST) Algorithms",
+    "category": "section",
+    "text": "A Minimum Spanning Tree (MST) is a subset of the edges of a connected, edge-weighted (un)directed graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight.kruskal_mst\nprim_mst"
 },
 
 {
@@ -1161,11 +1369,27 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "pathing.html#LightGraphs.yen_k_shortest_paths",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.yen_k_shortest_paths",
+    "category": "Function",
+    "text": "yen_k_shortest_paths(g, source, target, distmx=weights(g), K=1; maxdist=Inf);\n\nPerform Yen's algorithm on a graph, computing k-shortest distances between source and target other vertices. Return a YenState that contains distances and paths.\n\n\n\n"
+},
+
+{
+    "location": "pathing.html#LightGraphs.parallel_multisource_dijkstra_shortest_paths",
+    "page": "Path and Traversal",
+    "title": "LightGraphs.parallel_multisource_dijkstra_shortest_paths",
+    "category": "Function",
+    "text": "parallel_multisource_dijkstra_shortest_paths(g, sources=vertices(g), distmx=weights(g))\n\nCompute the shortest paths between all pairs of vertices in graph g by running [dijkstra_shortest_paths] for every vertex and using an optional list of source vertex sources and an optional distance matrix distmx. Return a MultipleDijkstraState with relevant traversal information.\n\n\n\n"
+},
+
+{
     "location": "pathing.html#General-properties-of-shortest-path-algorithms-1",
     "page": "Path and Traversal",
     "title": "General properties of shortest path algorithms",
     "category": "section",
-    "text": "The distance from a vertex to itself is always 0.\nThe distance between two vertices with no connecting edge is always Inf.a_star\ndijkstra_shortest_paths\nbellman_ford_shortest_paths\nfloyd_warshall_shortest_paths"
+    "text": "The distance from a vertex to itself is always 0.\nThe distance between two vertices with no connecting edge is always Inf.a_star\ndijkstra_shortest_paths\nbellman_ford_shortest_paths\nfloyd_warshall_shortest_paths\nyen_k_shortest_paths\nparallel_multisource_dijkstra_shortest_paths"
 },
 
 {
@@ -1329,11 +1553,27 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "distance.html#LightGraphs.transitiveclosure",
+    "page": "Distance",
+    "title": "LightGraphs.transitiveclosure",
+    "category": "Function",
+    "text": "transitiveclosure(g, selflooped=false)\n\nCompute the transitive closure of a directed graph, using the Floyd-Warshall algorithm. Return a graph representing the transitive closure. If selflooped is true, add self loops to the graph.\n\nPerformance\n\nTime complexity is \\mathcal{O}(|V|^3).\n\n\n\n"
+},
+
+{
+    "location": "distance.html#LightGraphs.transitiveclosure!",
+    "page": "Distance",
+    "title": "LightGraphs.transitiveclosure!",
+    "category": "Function",
+    "text": "transitiveclosure!(g, selflooped=false)\n\nCompute the transitive closure of a directed graph, using the Floyd-Warshall algorithm. If selflooped is true, add self loops to the graph.\n\nPerformance\n\nTime complexity is \\mathcal{O}(|V|^3).\n\nImplementation Notes\n\nThis version of the function modifies the original graph.\n\n\n\n"
+},
+
+{
     "location": "distance.html#Full-Docs-1",
     "page": "Distance",
     "title": "Full Docs",
     "category": "section",
-    "text": "Modules = [LightGraphs]\nPages   = [ \"distance.jl\"]\nPrivate = false"
+    "text": "Modules = [LightGraphs]\nPages   = [\n	\"distance.jl\",\n	\"transitivity.jl\"\n]\nPrivate = false"
 },
 
 {
@@ -1549,7 +1789,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
+    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
 },
 
 {
@@ -1557,7 +1797,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
+    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
 },
 
 {
