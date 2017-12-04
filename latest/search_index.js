@@ -45,7 +45,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Choosing A Graph Type",
     "title": "Which Graph Type Should I Use?",
     "category": "section",
-    "text": "These are general guidelines to help you select the proper graph type.In general, prefer SimpleGraphs.\nIf you need edge weights and don't require large numbers of graph modifications, use SimpleWeightedGraphs.\nIf you need labeling of vertices or edges, use MetaGraphs.\nIf you work with very large graphs (billons to tens of billions of edges) and don'tneed mutability, use StaticGraphs."
+    "text": "These are general guidelines to help you select the proper graph type.In general, prefer SimpleGraphs.\nIf you need edge weights and don't require large numbers of graph modifications, use SimpleWeightedGraphs.\nIf you need labeling of vertices or edges, use MetaGraphs.\nIf you work with very large graphs (billons to tens of billions of edges) and don't need mutability, use StaticGraphs."
 },
 
 {
