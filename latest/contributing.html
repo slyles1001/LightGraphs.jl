@@ -11,7 +11,7 @@ end</code></pre><p>should be rewritten as two functions</p><pre><code class="lan
     return f!(g, v, storage)
 end
 
-function f!(g::AbstractGraph, v::Integer, storage::AbstractVector{Int}, )
+function f!(g::AbstractGraph, v::Integer, storage::AbstractVector{Int})
     # some code operating on storage, g, and v.
     for i in 1:nv(g)
         storage[i] = v-i
