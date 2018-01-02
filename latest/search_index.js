@@ -881,11 +881,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "operators.html#LightGraphs.egonet-Tuple{LightGraphs.AbstractGraph,Integer,Integer}",
+    "location": "operators.html#LightGraphs.egonet-Union{Tuple{LightGraphs.AbstractGraph{T},Integer,Integer,AbstractArray{U,2}}, Tuple{LightGraphs.AbstractGraph{T},Integer,Integer}, Tuple{T}, Tuple{U}} where T<:Integer where U<:Real",
     "page": "Operators",
     "title": "LightGraphs.egonet",
     "category": "Method",
-    "text": "egonet(g, v, d)\n\nReturn the subgraph of g induced by the neighbors of v up to distance d. This is equivalent to induced_subgraph(g, neighborhood(g, v, d, dir=dir))[1].\n\nOptional Arguments\n\ndir=:out: if g is directed, this argument specifies the edge direction\n\nwith respect to v (i.e. :in or :out).\n\n\n\n"
+    "text": "egonet(g, v, d, distmx=weights(g))\n\nReturn the subgraph of g induced by the neighbors of v up to distance d, using weights (optionally) provided by distmx. This is equivalent to induced_subgraph(g, neighborhood(g, v, d, dir=dir))[1].\n\nOptional Arguments\n\ndir=:out: if g is directed, this argument specifies the edge direction\n\nwith respect to v (i.e. :in or :out).\n\n\n\n"
 },
 
 {
@@ -1121,139 +1121,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "pathing.html#LightGraphs.is_connected",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.is_connected",
-    "category": "Function",
-    "text": "is_connected(g)\n\nReturn true if graph g is connected. For directed graphs, use is_weakly_connected or is_strongly_connected.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.is_strongly_connected",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.is_strongly_connected",
-    "category": "Function",
-    "text": "is_strongly_connected(g)\n\nReturn true if directed graph g is strongly connected.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.is_weakly_connected",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.is_weakly_connected",
-    "category": "Function",
-    "text": "is_weakly_connected(g)\n\nReturn true if the directed graph g is connected.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.connected_components",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.connected_components",
-    "category": "Function",
-    "text": "connected_components(g)\n\nReturn the connected components of an undirected graph g as a vector of components, with each element a vector of vertices belonging to the component.\n\nFor directed graphs, see strongly_connected_components and weakly_connected_components.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.strongly_connected_components",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.strongly_connected_components",
-    "category": "Function",
-    "text": "strongly_connected_components(g)\n\nCompute the strongly connected components of a directed graph g.\n\nReturn an array of arrays, each of which is the entire connected component.\n\nImplementation Notes\n\nThe order of the components is not part of the API contract.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.weakly_connected_components",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.weakly_connected_components",
-    "category": "Function",
-    "text": "weakly_connected_components(g)\n\nReturn the weakly connected components of the directed graph g. This is equivalent to the connected components of the undirected equivalent of g.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.has_self_loops",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.has_self_loops",
-    "category": "Function",
-    "text": "has_self_loops(g)\n\nReturn true if g has any self loops.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.attracting_components",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.attracting_components",
-    "category": "Function",
-    "text": "attracting_components(g)\n\nReturn a vector of vectors of integers representing lists of attracting components in the directed graph g.\n\nThe attracting components are a subset of the strongly connected components in which the components do not have any leaving edges.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.is_bipartite",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.is_bipartite",
-    "category": "Function",
-    "text": "is_bipartite(g)\n\nReturn true if graph g is bipartite.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.bipartite_map",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.bipartite_map",
-    "category": "Function",
-    "text": "bipartite_map(g)\n\nFor a bipartite graph g, return a vector c of size V containing the assignment of each vertex to one of the two sets (c_i == 1 or c_i == 2`). Ifg` is not bipartite, return an empty vector.\n\nImplementation Notes\n\nNote that an empty vector does not necessarily indicate non-bipartiteness. An empty graph will return an empty vector but is bipartite.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.biconnected_components",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.biconnected_components",
-    "category": "Function",
-    "text": "biconnected_components(g)\n\nCompute the biconnected components of an undirected graph gand return a vector of vectors containing each biconnected component.\n\nPerformance: Time complexity is mathcalO(V).\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.condensation",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.condensation",
-    "category": "Function",
-    "text": "condensation(g[, scc])\n\nReturn the condensation graph of the strongly connected components scc in the directed graph g. If scc is missing, generate the strongly connected components first.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.neighborhood",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.neighborhood",
-    "category": "Function",
-    "text": "neighborhood(g, v, d)\n\nReturn a vector of the vertices in g at a geodesic distance less or equal to d from v.\n\nOptional Arguments\n\ndir=:out: If g is directed, this argument specifies the edge direction\n\nwith respect to v of the edges to be considered. Possible values: :in or :out.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.articulation",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.articulation",
-    "category": "Function",
-    "text": "articulation(g)\n\nCompute the articulation points of a connected graph g and return an array containing all cut vertices.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.period",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.period",
-    "category": "Function",
-    "text": "period(g)\n\nReturn the (common) period for all vertices in a strongly connected directed graph. Will throw an error if the graph is not strongly connected.\n\n\n\n"
-},
-
-{
-    "location": "pathing.html#LightGraphs.isgraphical",
-    "page": "Path and Traversal",
-    "title": "LightGraphs.isgraphical",
-    "category": "Function",
-    "text": "isgraphical(degs)\n\nReturn true if the degree sequence degs is graphical, according to Erdös-Gallai condition.\n\nPerformance\n\nTime complexity: ``\\mathcal{O}(|degs|^2)``\n\n\n\n"
-},
-
-{
     "location": "pathing.html#Connectivity-/-Bipartiteness-1",
     "page": "Path and Traversal",
     "title": "Connectivity / Bipartiteness",
     "category": "section",
-    "text": "Graph connectivity functions are defined on both undirected and directed graphs:is_connected\nis_strongly_connected\nis_weakly_connected\nconnected_components\nstrongly_connected_components\nweakly_connected_components\nhas_self_loops\nattracting_components\nis_bipartite\nbipartite_map\nbiconnected_components\ncondensation\nneighborhood\narticulation\nperiod\nisgraphical"
+    "text": "Graph connectivity functions are defined on both undirected and directed graphs:is_connected\nis_strongly_connected\nis_weakly_connected\nconnected_components\nstrongly_connected_components\nweakly_connected_components\nhas_self_loops\nattracting_components\nis_bipartite\nbipartite_map\nbiconnected_components\ncondensation\nneighborhood\nneighborhood_dists\narticulation\nperiod\nisgraphical"
 },
 
 {
