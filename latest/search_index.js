@@ -341,7 +341,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.add_vertex!",
     "category": "Function",
-    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\n"
+    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\n"
 },
 
 {
@@ -357,7 +357,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.rem_vertex!",
     "category": "Function",
-    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\n"
+    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\n"
 },
 
 {
@@ -486,6 +486,14 @@ var documenterSearchIndex = {"docs": [
     "title": "LightGraphs.random_regular_graph",
     "category": "Method",
     "text": "random_regular_graph(n, k)\n\nCreate a random undirected regular graph with n vertices, each with degree k.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\nPerformance\n\nTime complexity is approximately mathcalO(nk^2).\n\nImplementation Notes\n\nAllocates an array of nk Ints, and . For k  fracn2, generates a graph of degree n-k-1 and returns its complement.\n\n\n\n"
+},
+
+{
+    "location": "generators.html#LightGraphs.random_tournament_digraph-Tuple{Integer}",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.random_tournament_digraph",
+    "category": "Method",
+    "text": "random_tournament_digraph(n)\n\nCreate a random directed tournament graph with n vertices.\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\n\n\n"
 },
 
 {
