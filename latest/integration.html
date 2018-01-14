@@ -4,7 +4,7 @@ julia&gt; for e in LightGraphs.edges(g)
            add_edge!(s,src(e), dst(e))
        end</code></pre><h2><a class="nav-anchor" id="[Metis.jl](https://github.com/JuliaSparse/Metis.jl)-1" href="#[Metis.jl](https://github.com/JuliaSparse/Metis.jl)-1"><a href="https://github.com/JuliaSparse/Metis.jl">Metis.jl</a></a></h2><p>The Metis graph partitioning package can interface with <em>LightGraphs.jl</em>:</p><pre><code class="language-julia">julia&gt; using LightGraphs
 
-julia&gt; g = Graph(100,1000)
+julia&gt; g = SimpleGraph(100,1000)
 {100, 1000} undirected graph
 
 julia&gt; partGraphKway(g, 6)  # 6 partitions</code></pre><footer><hr/><a class="previous" href="flowcut.html"><span class="direction">Previous</span><span class="title">Flow and Cut</span></a><a class="next" href="contributing.html"><span class="direction">Next</span><span class="title">Contributing</span></a></footer></article></body></html>

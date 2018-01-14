@@ -13,7 +13,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Getting Started",
     "title": "Light Graphs",
     "category": "section",
-    "text": "The goal of LightGraphs.jl is to offer a performant platform for network and graph analysis in Julia. To this end, LightGraphs offers both (a) a set of simple, concrete graph implementations – Graph (for undirected graphs) and DiGraph (for directed graphs), and (b) an API for the development of more sophisticated graph implementations under the AbstractGraph type.As such, LightGraphs.jl is the central package of the JuliaGraphs ecosystem. Additional functionality like advanced IO and file formats, weighted graphs, property graphs, and optimization related functions can be found in the following packages:LightGraphsExtras.jl: extra functions for graph analysis.\nMetaGraphs.jl: graphs with associated meta-data.\nSimpleWeightedGraphs.jl: weighted graphs.\nGraphIO.jl: tools for importing and exporting graph objects using common file types like edgelists, GraphML, Pajek NET, and more."
+    "text": "The goal of LightGraphs.jl is to offer a performant platform for network and graph analysis in Julia. To this end, LightGraphs offers both (a) a set of simple, concrete graph implementations – SimpleGraph (for undirected graphs) and SimpleDiGraph (for directed graphs), and (b) an API for the development of more sophisticated graph implementations under the AbstractGraph type.As such, LightGraphs.jl is the central package of the JuliaGraphs ecosystem. Additional functionality like advanced IO and file formats, weighted graphs, property graphs, and optimization related functions can be found in the following packages:LightGraphsExtras.jl: extra functions for graph analysis.\nMetaGraphs.jl: graphs with associated meta-data.\nSimpleWeightedGraphs.jl: weighted graphs.\nGraphIO.jl: tools for importing and exporting graph objects using common file types like edgelists, GraphML, Pajek NET, and more.\nGraphDataFrameBridge.jl: Tools forconverting edgelists stored in DataFrames into graphs (MetaGraphs, MetaDiGraphs)."
 },
 
 {
@@ -37,7 +37,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Choosing A Graph Type",
     "title": "Graph Types",
     "category": "section",
-    "text": "In addition to providing a simplegraph implementation, LightGraphs also serves as a framework for other graph types. Currently, there are several alternative graph types, each with its own package:SimpleWeightedGraphs provides a graph structure with the ability to specify weights on edges.\nMetaGraphs provides a graph structure that supports user-defined properties on the graph, vertices, and edges.\nStaticGraphs supports very large graph structures in a space- and time-efficient manner, but as the name implies, does not allow modification of the graph oncecreated."
+    "text": "In addition to providing SimpleGraph and SimpleDiGraph implementations, LightGraphs also serves as a framework for other graph types. Currently, there are several alternative graph types, each with its own package:SimpleWeightedGraphs provides a graph structure with the ability to specify weights on edges.\nMetaGraphs provides a graph structure that supports user-defined properties on the graph, vertices, and edges.\nStaticGraphs supports very large graph structures in a space- and time-efficient manner, but as the name implies, does not allow modification of the graph oncecreated."
 },
 
 {
@@ -53,7 +53,7 @@ var documenterSearchIndex = {"docs": [
     "page": "LightGraphs Types",
     "title": "LightGraphs Types",
     "category": "page",
-    "text": "#LightGraphs TypesLightGraphs.jl supports both the AbstractGraph type and two concrete simple graph types- - Graph for undirected graphs and DiGraph for directed graphs – that are subtypes of AbstractGraph."
+    "text": "#LightGraphs TypesLightGraphs.jl supports both the AbstractGraph type and two concrete simple graph types- - SimpleGraph for undirected graphs and SimpleDiGraph for directed graphs – that are subtypes of AbstractGraph."
 },
 
 {
@@ -61,7 +61,7 @@ var documenterSearchIndex = {"docs": [
     "page": "LightGraphs Types",
     "title": "Concrete Types",
     "category": "section",
-    "text": "LightGraphs.jl provides two concrete graph types: Graph is an undirected graph, and DiGraph is its directed counterpart. Both of these types can be parameterized to specifying how vertices are identified (by default, Graph and DiGraph use the system default integer type, usually Int64).A graph G is described by a set of vertices V and edges E: G = {V, E}. V is an integer range 1:n; E is represented as forward (and, for directed graphs, backward) adjacency lists indexed by vertices. Edges may also be accessed via an iterator that yields Edge types containing (src<:Integer, dst<:Integer) values. Both vertices and edges may be integers of any type, and the smallest type that fits the data is recommended in order to save memory.Graphs are created using Graph() or DiGraph(); there are several options (see the tutorials for examples).Multiple edges between two given vertices are not allowed: an attempt to add an edge that already exists in a graph will not raise an error. This event can be detected using the return value of add_edge!."
+    "text": "LightGraphs.jl provides two concrete graph types: SimpleGraph is an undirected graph, and SimpleDiGraph is its directed counterpart. Both of these types can be parameterized to specifying how vertices are identified (by default, SimpleGraph and SimpleDiGraph use the system default integer type, usually Int64).A graph G is described by a set of vertices V and edges E: G = {V, E}. V is an integer range 1:n; E is represented as forward (and, for directed graphs, backward) adjacency lists indexed by vertices. Edges may also be accessed via an iterator that yields Edge types containing (src<:Integer, dst<:Integer) values. Both vertices and edges may be integers of any type, and the smallest type that fits the data is recommended in order to save memory.Graphs are created using SimpleGraph() or SimpleDiGraph(); there are several options (see the tutorials for examples).Multiple edges between two given vertices are not allowed: an attempt to add an edge that already exists in a graph will not raise an error. This event can be detected using the return value of add_edge!."
 },
 
 {
@@ -297,19 +297,19 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "generators.html#LightGraphs.Graph",
+    "location": "generators.html#LightGraphs.SimpleGraphs.SimpleGraph",
     "page": "Making and Modifying Graphs",
-    "title": "LightGraphs.Graph",
+    "title": "LightGraphs.SimpleGraphs.SimpleGraph",
     "category": "Type",
-    "text": "Graph\n\nA datastruture representing an undirected graph.\n\n\n\n"
+    "text": "SimpleGraph{T}\n\nA type representing an undirected graph.\n\n\n\n"
 },
 
 {
-    "location": "generators.html#LightGraphs.DiGraph",
+    "location": "generators.html#LightGraphs.SimpleGraphs.SimpleDiGraph",
     "page": "Making and Modifying Graphs",
-    "title": "LightGraphs.DiGraph",
+    "title": "LightGraphs.SimpleGraphs.SimpleDiGraph",
     "category": "Type",
-    "text": "DiGraph\n\nA datastruture representing a directed graph.\n\n\n\n"
+    "text": "SimpleDiGraph{T}\n\nA type representing a directed graph.\n\n\n\n"
 },
 
 {
@@ -341,7 +341,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.add_vertex!",
     "category": "Function",
-    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\n"
+    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\n"
 },
 
 {
@@ -357,7 +357,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.rem_vertex!",
     "category": "Function",
-    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\n"
+    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\n"
 },
 
 {
@@ -373,7 +373,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "Modifying graphs",
     "category": "section",
-    "text": "LightGraphs.jl offers a range of tools for modifying graphs, including:Graph\nDiGraph\nEdge\nadd_edge!\nrem_edge!\nadd_vertex!\nadd_vertices!\nrem_vertex!\nzeroIn addition to these core functions, more advanced operators can be found in Operators."
+    "text": "LightGraphs.jl offers a range of tools for modifying graphs, including:SimpleGraph\nSimpleDiGraph\nEdge\nadd_edge!\nrem_edge!\nadd_vertex!\nadd_vertices!\nrem_vertex!\nzeroIn addition to these core functions, more advanced operators can be found in Operators."
 },
 
 {
@@ -805,7 +805,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Operators",
     "title": "Operators",
     "category": "section",
-    "text": "LightGraphs.jl implements the following graph operators. In general, functions with two graph arguments will require them to be of the same type (either both Graph or both DiGraph).Order = [:type, :function]\nPages   = [\"operators.md\"]"
+    "text": "LightGraphs.jl implements the following graph operators. In general, functions with two graph arguments will require them to be of the same type (either both SimpleGraph or both SimpleDiGraph).Order = [:type, :function]\nPages   = [\"operators.md\"]"
 },
 
 {
@@ -2045,7 +2045,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Integration with other packages",
     "title": "Metis.jl",
     "category": "section",
-    "text": "The Metis graph partitioning package can interface with LightGraphs.jl:julia> using LightGraphs\n\njulia> g = Graph(100,1000)\n{100, 1000} undirected graph\n\njulia> partGraphKway(g, 6)  # 6 partitions"
+    "text": "The Metis graph partitioning package can interface with LightGraphs.jl:julia> using LightGraphs\n\njulia> g = SimpleGraph(100,1000)\n{100, 1000} undirected graph\n\njulia> partGraphKway(g, 6)  # 6 partitions"
 },
 
 {
