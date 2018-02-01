@@ -161,11 +161,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "types.html#LightGraphs.in_neighbors-Tuple{Any,Any}",
+    "location": "types.html#LightGraphs.inneighbors-Tuple{Any,Any}",
     "page": "LightGraphs Types",
-    "title": "LightGraphs.in_neighbors",
+    "title": "LightGraphs.inneighbors",
     "category": "Method",
-    "text": "in_neighbors(g, v)\n\nReturn a list of all neighbors connected to vertex v by an incoming edge.\n\nImplementation Notes\n\nReturns a reference, not a copy. Do not modify result.\n\n\n\n"
+    "text": "inneighbors(g, v)\n\nReturn a list of all neighbors connected to vertex v by an incoming edge.\n\nImplementation Notes\n\nReturns a reference, not a copy. Do not modify result.\n\n\n\n"
 },
 
 {
@@ -193,11 +193,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "types.html#LightGraphs.out_neighbors-Tuple{Any,Any}",
+    "location": "types.html#LightGraphs.outneighbors-Tuple{Any,Any}",
     "page": "LightGraphs Types",
-    "title": "LightGraphs.out_neighbors",
+    "title": "LightGraphs.outneighbors",
     "category": "Method",
-    "text": "out_neighbors(g, v)\n\nReturn a list of all neighbors connected to vertex v by an outgoing edge.\n\nImplementation Notes\n\nReturns a reference, not a copy. Do not modify result.\n\n\n\n"
+    "text": "outneighbors(g, v)\n\nReturn a list of all neighbors connected to vertex v by an outgoing edge.\n\nImplementation Notes\n\nReturns a reference, not a copy. Do not modify result.\n\n\n\n"
 },
 
 {
@@ -269,7 +269,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Accessing Properties",
     "title": "Vertex Properties",
     "category": "section",
-    "text": "neighbors: Return array of neighbors of a vertex. If graph is directed, output is equivalent of out_neighbors.\nall_neighbors:  Returns array of all neighbors (both in_neighbors and out_neighbors). For undirected graphs, equivalent to neighbors.\nin_neighbors: Return array of in-neighbors. Equivalent to neighbors for undirected graphs.\nout_neighbors: Return array of out-neighbors. Equivalent to neighbors for undirected graphs."
+    "text": "neighbors: Return array of neighbors of a vertex. If graph is directed, output is equivalent of outneighbors.\nall_neighbors:  Returns array of all neighbors (both inneighbors and outneighbors). For undirected graphs, equivalent to neighbors.\ninneighbors: Return array of in-neighbors. Equivalent to neighbors for undirected graphs.\noutneighbors: Return array of out-neighbors. Equivalent to neighbors for undirected graphs."
 },
 
 {
@@ -1069,7 +1069,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.diffusion",
     "category": "Function",
-    "text": "diffusion(g, p, n)\n\nRun diffusion simulation on g for n steps with spread probabilities based on p. Return a vector with the set of new vertices reached at each step of the simulation.\n\nOptional Arguments\n\ninitial_infections=sample(vertices(g), 1): A list of vertices that\n\nare infected at the start of the simulation.\n\nwatch=Vector(): While simulation is always run on the full graph,\n\nspecifying watch limits reporting to a specific set of vertices reached during the simulation. If left empty, all vertices will be watched.\n\nnormalize=false: if false, set the probability of spread from a vertex i to\n\neach of the out_neighbors of i to p. If true, set the probability of spread from a vertex i to each of the out_neighbors of i to fracpoutdegreee(g i).\n\n\n\n"
+    "text": "diffusion(g, p, n)\n\nRun diffusion simulation on g for n steps with spread probabilities based on p. Return a vector with the set of new vertices reached at each step of the simulation.\n\nOptional Arguments\n\ninitial_infections=sample(vertices(g), 1): A list of vertices that\n\nare infected at the start of the simulation.\n\nwatch=Vector(): While simulation is always run on the full graph,\n\nspecifying watch limits reporting to a specific set of vertices reached during the simulation. If left empty, all vertices will be watched.\n\nnormalize=false: if false, set the probability of spread from a vertex i to\n\neach of the outneighbors of i to p. If true, set the probability of spread from a vertex i to each of the outneighbors of i to fracpoutdegreee(g i).\n\n\n\n"
 },
 
 {
@@ -1693,7 +1693,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
+    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
 },
 
 {
@@ -1701,7 +1701,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
+    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
 },
 
 {
@@ -2013,7 +2013,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Developer Notes",
     "title": "Developing Alternate Graph Types",
     "category": "section",
-    "text": "This section is designed to guide developers who wish to write their own graph structures.All LightGraphs functions rely on a standard API to function. As long as your graph structure is a subtype of AbstractGraph and implements the following API functions with the given return values, all functions within the LightGraphs package should just work:edges\neltype\nhas_edge\nhas_vertex\nin_neighbors\nis_directed: Note that since we use traits to determine directedness, is_directed for a CustomGraph type should have the following signatures:\nis_directed(::Type{CustomGraph})::Bool\nis_directed(g::CustomGraph)::Bool\nne\nnv\nout_neighbors\nverticesIf the graph structure is designed to represent weights on edges, the weights function should also be defined. Note that the output does not necessarily have to be a dense matrix, but it must be indexable via [u, v]."
+    "text": "This section is designed to guide developers who wish to write their own graph structures.All LightGraphs functions rely on a standard API to function. As long as your graph structure is a subtype of AbstractGraph and implements the following API functions with the given return values, all functions within the LightGraphs package should just work:edges\neltype\nhas_edge\nhas_vertex\ninneighbors\nis_directed: Note that since we use traits to determine directedness, is_directed for a CustomGraph type should have the following signatures:\nis_directed(::Type{CustomGraph})::Bool\nis_directed(g::CustomGraph)::Bool\nne\nnv\noutneighbors\nverticesIf the graph structure is designed to represent weights on edges, the weights function should also be defined. Note that the output does not necessarily have to be a dense matrix, but it must be indexable via [u, v]."
 },
 
 {
