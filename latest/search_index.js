@@ -449,6 +449,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "generators.html#LightGraphs.expected_degree_graph-Union{Tuple{Array{T,1}}, Tuple{T}} where T<:Real",
+    "page": "Making and Modifying Graphs",
+    "title": "LightGraphs.expected_degree_graph",
+    "category": "Method",
+    "text": "expected_degree_graph(ω)\n\nGiven a vector of expected degrees ω indexed by vertex, create a random undirected graph in which vertices i and j are connected with probability ω[i]*ω[j]/sum(ω).\n\nOptional Arguments\n\nseed=-1: set the RNG seed.\n\nImplementation Notes\n\nThe algorithm should work well for maximum(ω) << sum(ω). As maximum(ω) approaches sum(ω), some deviations from the expected values are likely.\n\nReferences\n\nConnected Components in Random Graphs with Given Expected Degree Sequences, Linyuan Lu and Fan Chung. https://link.springer.com/article/10.1007%2FPL00012580\nEfficient Generation of Networks with Given Expected Degrees, Joel C. Miller and Aric Hagberg. https://doi.org/10.1007/978-3-642-21286-4_10\n\n\n\n"
+},
+
+{
     "location": "generators.html#LightGraphs.kronecker",
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.kronecker",
@@ -1693,7 +1701,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
+    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
 },
 
 {
@@ -1701,7 +1709,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
+    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
 },
 
 {
