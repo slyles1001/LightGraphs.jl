@@ -45,7 +45,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Choosing A Graph Type",
     "title": "Which Graph Type Should I Use?",
     "category": "section",
-    "text": "These are general guidelines to help you select the proper graph type.In general, prefer SimpleGraphs.\nIf you need edge weights and don't require large numbers of graph modifications, use SimpleWeightedGraphs.\nIf you need labeling of vertices or edges, use MetaGraphs.\nIf you work with very large graphs (billons to tens of billions of edges) and don't need mutability, use StaticGraphs."
+    "text": "These are general guidelines to help you select the proper graph type.In general, prefer SimpleGraphs.\nIf you need edge weights and don\'t require large numbers of graph modifications, use SimpleWeightedGraphs.\nIf you need labeling of vertices or edges, use MetaGraphs.\nIf you work with very large graphs (billons to tens of billions of edges) and don\'t need mutability, use StaticGraphs."
 },
 
 {
@@ -141,7 +141,7 @@ var documenterSearchIndex = {"docs": [
     "page": "LightGraphs Types",
     "title": "LightGraphs.edgetype",
     "category": "Method",
-    "text": "edgetype(g)\n\nReturn the type of graph g's edge\n\n\n\n"
+    "text": "edgetype(g)\n\nReturn the type of graph g\'s edge\n\n\n\n"
 },
 
 {
@@ -341,7 +341,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.add_vertex!",
     "category": "Function",
-    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\n"
+    "text": "add_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if the vertex was added successfully, false otherwise.\n\n\n\nadd_vertex!(g)\n\nAdd a new vertex to the graph g. Return true if addition was successful.\n\n\n\n"
 },
 
 {
@@ -357,7 +357,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.rem_vertex!",
     "category": "Function",
-    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\n"
+    "text": "rem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph), true otherwise.\n\n\n\nrem_vertex!(g, v)\n\nRemove the vertex v from graph g. Return false if removal fails (e.g., if vertex is not in the graph); true otherwise.\n\nPerformance\n\nTime complexity is mathcalO(k^2), where k is the max of the degrees of vertex v and vertex V.\n\nImplementation Notes\n\nThis operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices v  and V, and removing the last vertex V from the graph. After removal the vertices in g will be indexed by 1V-1.\n\n\n\n"
 },
 
 {
@@ -693,7 +693,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.smallgraph",
     "category": "Method",
-    "text": "smallgraph(s)\nsmallgraph(s)\n\nCreate a small graph of type s. Admissible values for s are:\n\ns graph type\n:bull A bull graph.\n:chvatal A Chvátal graph.\n:cubical A Platonic cubical graph.\n:desargues A Desarguesgraph.\n:diamond A diamond graph.\n:dodecahedral A Platonic dodecahedral  graph.\n:frucht A Frucht graph.\n:heawood A Heawood graph.\n:house A graph mimicing the classic outline of a house.\n:housex A house graph, with two edges crossing the bottom square.\n:icosahedral A Platonic icosahedral   graph.\n:krackhardtkite A Krackhardt-Kite social network  graph.\n:moebiuskantor A Möbius-Kantor graph.\n:octahedral A Platonic octahedral graph.\n:pappus A Pappus graph.\n:petersen A Petersen graph.\n:sedgewickmaze A simple maze graph used in Sedgewick's Algorithms in C++: Graph  Algorithms (3rd ed.)\n:tetrahedral A Platonic tetrahedral  graph.\n:truncatedcube A skeleton of the truncated cube graph.\n:truncatedtetrahedron A skeleton of the truncated tetrahedron  graph.\n:truncatedtetrahedron_dir A skeleton of the truncated tetrahedron digraph.\n:tutte A Tutte graph.\n\n\n\n"
+    "text": "smallgraph(s)\nsmallgraph(s)\n\nCreate a small graph of type s. Admissible values for s are:\n\ns graph type\n:bull A bull graph.\n:chvatal A Chvátal graph.\n:cubical A Platonic cubical graph.\n:desargues A Desarguesgraph.\n:diamond A diamond graph.\n:dodecahedral A Platonic dodecahedral  graph.\n:frucht A Frucht graph.\n:heawood A Heawood graph.\n:house A graph mimicing the classic outline of a house.\n:housex A house graph, with two edges crossing the bottom square.\n:icosahedral A Platonic icosahedral   graph.\n:krackhardtkite A Krackhardt-Kite social network  graph.\n:moebiuskantor A Möbius-Kantor graph.\n:octahedral A Platonic octahedral graph.\n:pappus A Pappus graph.\n:petersen A Petersen graph.\n:sedgewickmaze A simple maze graph used in Sedgewick\'s Algorithms in C++: Graph  Algorithms (3rd ed.)\n:tetrahedral A Platonic tetrahedral  graph.\n:truncatedcube A skeleton of the truncated cube graph.\n:truncatedtetrahedron A skeleton of the truncated tetrahedron  graph.\n:truncatedtetrahedron_dir A skeleton of the truncated tetrahedron digraph.\n:tutte A Tutte graph.\n\n\n\n"
 },
 
 {
@@ -709,7 +709,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Making and Modifying Graphs",
     "title": "LightGraphs.euclidean_graph",
     "category": "Method",
-    "text": "euclidean_graph(N, d; seed=-1, L=1., p=2., cutoff=-1., bc=:open)\n\nGenerate N uniformly distributed points in the box 0L^d and return a Euclidean graph, a map containing the distance on each edge and a matrix with the points' positions.\n\n\n\n"
+    "text": "euclidean_graph(N, d; seed=-1, L=1., p=2., cutoff=-1., bc=:open)\n\nGenerate N uniformly distributed points in the box 0L^d and return a Euclidean graph, a map containing the distance on each edge and a matrix with the points\' positions.\n\n\n\n"
 },
 
 {
@@ -1165,7 +1165,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.simplecycles",
     "category": "Function",
-    "text": "simplecycles(dg::::IsDirected)\n\nCompute all cycles of the given directed graph, using Johnson, 1973's algorithm and return them.\n\nPerformance\n\nThe number of cycles grows more than exponentially with the number of vertices, you might want to use the algorithm with a ceiling – getcycles – on large directed graphs (slightly slower). If you want to have an idea of the possible number of cycles, look at function maxsimplecycles(dg::DiGraph, byscc::Bool = true).\n\nReferences\n\nJohnson\n\n\n\n"
+    "text": "simplecycles(dg::::IsDirected)\n\nCompute all cycles of the given directed graph, using Johnson, 1973\'s algorithm and return them.\n\nPerformance\n\nThe number of cycles grows more than exponentially with the number of vertices, you might want to use the algorithm with a ceiling – getcycles – on large directed graphs (slightly slower). If you want to have an idea of the possible number of cycles, look at function maxsimplecycles(dg::DiGraph, byscc::Bool = true).\n\nReferences\n\nJohnson\n\n\n\n"
 },
 
 {
@@ -1173,7 +1173,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.simplecycles_iter",
     "category": "Function",
-    "text": "simplecycles_iter(dg::DiGraph, ceiling = 10^6)\n\nSearch all cycles of the given directed graph, using Johnson, 1973's algorithm, up to the ceiling (avoid memory overload).\n\nIf the graph is small, the ceiling will not be reached and simplecycles(dgDiGraph) is more efficient. It avoids the overhead of the counting and testing if the ceiling is reached. It returns all the cycles of the directed graph if the ceiling is not reached, a subset of them otherwise.\n\nTo get an idea of the possible number of cycles, using function maxsimplecycles(dg::DiGraph, byscc::Bool = true) on the directed graph.\n\nReferences\n\nJohnson\n\n\n\n"
+    "text": "simplecycles_iter(dg::DiGraph, ceiling = 10^6)\n\nSearch all cycles of the given directed graph, using Johnson, 1973\'s algorithm, up to the ceiling (avoid memory overload).\n\nIf the graph is small, the ceiling will not be reached and simplecycles(dgDiGraph) is more efficient. It avoids the overhead of the counting and testing if the ceiling is reached. It returns all the cycles of the directed graph if the ceiling is not reached, a subset of them otherwise.\n\nTo get an idea of the possible number of cycles, using function maxsimplecycles(dg::DiGraph, byscc::Bool = true) on the directed graph.\n\nReferences\n\nJohnson\n\n\n\n"
 },
 
 {
@@ -1189,7 +1189,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.simplecyclescount",
     "category": "Function",
-    "text": "simplecyclescount(dg::DiGraph, ceiling = 10^6)\n\nCount the number of cycles in a directed graph, using Johnson, 1973's algorithm.\n\nThe ceiling is here to avoid memory overload if there are a lot of cycles in the graph. Default value is 10^6, but it can be higher or lower. You can use the function maxsimplecycles(dg::DiGraph, byscc::Bool = true) to get an idea of the theoretical maximum number or cycles.\n\nReturns the minimum of the ceiling and the number of cycles.\n\nReferences\n\nJohnson\n\n\n\n"
+    "text": "simplecyclescount(dg::DiGraph, ceiling = 10^6)\n\nCount the number of cycles in a directed graph, using Johnson, 1973\'s algorithm.\n\nThe ceiling is here to avoid memory overload if there are a lot of cycles in the graph. Default value is 10^6, but it can be higher or lower. You can use the function maxsimplecycles(dg::DiGraph, byscc::Bool = true) to get an idea of the theoretical maximum number or cycles.\n\nReturns the minimum of the ceiling and the number of cycles.\n\nReferences\n\nJohnson\n\n\n\n"
 },
 
 {
@@ -1197,7 +1197,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.simplecycleslength",
     "category": "Function",
-    "text": "simplecycleslength(dg::DiGraph, ceiling = 10^6)\n\nSearch all cycles of the given directed graph, using Johnson, 1973's algorithm, and return their length.\n\nTo get an idea of the possible number of cycles, using function maxsimplecycles(dg::DiGraph, byscc::Bool = true) on the directed graph.\n\nIt returns cyclelengths and ncycles, the lengths of all cycles and the  number of cycles. The index in the array is the length of the cycle.  If the ceiling is reached (ncycles = ceiling), the output is only a subset of the cycles lengths.\n\nReferences\n\nJohnson\n\n\n\n"
+    "text": "simplecycleslength(dg::DiGraph, ceiling = 10^6)\n\nSearch all cycles of the given directed graph, using Johnson, 1973\'s algorithm, and return their length.\n\nTo get an idea of the possible number of cycles, using function maxsimplecycles(dg::DiGraph, byscc::Bool = true) on the directed graph.\n\nIt returns cyclelengths and ncycles, the lengths of all cycles and the  number of cycles. The index in the array is the length of the cycle.  If the ceiling is reached (ncycles = ceiling), the output is only a subset of the cycles lengths.\n\nReferences\n\nJohnson\n\n\n\n"
 },
 
 {
@@ -1221,7 +1221,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.kruskal_mst",
     "category": "Function",
-    "text": "kruskal_mst(g, distmx=weights(g))\n\nReturn a vector of edges representing the minimum spanning tree of a connected, undirected graph g with optional distance matrix distmx using Kruskal's algorithm.\n\n\n\n"
+    "text": "kruskal_mst(g, distmx=weights(g))\n\nReturn a vector of edges representing the minimum spanning tree of a connected, undirected graph g with optional distance matrix distmx using Kruskal\'s algorithm.\n\n\n\n"
 },
 
 {
@@ -1229,7 +1229,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.prim_mst",
     "category": "Function",
-    "text": "prim_mst(g, distmx=weights(g))\n\nReturn a vector of edges representing the minimum spanning tree of a connected, undirected graph g with optional distance matrix distmx using Prim's algorithm. Return a vector of edges.\n\n\n\n"
+    "text": "prim_mst(g, distmx=weights(g))\n\nReturn a vector of edges representing the minimum spanning tree of a connected, undirected graph g with optional distance matrix distmx using Prim\'s algorithm. Return a vector of edges.\n\n\n\n"
 },
 
 {
@@ -1261,7 +1261,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.dijkstra_shortest_paths",
     "category": "Function",
-    "text": "dijkstra_shortest_paths(g, srcs, distmx=weights(g));\n\nPerform Dijkstra's algorithm on a graph, computing shortest distances between srcs and all other vertices. Return a LightGraphs.DijkstraState that contains various traversal information.\n\nOptional Arguments\n\nallpaths=false: If true, returns a LightGraphs.DijkstraState that keeps track of all\n\npredecessors of a given vertex.\n\n\n\n"
+    "text": "dijkstra_shortest_paths(g, srcs, distmx=weights(g));\n\nPerform Dijkstra\'s algorithm on a graph, computing shortest distances between srcs and all other vertices. Return a LightGraphs.DijkstraState that contains various traversal information.\n\nOptional Arguments\n\nallpaths=false: If true, returns a LightGraphs.DijkstraState that keeps track of all\n\npredecessors of a given vertex.\n\n\n\n"
 },
 
 {
@@ -1285,7 +1285,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Path and Traversal",
     "title": "LightGraphs.yen_k_shortest_paths",
     "category": "Function",
-    "text": "yen_k_shortest_paths(g, source, target, distmx=weights(g), K=1; maxdist=Inf);\n\nPerform Yen's algorithm on a graph, computing k-shortest distances between source and target other vertices. Return a YenState that contains distances and paths.\n\n\n\n"
+    "text": "yen_k_shortest_paths(g, source, target, distmx=weights(g), K=1; maxdist=Inf);\n\nPerform Yen\'s algorithm on a graph, computing k-shortest distances between source and target other vertices. Return a YenState that contains distances and paths.\n\n\n\n"
 },
 
 {
@@ -1421,7 +1421,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Distance",
     "title": "LightGraphs.center",
     "category": "Method",
-    "text": "center(eccentricities)\ncenter(g, distmx=weights(g))\nparallel_center(g, distmx=weights(g))\n\nGiven a graph and optional distance matrix, or a vector of precomputed eccentricities, return the set of all vertices whose eccentricity is equal to the graph's radius (that is, the set of vertices with the smallest eccentricity).\n\n\n\n"
+    "text": "center(eccentricities)\ncenter(g, distmx=weights(g))\nparallel_center(g, distmx=weights(g))\n\nGiven a graph and optional distance matrix, or a vector of precomputed eccentricities, return the set of all vertices whose eccentricity is equal to the graph\'s radius (that is, the set of vertices with the smallest eccentricity).\n\n\n\n"
 },
 
 {
@@ -1453,7 +1453,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Distance",
     "title": "LightGraphs.periphery",
     "category": "Method",
-    "text": "periphery(eccentricities)\nperiphery(g, distmx=weights(g))\nparallel_periphery(g, distmx=weights(g))\n\nGiven a graph and optional distance matrix, or a vector of precomputed eccentricities, return the set of all vertices whose eccentricity is equal to the graph's diameter (that is, the set of vertices with the largest eccentricity).\n\n\n\n"
+    "text": "periphery(eccentricities)\nperiphery(g, distmx=weights(g))\nparallel_periphery(g, distmx=weights(g))\n\nGiven a graph and optional distance matrix, or a vector of precomputed eccentricities, return the set of all vertices whose eccentricity is equal to the graph\'s diameter (that is, the set of vertices with the largest eccentricity).\n\n\n\n"
 },
 
 {
@@ -1557,7 +1557,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Centrality Measures",
     "title": "LightGraphs.stress_centrality",
     "category": "Function",
-    "text": "stress_centrality(g[, vs])\nstress_centrality(g, k)\nparallel_stress_centrality(g[, vs])\nparallel_stress_centrality(g, k)\n\nCalculate the stress centrality of a graph g across all vertices, a specified subset of vertices vs, or a random subset of k vertices. Return a vector representing the centrality calculated for each node in g.\n\nThe stress centrality of a vertex n is defined as the number of shortest paths passing through n.\n\nReferences\n\nBarabási, A.L., Oltvai, Z.N.: Network biology: understanding the cell's functional organization. Nat Rev Genet 5 (2004) 101-113\nShimbel, A.: Structural parameters of communication networks. Bull Math Biophys 15 (1953) 501-507.\n\n\n\n"
+    "text": "stress_centrality(g[, vs])\nstress_centrality(g, k)\nparallel_stress_centrality(g[, vs])\nparallel_stress_centrality(g, k)\n\nCalculate the stress centrality of a graph g across all vertices, a specified subset of vertices vs, or a random subset of k vertices. Return a vector representing the centrality calculated for each node in g.\n\nThe stress centrality of a vertex n is defined as the number of shortest paths passing through n.\n\nReferences\n\nBarabási, A.L., Oltvai, Z.N.: Network biology: understanding the cell\'s functional organization. Nat Rev Genet 5 (2004) 101-113\nShimbel, A.: Structural parameters of communication networks. Bull Math Biophys 15 (1953) 501-507.\n\n\n\n"
 },
 
 {
@@ -1701,7 +1701,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don't commute with symmetrization.\n\n\n\n"
+    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
 },
 
 {
@@ -1709,7 +1709,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Linear Algebra",
     "title": "LightGraphs.LinAlg.symmetrize",
     "category": "Function",
-    "text": "symmetrize(A::SparseMatrix, which=:or)\n\nReturn a symmetric version of graph (represented by sparse matrix A) as a sparse matrix. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\n\n\n"
+    "text": "symmetrize(adjmat, which=:or)\n\nReturn a symmetric version of graph (represented by CombinatorialAdjacency adjmat) as a CombinatorialAdjacency. which may be one of :triu, :tril, :sum, or :or. Use :sum for weighted graphs.\n\nImplementation Notes\n\nOnly works on Adjacency because the normalizations don\'t commute with symmetrization.\n\n\n\n"
 },
 
 {
@@ -1861,7 +1861,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Community Structures",
     "title": "LightGraphs.modularity",
     "category": "Function",
-    "text": "modularity(g, c)\n\nReturn a value representing Newman's modularity Q for the undirected graph g given the partitioning vector c.\n\n\n\n"
+    "text": "modularity(g, c)\n\nReturn a value representing Newman\'s modularity Q for the undirected graph g given the partitioning vector c.\n\n\n\n"
 },
 
 {
@@ -1949,7 +1949,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Integration with other packages",
     "title": "Integration with other packages",
     "category": "section",
-    "text": "LightGraphs.jl's integration with other Julia packages is designed to be straightforward. Here are a few examples."
+    "text": "LightGraphs.jl\'s integration with other Julia packages is designed to be straightforward. Here are a few examples."
 },
 
 {
@@ -2005,7 +2005,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Contributing",
     "title": "Git usage",
     "category": "section",
-    "text": "In order to make it easier for you to review Pull Requests (PRs), you can add this to your git config file, which should be located at $HOME/.julia/v0.6/LightGraphs/.git/config. Follow the instructions here.Locate the section for your github remote in the .git/config file. It looks like this:[remote \"origin\"]\n	fetch = +refs/heads/*:refs/remotes/origin/*\n	url = git@github.com:JuliaGraphs/LightGraphs.jl.gitNow add the line fetch = +refs/pull/*/head:refs/remotes/origin/pr/* to this section. Obviously, change the github url to match your project's URL. It ends up looking like this:[remote \"origin\"]\n	fetch = +refs/heads/*:refs/remotes/origin/*\n	url = git@github.com:JuliaGraphs/LightGraphs.jl.git\n	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*Now fetch all the pull requests:$ git fetch origin\nFrom github.com:JuliaGraphs/LightGraphs.jl\n * [new ref]         refs/pull/1000/head -> origin/pr/1000\n * [new ref]         refs/pull/1002/head -> origin/pr/1002\n * [new ref]         refs/pull/1004/head -> origin/pr/1004\n * [new ref]         refs/pull/1009/head -> origin/pr/1009\n...To check out a particular pull request:$ git checkout pr/999\nBranch pr/999 set up to track remote branch pr/999 from origin.\nSwitched to a new branch 'pr/999'Now you can test a PR by running git fetch && git checkout pr/PRNUMBER && julia -e 'Pkg.test(\"LightGraphs\")"
+    "text": "In order to make it easier for you to review Pull Requests (PRs), you can add this to your git config file, which should be located at $HOME/.julia/v0.6/LightGraphs/.git/config. Follow the instructions here.Locate the section for your github remote in the .git/config file. It looks like this:[remote \"origin\"]\n	fetch = +refs/heads/*:refs/remotes/origin/*\n	url = git@github.com:JuliaGraphs/LightGraphs.jl.gitNow add the line fetch = +refs/pull/*/head:refs/remotes/origin/pr/* to this section. Obviously, change the github url to match your project\'s URL. It ends up looking like this:[remote \"origin\"]\n	fetch = +refs/heads/*:refs/remotes/origin/*\n	url = git@github.com:JuliaGraphs/LightGraphs.jl.git\n	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*Now fetch all the pull requests:$ git fetch origin\nFrom github.com:JuliaGraphs/LightGraphs.jl\n * [new ref]         refs/pull/1000/head -> origin/pr/1000\n * [new ref]         refs/pull/1002/head -> origin/pr/1002\n * [new ref]         refs/pull/1004/head -> origin/pr/1004\n * [new ref]         refs/pull/1009/head -> origin/pr/1009\n...To check out a particular pull request:$ git checkout pr/999\nBranch pr/999 set up to track remote branch pr/999 from origin.\nSwitched to a new branch \'pr/999\'Now you can test a PR by running git fetch && git checkout pr/PRNUMBER && julia -e \'Pkg.test(\"LightGraphs\")"
 },
 
 {
